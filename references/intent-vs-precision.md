@@ -1,24 +1,24 @@
-# Intent vs Precision
+# 意图与精度
 
-Seedance prompting is not pixel scripting. The text should direct intent; references should carry dense visual information.
+Seedance 提示词并非像素级脚本。文本应指引意图；参考素材应承载密集的视觉信息。
 
-## Use Text For
+## 文本用于表达
 
-- action;
-- emotional intent;
-- camera behavior;
-- timing;
-- light changes;
-- audio;
-- constraints.
+- 动作；
+- 情感意图；
+- 镜头行为；
+- 时序节奏；
+- 光影变化；
+- 音频设计；
+- 约束条件。
 
-## Use References For
+## 参考素材用于承载
 
-- identity;
-- product design;
-- motion examples;
-- camera rhythm;
-- voice or sound texture;
-- material appearance.
+- 身份特征；
+- 产品设计；
+- 运动范例；
+- 镜头节奏；
+- 人声或音效质感；
+- 材质外观。
 
-Short prompts should be dense, not vague.
+简短提示应信息密集，而非模糊笼统。

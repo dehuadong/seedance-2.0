@@ -1,159 +1,159 @@
-# Prompt Examples
+# 提示词示例
 
-Use these examples as patterns, not fixed scripts. Preserve reference tags exactly and keep final prompts under 2000 characters. Each example includes the mode and the reason the prompt is stable.
+请将这些示例视为模式参考，而非固定脚本。请精确保留参考标签，并将最终提示词控制在 2000 字符以内。每个示例均包含模式及该提示词保持稳定的原因。
 
-## T2V Product Launch
+## T2V 产品发布
 
-**Mode:** T2V. **Why it works:** one product anchor, one reveal, material-specific light.
+**模式：** T2V。**为何有效：** 单一产品锚点、一次展示动作、针对材质的布光。
 
-`Matte black wireless earbud case opens by itself on a dark acrylic table, revealing two glossy earbuds seated inside. Camera: slow dolly-in from medium hero shot to macro hinge detail. Lighting: narrow cool strip light glides across the curved plastic, soft rim reflection on the table. Sound: quiet room tone, tiny magnetic click as the lid reaches full open. Constraints: no text overlays, no logo changes.`
+`哑光黑色无线耳机盒在深色亚克力桌面上自动打开，露出内部两只光亮的耳塞。摄像机：从中景产品英雄镜头缓慢推轨至铰链微距细节。布光：窄幅冷光条扫过弧形塑料表面，桌面呈现柔和边缘反光。声音：安静的环境底噪，盒盖完全打开时发出轻微的磁性咔嗒声。限制：无文字叠加，无 Logo 变化。`
 
-## I2V Product Preservation
+## I2V 产品保持
 
-**Mode:** I2V. **Why it works:** visible identity is preserved while motion and light are added.
+**模式：** I2V。**为何有效：** 保留可视身份特征的同时添加运动与光影。
 
-`[Image1] is the product reference; preserve logo, label, bottle shape, cap geometry, and color exactly. Slow dolly-in from medium product shot to macro label detail. Warm side light slides across the glass, condensation beads form and move downward, background remains dark and still. Sound: soft room tone, single glass chime at the final frame.`
+`[Image1] 为产品参考；精确保持 Logo、标签、瓶身形状、瓶盖几何结构与颜色。摄像机：从中景产品镜头缓慢推轨至标签微距细节。暖色侧光滑过玻璃表面，冷凝水珠形成并向下移动，背景保持暗色静止。声音：柔和环境底噪，最后一帧伴随一声清脆的玻璃轻鸣。`
 
-## T2V Character Drama
+## T2V 角色戏剧
 
-**Mode:** T2V. **Why it works:** the emotional turn is shown through gesture and timing.
+**模式：** T2V。**为何有效：** 通过肢体动作与节奏展现情绪转折。
 
-`Character A stands in a narrow apartment hallway under a flickering warm ceiling light. She slowly lowers an unopened envelope, breath catches, eyes fixed on the closed door. Camera: locked medium close-up with a very slight push-in over five seconds. Lighting: warm overhead practical with cool rain reflection on the wall. Sound: distant rain, no music. End on her hand tightening around the paper.`
+`角色A站在狭窄的公寓走廊里，头顶是闪烁的暖色吸顶灯。她缓缓放下一封未拆的信，呼吸一滞，目光紧盯着紧闭的门。摄像机：锁定中近景，五秒内极轻微缓慢推近。布光：顶部暖色实景光源，墙面带有冷色雨水反光。声音：远处雨声，无音乐。结束于她手指收紧握住纸张的瞬间。`
 
-## I2V Portrait Micro-Performance
+## I2V 肖像微表演
 
-**Mode:** I2V. **Why it works:** small controlled facial and hand motion avoids identity drift.
+**模式：** I2V。**为何有效：** 受控的小幅度面部与手部动作可避免身份特征漂移。
 
-`[Image1] is the portrait reference; preserve facial identity, hairstyle, clothing, and background composition. The subject blinks once, looks down toward the table, then gives a small restrained smile. Camera stays locked, no reframing. Lighting remains the same except for a subtle warm lamp flicker on the cheek. Sound: quiet interior room tone.`
+`[Image1] 为肖像参考；保持面部身份特征、发型、服装及背景构图不变。主体眨眼一次，视线向下看向桌面，随后露出轻微克制的微笑。摄像机保持锁定，不重新构图。除面颊上出现微弱的暖色台灯闪烁外，布光保持不变。声音：安静的室内环境底噪。`
 
-## V2V Motion Transfer Without Identity Transfer
+## V2V 无身份传递的运动转移动作
 
-**Mode:** V2V. **Why it works:** the reference role is narrow and excludes likeness.
+**模式：** V2V。**为何有效：** 参考素材作用范围狭窄，排除了相貌相似度传递。
 
-`[Video1] provides only the timing and side-step choreography; do not transfer the performer identity, face, costume, room, or logo. New subject is an original masked street dancer in a wet neon alley. The dancer mirrors the step rhythm, pivots left, and stops with one hand raised. Camera: steady waist-level tracking move. Lighting: cyan storefront glow and magenta rim light. Sound: muted bass pulse synced to each footstep.`
+`[Video1] 仅提供时间节奏与侧步编舞；请勿传递表演者身份、面部、服装、房间或 Logo。新主体为一名在湿漉漉的霓虹小巷中的原创蒙面街舞舞者。舞者镜像模仿踏步节奏，向左旋转，并以单手抬起的姿势定格。摄像机：平稳的腰部高度跟拍运动。布光：青绿色店面泛光与洋红色轮廓光。声音：与每次脚步同步的沉闷低音脉冲。`
 
-## R2V Multi-Reference Product Ad
+## R2V 多参考产品广告
 
-**Mode:** R2V. **Why it works:** every reference has a single role.
+**模式：** R2V。**为何有效：** 每个参考素材仅承担单一角色。
 
-`[Image1] is the product identity reference; preserve shape, label, logo, and color exactly. [Image2] is only the background mood reference: warm wooden bar, low amber practicals. [Audio1] provides only music tempo. Product sits on black stone while a thin amber light sweep crosses the label in time with the beat. Camera: controlled slider move from silhouette to front three-quarter hero angle. Sound: music tempo from [Audio1], soft glass tap on final frame.`
+`[Image1] 为产品身份参考；精确保持形状、标签、Logo 与颜色。[Image2] 仅作为背景氛围参考：暖色木质吧台，低亮度琥珀色实景光源。[Audio1] 仅提供音乐节奏。产品置于黑色石材上，一道纤细的琥珀色扫光随节拍节奏划过标签。摄像机：受控滑轨运动，从剪影过渡至正前侧四分之三英雄角度。声音：来自 [Audio1] 的音乐节奏，最后一帧伴随轻微的玻璃敲击声。`
 
-## Dialogue and Lip-Sync
+## 对白与口型同步
 
-**Mode:** T2V or I2V. **Why it works:** one speaker, short line, stable framing.
+**模式：** T2V 或 I2V。**为何有效：** 单一说话人、简短台词、稳定构图。
 
-`Character A sits at a kitchen table, shoulders still, facing camera in a locked medium close-up. She quietly says, "I found the key." Her mouth movement is small and precise; no head turn during the line. Lighting: soft window light from frame right, warm lamp glow in the background. Sound: clear dry dialogue, low refrigerator hum, no music.`
+`角色A坐在厨房餐桌旁，双肩静止，以锁定中近景面向镜头。她轻声说道：“我找到钥匙了。”她的嘴部动作微小而精准；台词期间无头部转动。布光：画面右侧柔和窗户光，背景带有暖色台灯泛光。声音：清晰干声对白，低频冰箱嗡鸣，无音乐。`
 
-## Two-Character Blocking
+## 双角色场面调度
 
-**Mode:** T2V. **Why it works:** tags make action ownership unambiguous.
+**模式：** T2V。**为何有效：** 标签使动作归属明确无歧义。
 
-`Character A stands foreground left holding a cracked phone. Character B enters background right, stops at the doorway, and places both hands on the frame. Camera stays locked in a medium-wide hallway composition. Character A turns only her eyes toward Character B; Character B does not approach. Lighting: blue evening window light with a warm lamp behind Character A. Sound: floorboard creak, silence after.`
+`角色A站在前景左侧，手持一部屏幕碎裂的手机。角色B从背景右侧入画，在门口停下，双手扶住门框。摄像机锁定走廊中全景构图。角色A仅将视线转向角色B；角色B不靠近。布光：蓝色傍晚窗户光，角色A身后有一盏暖色台灯。声音：地板嘎吱声，随后归于寂静。`
 
-## Action Beat
+## 动作节拍
 
-**Mode:** T2V. **Why it works:** action has one objective, one obstacle, one endpoint.
+**模式：** T2V。**为何有效：** 动作具备单一目标、单一障碍与单一终点。
 
-`Original courier sprints across a rain-slick rooftop toward a closing service door. He jumps a narrow gap, lands hard with one knee down, then reaches the door just before it locks. Camera: low handheld tracking from behind, slight breathing sway, no orbit. Lighting: cold rooftop floodlights and wet reflections. Sound: heavy breathing, rain impacts, metal door buzzer at the endpoint.`
+`一名原创快递员在湿滑的屋顶上冲刺，奔向一扇正在关闭的检修门。他跃过一道窄缝，单膝重重着地，随后在门即将锁死前抵达。摄像机：低机位手持后方跟拍，伴随轻微呼吸晃动，无环绕运动。布光：冷色屋顶泛光灯与潮湿反光。声音：沉重喘息声、雨点撞击声，终点处金属门禁蜂鸣器响起。`
 
-## Safe Original Animation
+## 安全原创动画
 
-**Mode:** T2V. **Why it works:** uses production descriptors instead of protected style names.
+**模式：** T2V。**为何有效：** 使用制作描述符替代受版权保护的风格名称。
 
-`Original 2D animated desert courier with oversized scarf rides a tiny wind-powered cart across pale dunes. Style: hand-painted background texture, rounded character shapes, soft pastel palette, gentle squash-and-stretch wheel motion. Camera tracks side-on at a steady pace. Dust trails follow the wheels and settle behind the cart. Sound: soft wind, tiny wooden wheel rattle.`
+`原创 2D 动画沙漠快递员，戴着超大围巾，驾驶微型风力小车驶过苍白沙丘。风格：手绘背景纹理、圆润角色造型、柔和粉彩色调、车轮带有温和的挤压与拉伸运动。摄像机以稳定速度侧向跟拍。尘土轨迹跟随车轮并在车后沉降。声音：柔和风声、微小木质车轮嘎嗒声。`
 
-## Food Lifestyle
+## 美食生活方式
 
-**Mode:** T2V. **Why it works:** texture, light, and action are concrete.
+**模式：** T2V。**为何有效：** 纹理、光线与动作具体明确。
 
-`Close-up of a ceramic bowl of ramen on a small restaurant counter. Steam rises in soft layers while chopsticks lift one bundle of noodles and broth drips back into the bowl. Camera: locked macro three-quarter angle. Lighting: large warm practical above the counter, gentle highlight on the broth surface. Sound: quiet shop ambience, soft ceramic tap, no music.`
+`小餐馆柜台上陶瓷拉面碗的特写。蒸汽呈柔和层状升起，筷子夹起一团面条，肉汁滴回碗中。摄像机：锁定微距四分之三角度。布光：柜台上方大型暖色实景光源，汤面带有柔和高光。声音：安静的店铺环境声、轻微陶瓷碰撞声，无音乐。`
 
-## Landscape Atmosphere
+## 景观氛围
 
-**Mode:** T2V. **Why it works:** slow camera and weather motion create depth.
+**模式：** T2V。**为何有效：** 缓慢的摄像机运动与天气变化营造纵深感。
 
-`Wide coastal cliff at dawn, low mist drifting through grass while waves strike rocks below. Camera: slow crane rise from grass-level foreground to reveal the horizon. Lighting: cool blue dawn with a thin warm sun edge behind clouds. Motion: grass bends in wind, seabirds cross far background. Sound: distant surf, wind through grass.`
+`黎明时分的宽阔海岸悬崖，低垂的薄雾在草丛间飘动，下方海浪拍击礁石。摄像机：从前景草丛高度缓慢摇臂上升，展现地平线。布光：冷蓝色黎明光，云层后方透出一线暖色太阳边缘。运动：草随风摇曳，海鸟划过远景。声音：远处海浪声、风穿草丛声。`
 
-## VFX Energy
+## VFX 能量特效
 
-**Mode:** T2V. **Why it works:** effect has a source, path, light interaction, and endpoint.
+**模式：** T2V。**为何有效：** 特效具备明确来源、路径、光影交互与终点。
 
-`Old brass key floats above a wooden table as thin blue electrical arcs crawl from the key teeth to a circular chalk mark. The arcs briefly illuminate dust and scratches, then collapse into a small white spark. Camera: locked close-up, shallow depth of field. Lighting: dim warm candle key, blue arc light on the fingertips near frame edge. Sound: faint electrical crackle, single soft pop at the collapse.`
+`一把旧黄铜钥匙悬浮在木桌上方，纤细的蓝色电弧从钥匙齿部爬向地面的圆形粉笔标记。电弧短暂照亮空气中的灰尘与划痕，随后坍缩为一小团白色火花。摄像机：锁定特写，浅景深。布光：昏暗暖色蜡烛主光，画面边缘指尖附近带有蓝色电弧光。声音：微弱电流嘶嘶声，坍缩时伴随一声轻柔的爆裂声。`
 
-## Weather VFX Around a Product
+## 产品周围天气 VFX
 
-**Mode:** I2V. **Why it works:** product remains rigid while weather moves around it.
+**模式：** I2V。**为何有效：** 产品保持刚性静止，天气效果在其周围运动。
 
-`[Image1] is the shoe product reference; preserve silhouette, sole shape, color panels, and logo placement exactly. Rain streaks diagonally behind the shoe, droplets bead on the outsole and run off the tread. Camera: slow lateral slider from heel to toe. Lighting: cool backlight catches water droplets, neutral soft fill keeps logo readable. Sound: rain on concrete, subtle rubber squeak at the final frame.`
+`[Image1] 为鞋类产品参考；精确保持轮廓、鞋底形状、色块拼接与 Logo 位置。雨丝在鞋后方呈对角线划过，水滴在外底凝结并沿胎面流下。摄像机：从鞋跟至鞋尖的缓慢横向滑轨。布光：冷色背光捕捉水滴，中性柔光填充确保 Logo 清晰可读。声音：雨水打在混凝土上的声音，最后一帧伴随轻微的橡胶摩擦声。`
 
-## Music Beat Sync
+## 音乐节拍同步
 
-**Mode:** R2V. **Why it works:** audio controls rhythm, not unauthorized copying.
+**模式：** R2V。**为何有效：** 音频控制节奏，而非未经授权的内容复制。
 
-`[Audio1] provides only tempo and energy; do not copy any voice or melody. Original neon rehearsal room with three masked dancers. On each downbeat, the dancers hit one simple pose and the back wall light pulses once. Camera: locked wide shot for clean choreography. Lighting: magenta floor glow, cyan rim light. Sound: new percussive electronic beat matching [Audio1] tempo.`
+`[Audio1] 仅提供节奏与能量感；请勿复制任何人声或旋律。原创霓虹排练室，三名蒙面舞者。每次重拍时，舞者定格一个简单姿势，背景墙灯光同步脉冲一次。摄像机：锁定全景，确保编舞清晰。布光：洋红色地面泛光，青色轮廓光。声音：匹配 [Audio1] 节奏的全新打击电子乐。`
 
-## Troubleshooting Repair: Generic Output
+## 故障排查修复：泛化输出
 
-**Problem phrase:** `make it cinematic, epic, beautiful, dynamic`.
+**问题描述：** `make it cinematic, epic, beautiful, dynamic`（使其具有电影感、史诗感、美感、动感）。
 
-**Repair:** `Original mountain rescue helicopter appears through low cloud at sunrise. Camera: long lens locked shot from ridge level, slight heat shimmer. Lighting: warm sun edge catches rotor mist while the valley stays blue-gray. Motion: rotor wash pushes fog outward and bends grass in foreground. Sound: distant rotor thump growing louder, no music.`
+**修复方案：** `原创山地救援直升机在日出时分穿过低云出现。摄像机：从山脊高度使用长焦锁定拍摄，带有轻微热浪 shimmer。布光：暖色太阳边缘照亮旋翼激起的雾气，山谷保持蓝灰色。运动：旋翼下洗气流将雾气向外推散，并压低前景草丛。声音：远处旋翼轰鸣声逐渐增强，无音乐。`
 
-## Troubleshooting Repair: I2V Drift
+## 故障排查修复：I2V 特征漂移
 
-**Problem phrase:** `turn this bottle into a futuristic cinematic commercial with lots of transformations`.
+**问题描述：** `turn this bottle into a futuristic cinematic commercial with lots of transformations`（将此瓶子变成充满变形特效的未来感电影广告）。
 
-**Repair:** `[Image1] is the bottle reference; preserve label, logo, glass shape, cap, and liquid color exactly. No transformation of the bottle. Only the environment changes: a thin cold mist rolls across the table and a narrow white highlight travels from left to right across the label. Camera: locked medium product shot. Sound: soft air hiss, no music.`
+**修复方案：** `[Image1] 为瓶子参考；精确保持标签、Logo、玻璃形状、瓶盖与液体颜色。瓶子无任何变形。仅环境发生变化：一缕冷雾滑过桌面，一道狭窄的白色高光从左至右划过标签。摄像机：锁定中景产品镜头。声音：轻微气流嘶嘶声，无音乐。`
 
-## Multilingual Chinese Compressed Prompt
+## 多语言中文压缩提示词
 
-**Mode:** I2V. **Why it works:** compact Chinese phrasing keeps preservation and motion clear.
+**模式：** I2V。**为何有效：** 紧凑的中文表述使特征保持与运动指令清晰明确。
 
 `[Image1]为产品参考，严格保持logo、标签、瓶身形状和颜色不变。镜头缓慢推进到标签特写；左侧暖光扫过玻璃，水珠沿瓶身下滑，背景保持暗色静止。声音：轻微环境声，结尾一声清脆玻璃音。`
 
-## Chinese First/Last Frame
+## 中文首帧/尾帧
 
-**Mode:** FLF2V. **Why it works:** each image has one role and the prompt describes only the transition.
+**模式：** FLF2V。**为何有效：** 每张图像承担单一角色，提示词仅描述过渡过程。
 
 `@图1为首帧，@图2为尾帧。保持同一原创角色、服装和房间布局，角色从椅子上缓慢站起，走到窗边并停在尾帧姿势。动作连续自然，不跳切，不改变脸部、衣服或房间结构。镜头固定中景，仅轻微推镜。声音：安静室内环境声。`
 
-## Russian I2V Product Preservation
+## 俄语 I2V 产品保持
 
-**Mode:** I2V. **Why it works:** Russian wording keeps the product lock and only changes light and environment motion.
+**模式：** I2V。**为何有效：** 俄语表述锁定产品特征，仅改变光线与环境运动。
 
 `[Image1] как первый кадр и референс продукта; сохранить логотип, этикетку, форму, цвет и крышку без изменений. Меняются только свет и небольшое движение среды: теплый источник слева медленно проходит по стеклу, капли соединяются и стекают вниз. Камера: фиксированный средний план с очень медленным наездом к этикетке. Звук: тихий фон, легкий стеклянный щелчок в конце.`
 
-## Russian Reference Role Map
+## 俄语参考角色映射
 
-**Mode:** R2V. **Why it works:** image, video, and audio references are separated into safe roles.
+**模式：** R2V。**为何有效：** 图像、视频与音频参考被分离至安全的单一角色中。
 
 `[Image1] задает оригинального персонажа и костюм. [Video1] задает только ритм бокового сопровождения камеры; не копировать людей, место, бренды или узнаваемую сцену. [Audio1] задает только темп и настроение. Персонаж идет по мокрой вечерней улице, останавливается под фонарем и оборачивается. Камера: плавное боковое сопровождение, затем фиксированный средний план. Звук: дождь, шаги, без музыки.`
 
-## Chinese-English Mixed Role Map
+## 中英混合角色映射
 
-**Mode:** R2V. **Why it works:** Chinese binds references compactly while English keeps shared camera terms precise.
+**模式：** R2V。**为何有效：** 中文紧凑绑定参考素材，英文保持通用摄像机术语的精确性。
 
 `@图1锁定原创角色身份与服装；@图2仅参考雨夜街道氛围；@视频1仅参考 slow lateral tracking，不复制人物、地点或品牌。原创角色穿过湿润站台，停在一盏闪烁灯下。Camera: locked medium-wide, 35mm lens, one slow side track. Sound: rain, footsteps, no music.`
 
-## Japanese-English Portrait Control
+## 日英混合肖像控制
 
-**Mode:** I2V. **Why it works:** Japanese gives natural performance language while English locks camera behavior.
+**模式：** I2V。**为何有效：** 日语提供自然的表演语言，英语锁定摄像机行为。
 
 `[Image1]の人物の顔、髪型、衣装、背景構図を保持。動きは小さく：一度まばたきし、視線を少し下げ、最後に控えめに微笑む。Camera: locked medium close-up, no reframing. Lighting: soft window light from frame right. Sound: quiet room tone.`
 
-## Korean-English Melodrama Blocking
+## 韩英混合情节剧场面调度
 
-**Mode:** T2V. **Why it works:** character spacing, emotional micro-action, and sound are separated.
+**模式：** T2V。**为何有效：** 角色间距、情绪微动作与声音指令相互分离。
 
 `현대 아파트 주방, two original adult characters only. Character A lowers a ceramic mug and looks away; Character B stays near the window, no approach. Camera: locked medium-wide, subtle handheld breathing sway. Lighting: warm tungsten practical, faint blue city spill. Sound: refrigerator hum, fabric movement, no music.`
 
-## Spanish-English Product Preservation
+## 西英混合产品保持
 
-**Mode:** I2V. **Why it works:** Spanish preservation wording is paired with a simple English camera command.
+**模式：** I2V。**为何有效：** 西班牙语保持指令与简单的英语摄像机命令配对。
 
 `[Image1] es la referencia del producto; conservar forma, etiqueta, logo y color sin cambios. Solo cambia el ambiente: una luz cálida cruza el vidrio y aparecen gotas pequeñas. Camera: slow slider from left to right, locked product scale. Sound: room tone, soft glass tap at the end.`
 
-## Multilingual False-Positive Repair
+## 多语言误报修复
 
-**Mode:** T2V repair. **Why it works:** it clarifies a safe staged scene instead of hiding risky intent.
+**模式：** T2V 修复。**为何有效：** 明确安全的舞台化场景，而非隐藏风险意图。
 
 `原创成年角色进行 staged confrontation，非写实伤害、无血腥、无真实武器。Action: one choreographed step backward, a table prop slides, the character freezes at the doorway. Camera: locked medium shot. Lighting: low warm practical, blue window rim. Sound: chair scrape, breath, silence after.`

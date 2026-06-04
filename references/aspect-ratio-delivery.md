@@ -1,48 +1,48 @@
-# Aspect Ratio And Delivery Surfaces
+# 宽高比与交付载体
 
-Use this reference when planning professional framing, social cutdowns, broadcast/web deliverables, DCP/theatrical framing, or campaign versions.
+在规划专业构图、社交媒体精简版、广播/网络交付内容、DCP/影院构图或广告活动版本时，请使用此参考指南。
 
 ## Separate Creative Frame From Delivery Container
 
 | Layer | Decision |
 |---|---|
-| Creative aspect ratio | the composition the shot is designed for: 16:9, 9:16, 1:1, 4:5, 1.85, 2.39 |
-| Platform or container | web, broadcast, DCP, IMF, social, presentation, pitch deck |
-| Safe area | where faces, products, captions, and logos must remain readable |
-| Reframe plan | crop, letterbox, pillarbox, alternate render, or edit-specific version |
-| Text policy | on-screen text should usually be added in post, not generated into motion |
+| Creative aspect ratio | 镜头设计的构图比例：16:9、9:16、1:1、4:5、1.85、2.39 |
+| Platform or container | 网络、广播、DCP、IMF、社交媒体、演示文稿、提案简报 |
+| Safe area | 人脸、产品、字幕和标志必须保持清晰可辨的区域 |
+| Reframe plan | 裁剪、上下黑边、左右黑边、替代渲染或针对剪辑的特定版本 |
+| Text policy | 屏幕文字通常应在后期添加，而非直接生成到动态画面中 |
 
 ## Common Ratios
 
 | Ratio | Use | Prompt advice |
 |---|---|---|
-| 16:9 | web, broadcast, presentation, horizontal campaigns | strongest default for cinematic scene work |
-| 9:16 | vertical social, mobile ads | keep hero subject centered; avoid edge-critical action |
-| 1:1 | social grid, product loops | symmetrical product framing works well |
-| 4:5 | social feed ads | allow headroom and caption room |
-| 1.85 | theatrical/narrative modern frame | compose for horizontal storytelling, not tall product text |
-| 2.39 | widescreen drama, premium ads | protect faces/products from being too small |
+| 16:9 | 网络、广播、演示文稿、横向广告活动 | 电影场景创作的最强默认选择 |
+| 9:16 | 竖屏社交媒体、移动广告 | 保持主体居中；避免关键动作靠近边缘 |
+| 1:1 | 社交媒体网格、产品展示循环 | 对称式产品构图效果良好 |
+| 4:5 | 社交媒体信息流广告 | 预留头部空间和字幕空间 |
+| 1.85 | 影院/叙事类现代画幅 | 为横向叙事构图，而非高大的产品文字 |
+| 2.39 | 宽银幕剧情片、高端广告 | 确保人脸/产品不会过小 |
 
 ## Campaign Version Matrix
 
 | Version | Purpose | Planning notes |
 |---|---|---|
-| 30s hero | full story | more shots, full arc, strongest brand/product proof |
-| 15s cutdown | paid social/broadcast | keep hook, product proof, end state |
-| 10s bumper | recall | one action beat and final product or title card |
-| 6s bumper | fast placement | one visual gag/reveal/product beat |
-| 9:16 vertical | mobile | center action, avoid wide geography, captions lower third |
-| 1:1 or 4:5 | feed | product and face readable without edge details |
-| textless | localization/VFX | no burned-in copy, no captions, no end card text |
+| 30s hero | 完整故事 | 更多镜头、完整叙事弧线、最强的品牌/产品说服力 |
+| 15s cutdown | 付费社交/广播 | 保留核心钩子、产品证明、结尾状态 |
+| 10s bumper | 品牌回忆 | 一个动作节点加最终产品或标题卡 |
+| 6s bumper | 快速投放 | 一个视觉笑点/揭秘/产品节点 |
+| 9:16 vertical | 移动端 | 动作居中，避免广阔场景，字幕置于下三分之一区域 |
+| 1:1 or 4:5 | 信息流 | 产品和人脸清晰可辨，无需依赖边缘细节 |
+| textless | 本地化/视觉特效 | 无硬编码文案、无字幕、无结尾卡文字 |
 
 ## Prompt Framing Rules
 
-- Say the target ratio and composition goal early.
-- Keep faces, products, and logos away from frame edges when multiple crops are needed.
-- For vertical versions, simplify camera moves and avoid fast lateral action that exits frame.
-- For 2.39 or very wide frames, keep the hero subject large enough to survive generation and review.
-- For title cards, packshots, captions, and legal text, prefer clean visual plates plus post-added typography.
+- 尽早明确目标比例和构图目标。
+- 当需要多种裁剪方案时，让人脸、产品和标志远离画面边缘。
+- 对于竖屏版本，简化摄像机运动，避免快速横向动作移出画面。
+- 对于 2.39 或超宽画幅，确保主体足够大，以经受生成和审核流程。
+- 对于标题卡、packshots、字幕和法律文本，优先使用干净的视觉素材板，后期再添加排版文字。
 
 ## Delivery Caveat
 
-Always verify the active platform, buyer, broadcaster, festival, or ad network spec before final export. The skill may plan ratio and crop strategy, but the contract spec controls the master.
+在最终导出前，务必核实当前平台、买方、广播机构、电影节或广告网络的具体规格要求。技能可以规划比例和裁剪策略，但合同规格才是母版制作的最终依据。

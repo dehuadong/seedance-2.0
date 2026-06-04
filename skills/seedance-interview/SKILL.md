@@ -1,38 +1,22 @@
 ---
 name: seedance-interview
-description: "This skill should be used when the user has a vague Seedance 2.0 video idea and asks for creative guidance, story development, scene planning, a director interview, or help turning an undeveloped concept into a production-ready prompt."
-license: MIT
-user-invocable: true
-tags:
-  - creative-direction
-  - interview
-  - brief
-  - seedance-20
-metadata:
-  version: "5.4.5"
-  updated: "2026-05-30"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+description: '当用户对 Seedance 2.0 视频创意模糊，并请求创意指导、故事开发、场景规划、导演访谈，或需要将未成型概念转化为制作就绪提示词时，应使用此技能。'
 ---
 
 # seedance-interview
 
-Use this as the full director interview when the user has a rough idea rather than a ready scene.
+当用户仅有粗略想法而非就绪场景时，使用此技能进行完整导演访谈。
 
-## Process
+## 流程
 
-1. Build a safe draft premise immediately from the user input.
-2. Ask only the missing questions that materially affect the prompt: subject, action, reference assets, camera feel, emotional direction, duration, and risk constraints.
-3. Identify the genre path: product, lifestyle, drama, music video, landscape, commercial, animation, UGC, or experimental.
-4. If the user is a filmmaker, agency, producer, editor, localization team, or client-review owner, load `[ref:pro-filmmaking-standards]` and collect deliverables, territory, aspect ratio, approval owner, rights, and post/delivery needs.
-5. End with a concise creative brief and route to `[skill:seedance-prompt]`, `[skill:seedance-prompt-short]`, or `[skill:seedance-pipeline]`.
+1. 立即基于用户输入构建安全草案前提。
+2. 仅提问对提示词有实质性影响的缺失问题：主体、动作、参考素材、摄像机感受、情绪方向、时长及风险约束。
+3. 识别类型路径：产品、生活、戏剧、音乐视频、风景、商业广告、动画、用户生成内容或实验性。
+4. 若用户为影视从业者、代理机构、制片人、剪辑师、本地化团队或客户审核负责人，加载 `references/pro-filmmaking-standards.md` 并收集交付物、地域、画幅比、审核责任人、版权及后期/交付需求。
+5. 以简洁创意简报收尾，并路由至 `skills/seedance-prompt/SKILL.md`、`skills/seedance-prompt-short/SKILL.md` 或 `skills/seedance-pipeline/SKILL.md`。
 
-## Output Contract
+## 输出约定
 
-Return: concept summary, production phase, reference asset request, core scene, mood, camera intent, sound intent, safety/rights notes, deliverables if known, and next prompt path.
+返回：概念摘要、制作阶段、参考素材请求、核心场景、情绪基调、摄像机意图、音效意图、安全/版权说明、已知交付物及下一步提示词路径。
 
-Do not ask a long questionnaire when the user already supplied enough information to write the prompt.
+当用户已提供足够信息可直接撰写提示词时，勿提出冗长问卷。

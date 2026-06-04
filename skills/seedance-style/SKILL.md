@@ -1,48 +1,33 @@
 ---
 name: seedance-style
-description: "This skill should be used when the user asks for visual style, art direction, render feel, period aesthetic, texture, animation style, realism level, or style-safe alternatives to studio or franchise references."
-license: MIT
+description: '当用户请求视觉风格、艺术指导、渲染感受、时期美学、纹理、动画风格、真实感级别，或工作室/系列参考的风格安全替代方案时，应使用此技能。'
 user-invocable: true
-tags:
-  - style
-  - art-direction
-  - ip-safe
-  - seedance-20
-metadata:
-  version: "5.4.5"
-  updated: "2026-05-30"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
 # seedance-style
 
-Translate style requests into production descriptors. Style should describe medium, texture, palette, lens or render behavior, period cues, and composition. Do not rely on studio, franchise, artist, or living-creator names when a safer descriptive style can preserve the user's intent.
+将风格请求转化为制作描述符。风格应描述媒介、纹理、调色板、镜头或渲染行为、时期线索及构图。当更安全的描述性风格能够保留用户意图时，请勿依赖工作室、系列、艺术家或在世创作者的名称。
 
-## Style Safety Rule
+## 风格安全规则
 
-Do not use studio, franchise, artist, or living-creator names as style anchors unless the user has a clearly authorized workflow. Preserve the intended visual function by describing medium, texture, palette, lighting, composition, era, line quality, and motion rhythm.
+除非用户拥有明确授权的工作流程，否则请勿使用工作室、系列、艺术家或在世创作者的名称作为风格锚点。通过描述媒介、纹理、调色板、灯光、构图、时代、线条质感和运动节奏来保留预期的视觉功能。
 
-| User intent | Safe production descriptor |
-|---|---|
-| Cozy hand-drawn fantasy | `hand-painted 2D animation, soft watercolor backgrounds, rounded character silhouettes, warm pastel palette, gentle parallax` |
-| Sharp cyberpunk action | `neon noir city, wet pavement reflections, high-contrast magenta and cyan light, fast lateral tracking, angular silhouettes` |
-| Premium product realism | `clean commercial realism, controlled reflections, shallow depth of field, neutral background, polished material detail` |
-| Retro documentary | `1970s documentary texture, muted film grain, practical daylight, handheld observational framing` |
-| Children's animation | `soft clay-like characters, simple expressive faces, bright primary palette, bouncy squash-and-stretch motion` |
+| 用户意图         | 安全制作描述符                                                                                                                |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 温馨手绘奇幻风格 | `hand-painted 2D animation, soft watercolor backgrounds, rounded character silhouettes, warm pastel palette, gentle parallax` |
+| 犀利赛博朋克动作 | `neon noir city, wet pavement reflections, high-contrast magenta and cyan light, fast lateral tracking, angular silhouettes`  |
+| 高端产品写实风格 | `clean commercial realism, controlled reflections, shallow depth of field, neutral background, polished material detail`      |
+| 复古纪录片风格   | `1970s documentary texture, muted film grain, practical daylight, handheld observational framing`                             |
+| 儿童动画风格     | `soft clay-like characters, simple expressive faces, bright primary palette, bouncy squash-and-stretch motion`                |
 
-## Layered Style Method
+## 分层风格方法
 
-Separate style into layers instead of one broad label: **medium** (live action, stop-motion, 2D, 3D, miniature), **surface** (paper grain, clay, brushed metal, glass, fabric), **palette** (pastel, monochrome, sodium orange), **camera/render** (macro, shallow focus, orthographic, handheld), and **motion rhythm** (gentle, staccato, elastic, realistic weight).
+将风格拆分为多个层次，而非使用单一宽泛标签：**媒介**（实拍、定格动画、2D、3D、微缩模型）、**表面**（纸张纹理、黏土、拉丝金属、玻璃、织物）、**调色板**（柔和粉彩、单色、钠灯橙）、**相机/渲染**（微距、浅景深、正交投影、手持拍摄）以及**运动节奏**（柔和、断奏、弹性、真实重量感）。
 
-## Hybrid Style Rule
+## 混合风格规则
 
-If the user asks for a hybrid, assign each style to a layer: `live-action product photography with illustrated UI overlays` is clearer than mixing many named influences. Keep character design, environment, lighting, and VFX in compatible registers.
+若用户请求混合风格，请将每种风格分配至对应层次：`live-action product photography with illustrated UI overlays` 比混合多种命名影响更为清晰。确保角色设计、环境、灯光和视觉特效处于兼容的表现范畴内。
 
-## Output Contract
+## 输出合约
 
-Return a safe style descriptor, any protected-name rewrite, and one integrated prompt sentence.
+返回一个安全的风格描述符、任何受保护名称的替代重写，以及一句整合后的提示语句。

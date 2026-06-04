@@ -1,56 +1,40 @@
 ---
 name: seedance-motion
-description: "This skill should be used when the user asks for body action, choreography, physics, object movement, movement timing, action continuity, stunt direction, or motion-reference mapping in Seedance 2.0."
-license: MIT
-user-invocable: true
-tags:
-  - motion
-  - choreography
-  - physics
-  - seedance-20
-metadata:
-  version: "5.4.5"
-  updated: "2026-05-30"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+description: '当用户请求 Seedance 2.0 中的肢体动作、编舞、物理效果、物体运动、动作时机、动作连续性、特技指导或运动参考映射时，应使用此技能。'
 ---
 
 # seedance-motion
 
-Use physical verbs and consequences. Motion should be observable on screen, timed within the clip, and assigned to a subject or object. Prefer one strong action with a visible endpoint over several vague actions competing for attention.
+使用具象动词与物理后果。动作应在屏幕上可观察、在片段时长内完成，并归属于特定主体或物体。优先选择一个带可见终点的强动作，而非多个模糊动作相互争夺注意力。
 
-Load `[ref:reference-workflow]` for video-motion references, `[ref:shot-list-continuity]` for action handoffs across shots, and `[ref:examples-by-mode]` for safe edit, extend, and R2V patterns.
+加载 `references/reference-workflow.md` 获取视频运动参考，加载 `references/shot-list-continuity.md` 了解跨镜头动作交接，加载 `references/examples-by-mode.md` 获取安全的剪辑、扩展及 R2V 模式示例。
 
-## Motion Contract
+## 运动约定
 
-State: actor/object, action, force level, timing, physical consequence, continuity requirement, and endpoint.
+声明：演员/物体、动作、力度等级、时机、物理后果、连续性要求及终点。
 
-| Motion type | Strong phrase | Weak phrase |
-|---|---|---|
-| Subtle acting | `Character A inhales, grips the cup tighter, then sets it down without looking away` | `she feels nervous` |
-| Product material | `condensation beads gather, merge, and slide down the bottle neck` | `the product looks refreshing` |
-| Choreography | `Character B ducks under the swinging bag, pivots left, and stops in a guarded stance` | `fast action fight scene` |
-| Object physics | `paper receipt lifts in the fan breeze, flips once, and lands face-up` | `papers move dynamically` |
-| Environmental motion | `rain streaks diagonally across the backlight while puddle ripples spread from footsteps` | `stormy weather atmosphere` |
+| 运动类型 | 强表述                                              | 弱表述               |
+| -------- | --------------------------------------------------- | -------------------- |
+| 细微表演 | `角色 A 吸气，握紧杯子，然后视线不移开地将其放下`   | `她感到紧张`         |
+| 产品材质 | `冷凝水珠聚集、合并，并沿瓶颈滑落`                  | `产品看起来清爽`     |
+| 编舞动作 | `角色 B 低头躲过摆动的沙袋，向左转身，停在防御姿态` | `快节奏动作打斗场景` |
+| 物体物理 | `纸质收据在风扇微风中升起，翻转一次，正面朝上落地`  | `纸张动态飘动`       |
+| 环境运动 | `雨丝在逆光中斜向划过，同时水洼涟漪随脚步扩散`      | `暴风雨天气氛围`     |
 
-## Timing Pattern
+## 时机模式
 
-Use a three-beat structure for short clips: setup, action, changed end state. Example: `0-2s: candle flame steady; 2-4s: door opens and flame bends; 4-6s: smoke trail curls toward the hallway`. Time segmentation is useful for action, VFX, lip-sync, and product demonstrations, but avoid frame-perfect overload unless the user truly needs it.
+为短视频采用三节拍结构：铺垫、动作、变化后的结束状态。示例：`0-2 秒：蜡烛火焰稳定；2-4 秒：门打开，火焰弯曲；4-6 秒：烟迹向走廊卷曲`。时间分段对动作、视觉特效、口型同步及产品演示很有用，但除非用户确实需要，否则避免帧级精度的过载描述。
 
-When sound drives the motion, pair each visible change with one beat or SFX: `door click at 2s, light pulse on the downbeat, hand releases the cup on the final chime`. Do not ask for many cuts, locations, and micro-actions inside one short clip.
+当音效驱动动作时，将每个可见变化与一个节拍或音效配对：`2 秒门咔哒声，强拍时灯光脉冲，最终钟声时手松开杯子`。勿在单段短视频内要求多次剪辑、多地切换及微动作堆叠。
 
-## Reference Motion Rules
+## 参考运动规则
 
-For reference footage, use only owned, licensed, public-domain, stock, mocap, rehearsal, or self-recorded material. Map `[Video1]` to motion, camera, timing, or blocking, not identity, unless the identity is authorized. If a reference contains a real person, transfer only general motion or camera behavior and explicitly exclude likeness transfer.
+参考素材仅限自有、授权、公有领域、素材库、动作捕捉、排练或自录内容。将 `[Video1]` 映射到运动、摄像机、时机或场面调度，而非身份（除非身份已获授权）。若参考包含真人，仅迁移通用运动或摄像机行为，并明确排除肖像迁移。
 
-## Stability Rules
+## 稳定性规则
 
-Hands, faces, logos, and product geometry drift when too many actions occur. Reduce motion around fragile details: lock the camera for lip-sync, keep hands in simple poses, ask product parts to remain rigid, and move light or environment instead of the core identity anchor.
+当动作过多时，手部、面部、徽标及产品几何结构易发生漂移。减少脆弱细节周围的运动：口型同步时锁定摄像机，保持手部简单姿态，要求产品部件保持刚性，优先移动灯光或环境而非核心身份锚点。
 
-## Output Contract
+## 输出约定
 
-Return the motion phrase, timing pattern, reference role map if any, and repaired prompt language.
+返回运动短语、时机模式、参考角色映射（如有）及修复后的提示词语言。

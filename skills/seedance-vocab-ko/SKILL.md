@@ -1,43 +1,28 @@
 ---
 name: seedance-vocab-ko
-description: "This skill should be used when the user asks for Korean Seedance 2.0 prompt wording, Korean cinematic vocabulary, or translation of camera, lighting, action, VFX, audio, and production terms into Korean."
-license: MIT
-user-invocable: true
-tags:
-  - korean
-  - vocabulary
-  - seedance-20
-metadata:
-  version: "5.4.5"
-  updated: "2026-05-30"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+description: '当用户请求韩语 Seedance 2.0 提示词措辞、韩语影视词汇，或将镜头、灯光、动作、视觉特效、音频及制作术语翻译为韩语时，应使用此技能。'
 ---
 
 # seedance-vocab-ko
 
-Use Korean cinematic vocabulary when the user asks for Korean prompt wording, bilingual delivery, compact translation, or production vocabulary for camera, lighting, action, VFX, audio, and constraints. Preserve reference tags exactly: `[Image1]`, `[Video1]`, and `[Audio1]` must not be translated.
+当用户请求韩语提示词措辞、双语交付、简洁翻译，或镜头、灯光、动作、视觉特效、音频及限制条件的制作词汇时，请使用韩语影视词汇。精确保留参考标签：`[Image1]`、`[Video1]` 和 `[Audio1]` 不得翻译。
 
-## Usage Rule
+## 使用规则
 
-Translate the production intention rather than every English word. Keep the Korean prompt compact and concrete: subject, action, camera, light, sound, and preservation constraint.
+翻译制作意图而非逐字翻译每个英文单词。保持韩语提示词简洁具体：主体、动作、镜头、光线、声音及保留限制条件。
 
-| Function | Korean wording |
-|---|---|
-| Camera | `천천히 돌리 인`, `측면 트래킹 샷`, `고정된 중간 샷`, `로우 앵글`, `클로즈업` |
-| Lighting | `역광`, `부드러운 창문 빛`, `따뜻한 실용 조명`, `차가운 달빛`, `림 라이트` |
-| Motion | `천천히 돌아선다`, `프레임을 빠르게 가로지른다`, `물방울이 아래로 흐른다`, `연기가 얇게 퍼진다` |
-| Audio | `조용한 환경음`, `짧은 대사`, `부드러운 금속음`, `음악 없음` |
-| Constraints | `로고, 라벨, 형태를 정확히 유지한다` |
+| Function    | Korean wording                                                                                  |
+| ----------- | ----------------------------------------------------------------------------------------------- |
+| Camera      | `천천히 돌리 인`, `측면 트래킹 샷`, `고정된 중간 샷`, `로우 앵글`, `클로즈업`                   |
+| Lighting    | `역광`, `부드러운 창문 빛`, `따뜻한 실용 조명`, `차가운 달빛`, `림 라이트`                      |
+| Motion      | `천천히 돌아선다`, `프레임을 빠르게 가로지른다`, `물방울이 아래로 흐른다`, `연기가 얇게 퍼진다` |
+| Audio       | `조용한 환경음`, `짧은 대사`, `부드러운 금속음`, `음악 없음`                                    |
+| Constraints | `로고, 라벨, 형태를 정확히 유지한다`                                                            |
 
-## Compact Pattern
+## 简洁模式
 
 `[Image1]은 참조 이미지이며 얼굴/제품 형태/로고를 정확히 유지한다. 변화는 [동작/조명/카메라]만 적용한다. 카메라: [한 가지 움직임]. 사운드: [음향 지시].`
 
-## Output Contract
+## 输出约定
 
-Return Korean prompt wording, optional English gloss when useful, and unchanged reference tags.
+返回韩语提示词措辞，必要时附带英文释义，并保持参考标签不变。

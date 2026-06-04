@@ -4,10 +4,10 @@ Use this reference for Chinese Seedance prompt wording, role binding, and compac
 
 | Function | Chinese | English meaning |
 |---|---|---|
-| Role | `@图1 为首帧` | Image 1 is the first frame |
-| Role | `@图2 为尾帧` | Image 2 is the last frame |
-| Role | `@图1 锁定主体身份` | Image 1 locks subject identity |
-| Role | `@图2 参考场景氛围` | Image 2 provides scene mood only |
+| Role | `@图片1 为首帧` | Image 1 is the first frame |
+| Role | `@图片2 为尾帧` | Image 2 is the last frame |
+| Role | `@图片1 锁定主体身份` | Image 1 locks subject identity |
+| Role | `@图片2 参考场景氛围` | Image 2 provides scene mood only |
 | Role | `@视频1 仅参考运镜` | Video 1 provides camera movement only |
 | Role | `@视频1 参考动作节奏` | Video 1 provides action rhythm |
 | Role | `@音频1 参考节奏和氛围` | Audio 1 provides tempo and mood |

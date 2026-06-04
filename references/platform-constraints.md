@@ -1,20 +1,20 @@
-# Platform Constraints
+# 平台限制
 
 last_verified: 2026-05-30
 
-## Stable constraints
+## 稳定限制
 
-- Do not assume every Seedance 2.0 surface has identical features.
-- Do not assume API access, pricing, model IDs, regional access, upload limits, duration, or portrait authorization from memory.
-- Do not infer consent from an uploaded image, voice, or video.
-- Do not provide protected-character, celebrity, brand-logo, song-copying, exact-scene, or voice-imitation instructions without a safe rewrite or explicit authorization context.
-- Do not treat real-face input as universally allowed or universally blocked. Some surfaces restrict direct human-face uploads while allowing verified virtual portrait assets, trusted same-account generated assets, or authorized material.
-- Do not mix provider-specific field names: Volcengine first/last-frame roles, Runway `promptImage` positions, and wrapper schemas are not interchangeable.
+- 不要假设每个 Seedance 2.0 表面都具有相同的功能。
+- 不要凭记忆推断 API 访问权限、定价、模型 ID、区域访问权限、上传限制、时长或肖像授权。
+- 不要从上传的图片、语音或视频中推断用户同意。
+- 在没有安全重写或明确授权上下文的情况下，不要提供受保护角色、名人、品牌标识、歌曲复制、精确场景或语音模仿的指导。
+- 不要将真人面部输入视为普遍允许或普遍禁止。某些表面对直接上传人类面部有限制，但允许经过验证的虚拟肖像资产、同一可信账户生成的资产或已授权材料。
+- 不要混用特定提供商的字段名称：火山引擎的首帧/末帧角色、Runway 的 `promptImage` 位置以及封装器模式不可互换。
 
-## Surface-specific claims
+## 表面特定声明
 
-When a user asks about Dreamina, Jimeng, Volcengine Ark, BytePlus ModelArk, Runway, ComfyUI, Replicate, Higgsfield, or another surface, answer with the surface name and date. Label unofficial/community tools clearly.
+当用户询问 Dreamina、Jimeng、火山引擎方舟、BytePlus ModelArk、Runway、ComfyUI、Replicate、Higgsfield 或其他表面时，请回答时注明表面名称和日期。明确标注非官方/社区工具。
 
-## User-facing default
+## 用户默认提示
 
-Platform support varies by surface. Check current official documentation before production planning.
+平台支持因表面而异。在生产规划前，请查阅当前官方文档。

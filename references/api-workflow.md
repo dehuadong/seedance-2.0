@@ -1,56 +1,56 @@
-# API Workflow
+# API 工作流程
 
 last_verified: 2026-05-30
 
-Use this reference for Seedance 2.0 operational planning on Volcengine, BytePlus, Runway, or wrappers. It is not a static API contract. Always recheck the active provider docs or console before implementation.
+本参考文档用于 Seedance 2.0 在火山引擎、BytePlus、Runway 或其封装接口上的运营规划。它并非静态的 API 合约。在实施前，请务必重新核查活跃提供商的官方文档或控制台。
 
-## Surface Gate
+## 表面网关（Surface Gate）
 
-| Surface | Use when | Must recheck |
+| 表面（Surface） | 适用场景 | 必须重新核查 |
 |---|---|---|
-| Volcengine Ark | China-facing official Ark workflows, model IDs, task lifecycle, first/last-frame roles, `return_last_frame`, web-search tools, and virtual portrait assets. | model ID, region, entitlement, schema, pricing, duration, resolution, face/reference policy |
-| BytePlus ModelArk | International BytePlus docs or console workflows. | JS-rendered pricing/model pages, account access, region, exact model ID, upload/file rules |
-| Runway | Runway web/API/MCP workflow with `seedance2`, hosted uploads, and Runway plan/region constraints. | duration, ratios, plan, region, SDK field support, audio-reference combination rules |
-| Wrapper APIs | Fast prototyping through a third-party provider. | whether names, prices, moderation, duration, or face support are wrapper-specific |
+| Volcengine Ark | 面向中国区的官方 Ark 工作流、模型 ID、任务生命周期、首/尾帧角色、`return_last_frame`、网络搜索工具及虚拟人像素材。 | 模型 ID、地域、权益、数据结构、定价、时长、分辨率、人脸/参考素材政策 |
+| BytePlus ModelArk | 国际版 BytePlus 文档或控制台工作流。 | JS 渲染的定价/模型页面、账户访问权限、地域、精确模型 ID、上传/文件规则 |
+| Runway | Runway 网页/API/MCP 工作流，含 `seedance2`、托管上传及 Runway 套餐/地域限制。 | 时长、宽高比、套餐、地域、SDK 字段支持、音频参考组合规则 |
+| 封装接口（Wrapper APIs） | 通过第三方提供商快速原型开发。 | 名称、价格、内容审核、时长或人脸支持是否为封装接口特有 |
 
-## Async Task Lifecycle
+## 异步任务生命周期
 
-1. Create the task with source-dated model ID, prompt, duration, ratio/size, resolution, and reference files.
-2. Store task ID, provider, request date, model ID, and prompt version.
-3. Poll or use SDK wait helpers until completed or failed.
-4. Retrieve output URL(s), optional last frame, logs/errors, and moderation/failure reason when provided.
-5. Save output plus metadata for repeatability.
-6. Cancel, delete, or list tasks only through the active provider's current docs.
+1. 使用带来源日期的模型 ID、提示词、时长、宽高比/尺寸、分辨率及参考文件创建任务。
+2. 存储任务 ID、提供商、请求日期、模型 ID 及提示词版本。
+3. 轮询或使用 SDK 等待辅助函数，直至任务完成或失败。
+4. 获取输出 URL、可选的最后一帧、日志/错误信息，以及提供时的内容审核/失败原因。
+5. 保存输出结果及附加元数据以确保可复现性。
+6. 仅通过活跃提供商的当前文档执行任务的取消、删除或列表查询。
 
-## Request Checklist
+## 请求检查清单
 
-- Prompt says one visible beat, one camera move, physical light, sound intent, and constraints.
-- Mode is explicit: T2V, I2V, V2V, R2V, FLF2V, edit, or extend.
-- Reference roles are explicit and legal: first frame, last frame, identity, product, motion, camera, timing, audio, or style.
-- Audio references are paired with a text prompt and a valid image/video reference when the surface requires that combination.
-- First/last-frame requests do not silently mix incompatible video/audio reference modes unless the active docs allow it.
-- Real-person, face, portrait, and voice inputs have authorization and surface support.
-- Pricing, duration, resolution, region, quotas, and model IDs have a verification date.
+- 提示词应明确描述：一个可见的镜头节拍、一个摄像机运动、物理光照、声音意图及约束条件。
+- 模式必须明确：T2V、I2V、V2V、R2V、FLF2V、编辑或扩展。
+- 参考素材角色必须明确且合规：首帧、尾帧、身份、产品、动作、摄像机、时序、音频或风格。
+- 当表面要求组合使用时，音频参考需与文本提示词及有效的图像/视频参考配对使用。
+- 首/尾帧请求不得静默混合不兼容的视频/音频参考模式，除非活跃文档明确允许。
+- 真人、人脸、人像及语音输入需具备授权且表面支持。
+- 定价、时长、分辨率、地域、配额及模型 ID 需附带验证日期。
 
-## Provider Notes
+## 提供商备注
 
-Volcengine docs are the current source for `doubao-seedance-2-0-260128`, `doubao-seedance-2-0-fast-260128`, first/last-frame roles, and Ark task flow. Quote prices only with date and caveat.
+火山引擎文档是 `doubao-seedance-2-0-260128`、`doubao-seedance-2-0-fast-260128`、首/尾帧角色及 Ark 任务流程的当前权威来源。引用价格时务必注明日期及免责声明。
 
-Runway docs are the current source for Runway's `seedance2` API surface, `runway://` uploads, duration, reference-count rules, and SDK caveats. Do not copy Runway field names into Volcengine examples or vice versa.
+Runway 文档是 Runway `seedance2` API 表面、`runway://` 上传、时长、参考数量规则及 SDK 注意事项的当前权威来源。切勿将 Runway 字段名称复制到火山引擎示例中，反之亦然。
 
-BytePlus pages can be JavaScript-rendered. Do not infer live pricing or model IDs from incomplete static fetches.
+BytePlus 页面可能采用 JavaScript 渲染。切勿从不完整的静态抓取结果中推断实时定价或模型 ID。
 
-## Error and Risk Playbook
+## 错误与风险应对手册
 
-| Symptom | Likely cause | First repair |
+| 症状 | 可能原因 | 首要修复措施 |
 |---|---|---|
-| 403 or unavailable model | region, plan, entitlement, vendor licensing, or provider gate | check surface-specific access docs and account console |
-| audio-only request fails | active surface requires image/video plus prompt with audio | add valid visual reference and state audio role |
-| first/last frame rejected | incompatible mode mix or wrong role fields | use provider's first/last-frame field names and remove video/audio refs if required |
-| face/portrait upload blocked | real-person policy, verification, or asset-library requirement | use authorized virtual portrait path or original character rewrite |
-| output drifts after extension | weak last-frame continuity or too many changed variables | use returned last frame as next first frame and change one variable |
-| price estimate wrong | stale pricing page or wrapper-specific billing | recheck provider pricing page/console before quoting |
+| 403 或模型不可用 | 地域、套餐、权益、厂商许可或提供商网关限制 | 查阅表面特定的访问文档及账户控制台 |
+| 纯音频请求失败 | 活跃表面要求音频需搭配图像/视频及提示词 | 添加有效的视觉参考并声明音频角色 |
+| 首/尾帧被拒绝 | 模式混合不兼容或角色字段错误 | 使用提供商定义的首/尾帧字段名称，必要时移除视频/音频参考 |
+| 人脸/人像上传被拦截 | 真人政策、验证要求或素材库限制 | 使用授权的虚拟人像路径或重写原创角色描述 |
+| 扩展后输出漂移 | 尾帧连续性弱或变更变量过多 | 使用返回的尾帧作为下一任务的首帧，并仅变更一个变量 |
+| 价格估算错误 | 定价页面过时或封装接口特有计费规则 | 引用前重新核查提供商定价页面/控制台 |
 
-## Production Readiness
+## 生产就绪要求
 
-Keep a run ledger with: provider, model ID, prompt, mode, references, duration, resolution, generated audio flag, task ID, output URL, last frame, verification date, and failure notes. This makes prompt repair possible and prevents stale source claims from leaking into user-facing guidance.
+维护一份运行日志，包含：提供商、模型 ID、提示词、模式、参考素材、时长、分辨率、是否生成音频、任务 ID、输出 URL、尾帧、验证日期及失败备注。这有助于提示词修复，并防止过时来源声明泄露至面向用户的指导内容中。

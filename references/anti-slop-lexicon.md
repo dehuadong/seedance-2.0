@@ -1,18 +1,18 @@
-# Anti-Slop Lexicon
+# 反空洞用语词汇表
 
-Replace empty evaluation language with observable production language.
+用可观测的制作语言替换空洞的评价性表述。
 
-| Weak phrase | Replace with |
+| 空泛用语 | 替换为 |
 |---|---|
-| cinematic | shot scale, camera move, lighting, grade |
-| epic | physical scale, stakes, crowd size, lens distance |
-| beautiful | color, texture, composition, material, light behavior |
-| stunning | visible contrast, reveal, movement, or detail |
-| dynamic | specific movement, speed, and endpoint |
-| dramatic | blocking, shadow, silence, or camera pressure |
-| ultra-realistic | material behavior, skin texture, lens artifacts, natural motion |
-| cool transition | match cut, whip pan, dissolve, hard cut, object wipe |
-| magical | particle behavior, glow source, motion path, interaction |
-| professional | product lighting setup, clean background, controlled camera |
+| 电影感 | 镜头景别、运镜方式、布光、调色 |
+| 史诗感 | 物理规模、戏剧张力、群演数量、镜头距离 |
+| 美观 | 色彩、质感、构图、材质、光线表现 |
+| 惊艳 | 可见的明暗对比、画面揭示、运动轨迹或细节 |
+| 动感 | 具体运动方式、速度与落点 |
+| 戏剧性 | 场面调度、阴影、静默处理或镜头压迫感 |
+| 超真实 | 材质物理反馈、皮肤纹理、镜头光学瑕疵、自然运动 |
+| 酷炫转场 | 匹配剪辑、甩镜头、叠化、硬切或物体遮挡转场 |
+| 奇幻感 | 粒子运动行为、发光源、运动路径、物理交互 |
+| 专业 | 产品布光设置、纯净背景、受控运镜 |
 
-Rule: if a camera, microphone, light meter, or stopwatch cannot detect it, rewrite it.
+规则：若摄像机、麦克风、测光表或秒表无法实际捕捉到该元素，则必须重写。

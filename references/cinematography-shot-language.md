@@ -1,62 +1,62 @@
-# Cinematography Shot Language
+# 电影摄影镜头语言
 
-Use this reference when a user needs director/DP-grade shot design instead of generic cinematic adjectives.
+当用户需要导演或摄影指导（DP）级别的镜头设计，而非泛泛的电影感形容词时，请使用此参考。
 
-## Shot Contract
+## 镜头规范
 
-Every professional shot should declare:
+每个专业镜头都应明确声明：
 
-| Field | Prompt decision |
+| 字段 | 提示词决策 |
 |---|---|
-| Shot size | extreme wide, wide, medium wide, medium, medium close-up, close-up, extreme close-up, macro |
-| Angle | eye-level, low angle, high angle, overhead, profile, over-shoulder, insert, product three-quarter |
-| Lens feel | wide spatial energy, natural 35mm perspective, portrait compression, macro material detail |
-| Camera support | locked-off, handheld, slider, dolly, crane, drone, gimbal, virtual product table |
-| Movement | push-in, pull-back, lateral track, orbit, pan, tilt, pedestal, crane up, reveal, rack focus |
-| Subject relation | camera follows, leads, discovers, holds, observes, or blocks with the subject |
-| Start frame | first readable composition |
-| End frame | changed state, pose, reveal, product hero, or continuity handoff |
-| Fragile anchors | face, hands, logo, text, product shape, wardrobe, prop position |
+| 景别 | 极远景、远景、中远景、中景、中近景、近景、特写、微距 |
+| 角度 | 平视、仰角、俯角、鸟瞰/顶视、侧面、过肩、插入镜头、产品四分之三侧面 |
+| 镜头感 | 广阔空间张力、自然35mm视角、人像空间压缩感、微距材质细节 |
+| 摄影机支撑 | 固定机位、手持、滑轨、轨道车、摇臂、无人机、稳定器、虚拟产品展台 |
+| 运动 | 推镜头、拉镜头、横移、环绕、摇摄、俯仰、垂直升降、摇臂升起、揭示/亮相、焦点切换 |
+| 主体关系 | 摄影机跟随、引导、发现、保持、观察或遮挡主体 |
+| 起始帧 | 首个清晰可读的构图 |
+| 结束帧 | 状态改变、姿势变化、揭示、产品主视觉展示，或连续性交接 |
+| 易损锚点 | 面部、手部、Logo、文字、产品轮廓、服装、道具位置 |
 
-Prompt pattern:
+提示词模板：
 
-`Shot: [size/angle/lens feel]. Camera starts [composition], [one movement] at [speed] while [subject action], ending on [clear endpoint]. Preserve [fragile anchors].`
+`镜头：[景别/角度/镜头感]。摄影机起始于[构图]，以[速度]进行[单一运动]，同时[主体动作]，最终落于[明确终点]。保留[易损锚点]。`
 
-## Shot Size Use
+## 景别使用指南
 
-| Shot size | Use for | Seedance caution |
+| 景别 | 适用场景 | Seedance 注意事项 |
 |---|---|---|
-| Extreme wide | scale, arrival, environment | small faces/logos will drift; do not demand facial acting |
-| Wide | blocking, dance, movement, product-in-environment | keep action simple and readable |
-| Medium | dialogue, product use, handoff | good default for character commercials |
-| Close-up | emotion, texture, lip-sync, product detail | keep camera stable and action small |
-| Macro | material, food, jewelry, mechanics | avoid large motion and text redraw |
+| 极远景 | 规模感、登场、环境 | 小面部/Logo易漂移；勿要求面部表演 |
+| 远景 | 场面调度、舞蹈、运动、环境中的产品 | 保持动作简洁易读 |
+| 中景 | 对话、产品使用、交接 | 人物广告的良好默认选择 |
+| 特写 | 情绪、质感、口型同步、产品细节 | 保持摄影机稳定，动作幅度要小 |
+| 微距 | 材质、食物、珠宝、机械结构 | 避免大幅运动及文字重绘 |
 
-## Camera Movement Grammar
+## 摄影机运动语法
 
-- **Locked-off:** use for lip-sync, product identity, text, logos, precise VFX, and continuity anchors.
-- **Dolly/push-in:** use for discovery, realization, intimacy, product reveal.
-- **Lateral track:** use for travel, procession, choreography, passing foreground layers.
-- **Orbit:** use for product hero and statuesque subjects; avoid if identity must remain stable from one angle only.
-- **Crane/drone:** use for scale, arrival, geography, reveal; avoid for dialogue or tiny product text.
-- **Handheld:** use for realism or tension; keep movement subtle when identity matters.
-- **Rack focus:** use for attention shift between two anchored objects; avoid stacking with complex camera moves.
+- **固定机位：** 适用于口型同步、产品特征识别、文字、Logo、精确特效及连续性锚点。
+- **轨道推进/推镜头：** 适用于发现、领悟、营造亲密感、产品亮相。
+- **横移：** 适用于行进、队列、编舞、掠过前景层次。
+- **环绕：** 适用于产品主视觉展示及雕塑感主体；若主体特征必须仅从单一角度保持稳定，则应避免使用。
+- **摇臂/无人机：** 适用于规模感、登场、地理环境、揭示；避免用于对话或微小产品文字。
+- **手持：** 适用于写实感或营造紧张感；当主体特征至关重要时，保持运动微妙克制。
+- **焦点切换（Rack focus）：** 适用于在两个锚定物体间转移注意力；避免与复杂摄影机运动叠加使用。
 
-## Blocking and Coverage
+## 场面调度与镜头覆盖
 
-For multi-shot scenes, keep camera grammar motivated:
+对于多镜头场景，确保摄影机语法具有动机：
 
-1. Establish geography and screen direction.
-2. Move to character/product action.
-3. Use close detail only when the detail changes the story.
-4. End each clip with a frame that can become the next first-frame reference.
+1. 建立空间地理关系与屏幕方向（轴线）。
+2. 切入人物/产品动作。
+3. 仅在细节推动剧情时才使用特写细节。
+4. 每个片段的结尾帧应能作为下一个片段的首帧参考。
 
-Coverage pattern:
+镜头覆盖模板：
 
-`Shot 1 wide establishes [space/screen direction]. Shot 2 medium follows [action]. Shot 3 close-up reveals [consequence]. Continuity: same wardrobe, prop, light direction, and eyeline.`
+`镜头1（远景）建立[空间/屏幕方向]。镜头2（中景）跟随[动作]。镜头3（特写）揭示[结果]。连续性要求：服装、道具、光线方向及视线保持一致。`
 
-## Professional Avoid List
+## 专业避用词列表
 
-Avoid: `cinematic camera`, `dynamic shot`, `epic zoom`, `film look`, `Hollywood style`, `beautiful composition` without physical shot choices.
+避免：在未指定具体物理镜头参数时使用 `cinematic camera`（电影感摄影机）、`dynamic shot`（动态镜头）、`epic zoom`（史诗级变焦）、`film look`（电影质感）、`Hollywood style`（好莱坞风格）、`beautiful composition`（精美构图）等词汇。
 
-Replace with: shot size, support, movement, subject relation, motivated light, endpoint, and fragile anchors.
+替换为：具体景别、支撑方式、运动轨迹、主体关系、有动机的布光、明确终点及易损锚点。

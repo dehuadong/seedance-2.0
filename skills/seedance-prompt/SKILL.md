@@ -1,74 +1,59 @@
 ---
 name: seedance-prompt
-description: "This skill should be used when the user asks to write, improve, translate, compress, or debug a Seedance 2.0 video prompt; mentions T2V, I2V, V2V, R2V, camera direction, prompt quality, or provides reference assets for a production-ready prompt."
-license: MIT
-user-invocable: true
-tags:
-  - prompt-engineering
-  - video-generation
-  - seedance-20
-metadata:
-  version: "5.4.5"
-  updated: "2026-05-30"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+description: '当用户请求编写、改进、翻译、压缩或调试 Seedance 2.0 视频提示词；提及 T2V、I2V、V2V、R2V、摄像机指导、提示词质量，或为制作就绪的提示词提供参考素材时，应使用此技能。'
 ---
 
 # seedance-prompt
 
-Build production-ready Seedance prompts from clear concepts or supplied reference assets. Treat the prompt as a short shooting brief: it must say what changes on screen, what the camera does, what the light and sound contribute, and what must stay stable. Keep final prompts under the platform prompt budget and remove filler before delivery.
+基于清晰概念或提供的参考素材构建制作就绪的 Seedance 提示词。将提示词视为简短拍摄简报：必须说明屏幕上什么在变化、摄像机如何运动、灯光与音效的贡献，以及什么必须保持稳定。最终提示词需控制在平台提示词预算内，并在交付前移除填充内容。
 
-Load `[ref:quick-ref]` for the checklist, `[ref:reference-workflow]` for multimodal references, `[ref:i2v-guide]` for image-to-video, `[ref:first-last-frame-guide]` for first/last-frame work, `[ref:examples-by-mode]` when examples are useful, `[ref:shot-list-continuity]` for multi-shot professional plans, and `[ref:multilingual-community-examples]` for Chinese/Russian/Japanese/Korean/Spanish or mixed-language prompts.
+加载 `references/quick-ref.md` 获取检查清单，加载 `references/reference-workflow.md` 了解多模态参考流程，加载 `references/i2v-guide.md` 获取图生视频指南，加载 `references/first-last-frame-guide.md` 了解首/尾帧工作流，当需要示例时加载 `references/examples-by-mode.md`，涉及专业多镜头规划时加载 `references/shot-list-continuity.md`，需要中文/俄语/日语/韩语/西班牙语或混合语言提示词时加载 `references/multilingual-community-examples.md`。
 
-## Director Formula
+## 导演公式
 
-Use `Subject + Action + Scene + Camera + Lighting/Style + Audio + Constraints`. Put the subject and primary action first because early clauses set the shot hierarchy. Do not force every slot if a reference asset already shows the information; for I2V, describe only the motion, camera, timing, transformation, audio, and preservation constraints that the still image cannot show.
+使用 `主体 + 动作 + 场景 + 摄像机 + 灯光/风格 + 音频 + 约束条件`。将主体和主要动作置于首位，因为靠前的子句决定镜头层级。若参考素材已包含相关信息，则无需强制填满每个槽位；对于 I2V，仅需描述静态图像无法呈现的运动、摄像机、时机、变换、音频及保留约束。
 
-| Slot | Use for | Prompt-ready pattern |
-|---|---|---|
-| Subject | The anchor the model must track. | `Original ceramic perfume bottle on black acrylic, label preserved exactly` |
-| Action | The visible change. | `condensation beads form and slide down the glass over five seconds` |
-| Scene | Only what is not already in references. | `quiet rain-lit kitchen counter, shallow depth of field` |
-| Camera | One primary move with endpoint. | `slow dolly-in from medium product shot to macro label detail` |
-| Light and style | Physical light plus safe visual language. | `warm practical key from frame left, cool blue rim, clean commercial realism` |
-| Audio | Ambient bed, SFX, dialogue, or silence. | `Sound: low room tone, soft glass chime on final frame` |
-| Constraints | Preservation and exclusions. | `do not alter logo, shape, label, or cap geometry` |
+| 槽位       | 用途                         | 提示词就绪模式                                                                |
+| ---------- | ---------------------------- | ----------------------------------------------------------------------------- |
+| 主体       | 模型必须追踪的锚点。         | `Original ceramic perfume bottle on black acrylic, label preserved exactly`   |
+| 动作       | 可见的变化。                 | `condensation beads form and slide down the glass over five seconds`          |
+| 场景       | 仅描述参考中未呈现的内容。   | `quiet rain-lit kitchen counter, shallow depth of field`                      |
+| 摄像机     | 一项带终点的主体运动。       | `slow dolly-in from medium product shot to macro label detail`                |
+| 灯光与风格 | 物理光源加安全的视觉语言。   | `warm practical key from frame left, cool blue rim, clean commercial realism` |
+| 音频       | 环境底噪、音效、对话或静音。 | `Sound: low room tone, soft glass chime on final frame`                       |
+| 约束条件   | 保留项与排除项。             | `do not alter logo, shape, label, or cap geometry`                            |
 
-## Mode Gate
+## 模式门控
 
-Choose the mode before drafting. **T2V** needs subject, action, scene, camera, light, style, and constraints because nothing is visible yet. **I2V** starts from `[Image1]` and adds only motion, time, camera, lighting transition, audio, and preservation. **V2V** should map `[Video1]` to source clip, camera move, action rhythm, blocking, edit target, or extension anchor rather than accidentally transferring identity. **R2V** must list every reference role and state what must not transfer. **FLF2V** uses `[Image1]` as first frame and `[Image2]` as last frame, then describes only the continuous transition.
+起草前先选择模式。**T2V** 需要主体、动作、场景、摄像机、灯光、风格及约束条件，因为尚无可见内容。**I2V** 从 `[Image1]` 出发，仅添加运动、时间、摄像机、灯光过渡、音频及保留约束。**V2V** 应将 `[Video1]` 映射到源片段、摄像机运动、动作节奏、场面调度、剪辑目标或扩展锚点，而非意外迁移身份。**R2V** 必须列出每个参考的角色并说明什么不可迁移。**FLF2V** 使用 `[Image1]` 作为起始帧、`[Image2]` 作为结束帧，然后仅描述连续过渡过程。
 
-| Mode | Drafting priority | Common mistake | Repair |
-|---|---|---|---|
-| T2V | Build the whole shot in compact layers. | Too many events in one clip. | Keep one visible beat and one endpoint. |
-| I2V | Preserve visible identity; add motion. | Re-describing the image until the product or face drifts. | Say `preserve [Image1] exactly`; add only dynamic changes. |
-| V2V | Transfer motion, camera, or timing. | Copying unauthorized likeness or scene details. | Use owned/licensed/authorized references and restrict transfer role. |
-| R2V | Assign separate roles to each asset. | One reference asked to control identity, pose, scene, and style. | Split roles or prioritize the most important role. |
-| FLF2V | Move from first frame to last frame. | Treating the last frame as vague mood instead of endpoint. | State `[Image2]` is the final visual target. |
-| Edit | Preserve the source clip while changing one layer. | Rewriting the whole scene and losing continuity. | Say `[Video1] is the source clip; change only...` |
-| Extend | Continue from the existing final state. | Starting a new scene after the clip. | Use the last frame as continuity anchor and change one variable. |
+| 模式  | 起草优先级                   | 常见错误                                     | 修复方案                                           |
+| ----- | ---------------------------- | -------------------------------------------- | -------------------------------------------------- |
+| T2V   | 以紧凑层级构建完整镜头。     | 单片段内事件过多。                           | 保留一个可见节拍和一个终点。                       |
+| I2V   | 保留可见身份；添加运动。     | 反复重述图像导致产品或人脸漂移。             | 声明 `preserve [Image1] exactly`；仅添加动态变化。 |
+| V2V   | 迁移运动、摄像机或时机。     | 复制未授权肖像或场景细节。                   | 使用自有/授权/许可参考并限制迁移角色。             |
+| R2V   | 为每个素材分配独立角色。     | 要求单一参考同时控制身份、姿态、场景和风格。 | 拆分角色或优先最重要角色。                         |
+| FLF2V | 从起始帧移动到结束帧。       | 将结束帧视为模糊氛围而非明确终点。           | 声明 `[Image2]` 为最终视觉目标。                   |
+| 剪辑  | 保留源片段同时变更单一图层。 | 重写整个场景导致连续性丢失。                 | 声明 `[Video1] is the source clip; change only...` |
+| 扩展  | 从现有最终状态延续。         | 在片段结束后开启新场景。                     | 以末帧为连续性锚点并仅变更一个变量。               |
 
-## Prompt Build Process
+## 提示词构建流程
 
-First, identify the single visible beat: reveal, arrival, decision, transformation, contact, pursuit, or disappearance. Next, assign reference roles before adding adjectives. Then write a compact first draft in the director formula order. Finally, run a self-check: one main subject, one main action, one main camera move, physical lighting, assigned character tags, sound intent, and no hollow boosters.
+首先，识别单一可见节拍：揭示、抵达、决策、变换、接触、追逐或消失。其次，在添加形容词前先分配参考角色。然后按导演公式顺序撰写紧凑初稿。最后执行自检：一个主体、一个主要动作、一项主体摄像机运动、物理灯光、指定角色标签、音效意图，且无空洞增益词。
 
-## Compression Rules
+## 压缩规则
 
-When the prompt is too long, cut in this order: duplicate style adjectives, generic quality words, background details visible in references, secondary camera moves, secondary actions, and speculative emotional labels. Keep preservation constraints, action timing, and role maps. If a user requests a bilingual or mixed-language prompt, use language mixing only for clarity: reference roles, dialogue language, technical camera terms, and safe production constraints. Do not use another language to hide unsafe intent.
+当提示词过长时，按以下顺序删减：重复风格形容词、通用质量词、参考中已可见的背景细节、次要摄像机运动、次要动作及推测性情感标签。保留保留约束、动作时机及角色映射。若用户请求双语或混合语言提示词，仅当为提升清晰度时使用语言混合：参考角色、对话语言、技术摄像机术语及安全制作约束。不得使用其他语言隐藏不安全意图。
 
-## Output Contract
+## 输出约定
 
-Return:
+返回：
 
-1. Mode: T2V, I2V, V2V, R2V, FLF2V, edit, or extend.
-2. Reference role map, if any.
-3. Final prompt under 2000 characters.
-4. Optional Chinese compressed version when useful.
-5. Shot-list or delivery note when the prompt belongs to a professional sequence.
-6. Safety or copyright note when relevant.
+1. 模式：T2V、I2V、V2V、R2V、FLF2V、剪辑或扩展。
+2. 参考角色映射（如有）。
+3. 最终提示词（2000 字符以内）。
+4. 有用时可选提供中文精简版。
+5. 当提示词属于专业序列时附上镜头列表或交付说明。
+6. 相关时附上安全或版权说明。
 
-Before finalizing, run an anti-slop pass and remove vague quality boosters.
+最终定稿前执行反低质检查，移除模糊质量增益词。

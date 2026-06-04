@@ -1,56 +1,41 @@
 ---
 name: seedance-filter
-description: "This skill should be used when a Seedance 2.0 prompt is blocked, rejected, silently degraded, or likely to trigger a content filter; or when the user asks for a safer rewrite without losing the creative intent."
-license: MIT
-user-invocable: true
-tags:
-  - content-filter
-  - safe-rewrite
-  - seedance-20
-metadata:
-  version: "5.4.5"
-  updated: "2026-05-30"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+description: '当 Seedance 2.0 提示词被拦截、拒绝、静默降级，或可能触发内容过滤器；或当用户请求在不丢失创意意图的前提下进行更安全重写时，应使用此技能。'
 ---
 
 # seedance-filter
 
-Use this when a prompt is blocked, degraded, likely to trigger moderation, or needs a safer rewrite without losing creative intent. This skill does not help evade safety systems. It rewrites risky surface wording into professional, non-graphic production language and preserves the safe creative core.
+当提示词被拦截、降级、可能触发审核，或需要在不丢失创意意图的前提下进行更安全重写时使用此技能。本技能不协助规避安全系统。它将高风险表面措辞重写为专业、非露骨的制作语境语言，同时保留安全的创意核心。
 
-## Repair Method
+## 修复方法
 
-1. Identify the creative intent: action, mood, camera, subject, and final beat.
-2. Identify risky surface wording: graphic harm, protected identity, sexualized framing, real-person likeness, weapons, self-harm, hate, evasion language, or exact IP copying.
-3. Replace risky terms with professional, non-graphic, production-context language.
-4. Preserve composition, action, mood, camera logic, and authorized references.
-5. For likely false positives, clarify benign production context, ownership, and non-graphic intent. Do not help bypass safety systems or provide evasion tactics.
+1. 识别创意意图：动作、情绪、摄像机、主体及最终节拍。
+2. 识别高风险表面措辞：露骨伤害、受保护身份、性暗示构图、真人肖像、武器、自残、仇恨言论、规避性语言或精确复制知识产权内容。
+3. 用专业、非露骨、制作语境的语言替换高风险术语。
+4. 保留构图、动作、情绪、摄像机逻辑及授权参考素材。
+5. 对于可能的误判，澄清良性制作背景、所有权及非露骨意图。勿协助绕过安全系统或提供规避策略。
 
-## Safer Rewrite Patterns
+## 安全重写模式
 
-| Intent | Safer direction |
-|---|---|
-| Conflict | `staged confrontation, choreographed action beat, no graphic injury` |
-| Aftermath | `non-graphic distress, torn fabric, scattered props, dramatic silence` |
-| Suspense | `threat implied by shadow, locked door, heavy breathing, low light` |
-| Weapon-like prop | `prop object handled safely within a staged action scene` |
-| Horror mood | `eerie atmosphere, flickering practical light, off-screen sound cue` |
-| Protected identity | `original character with broad genre archetype traits` |
+| 意图       | 安全方向                                               |
+| ---------- | ------------------------------------------------------ |
+| 冲突       | `编排好的对抗场景，设计好的动作节拍，无露骨伤害`       |
+| 事后状态   | `非露骨的紧张情绪，撕裂的织物，散落的道具，戏剧性静默` |
+| 悬疑感     | `通过阴影、锁闭的门、沉重呼吸、低光照暗示威胁`         |
+| 类武器道具 | `在编排好的动作场景中安全处理的道具物件`               |
+| 恐怖氛围   | `诡异氛围，闪烁的实景光源，画外音效提示`               |
+| 受保护身份 | `具有宽泛类型原型特征的原创角色`                       |
 
-## Boundary Rule
+## 边界规则
 
-If the user's request is unsafe, refuse or redirect to a safe alternative. If it is safe but poorly worded, repair the wording. When uncertain, state the risk class and offer a conservative prompt that keeps the non-harmful scene function.
+若用户请求不安全，拒绝或重定向至安全替代方案。若请求安全但措辞不当，则修复措辞。若不确定，声明风险类别并提供保守提示词，保留无害场景功能。
 
-Do not provide filter-bypass, evasion, or hidden-word tactics. The safe path is to clarify production intent, remove unsafe identity or harm elements, and rewrite into an original authorized scene.
+勿提供过滤器绕过、规避或隐藏词策略。安全路径是澄清制作意图、移除不安全身份或伤害元素，并重写为原创授权场景。
 
-Face-limit or portrait-verification workarounds are not safe prompt tricks. If a surface offers sanctioned virtual portrait, trusted model-output, or authorization asset flows, route the user to those current official paths instead of evasion language.
+人脸限制或肖像验证的变通方案并非安全的提示词技巧。若某平台提供经批准的虚拟肖像、可信模型输出或授权素材流程，应将用户引导至这些当前官方路径，而非使用规避性语言。
 
-Load `[ref:filter-vocab]` for safer substitutions. Load `[ref:multilingual-community-examples]` only when the safe repair needs Chinese/Russian/Japanese/Korean/Spanish or mixed-language wording for clarity.
+加载 `references/filter-vocab.md` 获取安全替换词。仅当安全修复需要中文/俄语/日语/韩语/西班牙语或混合语言措辞以提升清晰度时，加载 `references/multilingual-community-examples.md`。
 
-## Output Contract
+## 输出约定
 
-Return likely trigger class, safer wording, final prompt, what changed, and any content boundary that still applies.
+返回可能的触发类别、安全措辞、最终提示词、变更内容及仍适用的内容边界。

@@ -1,59 +1,45 @@
 ---
 name: seedance-troubleshoot
-description: "This skill should be used when a Seedance 2.0 output is blurry, jittery, off-prompt, morphing, blocked, visually generic, unstable, desynced, inconsistent, or otherwise fails and needs root-cause diagnosis."
-license: MIT
+description: '当 Seedance 2.0 的输出出现模糊、抖动、偏离提示词、变形、被拦截、视觉泛化、不稳定、音画不同步、不一致或其他失败情况，且需要进行根本原因诊断时，应使用此技能。'
 user-invocable: true
-tags:
-  - diagnostics
-  - troubleshooting
-  - seedance-20
-metadata:
-  version: "5.4.5"
-  updated: "2026-05-30"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
 # seedance-troubleshoot
 
-Diagnose failure before rewriting. Do not simply add more adjectives. Identify whether the failure came from mode mismatch, overload, ambiguity, fragile identity, unsafe wording, unsupported platform behavior, or missing preservation constraints.
+在重写前先诊断失败原因。不要简单地堆砌更多形容词。需判断失败是否源于：模式不匹配、过载、歧义、身份标识脆弱、用词不安全、平台行为不支持，或缺失保留约束。
 
-Load `[ref:field-observed-tips]`, `[ref:reference-workflow]`, and `[ref:api-workflow]` when the failure involves continuation, edit/extend, source clips, audio references, or platform-specific errors. Load `[ref:shot-list-continuity]` for multi-shot drift and `[ref:delivery-qc]` for final-client or delivery failures.
+当失败涉及续生成、编辑/扩展、源片段、音频参考或平台特定错误时，请加载 `references/field-observed-tips.md`、`references/reference-workflow.md` 和 `references/api-workflow.md`。对于多镜头漂移问题，请加载 `references/shot-list-continuity.md`；对于最终客户交付或交付失败问题，请加载 `references/delivery-qc.md`。
 
-## Diagnostic Tree
+## 诊断树
 
-| Symptom | Likely cause | First repair |
-|---|---|---|
-| Product or face changes | I2V prompt re-described visible identity or overloaded motion. | Add preservation constraints; remove duplicate static detail. |
-| Camera jumps | Several incompatible moves or no endpoint. | Choose one move with start and finish. |
-| Generic output | Hollow style words and weak action. | Replace with physical action, source light, material, and sound. |
-| Motion ignored | Static prompt or no visible consequence. | Add actor, verb, timing, and changed end state. |
-| Lip-sync poor | Moving head/camera, long dialogue, unassigned speaker. | Lock framing, shorten line, assign speaker. |
-| VFX noisy | Effect has no source, physics, or dissipation. | Add source, material, path, interaction, and endpoint. |
-| Prompt blocked | Protected IP, real-person, graphic, or bypass-like wording. | Rewrite intent in safe production language without evasion. |
-| Extension quality degrades | No last-frame anchor or too many new variables across continuations. | Use returned last frame as first frame and change one variable. |
-| Audio reference ignored | Competing video sound, no visual beat mapping, or unsupported combo. | Mute competing video and map one visible event to the beat. |
-| Text/logos break | Small text asked to move or be redrawn. | Keep text static, centered, and protected; animate light around it. |
-| Client QC fails | Prompt output treated as final delivery without post/QC. | Route to delivery preflight, post fix, or regenerate only the failing shot. |
+| 症状               | 可能原因                                        | 首要修复方案                                       |
+| ------------------ | ----------------------------------------------- | -------------------------------------------------- |
+| 产品或人脸发生变化 | I2V 提示词重新描述了可见身份特征或运动过载。    | 添加保留约束；移除重复的静态细节。                 |
+| 镜头跳跃           | 多个不兼容的运镜或缺乏终点设定。                | 选择一个带起点和终点的单一运镜。                   |
+| 输出泛化           | 空洞的风格词汇与薄弱的动作描述。                | 替换为具体物理动作、光源、材质与声音描述。         |
+| 运动被忽略         | 提示词静态化或缺乏可见后果。                    | 添加角色、动词、时序及变化的终态。                 |
+| 口型同步差         | 头部/镜头移动、对话过长、说话人未指定。         | 锁定构图、缩短台词、指定说话人。                   |
+| 特效噪点多         | 特效缺乏来源、物理逻辑或消散过程。              | 添加来源、材质、路径、交互作用与终点。             |
+| 提示词被拦截       | 涉及受保护 IP、真人、敏感内容或规避式措辞。     | 用安全的制作语言重写意图，避免规避表述。           |
+| 扩展质量下降       | 缺乏末帧锚点或续生成中引入过多新变量。          | 使用返回的末帧作为下一段首帧锚点，仅变更一个变量。 |
+| 音频参考被忽略     | 视频声音冲突、缺乏视觉节拍映射或不支持的组合。  | 静音冲突视频音轨，并将一个可见事件映射到节拍。     |
+| 文字/标识破损      | 要求小尺寸文字移动或被重绘。                    | 保持文字静态、居中并受保护；仅对其周围光线做动画。 |
+| 客户质检失败       | 将提示词输出直接当作最终交付物，未经后期/质检。 | 路由至交付预检、后期修复，或仅重生成失败的镜头。   |
 
-## Repair Process
+## 修复流程
 
-First quote the failing phrase or missing element. Then name the root cause. Next, remove conflicts rather than adding complexity. Finally, produce one conservative retry prompt and one optional creative variant only if the user wants exploration.
+首先引用失败的短语或缺失元素。然后指明根本原因。接着，移除冲突而非增加复杂度。最后，生成一个保守的重试提示词，仅当用户需要探索时，再提供一个可选的创意变体。
 
-## Conservative Retry Pattern
+## 保守重试模式
 
-`[Reference role if any]. Preserve [identity/product/environment] exactly. One visible action: [specific verb and consequence]. Camera: [single move]. Lighting: [physical source]. Sound: [ambient/SFX/dialogue]. Constraints: [what must not change].`
+`[如有则注明参考角色]。精确保留 [身份/产品/环境]。单一可见动作：[具体动词及后果]。镜头：[单一运镜]。灯光：[物理光源]。声音：[环境音/音效/对话]。约束：[不可变更的内容]。`
 
-## Escalation Rules
+## 升级规则
 
-If the same error repeats, split the scene into shorter clips, reduce characters, simplify hand or face motion, use stronger reference role mapping, or change the mode. For unstable text/logos, keep them static, centered, and protected; do not ask the model to redraw small text during motion.
+若同一错误重复出现，请将场景拆分为更短片段、减少角色数量、简化手部或面部动作、使用更强的参考角色映射，或切换模式。对于不稳定的文字/标识，保持其静态、居中并受保护；切勿要求模型在运动中重绘小尺寸文字。
 
-For edit/extend failures, preserve the source clip first and change only the failing layer. If a surface supports returned last frames, use that still as the next first-frame anchor before extending.
+对于编辑/扩展失败，请优先保留源片段，仅修改失败图层。若某表面支持返回末帧，请在扩展前将该静帧用作下一段的首帧锚点。
 
-## Output Contract
+## 输出契约
 
-Return root cause, evidence from the prompt or result, repaired prompt, and one conservative retry variant.
+返回根本原因、来自提示词或结果的证据、修复后的提示词，以及一个保守重试变体。

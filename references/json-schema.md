@@ -1,6 +1,6 @@
-# Seedance Prompt JSON Schema
+# Seedance 提示词 JSON 架构
 
-Use this schema when the user wants structured output or when an automation pipeline needs stable fields.
+当用户需要结构化输出，或自动化流程需要稳定字段时，请使用此架构。
 
 ```json
 {
@@ -81,4 +81,4 @@ Use this schema when the user wants structured output or when an automation pipe
 }
 ```
 
-The JSON wrapper is for planning. The final prompt still needs to read naturally. For professional work, keep the production, shot-list, continuity, localization, audio, color, and delivery fields as handoff metadata; do not cram all of them into the prompt.
+JSON 封装用于规划。最终提示词仍需保持自然可读。专业工作中，请将 `production`、`shot_list`、`continuity_anchors`、`localization`、`audio`、`color_pipeline` 及 `delivery` 等字段作为交付元数据单独管理；切勿将所有字段堆砌进提示词正文。

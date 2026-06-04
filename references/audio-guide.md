@@ -1,53 +1,53 @@
-# Audio Guide
+# 音频指南
 
-Use this reference for detailed audio, dialogue, beat-sync, ambience, and lip-sync workflows. Keep audio roles explicit and avoid promising exact platform behavior unless the active surface documents it.
+请使用本参考文档了解详细的音频、对话、节拍同步、环境音及口型同步工作流程。请始终保持音频角色明确，除非当前平台文档明确说明，否则避免承诺确切的平台行为。
 
-For professional audio post, stems, M&E, dubbing, loudness, or delivery checks, also load `audio-post-delivery.md`.
+如需专业音频后期、分轨、音乐与效果轨（M&E）、配音、响度或交付检查，请同时加载 `audio-post-delivery.md`。
 
-## Dialogue
+## 对话
 
-- Keep lines short, preferably one sentence per speaker turn.
-- Put spoken dialogue in quotes.
-- Assign the speaker by tag.
-- Use stable framing for lip-sync.
-- Avoid head turns, large face movement, extreme camera moves, or busy hand action while mouth accuracy matters.
-- If the line matters more than the environment, reduce music and SFX during the line.
+- 保持台词简短，每位说话人每次发言最好仅一句话。
+- 将口语对话内容用引号括起。
+- 通过标签指定说话人。
+- 使用稳定的构图以利于口型同步。
+- 当口型准确度至关重要时，避免头部转动、大幅面部动作、极端镜头运动或复杂的手部动作。
+- 如果台词比环境更重要，请在台词播放期间降低音乐和音效音量。
 
-## Audio reference mapping
+## 音频参考映射
 
-`[Audio1]` can be used for rhythm, pacing, mood, voice tone, ambience, music texture, or beat timing. Do not promise exact audio playback unless the active platform documents exact playback behavior. If the source contains a real voice or recognizable song, treat it as authorization-sensitive and convert it into broad sonic descriptors when rights are unclear.
+`[Audio1]` 可用于节奏、速度、情绪、人声音色、环境氛围、音乐质感或节拍时序。除非当前平台文档明确说明确切的音频播放行为，否则不要承诺精确的音频回放。如果源内容包含真实人声或可识别歌曲，请将其视为授权敏感内容，并在版权不明确时转换为广义的声音描述符。
 
-When an audio reference and video reference compete, silence or mute the video reference before upload when the audio should control timing. If the video must keep sound, state the priority: `[Video1] controls only camera/motion; [Audio1] controls tempo and energy`.
+当音频参考与视频参考发生冲突时，若音频应控制时序，请在上传前将视频参考静音或消音。如果视频必须保留声音，请明确声明优先级：`[Video1] 仅控制镜头/运动；[Audio1] 控制速度与能量`。
 
-| Role | Good wording | Avoid |
+| 角色 | 推荐表述 | 避免 |
 |---|---|---|
-| Tempo | `[Audio1] provides tempo only; foot taps match the downbeat` | copying a protected performance |
-| Mood | `[Audio1] provides calm sparse atmosphere` | exact replay claim |
-| Voice tone | `soft, breathy, close-mic delivery` | imitating a named real voice |
-| Ambience | `rainy street room tone, distant traffic bed` | dense competing sound layers |
-| Conflict repair | `[Video1] is muted and controls camera only; [Audio1] controls beat timing` | two sources both controlling rhythm |
+| 速度（Tempo） | `[Audio1] 仅提供速度；脚部踏拍与强拍对齐` | 复制受保护的表演内容 |
+| 情绪（Mood） | `[Audio1] 提供平静、稀疏的氛围` | 声称精确回放 |
+| 人声音色 | `柔和、气声、近距麦克风拾音` | 模仿具名的真实人声 |
+| 环境音 | `雨街房间底噪、远处交通背景音` | 密集且相互干扰的声音层 |
+| 冲突修复 | `[Video1] 已静音且仅控制镜头；[Audio1] 控制节拍时序` | 两个源同时控制节奏 |
 
-## Multi-character dialogue
+## 多角色对话
 
-Use separate speaker turns when reliability matters. For two-person exchanges, generate controlled single-speaker clips and composite in post when necessary. If two speakers remain in one prompt, write: `Character A says... pause. Character B answers...` and keep the camera locked or gently motivated.
+当可靠性至关重要时，请使用独立的说话人轮次。对于双人对话，必要时生成受控的单说话人片段，并在后期合成。如果同一提示词中需保留两位说话人，请撰写：`角色A说... 暂停。角色B回答...`，并保持镜头锁定或仅作轻微合理运动。
 
-## Sound layer syntax
+## 声音层语法
 
-`Dialogue: Character A says "I found it." Sound: low room tone + distant rain. SFX: cup lands on table at 2s. Music: no music until after the line.`
+`对话：角色A说"我找到了。" 声音：低音量房间底噪 + 远处雨声。音效：杯子在2秒时落在桌上。音乐：台词结束前无音乐。`
 
-## Beat-sync syntax
+## 节拍同步语法
 
-`[Audio1] provides tempo only. On each downbeat: back wall light pulses once, dancer hits one pose, camera remains locked wide.` Use visible beat changes rather than asking the model to understand an abstract groove.
+`[Audio1] 仅提供速度。每个强拍：后墙灯光脉冲一次，舞者定格一个姿势，镜头保持广角锁定。` 请使用可见的节拍变化，而非要求模型理解抽象的律动感。
 
-## Troubleshooting
+## 故障排查
 
-- Desync: shorten dialogue, stabilize camera, remove head motion, reduce competing sound, and clean source audio role.
-- Wrong speaker: split lines by speaker and use explicit character tags.
-- Audio ignored: remove competing music/SFX instructions and make `[Audio1]` role explicit.
-- Overbusy mix: choose ambience plus one key SFX; remove music if dialogue matters.
-- Lip-sync drift: use a locked medium close-up, no head turn, short quoted line, and simple expression.
-- Audio-reference conflict: mute the video reference, remove competing SFX/music, and describe one visible event per beat.
+- 不同步：缩短对话、稳定镜头、移除头部运动、减少竞争性声音、清理源音频角色定义。
+- 说话人错误：按说话人拆分台词并使用明确的角色标签。
+- 音频被忽略：移除竞争性音乐/音效指令，并明确 `[Audio1]` 的角色。
+- 混音过载：选择环境音加一个关键音效；若对话重要则移除音乐。
+- 口型同步漂移：使用锁定的中近景，无头部转动，简短带引号的台词，以及简单的表情。
+- 音频参考冲突：将视频参考静音，移除竞争性音效/音乐，并为每个节拍描述一个可见事件。
 
-## Post Handoff Boundary
+## 后期交付边界
 
-Prompt audio can shape performance and visible timing, but final mixes need post-production review. For paid or delivery work, record spoken language, subtitle/dubbing needs, M&E/stem needs, sync cues, and buyer loudness target separately from the prompt.
+提示词中的音频可塑造表演和可见时序，但最终混音需经后期制作审核。对于付费或交付项目，请将口语录制、字幕/配音需求、M&E/分轨需求、同步提示点及买方响度目标与提示词分开记录。

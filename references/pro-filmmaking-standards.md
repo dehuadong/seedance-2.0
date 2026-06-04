@@ -1,52 +1,52 @@
-# Professional Filmmaking Standards
+# 专业影视制作标准
 
 last_verified: 2026-05-30
 
-Use this reference when Seedance work must support directors, cinematographers, editors, producers, localization teams, commercial agencies, or delivery/QC teams. Treat these standards as workflow guidance, not as a promise that a video-generation surface can render or export every technical deliverable directly.
+当 Seedance 的工作需要支持导演、摄影指导、剪辑师、制片人、本地化团队、广告代理公司或交付/QC 团队时，请使用本参考文件。请将这些标准视为工作流指导，而非承诺视频生成界面能够直接渲染或导出每一项技术交付物。
 
-## Source Boundaries
+## 来源边界
 
-| Area | Preferred source type | Use in this skill | Boundary |
+| 领域 | 首选参考来源 | 在本技能中的应用 | 边界/限制 |
 |---|---|---|---|
-| Shot design | ASC, cinematography education, production shot-list practice | Translate creative intent into shot contracts. | Do not over-specify frame-perfect camera physics for short AI clips. |
-| Continuity | Script supervision and production continuity practice | Track wardrobe, props, screen direction, eyelines, lighting state, and final-frame handoff. | AI continuity is probabilistic; use references and smaller shots for fragile anchors. |
-| Color | ACES docs, AMF, delivery partner guidance | Track color intent, show look, LUT/CDL/LMT notes, HDR/SDR expectations. | A prompt can request a look; finishing must still be verified in color tools. |
-| Aspect ratio | Delivery partner specs, DCI/ISDCF, platform specs | Separate creative framing from delivery containers and safe areas. | Do not assume every surface supports every ratio or crop. |
-| Audio | ITU BS.1770, EBU R128, ATSC A/85, delivery partner mix specs | Plan dialogue, ambience, SFX, music, M&E/stems, loudness, and sync checks. | Seedance prompt audio is not a certified final mix. |
-| Subtitles | Netflix timed text, WebVTT, accessibility and caption rules | Plan subtitles, SDH, forced narratives, reading time, placement, and localization notes. | Do not rely on generated burned-in text as final deliverable subtitles. |
-| Delivery/QC | SMPTE IMF, DPP, Netflix delivery specs, DCI | Create preflight checks for frame rate, resolution, color, audio, captions, textless, metadata, and human QC. | Always follow the buyer/platform spec actually contracted for the job. |
+| 镜头设计 | ASC 规范、电影摄影教育、分镜/拍摄清单实践 | 将创意意图转化为镜头执行规范。 | 不要为短时 AI 片段过度规定逐帧的摄像机物理参数。 |
+| 连续性（场记） | 剧本监督与制作场记实践 | 追踪服装、道具、画面方向、视线、灯光状态及最终帧交接。 | AI 连续性具有概率性；请使用参考素材和较短镜头处理脆弱的连续性锚点。 |
+| 色彩管理 | ACES 文档、AMF、交付方指导 | 追踪色彩意图、影片视觉风格、LUT/CDL/LMT 备注、HDR/SDR 预期。 | 提示词可请求某种视觉风格，但最终成片仍需在专业调色工具中验证。 |
+| 画幅比例 | 交付方规范、DCI/ISDCF、平台规范 | 将创意构图与交付容器及安全区域区分开。 | 不要假设所有平台/界面都支持任意画幅比例或裁切。 |
+| 音频 | ITU BS.1770、EBU R128、ATSC A/85、交付方混音规范 | 规划对白、环境音、音效、音乐、M&E（音乐与音效）/分轨、响度及同步检查。 | Seedance 提示词生成的音频并非认证的最终混音。 |
+| 字幕 | Netflix 定时文本、WebVTT、无障碍及字幕规范 | 规划字幕、SDH（听障人士字幕）、强制叙事字幕（FN）、阅读时间、位置及本地化备注。 | 不要将生成的硬字幕（烧录字幕）作为最终交付字幕。 |
+| 交付/QC | SMPTE IMF、DPP、Netflix 交付规范、DCI | 创建帧率、分辨率、色彩、音频、字幕、无字幕版、元数据及人工 QC 的预检清单。 | 始终遵循项目实际合同约定的买方/平台规范。 |
 
-## Professional Operating Spine
+## 专业操作主轴
 
-1. **Brief:** define client/creative goal, audience, territory, duration, aspect ratio, deliverables, references, rights, approval owner, and hard constraints.
-2. **Pre-production:** create treatment, reference map, shot list, continuity ledger, color/audio/localization intent, and risk log.
-3. **Generation plan:** split into stable shots. Assign one visible beat, one camera idea, and one endpoint per Seedance clip.
-4. **Review loop:** evaluate identity, product, action, camera, continuity, audio sync, text, safety, and rights before extending or editing.
-5. **Post plan:** edit, conform, stabilize, sound, color, captions, versioning, textless, and archival metadata.
-6. **Delivery/QC:** check spec, naming, frame rate, resolution, color pipeline, loudness, captions, safe areas, rights notes, and human review.
+1. **需求简报：** 明确客户/创意目标、受众、发行地区、时长、画幅比例、交付物、参考素材、版权、审批负责人及硬性限制条件。
+2. **前期筹备：** 制定创意阐述（treatment）、参考地图、分镜/拍摄清单、连续性记录表、色彩/音频/本地化意图及风险日志。
+3. **生成计划：** 拆分为稳定镜头。为每个 Seedance 片段分配一个明确的视觉节拍、一个摄像机构思和一个结束状态。
+4. **审核循环：** 在扩展或编辑前，评估角色一致性、产品、动作、摄像机运动、连续性、音频同步、文字、安全性及版权。
+5. **后期计划：** 剪辑、套底（conform）、稳定、声音制作、调色、字幕、版本制作、无字幕版及存档元数据。
+6. **交付/QC：** 检查规范、命名、帧率、分辨率、色彩流程、响度、字幕、安全区域、版权备注及人工审查。
 
-## When To Load Detailed References
+## 何时加载详细参考资料
 
-| User need | Load |
+| 用户需求 | 加载文件 |
 |---|---|
-| Treatment, production plan, client brief, campaign | `shot-list-continuity.md`, `delivery-qc.md` |
-| Camera, lens, shot size, blocking | `cinematography-shot-language.md` |
-| Multi-shot continuity, scene handoff | `shot-list-continuity.md` |
-| ACES, HDR/SDR, LUT/CDL/look language | `color-pipeline-aces.md` |
-| 16:9, 9:16, 1.85, 2.39, social cutdowns | `aspect-ratio-delivery.md` |
-| Dialogue, mix, stems, M&E, loudness | `audio-post-delivery.md` |
-| Subtitles, dubbing, captions, forced narrative | `subtitles-localization.md` |
-| IMF/DCP/social export, QC checklist | `delivery-qc.md` |
+| 创意阐述、制作计划、客户简报、广告 campaign | `shot-list-continuity.md`, `delivery-qc.md` |
+| 摄像机、镜头、景别、场面调度 | `cinematography-shot-language.md` |
+| 多镜头连续性、场景交接 | `shot-list-continuity.md` |
+| ACES、HDR/SDR、LUT/CDL/视觉风格术语 | `color-pipeline-aces.md` |
+| 16:9、9:16、1.85、2.39、社交媒体短版裁切 | `aspect-ratio-delivery.md` |
+| 对白、混音、分轨、M&E、响度 | `audio-post-delivery.md` |
+| 字幕、配音、字幕说明、强制叙事 | `subtitles-localization.md` |
+| IMF/DCP/社交媒体导出、QC 检查清单 | `delivery-qc.md` |
 
-## Professional Answer Contract
+## 专业回复规范
 
-For professional filmmaker requests, return:
+针对专业影视从业者的请求，请返回：
 
-- production phase and role: director, DP, editor, producer, sound, localization, or delivery;
-- assumptions and source-date caveats for volatile platform claims;
-- shot contract or workflow checklist;
-- reference and rights map;
-- continuity anchors;
-- post/delivery notes when the output will leave the prompt stage.
+- 制作阶段与角色：导演、摄影指导（DP）、剪辑师、制片人、声音、本地化或交付；
+- 针对平台动态更新声明的假设及资料来源日期免责声明；
+- 镜头执行规范或工作流检查清单；
+- 参考资料与版权映射；
+- 连续性锚点；
+- 当输出将离开提示词阶段时的后期/交付备注。
 
-Avoid giving only a final prompt when the user is asking for a film, commercial, campaign, localization package, or delivery-ready workflow.
+当用户询问的是电影、广告、营销 campaign、本地化包或准备交付的工作流时，避免仅提供一个最终提示词。

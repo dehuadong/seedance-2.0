@@ -1,32 +1,32 @@
-# Model Name Map
+# 模型名称映射
 
 last_verified: 2026-05-30
 
-Use this file when a user says "Seedance Pro", "Seedance V2", "Seed2.0 Pro", or wrapper-specific model names.
+当用户提及"Seedance Pro"、"Seedance V2"、"Seed2.0 Pro"或特定封装器的模型名称时，请使用此文件。
 
-## Canonical Names
+## 规范名称
 
-| Name | Meaning | Guidance |
+| 名称 | 含义 | 使用指导 |
 |---|---|---|
-| Seedance 2.0 | ByteDance Seed video generation model line | Correct public name for the v2 video model family. Use this as the default wording. |
-| Seedance 2.0 Fast | Faster Seedance 2.0 variant reported by official/product and wrapper surfaces | Use for draft, iteration, or low-latency discussion when the active surface exposes it. Recheck exact resolution, duration, and pricing. |
-| Doubao Seedance 2.0 | Volcengine/Doubao-flavored surface naming | Treat as a product/API surface label, not a different creative method. |
-| `doubao-seedance-2-0-260128` | Volcengine Ark model ID observed in May 29 tutorial | Useful for implementation examples only after rechecking the active console/docs. Do not treat as universal BytePlus/global availability. |
-| `doubao-seedance-2-0-fast-260128` | Volcengine Ark Fast model ID observed in May 29 tutorial | Use only when the active surface exposes the Fast variant and current pricing/limits are checked. |
-| `seedance2` | Runway API model ID | Use only for Runway's API surface. Do not substitute for Volcengine/Doubao model IDs. |
-| Seedance V2 | Community shorthand | Normalize to Seedance 2.0 unless the user is clearly referring to a wrapper-specific model. |
-| Seedance 2.0 Pro | Ambiguous community shorthand | Do not assume this is an official video-model name. Ask which surface, or normalize to Seedance 2.0 / Fast with a caveat. |
-| Seed2.0 Pro | Separate Seed/Doubao naming seen outside the Seedance video model line | Do not confuse with Seedance 2.0 video generation. |
-| Seedance 1.5 Pro | Earlier Seedance generation | Useful for historical comparison only. Do not mix its limits with Seedance 2.0. |
+| Seedance 2.0 | 字节跳动 Seed 视频生成模型系列 | v2 视频模型系列的正确公开名称。请将其作为默认表述使用。 |
+| Seedance 2.0 Fast | 官方/产品及封装器界面报告的更快版 Seedance 2.0 变体 | 当当前界面提供该变体时，用于草稿、迭代或低延迟场景的讨论。请重新核实具体的分辨率、时长和定价。 |
+| Doubao Seedance 2.0 | 火山引擎/豆包风格的界面命名 | 视为产品/API 界面标签，而非不同的创作方法。 |
+| `doubao-seedance-2-0-260128` | 5 月 29 日教程中观察到的火山引擎 Ark 模型 ID | 仅在重新核实当前控制台/文档后，才可用于实现示例。切勿将其视为通用的 BytePlus/全球可用性。 |
+| `doubao-seedance-2-0-fast-260128` | 5 月 29 日教程中观察到的火山引擎 Ark Fast 模型 ID | 仅当当前界面提供 Fast 变体且已核实当前定价/限制时使用。 |
+| `seedance2` | Runway API 模型 ID | 仅用于 Runway 的 API 界面。切勿替代火山引擎/豆包的模型 ID。 |
+| Seedance V2 | 社区简写 | 除非用户明确指代特定封装器的模型，否则统一规范为 Seedance 2.0。 |
+| Seedance 2.0 Pro | 含义模糊的社区简写 | 勿假设此为官方视频模型名称。请询问具体界面，或附带说明地规范为 Seedance 2.0 / Fast。 |
+| Seed2.0 Pro | 在 Seedance 视频模型系列之外出现的独立 Seed/豆包命名 | 切勿与 Seedance 2.0 视频生成混淆。 |
+| Seedance 1.5 Pro | 早期 Seedance 代系 | 仅适用于历史对比。切勿将其限制条件与 Seedance 2.0 混用。 |
 
-## Answer Pattern
+## 回答模式
 
-If the user says "Seedance 2.0 Pro", answer:
+如果用户提及"Seedance 2.0 Pro"，请回答：
 
-`I will treat this as Seedance 2.0 unless you mean a specific wrapper's Pro label. Official public video-model wording is Seedance 2.0 and, on some surfaces, Seedance 2.0 Fast. Seed2.0 Pro is a different naming lane and should not be used as the Seedance video model name without source confirmation.`
+`除非您指的是特定封装器的 Pro 标签，否则我将此视为 Seedance 2.0。官方公开的视频模型表述为 Seedance 2.0，在某些界面上则为 Seedance 2.0 Fast。Seed2.0 Pro 属于不同的命名体系，未经来源确认，不应将其用作 Seedance 视频模型名称。`
 
-## Wrapper Names
+## 封装器名称
 
-Third-party wrappers may expose names such as `doubao-seedance-2.0`, `doubao-seedance-2.0-fast`, or provider-prefixed variants. These can be useful for implementation, but they are not the repo's source of truth for official naming.
+第三方封装器可能提供诸如 `doubao-seedance-2.0`、`doubao-seedance-2.0-fast` 或带有提供商前缀的变体名称。这些名称可用于实现参考，但并非本仓库关于官方命名的权威来源。
 
-Do not quote current BytePlus Seedance 2.0 pricing or model IDs from JavaScript-rendered pricing pages unless the value has been verified in a current official page or console. Volcengine prices can be cited only with source date, model, surface, currency, and a recheck warning.
+除非相关数值已在当前官方页面或控制台中得到核实，否则切勿引用 JavaScript 渲染的定价页面中显示的当前 BytePlus Seedance 2.0 定价或模型 ID。引用火山引擎价格时，必须注明来源日期、模型、界面、币种，并附带重新核实的提醒。

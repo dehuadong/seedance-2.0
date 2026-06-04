@@ -1,54 +1,54 @@
-# Delivery And QC
+# 交付与质量控制
 
-Use this reference when output must be reviewed, handed to a client, prepared for platform upload, localized, archived, or delivered as part of a professional campaign.
+当输出内容需要审核、交付客户、准备平台上传、本地化、归档或作为专业营销活动的一部分进行交付时，请使用此参考文档。
 
-## Delivery Preflight
+## 交付前检查
 
-| Area | Check |
+| 检查项 | 检查内容 |
 |---|---|
-| Picture | frame rate, resolution, aspect ratio, crop, safe area, stabilization, flicker, banding |
-| Color | working space, look notes, HDR/SDR target, product/brand color, legal range if required |
-| Audio | sync, loudness, true peak, dialogue clarity, stems, M&E, silence where intended |
-| Text | captions, subtitles, forced narrative, on-screen copy, title-safe placement |
-| Continuity | wardrobe, props, screen direction, product orientation, light direction, last-frame handoffs |
-| Rights | references, music, voice, likeness, product/brand authorization, stock licenses |
-| Metadata | job ID, model/surface, prompt version, seed/settings if available, source URLs, approval owner |
-| Versioning | hero, cutdown, vertical, square, textless, localized, archival |
-| Human QC | watch all outputs at normal speed and pause on fragile frames |
+| 画面 | 帧率、分辨率、宽高比、裁剪、安全区域、防抖、闪烁、色带 |
+| 色彩 | 工作色彩空间、视觉风格备注、HDR/SDR 目标、产品/品牌色、如需则检查法律合规范围 |
+| 音频 | 同步、响度、真峰值、对白清晰度、分轨、M&E（音乐与效果轨）、预期静音处 |
+| 文字 | 字幕、隐藏式字幕、强制叙事字幕、屏幕文案、标题安全区域放置 |
+| 连贯性 | 服装、道具、屏幕方向、产品朝向、光线方向、末帧衔接 |
+| 版权 | 参考素材、音乐、配音、肖像权、产品/品牌授权、素材库许可 |
+| Metadata | job ID、model/surface、prompt version、seed/settings（如可用）、source URLs、approval owner |
+| 版本管理 | hero、cutdown、vertical、square、textless、localized、archival |
+| 人工质检 | 以正常速度观看所有输出内容，并在易出问题帧处暂停检查 |
 
-## Naming Pattern
+## 命名规范
 
-Use consistent names:
+使用统一的命名格式：
 
 `PROJECT_CAMPAIGN_VERSION_RATIO_LANG_DATE_STATUS`
 
-Example:
+示例：
 
 `LUMA_BOTTLE_HERO_15S_9x16_TEXTLESS_2026-05-30_REVIEW01`
 
-## Client Review Packet
+## 客户审核包
 
-Include:
+包含内容：
 
-- concept/treatment;
-- shot list and accepted prompts;
-- reference role map and rights notes;
-- exported review links/files;
-- known issues and recommended fixes;
-- approval questions;
-- delivery spec assumptions.
+- 概念/创意方案；
+- 镜头列表及已确认的提示词；
+- 参考素材角色映射及版权备注；
+- 导出的审核链接/文件；
+- 已知问题及建议修复方案；
+- 待审批问题；
+- 交付规格假设说明。
 
-## QC Failure Routing
+## 质检问题处理流程
 
-| Failure | Route |
+| 问题类型 | 处理方案 |
 |---|---|
-| face/product/text drift | I2V lock, edit pass, composite in post, or regenerate from stable frame |
-| continuity mismatch | update continuity ledger and regenerate only affected shot |
-| color mismatch | grade/conform first; only regenerate if lighting intent is wrong |
-| caption/text issue | remove generated text and add typography in post |
-| loudness/sync issue | fix mix or edit timing; do not rely on prompt repair alone |
-| unsafe or rights issue | rewrite to original/authorized material and document rights |
+| 人脸/产品/文字漂移 | I2V 锁定、剪辑调整、后期合成，或从稳定帧重新生成 |
+| 连贯性不一致 | 更新连贯性记录，仅重新生成受影响的镜头 |
+| 色彩不一致 | 先进行调色/匹配；仅当光线意图错误时才重新生成 |
+| 字幕/文字问题 | 移除生成的文字，在后期添加排版文字 |
+| 响度/同步问题 | 修复混音或剪辑时序；不要仅依赖提示词修复 |
+| 安全或版权问题 | 改写为原始/授权素材，并记录版权信息 |
 
-## Done Definition
+## 完成定义
 
-A professional Seedance asset is done only when the creative owner approves the shot, the rights map is clean, continuity is tracked, the post handoff is explicit, and the delivery target has passed human QC.
+一个专业的 Seedance 素材仅在以下条件全部满足时才算完成：创意负责人已审批该镜头、版权映射清晰无误、连贯性已追踪记录、后期交接明确、交付目标已通过人工质检。

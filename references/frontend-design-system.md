@@ -1,30 +1,30 @@
-# Frontend Design System
+# 前端设计系统
 
-This repository has no application frontend. The user-facing frontend is the GitHub README, generated bitmap assets, and SVG support assets.
+本仓库不包含应用程序前端。面向用户的前端即为 GitHub README、生成的位图资源以及 SVG 辅助资源。
 
-## Design goals
+## 设计目标
 
-- Clean, cinematic, high-contrast presentation.
-- No collapsed Markdown.
-- No overloaded neon copy.
-- Usable on GitHub mobile and dark mode.
-- Clear start-here decision path.
-- Validation commands visible above the fold after the skill map.
+- 呈现简洁、具有电影感且高对比度的视觉效果。
+- 不使用折叠的 Markdown 区块。
+- 避免过度堆砌的霓虹风格文案。
+- 兼容 GitHub 移动端与深色模式。
+- 提供清晰的“从这里开始”决策路径。
+- 验证命令需置于技能图谱之后、首屏可见的区域内。
 
-## Asset rules
+## 资源规范
 
-- Use SVG for simple structural support diagrams.
-- Use generated bitmap images for the README hero, operating-system infographic, skill-map infographic, capability map, CDN delivery map, reference-role map, production-delivery map, and QC stack when the asset needs cinematic texture, real scene depth, or visual storytelling.
-- Bitmap hero/infographic/map assets should be logo-free, watermark-free, and readable at GitHub README width.
-- Text-rich infographics are allowed when labels are large, short, corrected, and repeated in accessible Markdown next to the image.
-- SVG assets must include `<title>` and `<desc>`.
-- No external scripts, images, fonts, or tracking in SVG assets.
-- Avoid generic lens dashboards, dense decorative noise, and unreadable micro labels.
-- Inspect generated text manually; reject garbled words, ugly font treatment, low contrast, noisy decoration, and placeholder-looking panels.
+- 简单的结构支撑图使用 SVG 格式。
+- 当资源需要电影级质感、真实场景深度或视觉叙事效果时，README 主视觉图、操作系统信息图、技能图谱信息图、能力地图、CDN 交付地图、参考角色地图、生产交付地图以及质检（QC）技术栈均使用生成的位图图像。
+- 位图主视觉/信息图/地图资源应无 Logo、无水印，且在 GitHub README 宽度下保持清晰可读。
+- 允许使用文字密集的信息图，但前提是标签字号大、内容简短、准确无误，并在图片旁以符合无障碍标准的 Markdown 文本重复呈现。
+- SVG 资源必须包含 `<title>` 和 `<desc>`。
+- SVG 资源中不得包含外部脚本、图片、字体或追踪代码。
+- 避免使用千篇一律的镜头仪表盘设计、密集的装饰性噪点以及难以辨认的微缩标签。
+- 需人工检查生成的文本；剔除乱码、字体排版丑陋、对比度低、装饰杂乱以及类似占位符的面板。
 
-## README rules
+## README 规范
 
-- No line longer than 500 characters.
-- Tables should have real newlines.
-- Every major section should answer a user decision: what is it, where do I start, what skills exist, how do I validate, what changed.
-- Bitmap hero art should avoid watermarks and tiny text. Text-rich infographic labels must also be represented in Markdown for accessibility and search.
+- 单行长度不得超过 500 个字符。
+- 表格中应保留真实换行符。
+- 每个主要章节都应解答用户的核心决策问题：它是什么、我从哪里开始、具备哪些技能、如何验证、有哪些变更。
+- 位图主视觉应避免水印和极小字体。文字密集的信息图标签也必须在 Markdown 中同步呈现，以兼顾无障碍访问与搜索优化。

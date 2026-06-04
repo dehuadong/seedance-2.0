@@ -1,55 +1,55 @@
-# Agent Compatibility
+# Agent 兼容性
 
 last_verified: 2026-05-30
 
-Use this file when reviewing whether this repository is shaped correctly as an Agent Skill package. This is about packaging and agent behavior, not Seedance model capability.
+在审查此仓库是否正确构建为 Agent Skill 软件包时，请使用本文件。此处关注的是软件包封装与 Agent 行为，而非 Seedance 模型能力。
 
-## Current Agent-Skill Shape
+## 当前 Agent-Skill 结构
 
-Codex's current Agent Skills documentation describes a skill as a directory with a required `SKILL.md` file plus optional `scripts/`, `references/`, `assets/`, and `agents/` folders. It also describes progressive disclosure: the agent sees the name, description, and path first, then loads the full `SKILL.md` only when the skill matches the task.
+Codex 当前的 Agent Skills 文档将技能描述为一个包含必需 `SKILL.md` 文件，以及可选 `scripts/`、`references/`、`assets/` 和 `agents/` 文件夹的目录。它还描述了渐进式披露机制：Agent 首先仅看到名称、描述和路径，仅当技能与任务匹配时才加载完整的 `SKILL.md`。
 
-This repository follows that pattern:
+本仓库遵循该模式：
 
-| Agent-skill expectation | Repository location | Status |
+| Agent-skill 期望项 | 仓库位置 | 状态 |
 |---|---|---|
-| Root skill metadata and routing | `SKILL.md` | Present |
-| Task-specific sub-skills | `skills/*/SKILL.md` | Present |
-| Dense reference material | `references/*.md` | Present |
-| Validation and maintenance scripts | `scripts/*.py` | Present |
-| README-facing visual resources | `assets/*` | Present |
-| Codex UI metadata | `agents/openai.yaml` | Present |
-| Behavioral evals | `evals/evals.json` | Present |
-| CI validation | `.github/workflows/validate-skills.yml` | Present |
-| Local Codex installer | `scripts/install_codex_skill.py` | Present |
+| 根技能元数据与路由 | `SKILL.md` | 已存在 |
+| 任务特定子技能 | `skills/*/SKILL.md` | 已存在 |
+| 密集参考材料 | `references/*.md` | 已存在 |
+| 验证与维护脚本 | `scripts/*.py` | 已存在 |
+| README 面向的视觉资源 | `assets/*` | 已存在 |
+| Codex UI 元数据 | `agents/openai.yaml` | 已存在 |
+| 行为评估 | `evals/evals.json` | 已存在 |
+| CI 验证 | `.github/workflows/validate-skills.yml` | 已存在 |
+| 本地 Codex 安装器 | `scripts/install_codex_skill.py` | 已存在 |
 
-## Compatibility Rules
+## 兼容性规则
 
-- Keep every active `description` in third-person activation wording so tools can match it from a shortened skill list.
-- Keep the root `SKILL.md` small. Route to sub-skills and references instead of copying long tables into the root.
-- Keep volatile facts in dated references such as `api-status.md` and `source-registry.md`.
-- Keep generated bitmap images inside `assets/` if they are referenced by README.
-- Keep `agents/openai.yaml` aligned with the root skill name and make the default prompt invoke `$seedance-20`.
-- Use `scripts/install_codex_skill.py --force` to install or refresh the local user-level Codex copy at `$CODEX_HOME/skills/seedance-20` or `~/.codex/skills/seedance-20`.
-- Keep scripts deterministic and local. They should validate structure, schema, design, and source metadata without requiring private credentials.
-- Do not store API keys, account cookies, or private prompt corpora in the skill package.
+- 保持每个活跃 `description` 使用第三人称激活措辞，以便工具能从精简技能列表中匹配。
+- 保持根 `SKILL.md` 精简。路由至子技能和参考文件，而非将长表格复制到根目录。
+- 将易变事实存放在带日期的参考文件中，例如 `api-status.md` 和 `source-registry.md`。
+- 若位图图像被 README 引用，请将其保留在 `assets/` 内。
+- 保持 `agents/openai.yaml` 与根技能名称对齐，并确保默认提示词调用 `$seedance-20`。
+- 使用 `scripts/install_codex_skill.py --force` 安装或刷新本地用户级 Codex 副本至 `$CODEX_HOME/skills/seedance-20` 或 `~/.codex/skills/seedance-20`。
+- 保持脚本确定性与本地化。它们应验证结构、模式、设计与源元数据，而无需私有凭证。
+- 切勿在技能包中存储 API 密钥、账户 Cookie 或私有提示词语料库。
 
-## Cross-Client Notes
+## 跨客户端说明
 
-Different agent clients scan different local paths. Codex documentation says Codex scans `.agents/skills` locations from the current directory upward, plus user/admin/system skill locations. A repository root with `SKILL.md` has the right skill-folder shape, but it is not automatically discovered as a repository skill unless installed under a scanned skill directory or packaged through the relevant plugin/distribution path. Other agent clients may use `.claude/skills`, `.gemini/skills`, `.github/skills`, `.cursor/skills`, or `.windsurf/skills`. Treat those as installation targets, not separate source trees.
+不同 Agent 客户端扫描不同的本地路径。Codex 文档指出，Codex 会从当前目录向上扫描 `.agents/skills` 位置，以及用户/管理员/系统技能位置。具有 `SKILL.md` 的仓库根目录具备正确的技能文件夹结构，但除非安装在被扫描的技能目录下，或通过相关插件/分发路径打包，否则不会自动被识别为仓库技能。其他 Agent 客户端可能使用 `.claude/skills`、`.gemini/skills`、`.github/skills`、`.cursor/skills` 或 `.windsurf/skills`。请将这些视为安装目标，而非独立的源代码树。
 
-Runway MCP is a separate agent connector surface. It can expose Seedance 2.0 through Runway inside MCP-compatible agents, but it does not make this repository a Runway plugin and does not change Codex skill installation rules.
+Runway MCP 是独立的 Agent 连接器表面。它可通过 Runway 在 MCP 兼容的 Agent 中暴露 Seedance 2.0，但不会使本仓库成为 Runway 插件，也不会改变 Codex 技能安装规则。
 
-## Source Signals
+## 来源信号
 
-- OpenAI Codex Agent Skills docs: https://developers.openai.com/codex/skills
-- OpenAI Codex Plugins docs: https://developers.openai.com/codex/plugins
-- OpenAI Academy plugins and skills explainer: https://openai.com/academy/codex-plugins-and-skills/
-- OpenAI skills catalog: https://github.com/openai/skills
-- Agent Skills open standard overview: https://agentskills.io/
-- Runway MCP announcement: https://runwayml.com/news/mcp
+- OpenAI Codex Agent Skills 文档：https://developers.openai.com/codex/skills
+- OpenAI Codex Plugins 文档：https://developers.openai.com/codex/plugins
+- OpenAI Academy 插件与技能说明：https://openai.com/academy/codex-plugins-and-skills/
+- OpenAI 技能目录：https://github.com/openai/skills
+- Agent Skills 开放标准概览：https://agentskills.io/
+- Runway MCP 公告：https://runwayml.com/news/mcp
 
-## Do Not Claim
+## 禁止声明
 
-- Do not claim every agent client can install directly from this repository URL.
-- Do not claim every client honors the same metadata fields beyond `name` and `description`.
-- Do not claim this repository provides a live Seedance API wrapper. It is an agent-skill workflow and reference package.
+- 切勿声明每个 Agent 客户端都能直接从本仓库 URL 安装。
+- 切勿声明每个客户端都认可 `name` 和 `description` 之外的相同元数据字段。
+- 切勿声明本仓库提供实时的 Seedance API 封装。它是一个 Agent 技能工作流与参考软件包。

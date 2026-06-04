@@ -1,52 +1,35 @@
 ---
 name: seedance-copyright
-description: "This skill should be used when a Seedance 2.0 prompt mentions named characters, franchises, studios, celebrities, public figures, private people, brand logos, copyrighted scenes, songs, voices, or real-person likeness workflows and needs an IP-safe rewrite."
-license: MIT
-user-invocable: true
-tags:
-  - copyright
-  - ip
-  - likeness
-  - safety
-  - seedance-20
-metadata:
-  version: "5.4.5"
-  updated: "2026-05-30"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+description: '当 Seedance 2.0 提示词提及命名角色、系列作品、工作室、名人、公众人物、私人个体、品牌徽标、受版权保护的场景、歌曲、声音，或涉及真人肖像工作流且需要知识产权安全重写时，应使用此技能。'
 ---
 
 # seedance-copyright
 
-Use this before finalizing prompts involving protected IP, named brands, public figures, private people, voices, logos, songs, studios, exact scenes, or lookalike character requests. The goal is not to dilute the idea; the goal is to preserve the creative function with original, authorized, and safer production language.
+在最终确定涉及受保护知识产权、命名品牌、公众人物、私人个体、声音、徽标、歌曲、工作室、精确场景或相似角色请求的提示词前使用此技能。目标并非削弱创意，而是用原创、授权且更安全的制作语言保留创意功能。
 
-## Rewrite Principle
+## 重写原则
 
-Preserve the scene function, genre, mood, camera logic, emotional beat, and production intent. Replace protected identity with an original archetype, original costume logic, original world details, and descriptive style layers.
+保留场景功能、类型、情绪、摄像机逻辑、情感节拍及制作意图。将受保护身份替换为原创原型、原创服装逻辑、原创世界细节及描述性风格层次。
 
-| Risk | Replace with |
-|---|---|
-| Named character or franchise | Original archetype, genre function, and non-identical costume language |
-| Studio or living-creator style | Medium, texture, palette, composition, line quality, and motion rhythm |
-| Celebrity or private person | Original performer description or authorized reference workflow |
-| Brand logo | Generic product mark, blank label, or user-owned brand if explicitly authorized |
-| Song, voice, or performance | Tempo, energy, instrumentation, mood, or newly composed sound direction |
-| Exact scene recreation | Original scene with similar narrative function and different setting/blocking |
+| 风险                   | 替换为                                                 |
+| ---------------------- | ------------------------------------------------------ |
+| 命名角色或系列作品     | 原创原型、类型功能及非相同服装语言                     |
+| 工作室或在世创作者风格 | 媒介、质感、调色板、构图、线条质量及运动节奏           |
+| 名人或私人个体         | 原创表演者描述或授权参考工作流                         |
+| 品牌徽标               | 通用产品标识、空白标签，或用户明确授权时使用的自有品牌 |
+| 歌曲、声音或表演       | 节奏、能量、乐器配置、情绪，或新创作的音效方向         |
+| 精确场景复刻           | 具有相似叙事功能但不同场景/场面调度的原创场景          |
 
-## Authorization Gate
+## 授权门控
 
-If the user clearly owns the brand, asset, or likeness rights, keep the authorized elements but still preserve them with explicit constraints. If authorization is unclear, ask a short confirmation or provide a safe original rewrite. Do not assume rights from an uploaded image, song, or video.
+若用户明确拥有品牌、素材或肖像权，保留授权元素但仍需用显式约束条件加以保护。若授权不明确，提出简短确认或提供安全的原创重写方案。勿从上传的图片、歌曲或视频中推定权利归属。
 
-For real human faces, portraits, or voices, separate three questions: does the active surface support the input, does the user have authorization, and does the prompt avoid imitation of a public figure or private person without consent. Some surfaces use verified virtual portrait assets or authorization flows; do not collapse those into a universal allow or deny rule.
+对于真人面部、肖像或声音，需区分三个问题：当前界面是否支持该输入、用户是否拥有授权、提示词是否避免在未经同意的情况下模仿公众人物或私人个体。部分界面使用经认证的虚拟肖像素材或授权流程；勿将其简化为通用的允许或拒绝规则。
 
-## Safe Replacement Example
+## 安全替换示例
 
-Instead of a named superhero swinging through a recognizable franchise city, write: `original masked rooftop courier in a red weatherproof jacket leaps between rain-slick buildings, low handheld tracking camera, blue police lights far below, no logos or franchise symbols`.
+与其让命名超级英雄在可识别的系列作品城市中摆荡，不如写：`original masked rooftop courier in a red weatherproof jacket leaps between rain-slick buildings, low handheld tracking camera, blue police lights far below, no logos or franchise symbols`（原创蒙面屋顶信使身穿红色防雨夹克，在雨滑楼宇间跳跃，低机位手持跟拍，远处下方有蓝色警灯，无徽标或系列作品符号）。
 
-## Output Contract
+## 输出约定
 
-Return risk category, what was changed, safe replacement prompt, authorization requirement, and any residual constraints.
+返回风险类别、变更内容、安全替换提示词、授权要求及任何剩余约束条件。

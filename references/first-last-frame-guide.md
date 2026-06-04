@@ -1,59 +1,59 @@
-# First/Last Frame Guide
+# 首帧/尾帧指南
 
 last_verified: 2026-05-30
 
-Use this guide for FLF2V, first-frame/last-frame transitions, Chinese `首帧/尾帧`, or requests to generate the motion between two images.
+本指南适用于 FLF2V（首帧/尾帧生成视频）、首帧/尾帧过渡、中文语境下的“首帧/尾帧”，或请求在两张图像之间生成动态内容的场景。
 
-Source boundary: official ByteDance material supports multimodal references, editing, extension, and R2V examples. Volcengine now documents first-frame and last-frame roles on its video-generation surface. The exact `FLF2V` label is still product-surface vocabulary, so use the active surface's field names when implementing.
+来源边界：官方字节跳动（ByteDance）资料支持多模态参考、编辑、扩展及 R2V（参考图生成视频）示例。火山引擎（Volcengine）现已在其视频生成界面中明确了首帧和尾帧的角色定义。确切的 `FLF2V` 标签目前仍属于产品界面词汇，因此在实际实现时，请使用当前活动界面/产品的字段名称。
 
-## Core Principle
+## 核心原则
 
-The first frame defines where the clip begins. The last frame defines the target state. The prompt should describe only the transition logic, camera behavior, lighting continuity, audio intent, and what must stay unchanged.
+首帧定义片段的起始状态。尾帧定义目标状态。提示词应仅描述过渡逻辑、运镜行为、光照连续性、音频意图，以及必须保持不变的内容。
 
-## Reference Roles
+## 参考角色定义
 
-| Role | English wording | Chinese wording | Russian wording |
+| 角色 | 英文表述（已译） | 中文表述 | 俄文表述（已译） |
 |---|---|---|---|
-| First frame | `[Image1] is the first frame.` | `@图1 为首帧。` | `[Image1] как первый кадр.` |
-| Last frame | `[Image2] is the last frame.` | `@图2 为尾帧。` | `[Image2] как последний кадр.` |
-| Identity lock | `Preserve the same subject identity, outfit, shape, and scene logic.` | `保持同一主体、服装、形状和场景逻辑。` | `Сохранить того же персонажа, одежду, форму и логику сцены.` |
-| Transition only | `Generate only the motion between the two frames.` | `只生成两帧之间的连续动作。` | `Сгенерировать только переход между кадрами.` |
+| 首帧 | `[Image1] 为首帧。` | `@图1 为首帧。` | `[Image1] 作为首帧。` |
+| 尾帧 | `[Image2] 为尾帧。` | `@图2 为尾帧。` | `[Image2] 作为尾帧。` |
+| 身份锁定 | `保持同一主体、服装、形状和场景逻辑。` | `保持同一主体、服装、形状和场景逻辑。` | `保持同一角色、服装、外形及场景逻辑。` |
+| 仅过渡 | `仅生成两帧之间的连续动作。` | `只生成两帧之间的连续动作。` | `仅生成两帧之间的过渡。` |
 
-## Surface Field Notes
+## 界面字段说明
 
-| Surface | Practical wording |
+| 平台/界面 | 实用表述/说明 |
 |---|---|
-| Volcengine/Ark | Use current docs to verify `first_frame`, `last_frame`, `image_with_roles`, duration, resolution, and whether video/audio references can be mixed with first/last-frame mode. |
-| Runway | Use `promptImage` positions such as `first` or `last` on the Runway surface, and recheck the current API docs before assuming field parity with Volcengine. |
-| ComfyUI / partner workflows | `FLF2V` is useful workflow shorthand, but still confirm the node's exact inputs and face/portrait policy. |
+| 火山引擎/Ark | 查阅最新文档以确认 `first_frame`、`last_frame`、`image_with_roles`、时长、分辨率，以及是否可在首尾帧模式下混合视频/音频参考。 |
+| Runway | 在 Runway 界面中使用 `promptImage` 的位置参数（如 `first` 或 `last`），在假设其与火山引擎字段完全对应前，请务必重新核对当前 API 文档。 |
+| ComfyUI / 合作工作流 | `FLF2V` 可作为工作流的简写标签，但仍需确认节点的具体输入要求及面部/肖像政策。 |
 
-## Prompt Template
+## 提示词模板
 
 ```text
-[Image1] is the first frame. [Image2] is the last frame.
-Preserve [subject/product/character], [outfit/logo/shape], and scene layout.
-Generate a continuous transition from [starting state] to [ending state].
-Motion: [one physical action path].
-Camera: [one controlled move or locked frame].
-Lighting: [source and continuity].
-Sound: [ambience/dialogue/SFX/music/silence].
-Constraints: no new text, no watermark, no identity change, no object redesign.
+[Image1] 为首帧。[Image2] 为尾帧。
+保持 [主体/产品/角色]、[服装/Logo/外形] 及场景布局不变。
+生成从 [起始状态] 到 [结束状态] 的连续过渡。
+动作：[单一物理动作路径]。
+运镜：[单一受控移动或固定机位]。
+光照：[光源与连续性说明]。
+声音：[环境音/对话/音效/音乐/静音]。
+约束条件：无新增文字、无水印、无身份变化、无物体重新设计。
 ```
 
-## Product-Safe Transition
+## 产品安全过渡
 
-`[Image1] is the first frame and [Image2] is the last frame. Preserve the bottle logo, label, glass shape, cap geometry, and color exactly. Only the condensation and light change: droplets gather at the shoulder, slide toward the label, and a narrow warm highlight travels left to right. Camera stays locked in a medium product shot. Sound: low room tone, one soft glass tick at the end.`
+`[Image1] 为首帧，[Image2] 为尾帧。精确保持瓶身 Logo、标签、玻璃形状、瓶盖几何结构及颜色。仅改变冷凝水与光照：水珠在瓶肩处汇聚，向标签方向滑落，一道狭窄的暖色高光从左向右移动。相机保持锁定在中等产品特写机位。声音：低沉的环境底噪，结尾处一声轻微的玻璃碰撞声。`
 
-## Character-Safe Transition
+## 角色安全过渡
 
-`[Image1] is the first frame and [Image2] is the last frame. Preserve the original character's face structure, hairstyle, jacket, and room layout. The character slowly stands from the chair, turns toward the window, and stops in the final pose. Camera: locked medium shot with a slight push-in. Lighting: same cool window light, warmer lamp glow at the end. Sound: quiet room tone and soft floor creak.`
+`[Image1] 为首帧，[Image2] 为尾帧。保持原角色的面部结构、发型、夹克及房间布局不变。角色缓慢从椅子上站起，转向窗户，并在最终姿势停下。运镜：锁定中景机位，伴随轻微推进。光照：相同的冷色调窗户光，结尾处台灯暖光增强。声音：安静的房间底噪与轻微的地板嘎吱声。`
 
-## Common Failures
+## 常见失败案例与修复
 
-| Failure | Repair |
+| 失败现象 | 修复方法 |
 |---|---|
-| Subject morphs | Lock only the identity anchors that matter; remove extra style changes. |
-| Product/logo redraws | Use locked camera and say only light/weather moves. |
-| Jump cut | Add "continuous transition" and one physical action path. |
-| Camera chaos | Replace multiple moves with locked frame or one slow push-in. |
-| Ending misses target | State that `[Image2]` is the final visual target, not just mood reference. |
+| 主体变形（Morphs） | 仅锁定关键的身份锚点；移除多余的风格变化指令。 |
+| 产品/Logo 重绘 | 使用固定机位，并仅说明光照/天气变化。 |
+| 跳剪（Jump cut） | 添加“连续过渡”描述及单一物理动作路径。 |
+| 运镜混乱 | 将多个运镜指令替换为固定机位或单一缓慢推进。 |
+| 结尾偏离目标 | 明确声明 `[Image2]` 是最终的视觉目标，而不仅仅是氛围参考。 |

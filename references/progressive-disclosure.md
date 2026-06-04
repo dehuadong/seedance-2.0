@@ -1,14 +1,14 @@
-# Progressive Disclosure Plan
+# 渐进式披露计划
 
-The root skill should route. Sub-skills should decide. References should carry dense tables and volatile facts.
+根技能负责路由，子技能负责决策，参考资料承载密集表格与动态更新的事实。
 
-| Content | Location | Load condition |
+| 内容 | 存放位置 | 加载条件 |
 |---|---|---|
-| Routing, high-level rules | `SKILL.md` | Always |
-| Prompt construction | `skills/seedance-prompt/SKILL.md` | Prompt-writing tasks |
-| Platform/API facts | `references/api-status.md` | Platform or API tasks |
-| Vocabulary lists | Language skills + references | Translation/compression tasks |
-| Safety and IP | `seedance-copyright` + `platform-constraints` | Protected identity or safety-sensitive tasks |
-| Long examples | `seedance-examples-zh` or future `examples/` | User asks for examples |
+| 路由规则、高层级原则 | `SKILL.md` | 始终加载 |
+| 提示词构建 | `skills/seedance-prompt/SKILL.md` | 执行提示词撰写任务时 |
+| 平台/API 事实信息 | `references/api-status.md` | 执行平台或 API 相关任务时 |
+| 词汇列表 | 语言技能 + 参考资料 | 执行翻译/压缩任务时 |
+| 安全与知识产权 | `seedance-copyright` + `platform-constraints` | 涉及受保护身份或安全敏感任务时 |
+| 长示例 | `seedance-examples-zh` 或未来的 `examples/` | 用户请求示例时 |
 
-Do not move large databases back into active sub-skill bodies.
+请勿将大型数据库移回活跃的子技能主体中。

@@ -1,56 +1,40 @@
 ---
 name: seedance-audio
-description: "This skill should be used when the user asks for Seedance 2.0 audio, dialogue, lip-sync, music, sound effects, ambience, beat-sync, audio-reference mapping, desync troubleshooting, or sound-driven visual timing."
-license: MIT
-user-invocable: true
-tags:
-  - audio
-  - lip-sync
-  - dialogue
-  - seedance-20
-metadata:
-  version: "5.4.5"
-  updated: "2026-05-30"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+description: '当用户请求 Seedance 2.0 音频、对话、口型同步、音乐、音效、环境音、节拍同步、音频参考映射、不同步故障排查或声音驱动视觉时机时，应使用此技能。'
 ---
 
 # seedance-audio
 
-Use this for dialogue, lip-sync, sound layers, music, ambience, beat-sync, audio-reference mapping, desync troubleshooting, or sound-driven visual timing. Audio should support the visible beat instead of becoming a second competing prompt.
+本技能用于对话、口型同步、声音层次、音乐、环境音、节拍同步、音频参考映射、不同步故障排查或声音驱动视觉时机。音频应支持可见节拍，而非成为第二个相互竞争的提示词。
 
-Load `[ref:audio-guide]` for detailed constraints, beat-sync, desync repair, audio-reference conflicts, and multi-character workarounds. Load `[ref:audio-post-delivery]` when the user needs stems, M&E, dubbing, loudness, sync, mix, or delivery guidance.
+加载 `references/audio-guide.md` 获取详细约束、节拍同步、不同步修复、音频参考冲突及多角色变通方案。当用户需要分轨、M&E、配音、响度、同步、混音或交付指导时，加载 `references/audio-post-delivery.md`。
 
-## Core Rules
+## 核心规则
 
-Keep dialogue short, quote spoken lines, and assign every line to a named speaker. Prefer locked or stable framing for lip-sync. Remove head-turning, large face motion, extreme camera moves, or busy hand gestures while mouth accuracy matters. Treat `[Audio1]` as a rhythm, pacing, mood, voice-tone, or ambience reference unless the active platform documents exact playback behavior.
+保持对话简短，引用具体台词，并将每句台词分配给命名说话人。口型同步时优先使用锁定或稳定构图。当口型精度关键时，移除转头、大幅面部运动、极端摄像机运动或复杂手部手势。除非当前平台文档明确说明精确播放行为，否则将 `[Audio1]` 视为节奏、节拍、情绪、音色或环境音参考。
 
-## Sound Layer Pattern
+## 声音层次模式
 
-Use compact layers: `Dialogue: ... Sound: ... SFX: ... Music: ... Silence: ...`. Include only the layers that matter. Silence is valid when it sharpens drama or avoids confusing lip-sync.
+使用紧凑层次：`Dialogue: ... Sound: ... SFX: ... Music: ... Silence: ...`。仅包含必要的层次。当静默能强化戏剧性或避免口型同步混淆时，静默是有效选项。
 
-| Need | Stable audio direction |
-|---|---|
-| Lip-sync | `Character A, locked medium close-up, says "I found it." Clear dry dialogue, no head turn.` |
-| Product ad | `Sound: low room tone. SFX: magnetic click on lid open, soft glass chime at final frame.` |
-| Beat sync | `[Audio1] provides tempo only; light pulses and foot taps match the downbeat.` |
-| Drama | `Distant rain and refrigerator hum; no music during the line.` |
-| Action | `Breathing grows louder, shoe squeak at landing, metal door buzzer at endpoint.` |
+| 需求     | 稳定音频指导                                                                                                                                              |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 口型同步 | `Character A, locked medium close-up, says "I found it." Clear dry dialogue, no head turn.`（角色 A，锁定中近景，说"我找到了。"清晰干声对话，无转头。）   |
+| 产品广告 | `Sound: low room tone. SFX: magnetic click on lid open, soft glass chime at final frame.`（音效：低环境底噪。音效：开盖时磁性咔哒声，终帧时柔和玻璃音。） |
+| 节拍同步 | `[Audio1] provides tempo only; light pulses and foot taps match the downbeat.`（`[Audio1]` 仅提供节奏；灯光脉冲与脚步轻踏匹配强拍。）                     |
+| 戏剧感   | `Distant rain and refrigerator hum; no music during the line.`（远处雨声与冰箱嗡鸣；台词期间无配乐。）                                                    |
+| 动作     | `Breathing grows louder, shoe squeak at landing, metal door buzzer at endpoint.`（呼吸声渐强，落地时鞋面摩擦声，终点时金属门蜂鸣音。）                    |
 
-## Multi-Character Dialogue
+## 多角色对话
 
-Use one speaker per short clip when reliability matters. If two characters must speak, separate turns and keep the camera stable: `Character A says... pause. Character B answers...`. For complex exchanges, recommend generating controlled single-speaker clips and compositing in post.
+当可靠性关键时，每个短视频片段仅使用一位说话人。若必须有两位角色对话，分开轮次并保持摄像机稳定：`Character A says... pause. Character B answers...`（角色 A 说...停顿。角色 B 回答...）。对于复杂对话交换，建议生成受控的单说话人片段并在后期合成。
 
-## Failure Fixes
+## 故障修复
 
-If dialogue desyncs, shorten the line, lock the camera, remove head turns, clean the audio role, and reduce competing SFX. If the wrong speaker talks, assign tags and split lines by speaker. If audio is ignored, remove extra music/SFX instructions and make the reference role explicit.
+若对话不同步，缩短台词、锁定摄像机、移除转头动作、清理音频角色并减少竞争性音效。若错误说话人发声，分配标签并按说话人拆分台词。若音频被忽略，移除额外音乐/音效指令并明确参考角色。
 
-If audio and video references fight each other, mute the reference video before upload when possible, or make the priority explicit: `[Video1] controls camera only; [Audio1] controls tempo and energy`.
+若音频与视频参考相互冲突，上传前尽可能静音参考视频，或明确优先级：`[Video1] controls camera only; [Audio1] controls tempo and energy`（`[Video1]` 仅控制摄像机；`[Audio1]` 控制节奏与能量）。
 
-## Output Contract
+## 输出约定
 
-Return speaker map, quoted dialogue, sound layers, audio reference role, lip-sync constraints, post/delivery notes if needed, and a compact prompt-ready audio block.
+返回说话人映射、引用台词、声音层次、音频参考角色、口型同步约束、必要时附后期/交付说明，以及一句紧凑的提示词就绪音频模块。

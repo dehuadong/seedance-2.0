@@ -1,41 +1,41 @@
-# Field-Observed Tips
+# 实地观察建议
 
 last_verified: 2026-05-30
 
-These are practitioner patterns gathered from public community material. Treat them as field-observed, not official platform guarantees.
+这些是从公开社区资料中收集到的从业者经验模式。请将其视为一线实践观察，而非官方平台的保证。
 
-## Stable Workflow
+## 稳定工作流
 
-1. Draft short before long: test 3-5 seconds before spending on a 10-15 second clip.
-2. Change one variable per retry: camera, lighting, motion, or reference role.
-3. Bind every reference asset to one job.
-4. Use locked framing for fragile identity, product logos, readable text, lip-sync, hands, or complex VFX.
-5. Use video references for motion rhythm or camera behavior, not unauthorized identity transfer.
-6. Use audio references for tempo, mood, or ambience unless the voice/music is owned, licensed, or authorized.
-7. Prefer edit, extend, or segment replacement over regenerating a whole clip when only one beat fails.
-8. For continuation, save the returned last frame when the surface supports it and use it as the next first-frame anchor.
-9. If an audio reference should control timing, mute competing reference videos before upload or explicitly lower their role to camera/motion only.
+1. 先短后长：在投入制作 10-15 秒的片段前，先用 3-5 秒进行测试。
+2. 每次重试仅更改一个变量：机位、光照、运动或参考素材的角色。
+3. 每个参考素材仅绑定至单一生成任务。
+4. 针对易失真的人物特征、产品 Logo、可读文本、口型同步、手部或复杂特效，请使用固定构图（locked framing）。
+5. 视频参考仅用于提供运动节奏或摄像机行为，切勿用于未经授权的身份迁移。
+6. 音频参考仅用于控制节奏、情绪或氛围，除非该语音/音乐已拥有版权、获得许可或授权。
+7. 若仅某一关键节点失败，优先选择编辑、延展或局部替换，而非重新生成整个片段。
+8. 如需延续生成，在平台界面支持的情况下保存返回的最后一帧，并将其用作下一段生成的首帧锚点。
+9. 若需音频参考控制时间节奏，请在上传前静音冲突的视频参考，或明确将其角色降级为仅提供机位/运动参考。
 
-## Prompt Discipline
+## 提示词规范
 
-| Weak pattern | Stronger pattern |
+| 较弱写法 | 较优写法 |
 |---|---|
-| `cinematic, epic, beautiful` | `soft side backlight, wet asphalt reflections, locked medium shot, quiet room tone` |
-| `make it move naturally` | `shoulders rise once with breathing, hand releases the cup, final pose holds for one second` |
-| `use this video as style` | `[Video1] provides only side-tracking camera rhythm; do not transfer performer identity or background` |
-| `make product luxury` | `narrow warm light sweep across the label, black acrylic table reflection, no label redesign` |
+| `cinematic, epic, beautiful` | `柔和侧逆光，湿润柏油路面反光，固定中景，安静的环境底噪` |
+| `make it move naturally` | `随呼吸肩膀起伏一次，手松开杯子，最终姿态保持一秒` |
+| `use this video as style` | `[Video1] 仅提供侧向跟拍的摄像机节奏；请勿迁移表演者身份或背景` |
+| `make product luxury` | `狭窄的暖光扫过标签，黑色亚克力桌面倒影，不重新设计标签` |
 
-## High-Risk Areas
+## 高风险区域
 
-- Fast hand gestures.
-- Small text, signs, logos, labels, and subtitles.
-- Multi-character action without tags.
-- Multiple simultaneous camera moves.
-- Product transformations when identity must stay fixed.
-- Real-person faces, voices, celebrity likeness, and protected characters.
-- Long script-like prompts that ask for too many cuts, locations, and character turns in one generation.
-- Extension chains without a last-frame anchor; quality and continuity can degrade across retries.
+- 快速的手部动作。
+- 小型文本、标牌、Logo、标签及字幕。
+- 未加角色标签的多角色动作。
+- 多重同时进行的摄像机运动。
+- 需保持固定身份时的产品形变。
+- 真人面部、声音、名人肖像及受版权保护的角色。
+- 冗长如剧本的提示词，单次生成要求过多镜头切换、场景和角色转折。
+- 缺乏末帧锚点的连续延展链；多次重试后画质与连贯性可能下降。
 
-## Safe Hidden Trick
+## 稳妥的“隐藏技巧”
 
-The best "trick" is not bypassing filters. It is making intent legible: source, role, action path, camera endpoint, light source, sound cue, and constraint.
+最佳的“技巧”并非绕过安全过滤器，而是让意图清晰可辨：明确来源、角色、动作路径、摄像机终点、光源、声音提示及约束条件。

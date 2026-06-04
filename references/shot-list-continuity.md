@@ -1,75 +1,75 @@
-# Shot List And Continuity
+# 镜头清单与连续性
 
-Use this reference when a user asks for a film scene, ad sequence, multi-shot plan, storyboard, treatment-to-shot-list conversion, or continuity repair.
+当用户要求生成电影场景、广告序列、多镜头计划、分镜脚本、创意大纲转镜头清单，或修复连续性时，请使用此参考指南。
 
-## Pre-Production Brief
+## 前期制作简报
 
-Collect only what changes production decisions:
+仅收集会影响制作决策的信息：
 
-- objective: film scene, product ad, music video, trailer, social cutdown, internal pitch, test render;
-- audience and territory;
-- duration and target platforms;
-- hero subject, product, character, or brand;
-- references and what each one controls;
-- rights/authorization status;
-- dialogue/audio needs;
-- aspect ratios and delivery surfaces;
-- deadline, approval owner, and risk constraints.
+- 目标：电影场景、产品广告、音乐视频、预告片、社交媒体精简版、内部提案、测试渲染；
+- 受众与目标地区；
+- 时长与目标投放平台；
+- 核心主体、产品、角色或品牌；
+- 参考素材以及每项素材所控制的具体要素；
+- 版权/授权状态；
+- 对白/音频需求；
+- 画幅比例与交付媒介/终端；
+- 截止日期、审批负责人及风险限制。
 
-## Shot List Fields
+## 镜头清单字段
 
-| Field | Example |
+| 字段 | 示例 |
 |---|---|
-| Shot ID | `S01_SH03` |
-| Duration | `5s` |
-| Mode | T2V, I2V, R2V, FLF2V, edit, extend |
-| Purpose | establish, reveal, demonstrate, emotional turn, end card |
-| Subject/action | product rotates once; character lowers letter |
-| Shot contract | medium close-up, locked-off, 50mm portrait compression |
-| References | `[Image1] product identity`, `[Video1] camera rhythm`, `[Audio1] beat` |
-| Continuity anchors | wardrobe, prop, screen direction, light state, background layout |
-| Start frame | where the shot begins |
-| End frame | next-shot handoff or final target |
-| Audio | dialogue, ambience, SFX, music cue, silence |
-| Risks | face drift, logo text, hand complexity, unsafe likeness, prompt block |
-| Review notes | accept, retry, edit, extend, replace |
+| 镜头编号 | `S01_SH03` |
+| 时长 | `5s` |
+| 模式 | T2V、I2V、R2V、FLF2V、剪辑（edit）、延展（extend） |
+| 用途 | 建立场景、揭示信息、演示产品、情绪转折、结尾标版 |
+| 主体/动作 | 产品旋转一周；角色放下信件 |
+| 镜头合约 | 中近景、固定机位、50mm人像压缩感 |
+| 参考素材 | `[Image1] 产品身份标识`, `[Video1] 镜头节奏`, `[Audio1] 节拍` |
+| 连续性锚点 | 服装、道具、屏幕方向（轴线）、灯光状态、背景布局 |
+| 起始帧 | 镜头开始的位置 |
+| 结束帧 | 与下一镜头的交接点或最终目标状态 |
+| 音频 | 对白、环境音、音效、音乐提示音、静音 |
+| 风险 | 面部漂移、Logo文字变形、手部结构复杂、肖像权风险、提示词安全拦截 |
+| 审核备注 | 通过、重试、剪辑、延展、替换 |
 
-## Continuity Ledger
+## 连续性台账
 
-Track these anchors across shots:
+跨镜头跟踪记录以下锚点：
 
-| Anchor | What to record |
+| 锚点 | 记录内容 |
 |---|---|
-| Character | tag, wardrobe, hair, silhouette, prop, emotional state |
-| Product | label, logo, geometry, material, color, packshot angle |
-| Location | layout, left/right geography, doorway/window positions |
-| Screen direction | subject moves left-to-right or right-to-left |
-| Eyeline | where each character looks and whether it matches reverse shots |
-| Lighting | key direction, practical sources, time of day, atmosphere |
-| Camera | lens feel, height, stability, movement family |
-| Action state | what happened at previous endpoint |
-| Sound state | music, ambience, dialogue, sync cue |
+| 角色 | 标识、服装、发型、轮廓剪影、道具、情绪状态 |
+| 产品 | 标签、Logo、几何形状、材质、颜色、产品定格角度 |
+| 场景/地点 | 布局、左右空间地理关系、门窗位置 |
+| 屏幕方向（轴线） | 主体由左向右或由右向左运动 |
+| 视线 | 每个角色的注视点，以及是否与反打镜头匹配 |
+| 灯光 | 主光方向、现场光源、时间段、氛围 |
+| 摄影机 | 镜头质感、高度、稳定性、运动类型 |
+| 动作状态 | 上一镜头结束点发生的具体动作 |
+| 声音状态 | 音乐、环境音、对白、同步提示音 |
 
-## Treatment To Shot List
+## 创意大纲转镜头清单
 
-1. Extract the dramatic or commercial beats.
-2. Assign one Seedance clip per beat unless the beat is tiny and stable.
-3. Choose the fragile anchor for each clip: face, product, text, choreography, or endpoint.
-4. Select the safest mode: I2V for identity/product preservation, FLF2V for exact endpoints, R2V for role-bound motion or camera, edit for one-layer changes, extend for continuation.
-5. Create a shot contract and continuity anchors for every shot.
-6. Write prompts only after the shot list is stable.
+1. 提取戏剧性节拍或商业宣传节拍。
+2. 为每个节拍分配一个 Seedance 视频片段，除非该节拍极短且状态稳定。
+3. 为每个片段选定最脆弱的锚点：面部、产品、文字、编排动作或结束状态。
+4. 选择最安全的生成模式：I2V 用于保持身份/产品一致性，FLF2V 用于精确控制首尾帧，R2V 用于限定角色动作或摄影机运动，edit 用于单层修改，extend 用于画面延展。
+5. 为每个镜头制定镜头合约与连续性锚点。
+6. 仅在镜头清单确定稳定后，再编写提示词。
 
-## Three-Shot Commercial Pattern
+## 三镜头广告模板
 
-| Shot | Purpose | Prompt spine |
+| 镜头 | 用途 | 提示词骨架 |
 |---|---|---|
-| 1 | Problem or world | wide or medium environment, simple action, establish product context |
-| 2 | Product/material proof | close or macro, locked or slow push, material detail and one SFX |
-| 3 | Hero packshot/end state | product three-quarter, clean light, logo preserved, tagline handled in post |
+| 1 | 痛点或世界观呈现 | 广角或中景环境，简单动作，建立产品使用场景 |
+| 2 | 产品/材质实证 | 特写或微距，固定机位或缓慢推镜，展现材质细节并搭配一个音效 |
+| 3 | 核心产品定格/最终状态 | 产品四分之三视角，干净布光，保留 Logo，标语留待后期处理 |
 
-## Handoff Rules
+## 镜头衔接规则
 
-- Use the accepted last frame as the next first-frame reference when continuity matters.
-- Keep wardrobe, product orientation, screen direction, and light direction stable unless the story explicitly changes them.
-- If a prompt creates a good performance but bad product/logo, edit or composite the product layer rather than regenerating the whole shot.
-- If a shot fails three times, simplify the shot contract or split the action into two clips.
+- 当需要保持连续性时，使用已确认的上一镜头最后一帧作为下一镜头的起始帧参考。
+- 除非剧情明确要求改变，否则保持服装、产品朝向、屏幕方向（轴线）和光源方向稳定。
+- 如果生成的提示词带来了出色的表演但产品/Logo 效果不佳，应通过剪辑或合成替换产品图层，而非重新生成整个镜头。
+- 如果一个镜头连续失败三次，请简化镜头合约或将动作拆分为两个片段。

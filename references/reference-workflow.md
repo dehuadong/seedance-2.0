@@ -1,47 +1,47 @@
-# Reference Workflow
+# 参考工作流
 
-## Asset Role Map
+## 资产角色映射
 
-Before writing prompt prose, assign every uploaded asset a role. Role mapping prevents accidental transfer of identity, logos, scene ownership, or incompatible camera and motion instructions.
+在编写提示词正文之前，需为每个上传的资产分配一个角色。角色映射可防止意外传递身份、Logo、场景所有权，或不兼容的运镜与动作指令。
 
-| Asset | Good Roles | Avoid |
+| 资产 | 适用角色 | 避免 |
 |---|---|---|
-| Image | identity, product, pose, costume, environment, first frame, last frame | asking it to define unseen motion |
-| Video | motion, camera, pacing, blocking, timing, gesture rhythm | copying protected identity, logo, or scene ownership |
-| Audio | rhythm, tempo, mood, ambience, delivery tone, music texture | assuming voice, song, or likeness authorization |
-| Text brief | action, genre, camera plan, constraints | replacing concrete reference roles with vague mood words |
+| 图像 | 身份、产品、姿态、服装、环境、首帧、尾帧 | 要求其定义未见的动作 |
+| 视频 | 动作、运镜、节奏、场面调度、时序、手势韵律 | 复制受保护的身份、Logo 或场景所有权 |
+| 音频 | 节奏、速度、情绪、氛围、演绎语气、音乐纹理 | 默认已获声音、歌曲或肖像授权 |
+| 文本简报 | 动作、类型、运镜规划、约束条件 | 用模糊的情绪词汇替代具体的参考角色 |
 
-## Rules
+## 规则
 
-- Preserve reference tags exactly.
-- Give every reference one primary role before writing style language.
-- Do not ask one reference to control incompatible roles unless the tradeoff is explicit.
-- Use owned, licensed, public-domain, or clearly authorized references.
-- Write what should transfer and what should not transfer.
-- When authorization is unclear, transfer broad motion, tempo, mood, or production function rather than protected identity.
-- Treat multimodal reference generation, video edit, video extend, and first/last-frame generation as separate tasks. They can share assets, but the prompt should name the active workflow.
-- If audio and video references compete, make the video silent when audio timing must dominate, or state that the video controls camera/motion only and `[Audio1]` controls tempo.
+- 严格保留参考标签。
+- 在编写风格描述语言之前，为每个参考指定一个主要角色。
+- 除非明确说明取舍，否则不要让单一参考控制互不兼容的角色。
+- 使用自有、已获授权、公有领域或明确获准的参考素材。
+- 明确写出需要迁移的内容与不应迁移的内容。
+- 当授权不明确时，优先迁移宏观的动作、节奏、情绪或制作功能，而非受保护的身份特征。
+- 将多模态参考生成、视频剪辑、视频延展以及首/尾帧生成视为独立任务。它们可共享资产，但提示词中需明确指出当前活跃的工作流。
+- 若音频与视频参考存在冲突，当音频时序需主导时，请将视频设为静音；或明确声明视频仅控制运镜/动作，而 `[Audio1]` 控制节奏。
 
-## Workflow-Specific Patterns
+## 工作流专用模式
 
-| Workflow | Use this wording | Avoid |
+| 工作流 | 推荐表述 | 避免 |
 |---|---|---|
-| Multimodal reference | `[Image1] controls product identity; [Video1] controls camera rhythm; [Audio1] controls tempo only.` | `Use all references for style.` |
-| Video edit | `[Video1] is the source clip; preserve composition and timing, change only [lighting/background/VFX].` | Regenerating the whole concept from scratch. |
-| Video extend | `[Video1] is the previous clip; continue the same shot for [duration] and preserve last-frame continuity.` | Starting a new scene with no continuity anchor. |
-| First/last frame | `[Image1] is first frame; [Image2] is final visual target; generate the continuous transition only.` | Asking the last frame to be only "mood." |
-| Audio reference | `[Audio1] controls tempo and energy; do not copy protected voice, song, or performance identity.` | Treating audio as authorization proof. |
+| 多模态参考 | `[Image1] 控制产品身份；[Video1] 控制运镜节奏；[Audio1] 仅控制节奏。` | `将所有参考素材用于定义风格。` |
+| 视频剪辑 | `[Video1] 为源片段；保留构图与时序，仅更改 [灯光/背景/VFX]。` | 从头重新生成整个概念。 |
+| 视频延展 | `[Video1] 为上一片段；在同一镜头基础上继续生成 [时长]，并保持尾帧连贯性。` | 在无连贯性锚点的情况下开启新场景。 |
+| 首/尾帧 | `[Image1] 为首帧；[Image2] 为最终视觉目标；仅生成连续的过渡过程。` | 要求尾帧仅呈现“情绪”。 |
+| 音频参考 | `[Audio1] 控制节奏与能量；请勿复制受保护的声音、歌曲或表演身份。` | 将音频视为授权证明。 |
 
-## Role Examples
+## 角色映射示例
 
-| Situation | Strong map |
+| 场景 | 优质映射 |
 |---|---|
-| Product ad | `[Image1] controls product identity; [Audio1] controls tempo only.` |
-| Motion transfer | `[Video1] controls side-step choreography only; do not transfer performer, costume, room, or logo.` |
-| Style reference | `[Image2] controls warm bar atmosphere only; product identity remains from [Image1].` |
-| First-last frame | `[Image1] is first frame; [Image2] is target end frame; transition occurs through light sweep, not product deformation.` |
-| Edit/extend | `[Video1] is the source clip; preserve subject and camera path, replace only the failed lighting beat from 3s to 5s.` |
+| 产品广告 | `[Image1] 控制产品身份；[Audio1] 仅控制节奏。` |
+| 动作迁移 | `[Video1] 仅控制侧步舞蹈编排；请勿迁移表演者、服装、房间或 Logo。` |
+| 风格参考 | `[Image2] 仅控制温暖的酒吧氛围；产品身份仍源自 [Image1]。` |
+| 首/尾帧 | `[Image1] 为首帧；[Image2] 为目标尾帧；通过光线扫掠实现过渡，而非产品形变。` |
+| 剪辑/延展 | `[Video1] 为源片段；保留主体与运镜路径，仅替换 3 秒至 5 秒处失效的灯光节拍。` |
 
-## Template
+## 模板
 
-`[Image1] controls product identity. [Video1] controls camera pace only. [Audio1] controls tempo only. Preserve the subject from [Image1]; do not copy characters, logos, music, voice, or environment from [Video1]/[Audio1].`
+`[Image1] 控制产品身份。[Video1] 仅控制运镜速度。[Audio1] 仅控制节奏。保留来自 [Image1] 的主体；请勿从 [Video1]/[Audio1] 复制角色、Logo、音乐、人声或环境。`

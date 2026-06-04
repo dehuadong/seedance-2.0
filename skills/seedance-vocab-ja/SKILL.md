@@ -1,21 +1,6 @@
 ---
 name: seedance-vocab-ja
-description: "This skill should be used when the user asks for Japanese Seedance 2.0 prompt wording, Japanese cinematic vocabulary, or translation of camera, lighting, action, VFX, audio, and production terms into Japanese."
-license: MIT
-user-invocable: true
-tags:
-  - japanese
-  - vocabulary
-  - seedance-20
-metadata:
-  version: "5.4.5"
-  updated: "2026-05-30"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+description: 'This skill should be used when the user asks for Japanese Seedance 2.0 prompt wording, Japanese cinematic vocabulary, or translation of camera, lighting, action, VFX, audio, and production terms into Japanese.'
 ---
 
 # seedance-vocab-ja
@@ -26,13 +11,13 @@ Use Japanese cinematic vocabulary when the user asks for Japanese prompt wording
 
 Prefer concise production Japanese over literal translation. Keep the structure readable: subject, action, camera, lighting, sound, and preservation constraint.
 
-| Function | Japanese wording |
-|---|---|
-| Camera | `ゆっくりドリーイン`, `横移動のトラッキング`, `固定の中景`, `低いアングル`, `クローズアップ` |
-| Lighting | `逆光`, `柔らかい窓光`, `暖かい実用照明`, `冷たい月明かり`, `輪郭光` |
-| Motion | `ゆっくり振り返る`, `画面を素早く横切る`, `水滴が下へ流れる`, `煙が薄く広がる` |
-| Audio | `静かな環境音`, `短い台詞`, `金属音`, `音楽なし` |
-| Constraints | `ロゴ、ラベル、形状を正確に維持する` |
+| Function    | Japanese wording                                                                             |
+| ----------- | -------------------------------------------------------------------------------------------- |
+| Camera      | `ゆっくりドリーイン`, `横移動のトラッキング`, `固定の中景`, `低いアングル`, `クローズアップ` |
+| Lighting    | `逆光`, `柔らかい窓光`, `暖かい実用照明`, `冷たい月明かり`, `輪郭光`                         |
+| Motion      | `ゆっくり振り返る`, `画面を素早く横切る`, `水滴が下へ流れる`, `煙が薄く広がる`               |
+| Audio       | `静かな環境音`, `短い台詞`, `金属音`, `音楽なし`                                             |
+| Constraints | `ロゴ、ラベル、形状を正確に維持する`                                                         |
 
 ## Compact Pattern
 

@@ -1,46 +1,32 @@
 ---
 name: seedance-vocab-zh
-description: "This skill should be used when the user asks for Chinese Seedance 2.0 prompt wording, Mandarin cinematic vocabulary, Chinese prompt compression, or translation of camera, lighting, action, VFX, audio, and production terms into Chinese."
-license: MIT
+description: '当用户请求中文 Seedance 2.0 提示词措辞、普通话影视词汇、中文提示词压缩，或将摄像机、灯光、动作、视觉特效、音频及制作术语翻译为中文时，应使用此技能。'
 user-invocable: true
-tags:
-  - chinese
-  - vocabulary
-  - seedance-20
-metadata:
-  version: "5.4.5"
-  updated: "2026-05-30"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
 # seedance-vocab-zh
 
-Use Chinese vocabulary when the user asks for Chinese prompts, Mandarin cinematic wording, role binding, first/last-frame workflow, or maximum compactness. Chinese prompt wording is often efficient, but it must still preserve mode, reference tags, action, camera, lighting, audio, and constraints.
+当用户请求中文提示词、普通话影视措辞、角色绑定、首帧/末帧工作流或最大程度简洁表达时，请使用中文词汇。中文提示词措辞通常高效，但仍需保留模式、参考标签、动作、摄像机、灯光、音频及约束条件。
 
-## Usage Rule
+## 使用规则
 
-Do not translate reference tags. Keep `[Image1]`, `[Video1]`, and `[Audio1]` unchanged. Use short production phrases instead of abstract adjectives.
+请勿翻译参考标签。保持 `[图片1]`、`[视频1]` 和 `[音频1]` 不变。使用简短的制作短语，避免抽象形容词。
 
-Load `[ref:vocab/zh]` for dense role-binding, first/last-frame, camera, lighting, audio, edit/extend, constraint, and safety vocabulary.
+加载 `references/vocab/zh.md` 以获取密集的角色绑定、首帧/末帧、摄像机、灯光、音频、编辑/扩展、约束及安全相关词汇。
 
-| Function | Chinese wording |
-|---|---|
-| Camera | `缓慢推镜`, `横向跟拍`, `固定中景`, `低角度`, `特写`, `从轮廓到正面三分之二角度` |
-| Lighting | `侧逆光`, `柔和窗光`, `暖色实用灯`, `冷色月光`, `轮廓光`, `体积光` |
-| Motion | `慢慢转身`, `快速掠过画面`, `水珠沿表面下滑`, `薄雾贴地扩散` |
-| Audio | `安静环境声`, `一句短对白`, `轻微金属声`, `无配乐`, `脚步声卡点` |
-| First/last frame | `@图1 为首帧`, `@图2 为尾帧`, `自然过渡到尾帧`, `中间动作连续，不跳切` |
-| Constraints | `严格保持logo、标签、形状和颜色不变` |
+| 功能      | 中文措辞                                                                         |
+| --------- | -------------------------------------------------------------------------------- |
+| 摄像机    | `缓慢推镜`, `横向跟拍`, `固定中景`, `低角度`, `特写`, `从轮廓到正面三分之二角度` |
+| 灯光      | `侧逆光`, `柔和窗光`, `暖色实用灯`, `冷色月光`, `轮廓光`, `体积光`               |
+| 运动      | `慢慢转身`, `快速掠过画面`, `水珠沿表面下滑`, `薄雾贴地扩散`                     |
+| 音频      | `安静环境声`, `一句短对白`, `轻微金属声`, `无配乐`, `脚步声卡点`                 |
+| 首帧/末帧 | `@图片1 为首帧`, `@图片2 为尾帧`, `自然过渡到尾帧`, `中间动作连续，不跳切`       |
+| 约束条件  | `严格保持logo、标签、形状和颜色不变`                                             |
 
-## Compact Pattern
+## 简洁模式
 
-`[Image1]为参考，严格保持[主体/产品/脸部/标志]不变；仅加入[动作/光线/镜头变化]。镜头：[一个动作]。声音：[音效或环境声]。`
+`[图片1]为参考，严格保持[主体/产品/脸部/标志]不变；仅加入[动作/光线/镜头变化]。镜头：[一个动作]。声音：[音效或环境声]。`
 
-## Output Contract
+## 输出约定
 
-Return concise Chinese prompt text, optional English gloss when useful, and preserve reference tags exactly.
+返回简洁的中文提示词文本，必要时附英文术语对照，并精确保留参考标签。

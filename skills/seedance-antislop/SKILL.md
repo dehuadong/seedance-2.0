@@ -1,49 +1,34 @@
 ---
 name: seedance-antislop
-description: "This skill should be used when a Seedance 2.0 prompt contains generic AI filler, hollow superlatives, vague cinematic language, bloated adjectives, weak verbs, or needs sharper production-specific wording."
-license: MIT
-user-invocable: true
-tags:
-  - prompt-quality
-  - anti-slop
-  - seedance-20
-metadata:
-  version: "5.4.5"
-  updated: "2026-05-30"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+description: '当 Seedance 2.0 提示词包含通用 AI 填充词、空洞最高级、模糊电影语言、冗余形容词、弱动词，或需要更精准的制作导向措辞时，应使用此技能。'
 ---
 
 # seedance-antislop
 
-Remove filler that hides missing visual decisions. A strong Seedance prompt uses observable nouns, verbs, camera moves, light sources, sound cues, and constraints. A weak prompt asks for excellence without saying what excellence looks or sounds like.
+移除掩盖缺失视觉决策的填充内容。优秀的 Seedance 提示词使用可观察的名词、动词、摄像机运动、光源、音效提示及约束条件。弱提示词要求"卓越"却不说明卓越在视觉或听觉上具体呈现为何。
 
-## Visibility Test
+## 可见性测试
 
-Every major phrase should be visible to a camera, measurable by a light meter, audible in the mix, or observable as motion. If a phrase cannot pass that test, replace it with production language.
+每个主要短语应能被摄像机捕捉、被测光表测量、在混音中可闻，或作为运动可观察。若短语无法通过该测试，则用制作语言替换。
 
-| Filler | Ask what it means | Strong replacement pattern |
-|---|---|---|
-| cinematic | What camera and light make it cinematic? | `locked close-up, warm practical key, cool rim light` |
-| epic | What is the scale or stake? | `wide low-angle shot, tiny figure against storm wall` |
-| beautiful | What color, texture, or light behavior? | `pearl highlights on wet ceramic, soft window bounce` |
-| dynamic | What moves, how fast, and where does it end? | `fast lateral track ending on the hero label` |
-| professional | What production setup? | `clean commercial tabletop, controlled reflection, no clutter` |
+| 填充词               | 追问其含义                       | 强替换模式                                                                                       |
+| -------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------ |
+| cinematic（电影感）  | 什么摄像机和灯光使其具有电影感？ | `locked close-up, warm practical key, cool rim light`（锁定特写，暖色实景主光，冷色轮廓光）      |
+| epic（史诗感）       | 规模或风险是什么？               | `wide low-angle shot, tiny figure against storm wall`（广角低角度镜头，微小人物对抗风暴墙）      |
+| beautiful（美丽）    | 什么色彩、质感或光线行为？       | `pearl highlights on wet ceramic, soft window bounce`（湿润陶瓷上的珍珠高光，柔和窗户反射光）    |
+| dynamic（动态）      | 什么在动、多快、终点在哪？       | `fast lateral track ending on the hero label`（快速横向跟拍，终点聚焦主打标签）                  |
+| professional（专业） | 什么制作设置？                   | `clean commercial tabletop, controlled reflection, no clutter`（干净商业桌面，受控反射，无杂乱） |
 
-## Rewrite Pass
+## 重写流程
 
-First, underline all superlatives and vague style labels. Second, decide whether each word should become camera, light, motion, material, sound, or constraint language. Third, reduce duplicates. Fourth, keep the prompt within the character budget and preserve reference tags.
+首先，标出所有最高级和模糊风格标签。其次，决定每个词应转化为摄像机、灯光、运动、材质、声音或约束语言。第三，减少重复项。第四，确保提示词在字符预算内并保留参考标签。
 
-## Do Not Over-Correct
+## 勿过度修正
 
-Do not remove useful genre language when it is paired with concrete direction. `Noir hallway with hard venetian-blind shadows` is useful; `dramatic cinematic noir vibes` is not. Keep terms that communicate medium, era, palette, or lens behavior.
+当类型语言与具体指导配对时，勿移除有用的类型术语。`Noir hallway with hard venetian-blind shadows`（带有硬百叶窗阴影的黑色电影走廊）是有用的；`dramatic cinematic noir vibes`（戏剧性电影感黑色氛围）则无用。保留能传达媒介、时代、调色板或镜头行为的术语。
 
-Load `[ref:anti-slop-lexicon]` for the extended replacement table.
+加载 `references/anti-slop-lexicon.md` 获取扩展替换词表。
 
-## Output Contract
+## 输出约定
 
-Return removed words, replacements grouped by camera/light/motion/sound/constraint, and the tightened prompt.
+返回已移除词汇、按摄像机/灯光/运动/声音/约束分组的替换项，以及精简后的提示词。

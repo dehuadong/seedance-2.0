@@ -1,39 +1,39 @@
-# Platform Surface Matrix
+# 平台表面矩阵
 
 last_verified: 2026-05-30
 
-Seedance 2.0 capability claims must separate the model from the product surface. A feature can be true for the model while still being gated, unavailable, renamed, priced differently, or policy-limited on a specific surface.
+Seedance 2.0 的能力声明必须将模型与产品表面区分开来。某项功能可能对模型本身成立，但在特定表面上仍可能受到限制、不可用、重命名、定价不同或受政策约束。
 
-| Surface | Evidence type | Typical use | Current guidance |
+| 表面 | 证据类型 | 典型用途 | 当前指导 |
 |---|---|---|---|
-| ByteDance Seed official model page | official | Broad capability framing | Use for high-level model positioning only. It confirms multimodal audio-video generation, references, performance, lighting, shadow, and camera control. |
-| ByteDance official launch post | official | Capability details and known limits | Use for the strongest public claims about input modalities, reference counts, video extension/editing, dual-channel audio, and remaining weaknesses. |
-| Volcengine Ark / ModelArk docs | official platform docs | API task flow and model surface | Recheck before giving endpoints, regions, quotas, pricing, or file limits. The May 29 model list/tutorial pages are current signals, but still date-bound. |
-| Volcengine video-generation tutorial | official platform docs | Async task lifecycle, first/last-frame roles, return-last-frame, web-search tools, and reference-file combinations | Current May 29 signal for Volcengine fields. Use for Volcengine only; recheck exact schema, entitlement, pricing, and face-reference behavior before implementation. |
-| Volcengine developer-community article | official ecosystem/news article | API availability, safety, and adoption context | Useful for noting API-service rollout, portrait/copyright standards, face verification, virtual portraits, and BytePlus overseas service. Do not treat it as an API schema, pricing table, or account entitlement guarantee. |
-| BytePlus ModelArk docs | official platform docs | International API and docs surface | Recheck before production guidance. Some pages require JavaScript, so cite only visible or independently verified claims. Do not quote Seedance 2.0 BytePlus pricing from JS-only pages without live verification. |
-| Runway Seedance 2 | official third-party surface | API/web generation with Seedance 2 model access | Runway documents `seedance2`, 5-15s duration, image/video/audio references, upload URIs, audio-combination rules, and plan/region caveats. Treat as Runway surface behavior, not Volcengine or BytePlus behavior. |
-| Runway MCP | official agent connector surface | Agent-accessible image/video generation | Useful for agent workflow planning. It does not prove ByteDance API access or alter Seedance model limits. |
-| Dreamina / Jimeng web UI | official product surface | Creator workflow | Behavior may differ from API. Do not generalize web UI limits, credits, face checks, or upload rules to every surface. |
-| ComfyUI partner node docs | partner workflow docs | T2V, R2V, FLF2V workflows | Useful for workflow vocabulary and surface caveats. Label as ComfyUI-specific rather than universal Seedance behavior. |
-| Third-party wrappers | community/commercial wrapper | Access abstraction | Useful for field patterns and integration ideas only. Do not present wrapper model names, prices, or guardrail behavior as official. |
-| Community prompt corpora | field-observed | Prompt pattern mining | Mine structures, timing syntax, vocab, and failure modes. Do not copy unsafe, IP-sensitive, or real-person examples directly. |
-| Agent Skills docs | agent packaging docs | Repository layout and install language | Use for skill structure and progressive-disclosure guidance. Do not treat repository install paths as universal client guarantees. |
+| 字节跳动 Seed 官方模型页面 | 官方 | 广泛的能力框架描述 | 仅用于高层模型定位。它确认了多模态音视频生成、参考素材、性能、光照、阴影及相机控制等功能。 |
+| 字节跳动官方发布文章 | 官方 | 能力详情与已知限制 | 用于关于输入模态、参考素材数量、视频扩展/编辑、双通道音频及剩余弱点的最强公开声明。 |
+| 火山引擎 Ark / ModelArk 文档 | 官方平台文档 | API 任务流与模型表面 | 在提供端点、地域、配额、定价或文件限制前需重新核查。5 月 29 日的模型列表/教程页面为当前信号，但仍具有时效性。 |
+| 火山引擎视频生成教程 | 官方平台文档 | 异步任务生命周期、首帧/末帧角色、返回末帧、网络搜索工具及参考文件组合 | 火山引擎字段的当前 5 月 29 日信号。仅适用于火山引擎；实施前需重新核查确切架构、权限、定价及人脸参考行为。 |
+| 火山引擎开发者社区文章 | 官方生态/新闻文章 | API 可用性、安全性及采用背景 | 有助于了解 API 服务推广、肖像/版权标准、人脸验证、虚拟人像及 BytePlus 海外服务。切勿将其视为 API 架构、定价表或账户权限保证。 |
+| BytePlus ModelArk 文档 | 官方平台文档 | 国际 API 与文档表面 | 生产环境指导前需重新核查。部分页面需要 JavaScript，因此仅引用可见或经独立验证的声明。未经实时验证，切勿引用仅含 JavaScript 页面上的 Seedance 2.0 BytePlus 定价。 |
+| Runway Seedance 2 | 官方第三方表面 | 通过 Seedance 2 模型访问的 API/网页生成 | Runway 文档记录了 `seedance2`、5-15 秒时长、图片/视频/音频参考、上传 URI、音频组合规则及套餐/地域注意事项。请视为 Runway 表面行为，而非火山引擎或 BytePlus 行为。 |
+| Runway MCP | 官方代理连接器表面 | 代理可访问的图片/视频生成 | 有助于代理工作流规划。它不能证明字节跳动 API 访问权限，也不会改变 Seedance 模型限制。 |
+| Dreamina / 即梦网页 UI | 官方产品表面 | 创作者工作流 | 行为可能与 API 不同。切勿将网页 UI 的限制、积分、人脸检查或上传规则泛化至所有表面。 |
+| ComfyUI 合作伙伴节点文档 | 合作伙伴工作流文档 | T2V、R2V、FLF2V 工作流 | 有助于工作流术语及表面注意事项。请标注为 ComfyUI 特有，而非 Seedance 通用行为。 |
+| 第三方封装器 | 社区/商业封装器 | 访问抽象 | 仅有助于字段模式与集成思路参考。切勿将封装器的模型名称、价格或防护栏行为作为官方信息呈现。 |
+| 社区提示词语料库 | 实地观察 | 提示词模式挖掘 | 挖掘结构、时序语法、词汇及失败模式。切勿直接复制不安全、涉及知识产权或真实人物的示例。 |
+| Agent Skills 文档 | 代理打包文档 | 仓库布局与安装语言 | 用于技能结构及渐进式披露指导。切勿将仓库安装路径视为通用客户端保证。 |
 
-## Surface-Specific Claims
+## 表面特定声明
 
-When answering a question about production use, include:
+回答有关生产环境使用的问题时，请包含：
 
-- surface name,
-- verification date,
-- model or workflow name if known,
-- whether the claim is official, partner, wrapper, or field-observed,
-- what must be rechecked before use.
+- 表面名称，
+- 验证日期，
+- 模型或工作流名称（如已知），
+- 声明属于官方、合作伙伴、封装器还是实地观察，
+- 使用前必须重新核查的内容。
 
-## Real-Person Rule
+## 真实人物规则
 
-Real-person images, portraits, and voices are authorization-sensitive. Some surfaces may provide identity verification flows, and others may reject or restrict real-person references. Do not infer consent from an uploaded asset.
+真实人物的图片、肖像及声音涉及授权敏感问题。部分表面可能提供身份验证流程，而其他表面可能拒绝或限制真实人物参考素材。切勿从已上传的素材推断获得授权同意。
 
-## V2V, R2V, and FLF2V Boundary
+## V2V、R2V 与 FLF2V 边界
 
-Official ByteDance material supports multimodal references, I2V/R2V examples, editing, and extension. Volcengine now documents first-frame and last-frame roles on its video-generation surface. Keep `FLF2V` as a label caveat because workflow names differ by product surface, but do not say first/last-frame itself is partner-only.
+字节跳动官方材料支持多模态参考素材、I2V/R2V 示例、编辑及扩展功能。火山引擎现已在视频生成表面上文档化了首帧与末帧的角色。保留 `FLF2V` 作为标签注意事项，因为工作流名称因产品表面而异，但请勿声称首帧/末帧功能本身仅限合作伙伴使用。
