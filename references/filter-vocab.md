@@ -1,40 +1,40 @@
-# Filter-Safe Vocabulary
+# 过滤器安全词汇
 
-Use professional, non-graphic, production-context language. Do not use this reference to bypass safety systems.
+请使用专业、非写实、制作语境的语言。不要使用此参考来绕过安全系统。
 
-| Risky surface | Safer production wording |
+| 风险表面 | 更安全的制作用语 |
 |---|---|
-| violent impact | high-energy collision, non-graphic action beat |
-| weapon close-up | prop object held safely, action-scene staging |
-| blood | red fabric accent, colored liquid, non-graphic aftermath |
-| injury | visible fatigue, dramatic tension, character distress |
-| fight | choreographed action sequence, staged confrontation |
-| celebrity face | original character with broad archetype traits |
-| brand logo | generic product mark or blank label |
-| named franchise | original world with similar genre function |
+| 暴力冲击 | 高能量碰撞、非写实动作节拍 |
+| 武器近景 | 安全持有的道具物体、动作场面调度 |
+| 血迹 | 红色织物点缀、有色液体、非写实后果 |
+| 伤害 | 可见的疲惫、戏剧张力、角色困境 |
+| 打斗 | 编排好的动作序列、舞台化对峙 |
+| 名人面孔 | 具有宽泛原型特质的原创角色 |
+| 品牌标识 | 通用产品标记或空白标签 |
+| 具名系列作品 | 具有类似类型功能的原创世界观 |
 
-Preserve intent. Change risky surface wording.
+保留意图。改变有风险的表面措辞。
 
-## False-Positive Reduction
+## 误报减少
 
-Use this only for safe prompts that are being misunderstood. The repair is clarity, not evasion.
+仅将此用于被误解的安全提示词。修复方式是清晰化，而非规避。
 
-| Ambiguous wording | Safer clarification |
+| 模糊措辞 | 更安全的清晰化表述 |
 |---|---|
-| dark fight scene | staged confrontation, choreographed action beat, no graphic injury |
-| knife on table | safe prop object on a table, not used for harm |
-| intense hostage mood | locked-door suspense scene with no restraints and no harm |
-| blood-red light | deep red practical light, red fabric accent, no injury |
-| copy this person | original authorized character reference, preserve only user-owned identity |
-| make it like this movie | original scene with similar camera function, palette, pacing, and genre mood |
-| scary childlike doll | antique toy prop in an eerie room, no real child |
+| 黑暗打斗场景 | 舞台化对峙、编排好的动作节拍、无写实伤害 |
+| 桌上的刀 | 桌上的安全道具物体，不用于伤害 |
+| 激烈的人质情绪 | 锁闭房间悬疑场景，无束缚且无伤害 |
+| 血红色光 | 深红色实际光源、红色织物点缀、无伤害 |
+| 复制这个人 | 原创授权角色参考，仅保留用户自有身份 |
+| 做得像那部电影 | 具有类似镜头功能、色调、节奏和类型氛围的原创场景 |
+| 可怕的娃娃 | 诡异房间中的古董玩具道具，无真实儿童 |
 
-## Multilingual Clarity
+## 多语言清晰化
 
-Language mixing is allowed when it makes a safe prompt clearer:
+当能使安全提示词更清晰时，允许混合使用语言：
 
-- Keep technical camera terms in English when they are more precise: `locked medium shot`, `35mm lens`, `slow dolly-in`.
-- Keep Chinese role binding when it is shorter: `@图1锁定主体身份`, `@视频1仅参考运镜`.
-- Keep dialogue in the speaker language, and keep safety/ownership constraints explicit.
-- Do not translate unsafe content into another language as a workaround.
-- If a prompt still fails, change the risky creative surface instead of only changing language.
+- 当英文技术镜头术语更精确时，保留英文：`locked medium shot`、`35mm lens`、`slow dolly-in`。
+- 当中文角色绑定更简短时，保留中文：`@图1锁定主体身份`、`@视频1仅参考运镜`。
+- 对话保留在说话者的语言中，安全和所有权约束保持明确。
+- 不要将不安全内容翻译成另一种语言作为变通手段。
+- 如果提示词仍然失败，请改变有风险的创意表面，而不仅仅是改变语言。

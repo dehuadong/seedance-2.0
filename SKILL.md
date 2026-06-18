@@ -39,26 +39,106 @@ Seedance 2.0 智能体导向视频工作的操作循环。使用此根技能进�
 
 ## 加载映射
 
-| 情况                                               | 加载                                                                                                                                         |
-| -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| 模糊想法或缺失简报                                 | `[skill:seedance-interview]` 或 `[skill:seedance-interview-short]`                                                                           |
-| 制作提示词                                         | `[skill:seedance-prompt]`、`[ref:quick-ref]`、`[ref:prompt-examples]`                                                                        |
-| 规划任何镜头、模式或预算                           | `[ref:capability-map]`                                                                                                                       |
-| 提示词保真度分配：身份 vs 运动 vs 场景密度         | `[ref:allocation-model]`、`[ref:intent-vs-precision]`                                                                                        |
-| 多镜头提示词、单个片段内剪切或每秒镜头预算         | `[ref:multishot-grammar]`                                                                                                                    |
-| 2D、动漫或赛璐珞风格运动                           | `[ref:2d-anime-grammar]`、`[skill:seedance-style]`                                                                                           |
-| 专业电影、广告、营销活动或交付工作流               | `[ref:pro-filmmaking-standards]`、`[ref:shot-list-continuity]`、`[ref:delivery-qc]`                                                          |
-| 紧凑提示词或中文压缩                               | `[skill:seedance-prompt-short]`、语言词汇参考                                                                                                |
-| 摄影机、镜头、调度、镜头契约                       | `[skill:seedance-camera]`、`[ref:cinematography-shot-language]`                                                                              |
-| 图像参考 / 首帧                                    | `[ref:i2v-guide]`、`[ref:reference-workflow]`                                                                                                |
-| 首帧和尾帧                                         | `[ref:first-last-frame-guide]`                                                                                                               |
-| API、Runway、火山引擎、fal、工作流、定价、模型 ID  | `[skill:seedance-pipeline]`、`[ref:api-workflow]`、`[ref:model-name-map]`                                                                    |
-| 调色、ACES、HDR/SDR、画幅比例、字幕、音频后期或 QC | `[ref:color-pipeline-aces]`、`[ref:aspect-ratio-delivery]`、`[ref:subtitles-localization]`、`[ref:audio-post-delivery]`、`[ref:delivery-qc]` |
-| 类型模板或示例                                     | `[skill:seedance-recipes]`、`[ref:examples-by-mode]`、`[ref:genre-guides]`                                                                   |
-| 中/俄/日/韩/西语或混合语言示例                     | `[ref:multilingual-community-examples]`、语言词汇参考                                                                                        |
-| 套话过多或触发过滤的英文措辞                       | `[skill:seedance-vocab-en]`、`[skill:seedance-antislop]`                                                                                     |
-| 结果不佳                                           | `[skill:seedance-troubleshoot]`                                                                                                              |
-| 素材返回：保留、后期修复、剪辑、重新生成或重写     | `[ref:retake-protocol]`                                                                                                                      |
-| 为什么某条规则有效，或规则未涵盖的新颖案例         | `[ref:model-mechanics]`                                                                                                                      |
+以下按渐进式披露组织——从模糊意图到精确交付。当一行命中时，优先加载该行资源；当多行命中时，从较低 Phase 编号开始加载。每条触发条件对应可观察的用户语言模式，而非内部术语。
+
+### 🎯 Phase 1 — 意图接入：用户刚来，想法模糊
+
+| 触发条件 | 加载 | 用途 |
+|----------|------|------|
+| 只说"做个视频""帮我拍一段"，没给出主体、场景、动作、时长或画幅比 | `[skill:seedance-interview]` | 结构化访谈逐轮追问，将模糊感受转化为完整简报 |
+| 同上但对话预计 ≤3 轮，或用户明确说"简短""快速过一下" | `[skill:seedance-interview-short]` | 精简版访谈，快速锁定核心意图后直接进入提示词 |
+| 描述了一个叙事意图：情节、人物弧线、"讲一个…的故事"、冲突或转折 | `[ref:storytelling-framework]` | 将叙事拆为可见节拍：前状态 → 动作 → 变化后状态 |
+| 提到"模板""配方""广告模板""类型片""MV模板"，或询问某种类型的标准做法 | `[skill:seedance-recipes]`、`[ref:examples-by-mode]`、`[ref:genre-guides]` | 按模式/类型分类的制作模板和完整示例 |
+
+### 🔌 Phase 2 — 平台与来源：确认可行性和成本
+
+| 触发条件 | 加载 | 用途 |
+|----------|------|------|
+| 提到 Runway、火山引擎/Ark、BytePlus、fal、Dreamina/即梦、CapCut、豆包或任何 Seedance 接入表面 | `[ref:platform-surface-matrix]` | 区分模型能力与表面行为：哪些特性被特定表面限制/定价 |
+| 询问 API 接入、端点、定价、配额、区域可用性或模型 ID | `[ref:api-status]`、`[ref:api-workflow]`、`[ref:model-name-map]` | 带日期的 API 状态、各表面模型 ID 映射、异步任务生命周期 |
+| 询问"从哪里开始""哪些平台能用 Seedance"或寻找官方链接 | `[ref:source-registry]` | 已验证的接入表面列表、官方文档链接、证据类型和当前状态 |
+| 询问 API 集成、工作流编排、批量生成、拼接或多步骤流水线 | `[skill:seedance-pipeline]` | API 规划、任务提交/轮询、批量工作流和集成指南 |
+
+### 🧭 Phase 3 — 模式与能力：确定怎么做
+
+| 触发条件 | 加载 | 用途 |
+|----------|------|------|
+| 未指定模式，或问"支持什么模式""T2V/I2V/V2V 有什么区别""模式怎么选" | `[ref:capability-map]` | 全部模式（T2V/I2V/V2V/R2V/FLF2V/剪辑/延展）的平台可用性、输入和限制 |
+| 需要在身份保真、运动幅度、场景复杂度之间取舍；或问"保真度怎么分配""预算怎么花" | `[ref:allocation-model]`、`[ref:intent-vs-precision]` | 提示词注意力预算：文字控制意图，参考控制密度 |
+| 提到多个镜头、片段内剪切、每秒镜头数，"在一段里切几次" | `[ref:multishot-grammar]` | 多镜头标签语法、镜头×秒数预算和剪辑位置语法 |
+
+### ✍️ Phase 4 — 提示词构建：动手写
+
+| 触发条件 | 加载 | 用途 |
+|----------|------|------|
+| 有明确简报，需要编写/优化 T2V/I2V/V2V/R2V 提示词 | `[skill:seedance-prompt]`、`[ref:quick-ref]`、`[ref:prompt-examples]` | 导演公式构建：主体+动作+场景+摄影机+光影+音频+约束 |
+| 要求"简短""压缩""精简""字数限制"或中文短提示词 | `[skill:seedance-prompt-short]`、`[ref:vocab/zh]` | 在保持信息密度前提下压缩字数 |
+| 需要结构化输出、JSON、自动化流水线字段或 API 请求体 | `[ref:json-schema]` | 标准 JSON Schema：模式、时长、参考角色、镜头表、字段定义 |
+| 提供图像作参考，或问"怎么用这张图""I2V 怎么做" | `[ref:i2v-guide]`、`[ref:reference-workflow]` | 图像参考角色映射，I2V 只需描述静态图像未传达的运动/摄影机 |
+| 明确问"首尾帧怎么设""FLF2V 怎么做""首帧和尾帧怎么用" | `[ref:first-last-frame-guide]` | 首尾帧角色分配、过渡控制、尾帧锚点复用 |
+
+### 🎨 Phase 5 — 创作领域：各创意学科深入
+
+| 触发条件 | 加载 | 用途 |
+|----------|------|------|
+| 问视觉风格、艺术指导、渲染质感、时代美学、动画风格、写实程度 | `[skill:seedance-style]` | 风格请求→制作描述符（媒介/纹理/调色板/镜头行为），安全替代工作室名称 |
+| 问摄影机运动、镜头景别、调度、跟拍、推拉摇移、镜头语言 | `[skill:seedance-camera]`、`[ref:cinematography-shot-language]` | 镜头类型×运动×速度×视点可组合语法 |
+| 问角色一致性、身份锁定、多角色走位、服装连续性、表情控制 | `[skill:seedance-characters]` | 角色契约：标签、外貌、服装、位置、动作、情绪的多镜头追踪 |
+| 问灯光设计、氛围、色温、阴影、反射、实际光源、情绪光线转换 | `[skill:seedance-lighting]` | 物理光源描述：来向、色温、阴影、氛围、是否变化 |
+| 问身体动作、动作编排、物理效果、物体运动、特技、动作节奏 | `[skill:seedance-motion]` | 具体动词+结果：主体→动作→终点，一个可见节拍优先 |
+| 问 VFX、粒子、能量、破坏、变形、天气、魔法、爆炸、烟雾、火焰、水体 | `[skill:seedance-vfx]` | 效果约定：来源→材质→路径→与光交互→消散过程→终点 |
+| 问音频、对白、口型同步、音乐、音效、环境音、节拍同步、音频参考 | `[skill:seedance-audio]`、`[ref:audio-guide]` | 音频参考角色映射、对话分层语法、音频作为剪辑主时钟 |
+| 提到"动漫""2D""赛璐珞""手绘风"的运动或风格 | `[ref:2d-anime-grammar]`、`[skill:seedance-style]` | 2D/动漫特有的运动稳定性规则：媒介线重复、运动幅度约束 |
+
+### 🎬 Phase 6 — 专业制作：电影级交付
+
+| 触发条件 | 加载 | 用途 |
+|----------|------|------|
+| 要求电影/广告/营销活动级交付，或提导演/DP/制片人/剪辑师/调色师角色 | `[ref:pro-filmmaking-standards]`、`[ref:shot-list-continuity]`、`[ref:delivery-qc]` | 镜头表×连续性台账×交付 QC 清单的专业工作流对象 |
+| 问调色、ACES、HDR/SDR、LUT、CDL、色彩交接或产品色彩 | `[ref:color-pipeline-aces]` | 色彩管线：风格意图→工作假设→输出变换→QC 备注 |
+| 问画幅比、安全区域、分辨率、帧率或不同交付格式 | `[ref:aspect-ratio-delivery]` | 各表面支持的画幅比、安全区域规则、分辨率推荐 |
+| 问字幕、SDH、强制叙述字幕、配音、本地化或无字版 | `[ref:subtitles-localization]` | 字幕/配音/本地化规划：语言列表、字幕类型、配音方案 |
+| 问音频后期、分轨、M&E、响度标准、同步提示或音频交付物 | `[ref:audio-post-delivery]` | 音频交付物：完整混音/分轨/M&E/响度目标/同步提示 |
+| 在专业上下文中问"实测""踩坑""实操技巧""稳定建议" | `[ref:field-observed-tips]` | 社区实测稳定性模式和高风险领域，标注为观察而非保证 |
+
+### 🌐 Phase 7 — 多语言适配
+
+| 触发条件 | 加载 | 用途 |
+|----------|------|------|
+| 用户使用中文编写或讨论提示词 | `[skill:seedance-vocab-zh]`、`[ref:vocab/zh]` | 中文摄影机/灯光/动作/风格术语表和反套话陷阱 |
+| 用户使用日语编写或讨论提示词 | `[skill:seedance-vocab-ja]`、`[ref:vocab/ja]` | 日语制作用语、敬语/语气适配、反套话陷阱 |
+| 用户使用韩语编写或讨论提示词 | `[skill:seedance-vocab-ko]`、`[ref:vocab/ko]` | 韩语制作用语、反套话陷阱 |
+| 用户使用俄语编写或讨论提示词 | `[skill:seedance-vocab-ru]`、`[ref:vocab/ru]` | 俄语制作用语、格变化适配、反套话陷阱 |
+| 用户使用西班牙语编写或讨论提示词 | `[skill:seedance-vocab-es]`、`[ref:vocab/es]` | 西班牙语制作用语、反套话陷阱 |
+| 英语提示词出现大量空洞形容词/套话/图像模型标记词 | `[skill:seedance-vocab-en]`、`[skill:seedance-antislop]`、`[ref:anti-slop-lexicon]` | 英语制作用语、六类陈词滥调识别和替换 |
+| 中/英/日/韩/俄/西语的多语言混合提示词或跨语言示例需求 | `[ref:multilingual-community-examples]` | 每种语言的完整提示词、参考标签和平台适配说明 |
+| 需要中文完整示例，或说"有没有中文案例" | `[skill:seedance-examples-zh]` | 中文语境完整示例集合 |
+
+### 🛡️ Phase 8 — 安全与合规
+
+| 触发条件 | 加载 | 用途 |
+|----------|------|------|
+| 提示词涉及知名角色、IP 作品、制片厂、名人、品牌标识、版权场景或声音 | `[skill:seedance-copyright]`、`[ref:filter-vocab]` | IP 安全改写：受保护元素→原型描述，保留功能但规避法律风险 |
+| 提示词被平台拦截、拒接、降质；或说"被过滤了""过不了审""怎么改" | `[skill:seedance-filter]` | 内容过滤诊断与安全改写：识别触发词、制作语境替代表达 |
+| 平台讨论涉及真人面部、声音、肖像、品牌、暴力或敏感内容 | `[ref:platform-constraints]` | 各表面真人/品牌/内容政策差异，不推断授权原则 |
+| 说"从论坛/Reddit/社区找的提示词"或参考网上案例 | `[ref:community-source-methodology]` | 社区来源方法论：允许提取什么、禁止提取什么、语料标签 |
+
+### 🔧 Phase 9 — 修复与迭代
+
+| 触发条件 | 加载 | 用途 |
+|----------|------|------|
+| 输出出现模糊、抖动、偏离提示词、变形、不稳定、不同步、不一致 | `[skill:seedance-troubleshoot]` | 根因诊断：提示词/模式/参考冲突/预算/模型限制？每次只改一个变量 |
+| 素材返回后需决定下一步：保留/后期修复/剪辑/重新生成/重写 | `[ref:retake-protocol]` | 分类决策树：什么可后期修、何时重写、单变量重试规则和预算上限 |
+| 提示词含空洞评价词（"电影级""史诗""惊艳"）、图像标记词（"8K""Unreal"）、标签沙拉 | `[skill:seedance-antislop]`、`[ref:anti-slop-lexicon]` | 每个空洞词→一个可观察的制作细节 |
+
+### 📋 Phase 10 — 元知识与仓储
+
+| 触发条件 | 加载 | 用途 |
+|----------|------|------|
+| 问"为什么这条规则有效""模型内部如何工作"或规则未涵盖的新颖案例 | `[ref:model-mechanics]` | 八种生成机制的思维模型，用于推导规则未覆盖的新情况 |
+| 问技能包本身：安装、"如何用这个技能"、Codex/Claude 中的使用方式 | `[ref:agent-compatibility]` | 跨智能体安装指南、技能目录形态、各客户端路径映射 |
+| 运行评估、验证技能行为或问评分标准 | `[ref:eval-rubric]` | 0-3 分制评分标准、通过阈值（每题≥2，平均≥2.6） |
+| 问 README 设计、视觉资产、SVG 规则、设计令牌或前端展示 | `[ref:frontend-design-system]` | 仓储前端设计系统：令牌、字体栈、资产规则、编辑规范 |
+| 需追溯某声明的证据来源，或问"这个结论怎么来的" | `[ref:research-2026-05-30]` | 2026-05-30 研究快照：官方信号/实地信号/排除项的来源日期追溯 |
 
 精确保留参考标签，保持提示词简短，永远不要将社区实测的技巧转化为官方平台保证。对于专业电影制作人的请求，交付该角色所需的工作流对象：镜头表、镜头契约、连续性台账、提示词、后期交接文档、本地化方案或 QC 清单。
