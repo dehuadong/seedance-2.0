@@ -1,58 +1,53 @@
 ---
 name: seedance-vocab-en
-description: "This skill should be used when an English Seedance 2.0 prompt is slop-heavy, generic, padded with empty quality words, tripping false-positive filters, or needs precise English production vocabulary for camera, lighting, motion, VFX, audio, and constraints."
+description: '当英文Seedance 2.0提示词充满废话、过于笼统、被空洞的质量词汇填充、触发误报过滤器，或需要精确的英文制作词汇来描述摄影、灯光、动作、视觉特效、音频和约束条件时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - english
-  - vocabulary
-  - anti-slop
+  - 英文
+  - 词汇
+  - 反废话
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
+  parent: 'seedance-20'
 ---
 
 # seedance-vocab-en
 
-English is the default prompting language and fails in two ways at once: slop (empty evaluation words that add tokens and no signal) and false positives (vague threat-adjacent wording that trips the heaviest moderation surface). The cure for both is the same: concrete production English. Preserve reference tags exactly: `[Image1]`, `[Video1]`, `[Audio1]` must never be reworded.
+英文是默认的提示词语言，它会以两种方式同时失效：废话（添加了大量标记但不含任何信号的空洞评价性词汇）和误报（模糊的、带有威胁暗示的措辞触发了最严格的审核层）。解决这两者的方法是一样的：具体的、有制作价值的英文。必须精确保留参考标签：`[Image1]`、`[Video1]`、`[Audio1]`绝不能重新措辞。
 
-## Intent
+## 意图
 
-English is where most users think, and where most prompts quietly rot. The soul of this vocabulary is precision as kindness: give people exact words so their excitement survives contact with the model, and so honest prompts stop being mistaken for dangerous ones.
+英文是大多数用户思考的语言，也是大多数提示词默默腐烂的地方。此词汇表的灵魂是"精确即善意"：给人们准确的字眼，让他们所期待的兴奋感能够经受住与模型的接触，也让真实的提示词不再被误认为有害内容。
 
-## Usage Rule
+## 使用规则
 
-If a camera, microphone, light meter, or stopwatch cannot detect it, rewrite it. Every sentence should name something visible, audible, or measurable: subject, visible action, camera, light source, sound, constraint.
+如果摄影机、麦克风、测光表或秒表无法检测到它，就重写它。每个句子都应命名可见、可听或可测量的内容：主体、可见动作、摄影机、光源、音效、约束条件。
 
-| Function | English wording |
-|---|---|
-| Camera | `slow push-in`, `locked medium shot`, `stable lateral tracking`, `pull back to reveal`, `macro close-up` |
-| Lighting | `soft backlight`, `warm practical light from the left`, `cool moonlight rim`, `wet asphalt reflecting neon` |
-| Motion | `a slow head turn that stops`, `droplets merge and slide down`, `fabric settles after the gesture` |
-| Audio | `quiet room tone`, `one clear spoken line in quotes`, `no music until after the line` |
-| Constraints | `keep the logo, label, and shape unchanged`, `one action, one camera move`, `nothing else moves` |
+| 功能 | 英文措辞                                                                     |
+| ---- | ---------------------------------------------------------------------------- |
+| 摄影 | `缓慢推进`, `锁定中景`, `稳定的横向跟拍`, `拉远揭示`, `微距特写`             |
+| 灯光 | `柔和的逆光`, `左侧温暖的实用光源`, `冷色月光轮廓光`, `湿润沥青反射霓虹灯`   |
+| 动作 | `缓慢转头然后停止`, `水滴汇聚并滑落`, `布料在动作后恢复平整`                 |
+| 音频 | `安静的室内环境音`, `一句用引号标注的清晰台词`, `台词之前无配乐`             |
+| 约束 | `保持标志、标签和外形不变`, `一个动作，一个摄影机运动`, `其他任何东西都不动` |
 
-## De-Slop Pass
+## 去除废话步骤
 
-Strip quality adjectives before adding anything: `cinematic`, `epic`, `stunning`, `masterpiece`, `8K`, `ultra-realistic`, `award-winning`, `hyper-detailed` all delete or convert to one observable detail each. A prompt that earns "epic" names the crowd size, the lens distance, or the structure height instead of the word.
+在添加任何内容之前，先剥离质量形容词：`电影感`、`史诗`、`惊艳`、`杰作`、`8K`、`超写实`、`获奖`、`超高细节`——全部删除，或每一个替换为一个可观察的具体细节。一个配得上"史诗"的提示词，应该写出人群规模、镜头距离或建筑物高度，而不是直接使用这个词。
 
-## Filter-Aware Wording
+## 过滤器敏感措辞
 
-English homonyms read as threats to filters: `shoot the scene`, `kill the lights`, `gun it`, `dead silence`, `blow up the image`. Use the production synonym (`film the take`, `cut the lights to black`, `accelerate hard`, `held silence`, `enlarge to full frame`). This is clarity for safe prompts only — never evasion. Anything genuinely risky (minors, real-person likeness, sexual or graphic content) routes to `[skill:seedance-filter]` for its boundary rule, not to a rewording.
+英文同义词可能被过滤器识别为威胁：`shoot the scene`（拍摄场景）、`kill the lights`（关灯）、`gun it`（猛踩油门）、`dead silence`（死寂）、`blow up the image`（放大图像）。使用制作行业同义词（`film the take`、`cut the lights to black`、`accelerate hard`、`held silence`、`enlarge to full frame`）。这仅是为了安全提示词的清晰表达——绝不是规避。任何真正有风险的内容（未成年人、真实人物肖像、色情或露骨内容）路由到`[skill:seedance-filter]`处理其边界规则，而非重新措辞。
 
-## Compact Pattern
+## 紧凑模式
 
-`[Image1] is the reference; keep identity, color, and shape unchanged. Only [motion/light/camera] changes. Camera: [one move]. Sound: [one cue]. Constraints: [lock].`
+`[Image1]为参考；保持身份、颜色和外形不变。仅[动作/光线/摄影机]变化。摄影：[一个运动]。音效：[一个提示]。约束：[锁定]。`
 
-Load `references/vocab/en.md` for the full function-organized vocabulary, slop traps, and filter-trip repairs. Load `[ref:anti-slop-lexicon]` for the core replacement rule and `[ref:filter-vocab]` for the full false-positive repair table.
+加载`references/vocab/en.md`获取完整按功能组织的词汇表、废话陷阱和过滤器触发修复。加载`[ref:anti-slop-lexicon]`获取核心替换规则，`[ref:filter-vocab]`获取完整的误报修复对照表。
 
-## Output Contract
+## 输出约定
 
-Return the de-slopped English prompt, each replacement made (slop → observable detail), any filter-trip repair applied, and unchanged reference tags.
+返回去除废话后的英文提示词、所做的每项替换（废话 → 可观察细节）、应用的任何过滤器触发修复，以及未改变的参考标签。

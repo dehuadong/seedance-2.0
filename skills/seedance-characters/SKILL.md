@@ -1,67 +1,61 @@
 ---
 name: seedance-characters
-description: "This skill should be used when the user asks for character consistency, character tags, identity lock, multi-character blocking, wardrobe continuity, hand safety, expression control, or likeness-sensitive character guidance."
+description: '当用户询问角色一致性、角色标签、身份锁定、多角色走位、服装连续性、手部安全、表情控制或涉及肖像权的角色指导时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - characters
-  - identity
-  - consistency
+  - 角色
+  - 身份
+  - 一致性
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
 ---
 
 # seedance-characters
 
-Use this for identity, consistency, multi-character blocking, wardrobe continuity, hand safety, expression control, and likeness-sensitive character guidance. Character prompting must remove ambiguity before adding style.
+用于处理身份、一致性、多角色走位、服装连续性、手部安全、表情控制以及涉及肖像权的角色指导。角色提示词必须先消除歧义，再添加风格。
 
-Load `[ref:shot-list-continuity]` when character identity, wardrobe, props, eyeline, screen direction, or emotional state must survive across multiple shots.
+当角色身份、服装、道具、视线方向、屏幕方向或情绪状态必须在多个镜头中保持一致时，加载 `[ref:shot-list-continuity]`。
 
-## Intent
+## 意图
 
-The user is protecting someone here - a character they invented, a product they built, or a person they love. Identity is trust: when a face drifts, the user feels it as betrayal, not as a rendering artifact. Treat every recurring character as a continuing cast member with memory and a contract, never as a stranger re-cast for each clip.
+用户在这里是在保护某个人——他们创造的角色、他们打造的产品，或是他们所爱的人。身份即信任：当一张脸发生变化时，用户感受到的是背叛，而不是渲染瑕疵。将每一个反复出现的角色视为拥有记忆和合约的常驻演员，而不是为每个片段重新选角的陌生人。
 
-## Character Contract
+## 角色契约
 
-Assign each character a stable tag: `Character A`, `Character B`, `[Image1] subject`, or a user-provided original name. After more than one character appears, do not use ambiguous pronouns. Keep tag, role, appearance, wardrobe, position, action, and emotional beat consistent.
+为每个角色分配一个稳定的标签：`角色A`、`角色B`、`[Image1] 主体`，或用户提供的原始名称。出现超过一个角色后，不要使用模糊的代词。保持标签、角色、外貌、服装、位置、动作和情绪状态的一致性。
 
-| Field | Prompt use |
-|---|---|
-| Tag | `Character A` or `[Image1] subject` |
-| Identity anchor | Age range, silhouette, hair, wardrobe, or authorized reference role |
-| Position | Foreground/background, left/right, seated/standing |
-| Action | One assigned verb and endpoint |
-| Expression | Observable behavior such as blink, glance, smile, grip, pause |
-| Constraint | What must stay unchanged |
+| 字段     | 提示词中的用法                               |
+| -------- | -------------------------------------------- |
+| 标签     | `角色A` 或 `[Image1] 主体`                   |
+| 身份锚点 | 年龄段、轮廓、发型、服装或经授权的参考角色   |
+| 位置     | 前景/背景、左/右、坐/站                      |
+| 动作     | 一个指定的动词和终点                         |
+| 表情     | 可观察的行为，如眨眼、注视、微笑、握紧、停顿 |
+| 约束     | 必须保持不变的内容                           |
 
-## Multi-Character Blocking
+## 多角色走位
 
-Assign actions separately: `Character A lowers the envelope; Character B remains in the doorway`. Do not write `they argue dramatically` when the model must decide who moves. If contact occurs, describe the contact point and endpoint. For crowd scenes, identify the hero subject and keep background motion simple.
+分别分配动作：`角色A放下信封；角色B留在门口`。当模型必须决定谁在动时，不要写“他们激烈地争吵”。如果发生接触，描述接触点和终点。对于人群场景，明确主角主体并保持背景运动简单。
 
-## Three-Tier Action Hierarchy
+## 三层动作优先级
 
-Field-observed from Chinese production practice; the strongest known stabilizer for multi-person scenes. Give every visible person an action from exactly one tier:
+从中国制作实践中实地观察得出；是多人物场景已知最强大的稳定器。让每个可见人物从且仅从以下一个层级中获得动作：
 
-1. **Persistent micro-motion** - breathing, blinks, slight shoulder movement, hair drift, drifting gaze. Continuous, no gaps; this is the default tier for everyone who is not the focus.
-2. **One focused response** - a single person gets one small reaction with an explicit time window: `Character B's lip corner lifts and she holds a half-second glance`.
-3. **Large actions - prohibited by default.** In multi-person shots, explicitly exclude standing, walking, turning, posture changes, and object pickup unless one of them is the shot's single beat. Character-to-prop physics (lifting a glass, passing an object) is fragile with multiple people on screen - keep contact simple or move it off-screen.
+1. **持续的微动作**——呼吸、眨眼、轻微的肩部移动、发丝飘动、目光游移。持续不断，无间隙；这是所有非焦点人物的默认层级。
+2. **一次聚焦反应**——单个人物在一个明确的时间窗口内获得一个小反应：`角色B的嘴角微微上扬，并维持半秒的注视`。
+3. **大幅度动作——默认禁止。** 在多人物镜头中，除非其中一个是该镜头的单一节拍，否则明确排除站立、行走、转身、姿势变化和拾取物体。角色与道具的物理交互（拿起杯子、传递物体）在多人同框时是脆弱的——保持接触简单或将其移至画面之外。
 
-## Hand and Face Stability
+## 手部和面部稳定性
 
-Hands and faces degrade under complex choreography. Keep hands visible but simple, avoid rapid finger actions, avoid face-touching during dialogue, and lock the camera for lip-sync or portrait preservation. Use props to show emotion when facial precision is fragile.
+手部和面部在复杂的编排下会退化。保持手部可见但动作简单，避免快速的手指动作，避免在对白期间触摸面部，并为口型同步或肖像保留锁定镜头。当面部精度不可靠时，使用道具来表达情绪。
 
-## Likeness Rule
+## 肖像权规则
 
-For real-person likeness, do not infer consent from an uploaded asset. Treat portrait, face, and voice workflows as authorization-dependent and surface-specific. If authorization is unclear, rewrite to an original character archetype while preserving the scene function.
+对于真人肖像，不要从上载的素材中推断授权。将肖像、面部和声音工作流视为依赖授权且特定于使用场景的。如果授权不明确，在保留场景功能的前提下改写为原创角色原型。
 
-## Output Contract
+## 输出约定
 
-Return a character card, tag map, action assignments, continuity constraints, and any safety or authorization note.
+返回角色卡片、标签映射、动作分配、连续性约束以及任何安全性或授权说明。

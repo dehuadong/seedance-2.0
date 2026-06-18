@@ -1,54 +1,54 @@
-# Audio Post And Delivery
+# 音频后期与交付
 
-Use this reference when Seedance work involves dialogue, sound design, music, stems, M&E, dubbing, sync, or final delivery checks.
+当 Seedance 作品涉及对话、声音设计、音乐、分轨、M&E、配音、同步或最终交付检查时，使用此参考。
 
-## Prompt-Level Audio
+## 提示词层面的音频
 
-Use prompt audio to direct story timing and mood:
+使用提示词中的音频来引导故事节奏和情绪：
 
-- dialogue: short, quoted, assigned to one speaker;
-- ambience: room tone, traffic, rain, crowd bed, machine hum;
-- SFX: one or two story-relevant sounds tied to visible action;
-- music: broad tempo, energy, instrumentation, or silence;
-- sync cue: door slam at endpoint, product click on final frame, light pulse on downbeat.
+- 对话：简短、带引号、分配给单一说话者；
+- 环境声：室内环境音、交通声、雨声、人群底层音、机器嗡鸣声；
+- 音效：与可见动作相关联的一到两个故事相关声音；
+- 音乐：宽泛的节奏、能量、配器或静默；
+- 同步提示：终点处门砰然关闭、最后一帧产品点击声、重拍上灯光脉冲。
 
-Avoid exact reproduction claims for protected songs, real voices, or licensed performances unless rights and platform support are clear.
+除非权利和平台支持明确，否则避免对受保护歌曲、真实人声或许可表演提出精确再现的要求。
 
-## Post-Level Audio Deliverables
+## 后期音频交付物
 
-| Deliverable | Purpose |
+| 交付物 | 用途 |
 |---|---|
-| Full mix | final stereo/5.1/Atmos or platform-required mix |
-| Dialogue stem | spoken lines for edits, dubbing, and cleanup |
-| Music stem | music-only layer |
-| Effects stem | SFX and designed sound |
-| M&E | music and effects without original dialogue for localization |
-| Printmaster | approved final master mix |
-| Dubbing guide | speaker timing, tone, pronunciation, pauses |
-| Loudness report | delivery-target compliance evidence |
+| 完整混音 | 最终立体声/5.1/Atmos 或平台要求的混音 |
+| 对话分轨 | 用于剪辑、配音和清理的口语台词 |
+| 音乐分轨 | 纯音乐层 |
+| 音效分轨 | 音效和设计声音 |
+| M&E | 不含原始对话的音乐和音效，用于本地化 |
+| 成品母版 | 经批准的最终母版混音 |
+| 配音指南 | 说话者时序、语气、发音、停顿 |
+| 响度报告 | 符合交付目标合规性证据 |
 
-## Audio Planning Template
+## 音频规划模板
 
-`Dialogue: [speaker/line/language]. Ambience: [bed]. SFX: [visible sync cue]. Music: [tempo/mood or none]. Reference: [Audio1 role]. Post: [stems/M&E/loudness/sync notes].`
+`对话：[说话者/台词/语言]。环境声：[底层音]。音效：[可见同步提示]。音乐：[节奏/情绪或无]。参考：[Audio1 的角色]。后期：[分轨/M&E/响度/同步说明]。`
 
-## Sync And Loudness Checks
+## 同步与响度检查
 
-For professional delivery, check:
+对于专业交付，请检查：
 
-- lip-sync against final picture;
-- music/SFX sync after frame-rate conversion;
-- no dialogue masked by music or effects;
-- no unintended source-video audio in R2V workflows;
-- loudness target and true peak per buyer/platform spec;
-- M&E or stems exist if localization is required.
+- 口型与最终画面同步；
+- 帧率转换后音乐/音效同步；
+- 无对话被音乐或音效掩盖；
+- 无 R2V 工作流中来自源视频的意外音频；
+- 符合买方/平台规格的响度目标和真峰值；
+- 如需本地化，M&E 或分轨是否存在。
 
-## Common Repairs
+## 常见修复方案
 
-| Failure | Repair |
+| 问题 | 修复方案 |
 |---|---|
-| dialogue desync | shorter line, locked framing, less head motion, one speaker |
-| wrong speaker | tag the speaker and split turns |
-| music overwhelms line | remove music during dialogue, keep room tone |
-| audio reference ignored | map `[Audio1]` to tempo or mood and bind a visible event to it |
-| video and audio refs conflict | mute video reference or assign video to camera only |
-| localization impossible | plan M&E/stems and textless picture before final edit |
+| 对话不同步 | 更短的台词、固定画幅、减少头部运动、单一说话者 |
+| 说话者错误 | 标记说话者并分开轮次 |
+| 音乐盖过台词 | 对话期间移除音乐，保留室内环境音 |
+| 音频参考被忽略 | 将 `[Audio1]` 映射到节奏或情绪，并将一个可见事件绑定到它 |
+| 视频和音频参考冲突 | 将视频参考静音，或指定视频仅控制镜头 |
+| 无法本地化 | 在最终剪辑前规划 M&E/分轨和无文字画面 |

@@ -1,58 +1,58 @@
-# Color Pipeline And ACES Notes
+# 色彩工作流与 ACES 说明
 
-Use this reference when Seedance output must enter a professional edit, grade, HDR/SDR pass, agency review, or delivery workflow.
+当 Seedance 输出需要进入专业剪辑、调色、HDR/SDR 流程、广告公司审核或交付工作流时，请使用此参考。
 
-## Honest Boundary
+## 诚实边界
 
-Seedance prompts can describe color intent, lighting motivation, contrast, palette, material response, and mood. They cannot replace measured color management, calibrated monitoring, conform, grade, legal-range checks, or delivery transforms. Keep prompt language creative; keep pipeline language as metadata for post.
+Seedance 提示词可以描述色彩意图、光线动机、对比度、调色板、材质响应和情绪。但它们不能替代经过测量的色彩管理、校准后的监视器、套底、调色、合法范围检查或交付转换。保持提示词语言的创意性；将工作流语言作为后期元数据保留。
 
-## Prompt-Level Color Intent
+## 提示词层面的色彩意图
 
-Use:
+可使用：
 
-- source light: tungsten practical, overcast daylight, sodium streetlight, neon sign, cool moon rim;
-- contrast: soft low contrast, hard noir contrast, clean product contrast, high-key beauty;
-- palette: restrained warm/cool split, muted winter palette, saturated music-video palette;
-- material response: brushed metal highlight, skin rolloff, glossy acrylic reflection, wet asphalt speculars;
-- transition: practical lamp warms the face, lightning briefly hardens the silhouette.
+- 光源：钨丝灯实际光源、阴天日光、钠灯路灯、霓虹灯、冷调月光轮廓光；
+- 对比度：柔和低对比度、硬朗黑色电影对比度、干净产品对比度、高调美容光；
+- 调色板：克制的暖/冷分离色调、柔和冬季调色板、饱和的音乐视频调色板；
+- 材质响应：拉丝金属高光、肤色过渡、光泽亚克力反射、湿沥青镜面反光；
+- 过渡：实际灯光使面部变暖，闪电短暂地使轮廓变硬。
 
-Avoid:
+避免：
 
-- unsupported claims such as exact ACES compliance from a prompt alone;
-- impossible stacks like HDR Dolby Vision, 16mm, neon, bleach bypass, and pastel commercial all in one short shot;
-- using LUT names as magic style words without describing the visible result.
+- 不支持的说法，例如仅凭提示词就能精确符合 ACES；
+- 不可能的堆叠，如 HDR Dolby Vision、16mm、霓虹灯、漂白旁路和粉彩广告风格全部挤在一个短镜头中；
+- 将 LUT 名称当作魔法风格词使用，而不描述可见效果。
 
-## Post Metadata To Track
+## 需跟踪的后期元数据
 
-For professional handoff, record:
+对于专业交接，记录：
 
-| Field | Meaning |
+| 字段 | 含义 |
 |---|---|
-| capture/source | generated source, reference clips, stills, source frame |
-| working color space | project working assumption, often ACEScct/ACEScg or editor-managed alternative |
-| IDT/source transform | how source media is interpreted, if applicable |
-| show look | creative look description, LUT/CDL/LMT notes |
-| output transform | SDR Rec.709, HDR PQ, theatrical/DCP, social platform conversion |
-| trim pass | separate SDR/HDR/social review notes |
-| QC notes | clipping, illegal levels, banding, skin tone, product color, logo color |
+| 采集/来源 | 生成来源、参考片段、静帧、源帧 |
+| 工作色彩空间 | 项目工作假设，通常为 ACEScct/ACEScg 或剪辑师管理的替代方案 |
+| IDT/源转换 | 源媒体如何被解释（如适用） |
+| 成片风格 | 创意风格描述、LUT/CDL/LMT 说明 |
+| 输出转换 | SDR Rec.709、HDR PQ、院线/DCP、社交媒体平台转换 |
+| 微调版本 | 独立的 SDR/HDR/社交媒体审核说明 |
+| QC 说明 | 裁切、非法电平、色带、肤色、产品颜色、标识颜色 |
 
-## ACES-Friendly Handoff
+## ACES 友好交接
 
-When a user asks for ACES, respond with a two-layer answer:
+当用户询问 ACES 时，提供两层回答：
 
-1. Prompt: visible color and lighting instructions that Seedance can understand.
-2. Handoff: ACES/AMF/color notes for the editor or colorist to verify outside Seedance.
+1. 提示词：Seedance 能够理解的可见色彩和光线指令。
+2. 交接：供剪辑师或调色师在 Seedance 之外验证的 ACES/AMF/色彩说明。
 
-Example:
+示例：
 
-`Prompt look: cool overcast daylight with a warm practical lamp reflected in the bottle, soft contrast, clean highlight rolloff, no crushed blacks. Post note: conform generated clip into the project color pipeline, verify source interpretation, preserve product color, create SDR Rec.709 and HDR trim review if required.`
+`提示词风格：冷调阴天日光，瓶身反射暖调实际光源，柔和对比度，干净的高光过渡，不压黑。后期说明：将生成的片段套底到项目色彩工作流中，验证源解释，保持产品颜色，如需要创建 SDR Rec.709 和 HDR 微调审核版本。`
 
-## Color Failure Repairs
+## 色彩问题修复方案
 
-| Symptom | Repair |
+| 症状 | 修复方案 |
 |---|---|
-| Flat image | add motivated key source, rim/separation, and one material highlight |
-| Overprocessed color | reduce style names; specify natural contrast and neutral skin/product color |
-| Inconsistent color across shots | repeat light direction, time of day, palette, and show-look note in every shot |
-| Product color wrong | use I2V product reference, locked camera, and product-color preservation constraint |
-| HDR/social mismatch | keep prompt neutral; plan separate grade/export versions in post |
+| 画面平淡 | 加入有动机的主光源、轮廓/分离光，以及一个材质高光 |
+| 色彩过度处理 | 减少风格名称；指定自然对比度和中性肤色/产品颜色 |
+| 镜头之间色彩不一致 | 在每个镜头中重复光线方向、一天中的时间、调色板和成片风格说明 |
+| 产品颜色错误 | 使用 I2V 产品参考、锁定摄影机和产品颜色保持约束 |
+| HDR/社交媒体不匹配 | 保持提示词中性；在后期规划独立的调色/导出版本 |

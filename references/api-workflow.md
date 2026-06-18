@@ -1,56 +1,56 @@
-# API Workflow
+# API 工作流
 
-last_verified: 2026-05-30
+最后验证时间：2026-05-30
 
-Use this reference for Seedance 2.0 operational planning on Volcengine, BytePlus, Runway, or wrappers. It is not a static API contract. Always recheck the active provider docs or console before implementation.
+将此参考用于 Volcengine、BytePlus、Runway 或封装器上的 Seedance 2.0 操作规划。它不是静态的 API 合同。实施前务必重新确认当前提供商文档或控制台。
 
-## Surface Gate
+## 表面选型
 
-| Surface | Use when | Must recheck |
+| 表面 | 使用场景 | 必须重新确认 |
 |---|---|---|
-| Volcengine Ark | China-facing official Ark workflows, model IDs, task lifecycle, first/last-frame roles, `return_last_frame`, web-search tools, and virtual portrait assets. | model ID, region, entitlement, schema, pricing, duration, resolution, face/reference policy |
-| BytePlus ModelArk | International BytePlus docs or console workflows. | JS-rendered pricing/model pages, account access, region, exact model ID, upload/file rules |
-| Runway | Runway web/API/MCP workflow with `seedance2`, hosted uploads, and Runway plan/region constraints. | duration, ratios, plan, region, SDK field support, audio-reference combination rules |
-| Wrapper APIs | Fast prototyping through a third-party provider. | whether names, prices, moderation, duration, or face support are wrapper-specific |
+| Volcengine Ark | 面向中国的官方 Ark 工作流、模型 ID、任务生命周期、首帧/尾帧角色、`return_last_frame`、联网搜索工具和虚拟肖像资产。 | 模型 ID、区域、授权、模式、定价、时长、分辨率、面部/参考政策 |
+| BytePlus ModelArk | 国际 BytePlus 文档或控制台工作流。 | JS 渲染的定价/模型页面、账户访问权限、区域、确切模型 ID、上传/文件规则 |
+| Runway | 使用 `seedance2` 的 Runway 网页/API/MCP 工作流，托管上传，以及 Runway 套餐/区域限制。 | 时长、宽高比、套餐、区域、SDK 字段支持、音频参考组合规则 |
+| 封装器 API | 通过第三方提供商进行快速原型开发。 | 名称、价格、审核、时长或面部支持是否为封装器特定 |
 
-## Async Task Lifecycle
+## 异步任务生命周期
 
-1. Create the task with source-dated model ID, prompt, duration, ratio/size, resolution, and reference files.
-2. Store task ID, provider, request date, model ID, and prompt version.
-3. Poll or use SDK wait helpers until completed or failed.
-4. Retrieve output URL(s), optional last frame, logs/errors, and moderation/failure reason when provided.
-5. Save output plus metadata for repeatability.
-6. Cancel, delete, or list tasks only through the active provider's current docs.
+1. 使用带有来源日期的模型 ID、提示词、时长、比例/尺寸、分辨率和参考文件创建任务。
+2. 存储任务 ID、提供商、请求日期、模型 ID 和提示词版本。
+3. 轮询或使用 SDK 等待辅助工具，直至完成或失败。
+4. 检索输出 URL、可选尾帧、日志/错误，以及提供的审核/失败原因。
+5. 保存输出及元数据以保证可复现性。
+6. 仅通过当前提供商文档取消、删除或列出任务。
 
-## Request Checklist
+## 请求检查清单
 
-- Prompt says one visible beat, one camera move, physical light, sound intent, and constraints.
-- Mode is explicit: T2V, I2V, V2V, R2V, FLF2V, edit, or extend.
-- Reference roles are explicit and legal: first frame, last frame, identity, product, motion, camera, timing, audio, or style.
-- Audio references are paired with a text prompt and a valid image/video reference when the surface requires that combination.
-- First/last-frame requests do not silently mix incompatible video/audio reference modes unless the active docs allow it.
-- Real-person, face, portrait, and voice inputs have authorization and surface support.
-- Pricing, duration, resolution, region, quotas, and model IDs have a verification date.
+- 提示词包含一个可见节拍、一个镜头运动、物理光线、音效意图和约束条件。
+- 模式明确：T2V、I2V、V2V、R2V、FLF2V、编辑或扩展。
+- 参考角色明确且合法：首帧、尾帧、身份、产品、运动、镜头、节奏、音频或风格。
+- 当表面要求该组合时，音频参考与文本提示和有效的图像/视频参考配对使用。
+- 除非当前文档允许，否则首帧/尾帧请求不会静默混合不兼容的视频/音频参考模式。
+- 真人、面部、肖像和音频输入具有授权和表面支持。
+- 定价、时长、分辨率、区域、配额和模型 ID 带有验证日期。
 
-## Provider Notes
+## 提供商说明
 
-Volcengine docs are the current source for `doubao-seedance-2-0-260128`, `doubao-seedance-2-0-fast-260128`, first/last-frame roles, and Ark task flow. Quote prices only with date and caveat.
+Volcengine 文档是 `doubao-seedance-2-0-260128`、`doubao-seedance-2-0-fast-260128`、首帧/尾帧角色和 Ark 任务流程的当前来源。引用价格时须附带日期和免责声明。
 
-Runway docs are the current source for Runway's `seedance2` API surface, `runway://` uploads, duration, reference-count rules, and SDK caveats. Do not copy Runway field names into Volcengine examples or vice versa.
+Runway 文档是 Runway 的 `seedance2` API 表面、`runway://` 上传、时长、引用计数规则和 SDK 注意事项的当前来源。不要将 Runway 字段名复制到 Volcengine 示例中，反之亦然。
 
-BytePlus pages can be JavaScript-rendered. Do not infer live pricing or model IDs from incomplete static fetches.
+BytePlus 页面可能采用 JavaScript 渲染。不要从不完整的静态抓取中推断实时定价或模型 ID。
 
-## Error and Risk Playbook
+## 错误与风险应对手册
 
-| Symptom | Likely cause | First repair |
+| 症状 | 可能原因 | 首要修复措施 |
 |---|---|---|
-| 403 or unavailable model | region, plan, entitlement, vendor licensing, or provider gate | check surface-specific access docs and account console |
-| audio-only request fails | active surface requires image/video plus prompt with audio | add valid visual reference and state audio role |
-| first/last frame rejected | incompatible mode mix or wrong role fields | use provider's first/last-frame field names and remove video/audio refs if required |
-| face/portrait upload blocked | real-person policy, verification, or asset-library requirement | use authorized virtual portrait path or original character rewrite |
-| output drifts after extension | weak last-frame continuity or too many changed variables | use returned last frame as next first frame and change one variable |
-| price estimate wrong | stale pricing page or wrapper-specific billing | recheck provider pricing page/console before quoting |
+| 403 或模型不可用 | 区域、套餐、授权、供应商许可或提供商门槛 | 检查特定表面的访问文档和账户控制台 |
+| 仅音频请求失败 | 活动表面要求图像/视频加提示词配音频 | 添加有效的视觉参考并说明音频角色 |
+| 首帧/尾帧被拒绝 | 模式组合不兼容或角色字段错误 | 使用提供商的首帧/尾帧字段名，并按需移除视频/音频参考 |
+| 面部/肖像上传被阻止 | 真人政策、验证或素材库要求 | 使用已授权的虚拟肖像路径或原创角色改写 |
+| 扩展后输出漂移 | 尾帧连续性较弱或过多变量被更改 | 将返回的尾帧作为下一段的首帧，且只更改一个变量 |
+| 价格估算错误 | 定价页面过时或封装器特定计费 | 引用前重新确认提供商定价页面/控制台 |
 
-## Production Readiness
+## 生产就绪
 
-Keep a run ledger with: provider, model ID, prompt, mode, references, duration, resolution, generated audio flag, task ID, output URL, last frame, verification date, and failure notes. This makes prompt repair possible and prevents stale source claims from leaking into user-facing guidance.
+维护运行日志，包含：提供商、模型 ID、提示词、模式、参考、时长、分辨率、生成音频标志、任务 ID、输出 URL、尾帧、验证日期和失败记录。这使提示词修复成为可能，并防止过时的来源声明泄露到面向用户的指导中。

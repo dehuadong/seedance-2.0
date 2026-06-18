@@ -1,29 +1,29 @@
-# Capability Map — design into strengths, around limits
+# 能力地图 — 依据优势设计，围绕限制规避
 
-*What Seedance 2.0 is best at, how to extract each strength, and what to design around. Load before prompt planning. Labels: [official] = ByteDance/fal/Ark docs · [field] = practitioner-reported · [heuristic] = default to test. Last verified 2026-06-09. The mechanics behind these rows live in `model-mechanics.md`.*
+*Seedance 2.0 最擅长的领域、如何发挥每项优势，以及需要绕开的设计点。在规划提示词前加载。标签：[official] = ByteDance/fal/Ark 文档 · [field] = 从业者报告 · [heuristic] = 默认建议测试。最后验证于 2026-06-09。这些条目背后的机制位于 `model-mechanics.md`。*
 
-## Design INTO these
+## 要利用的这些能力
 
-| Capability | Extraction move |
+| 能力 | 提取方法 |
 |---|---|
-| Multi-shot in one call [official] | `Shot 1:/2:/3:` labels · one action + one camera each · Standard tier · 10–15s/`auto` · shots×seconds budget |
-| Native synced audio [official] | name specific sounds; dialogue as a natural quoted line on-screen; short lines; clean front face ref; SFX>music>dialogue — test dialogue first |
-| Role-separated references [official] | per-asset role **+ exclusion** ("motion only, no appearance") |
-| Motion transfer via @Video [official/field] | donor clip for choreography/camera rhythm + identity @Image |
-| Audio-as-clock via @Audio [field] | "cut on the beat of @Audio1; the turn lands on the drop" |
-| First/last frame [official] | lock endpoints; prompt initiate→travel→resolve; transformations & match-cuts |
-| Literal camera verbs [official] | one motivated move per shot |
-| Physics [official claim] | physical verbs & consequences, not pose adjectives |
-| Slow motion [official] | Standard tier; on the single key action |
-| Transformation [field] | endpoint states + the persisting carrier; hard cases → FLF decomposition |
-| 2D/anime [field] | medium grammar: cel over painted bg, sakuga vs held frames, impact frames/speed lines/smears; no lens/DOF talk — full grammar in `[ref:2d-anime-grammar]` |
-| Formats & `auto` [official] | 21:9 for cinema; `auto` sizes duration to complexity |
-| Multilingual [official/field] | zh anchors for texture/mood; keep reference tags exact |
+| 单次调用多镜头 [official] | `镜头 1:/2:/3:` 标签 · 每个镜头一个动作 + 一个镜头运动 · 标准层级 · 10–15 秒/`auto` · 镜头数 × 秒数的预算 |
+| 原生同步音频 [official] | 指明具体声音；对话作为画面中自然的引用台词；简短台词；干净正面面部参考；音效 > 音乐 > 对话 — 先测试对话 |
+| 角色分离的参考 [official] | 每个素材的角色 **+ 排除项**（“仅用于动作，不用于外观”） |
+| 通过 @Video 进行动作迁移 [official/field] | 用于编排动作/镜头节奏的捐赠者片段 + 用于身份的 @Image |
+| 通过 @Audio 作为音频时钟 [field] | “根据 @Audio1 的节拍进行剪辑；转身动作落在 drop 处” |
+| 首帧/尾帧 [official] | 锁定端点；提示词结构：起始→运动过程→解决；变形转换与匹配剪辑 |
+| 字面意义的镜头动词 [official] | 每个镜头一个有动机的运动 |
+| 物理效果 [official 声称] | 物理动词及其后果，而非姿势形容词 |
+| 慢动作 [official] | 标准层级；用于单一关键动作 |
+| 变形转换 [field] | 端点状态 + 持续存在的载体；困难情况 → FLF 分解 |
+| 2D/动漫 [field] | 媒介语法：赛璐珞层叠于手绘背景之上、爆发式作画 vs 定格帧、冲击帧/速度线/拖影；不要使用镜头/景深相关词汇 — 完整语法见 `[ref:2d-anime-grammar]` |
+| 格式与 `auto` [official] | 21:9 用于院线风格；`auto` 根据复杂度调整时长 |
+| 多语言 [official/field] | 中文锚点用于质感和情绪；保持参考标签准确 |
 
-## Design AROUND these
+## 要规避的这些限制
 
-≤15s/call; audio not continuous across calls → score in post [official] · on-screen text → post [official] · negation summons — exclude compositionally [field] · tiny detail (distant faces, hands, logos) degrades [field] · facial micro-acting weakest — stage emotion in body/staging, ration CUs [heuristic] · identity drift after ~4–5 chained gens — re-anchor original refs [field] · character↔prop physics fragile in multi-person shots — keep contact simple or off-screen, use the three-tier action hierarchy [field] · Fast tier: no reliable multi-shot/slow-mo/dolly [field] · seed = stabilizer, not lock [official].
+≤15 秒/次调用；音频在多次调用间不连续 → 后期配乐 [official] · 屏幕文字 → 后期添加 [official] · 否定式会召唤出缺陷 — 通过构图排除 [field] · 微小细节（远处面部、手部、标识）会退化 [field] · 面部微表情最弱 — 用肢体/场面调度传达情绪，控制近景镜头数量 [heuristic] · 约 4–5 次链式生成后身份漂移 — 用原始参考重新锚定 [field] · 角色↔道具物理效果在多人物镜头中脆弱 — 保持接触简单或在画面外，使用三层动作层级结构 [field] · Fast 层级：多镜头/慢动作/轨道车运动不可靠 [field] · seed = 稳定辅助，非锁定 [official]。
 
-## Competitive Context *(2026-06-14)*
+## 竞争格局 *(2026-06-14)*
 
-Native audio is no longer a Seedance-unique differentiator — as of mid-2026 Veo 3.1, Sora 2, Kling 3.0, Runway Gen-4.5, Hailuo 2.3, and Vidu Q3 all ship it [tech-press]. Lead with what is still distinctive in combination — single-pass multimodal references (text+image+video+audio together), multi-shot from one prompt, and multilingual lip-sync — rather than selling native audio as a headline. The official native resolution is 480p/720p; 1080p is surface-specific (see `api-status.md`).
+原生音频已不再是 Seedance 独有的差异化优势——截至 2026 年中期，Veo 3.1、Sora 2、Kling 3.0、Runway Gen-4.5、Hailuo 2.3 和 Vidu Q3 都已具备该功能 [科技媒体]。请以仍然具有组合优势的方面作为核心卖点——单次通过多模态参考（文本+图像+视频+音频同时输入）、单提示词多镜头输出，以及多语言口型同步——而非将原生音频作为主打卖点。官方原生分辨率为 480p/720p；1080p 是特定于表面的（参见 `api-status.md`）。

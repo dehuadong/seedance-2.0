@@ -1,50 +1,45 @@
 ---
 name: seedance-interview-short
-description: "This skill should be used when the user wants a fast Seedance 2.0 creative brief, a short interview, a compressed intake flow, or a quick director-style clarification before prompt writing."
+description: '当用户想要一个快速的Seedance 2.0创意简报、简短访谈、压缩版信息采集流程，或在编写提示词之前进行快速的导演式澄清时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - creative-direction
-  - brief
-  - compression
+  - 创意指导
+  - 简报
+  - 压缩
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
+  parent: 'seedance-20'
 ---
 
 # seedance-interview-short
 
-Use this when speed matters more than exhaustive creative discovery. The goal is to turn a vague idea into a compact director brief with no more than three questions, then route to prompt writing.
+当速度比全面创意探索更重要时使用此技能。目标是将模糊想法转化为不超过三个问题的紧凑导演简报，然后路由到提示词编写。
 
-## Intent
+## 意图
 
-The user here knows what they want and is asking you to respect their momentum. The soul of this skill is restraint: find the one missing piece that would sink the generation, ask only that, and get out of the way. Speed is the form their trust takes.
+这里的用户知道他们想要什么，并要求你尊重他们的节奏。此技能的灵魂在于克制：找到那个会让生成失败的唯一缺失环节，只问那一个，然后让路。速度是他们信任的表现形式。
 
-## Process
+## 流程
 
-Ask at most three questions, and only ask them if the answer materially changes the prompt. Assume no film background: ask in everyday words, give pickable options, and attach a default so "I don't know" never stalls the brief. Prioritize:
+最多问三个问题，且只有当答案会实质性地改变提示词时才问。假设没有电影背景：用日常语言提问，提供可选选项，并附带默认值，这样"我不知道"就永远不会卡住简报。优先级：
 
-1. What happens in the video, and what is different at the end? `(not sure? I'll pick one simple action with a visible ending)`
-2. What should it feel like - pick one: polished ad, movie drama, funny, real-life phone clip, cartoon, or moody atmosphere? `(not sure? I'll go calm and warm)`
-3. Do you have photos, clips, or sound of the real thing - and should each one keep the look, the motion, or the sound? `(none is fine)`
+1. 视频中发生了什么？结尾有什么不同？`（不确定？我会选一个有可见结局的简单动作）`
+2. 应该给人什么感觉——选一个：精致广告、电影剧情、搞笑、真实生活手机片段、动画片，还是氛围感？`（不确定？我会选平静而温暖）`
+3. 你有真实事物的照片、视频片段或声音吗——每一项应该保留外观、动作，还是声音？`（没有也可以）`
 
-If the user already supplied enough information, do not ask. Produce a brief immediately. If the user speaks production language fluently, drop the plain phrasing and ask in director terms.
+如果用户已经提供了足够的信息，就不要提问。立即生成简报。如果用户流利地使用制作行话，则放弃平实措辞，改用导演术语提问。
 
-## Compact Brief Pattern
+## 紧凑简报模板
 
-`Mode: [T2V/I2V/V2V/R2V]. Subject: [anchor]. Beat: [before -> action -> final state]. Camera: [one move]. Light/style: [physical source and safe descriptor]. Sound: [dialogue/ambience/SFX/music/silence]. Constraints: [identity, IP, safety, product, prompt budget].`
+`模式：[T2V/I2V/V2V/R2V]。主体：[锚点]。节拍：[之前 -> 动作 -> 最终状态]。摄影：[一个运动]。灯光/风格：[物理光源和安全的描述词]。音效：[对白/环境音/音效/音乐/静音]。约束：[身份、IP、安全、产品、提示词预算]。`
 
-## Routing Rule
+## 路由规则
 
-Route to `[skill:seedance-prompt]` for a full production prompt, `[skill:seedance-prompt-short]` for a compact prompt, `[skill:seedance-copyright]` for IP/likeness risk, or `[skill:seedance-troubleshoot]` when the user starts from a bad result.
+路由到`[skill:seedance-prompt]`获取完整制作提示词，`[skill:seedance-prompt-short]`获取紧凑提示词，`[skill:seedance-copyright]`处理IP/肖像权风险，或当用户从糟糕的结果开始时路由到`[skill:seedance-troubleshoot]`。
 
-## Output Contract
+## 输出约定
 
-Return one compact brief under 150 words, any missing high-impact question, and a recommended skill route.
+返回一份150字以内的紧凑简报、任何缺失的高影响问题，以及推荐的技能路由路径。

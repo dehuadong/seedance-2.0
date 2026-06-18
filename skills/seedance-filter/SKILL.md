@@ -1,64 +1,58 @@
 ---
 name: seedance-filter
-description: "This skill should be used when a Seedance 2.0 prompt is blocked, rejected, silently degraded, or likely to trigger a content filter; or when the user asks for a safer rewrite without losing the creative intent."
+description: '当 Seedance 2.0 提示词被拦截、拒绝、静默降质或可能触发内容过滤器时；或当用户要求在不丢失创作意图的情况下进行更安全改写时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - content-filter
-  - safe-rewrite
+  - 内容过滤
+  - 安全改写
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
 ---
 
 # seedance-filter
 
-## Intent
+## 意图
 
-A wrongly blocked prompt makes a user feel accused by a machine with no court of appeal. This skill is the advocate: clear the innocent by stating their honest intent plainly, and never coach the guilty. The user's dignity and the platform's boundary are protected in the same gesture.
+一个被错误拦截的提示词会让用户感觉被一台没有上诉法院的机器指控。这项技能是辩护者：通过直白地陈述其正当意图来为无辜者澄清，并且绝不指导有罪者。在同一个动作中保护用户的尊严和平台的边界。
 
-## Boundary — read before anything else
+## 边界——在阅读其他内容之前先读此条
 
-This skill repairs **false positives only**: benign production content blocked or degraded by over-broad filtering (medical, historical, athletic, fictional-original contexts). It works by **clarifying legitimate context in plain language** — never by disguising intent. It does not rephrase genuinely prohibited content: anything risky involving minors, real-person likeness without rights, sexual or graphic or illegal material. If the underlying request is prohibited, refuse plainly and offer a legitimate alternative only where one exists.
+此技能仅修复**误报**：被过度宽泛的过滤（医疗、历史、体育、虚构原创等背景）拦截或降质的良性制作内容。它通过**用平实的语言澄清合法上下文**来工作——绝不通过伪装意图来工作。它不会改写真正被禁止的内容：任何涉及未成年人、未经授权的真人肖像、色情、露骨或非法材料的风险内容。如果底层请求是被禁止的，直接拒绝，并仅在存在合法替代方案时提供一个。
 
-Use this when a prompt is blocked, degraded, likely to trigger moderation, or needs a safer rewrite without losing creative intent. This skill does not help evade safety systems. It rewrites risky surface wording into professional, non-graphic production language and preserves the safe creative core.
+当提示词被拦截、降质、可能触发审核，或需要在不丢失创作意图的情况下进行更安全改写时使用此技能。此技能不帮助规避安全系统。它将有风险的表面措辞改写为专业的、非露骨的制作语言，并保留安全的创作核心。
 
-## Repair Method
+## 修复方法
 
-1. Identify the creative intent: action, mood, camera, subject, and final beat.
-2. Identify risky surface wording: graphic harm, protected identity, sexualized framing, real-person likeness, weapons, self-harm, hate, evasion language, or exact IP copying.
-3. Replace risky terms with professional, non-graphic, production-context language.
-4. Preserve composition, action, mood, camera logic, and authorized references.
-5. For likely false positives, clarify benign production context, ownership, and non-graphic intent. Do not help bypass safety systems or provide evasion tactics.
+1. 识别创作意图：动作、情绪、镜头、主体和最终节拍。
+2. 识别有风险的表面措辞：露骨伤害、受保护身份、色情化的构图、真人肖像、武器、自残、仇恨、规避性语言或精确的 IP 复制。
+3. 用专业的、非露骨的、制作语境的语言替换风险术语。
+4. 保留构图、动作、情绪、镜头逻辑和经授权的参考。
+5. 对于可能的误报，澄清良性的制作背景、所有权和非露骨意图。不帮助规避安全系统或提供规避策略。
 
-## Safer Rewrite Patterns
+## 更安全的改写模式
 
-| Intent | Safer direction |
-|---|---|
-| Conflict | `staged confrontation, choreographed action beat, no graphic injury` |
-| Aftermath | `non-graphic distress, torn fabric, scattered props, dramatic silence` |
-| Suspense | `threat implied by shadow, locked door, heavy breathing, low light` |
-| Weapon-like prop | `prop object handled safely within a staged action scene` |
-| Horror mood | `eerie atmosphere, flickering practical light, off-screen sound cue` |
-| Protected identity | `original character with broad genre archetype traits` |
+| 意图       | 更安全的指导                                           |
+| ---------- | ------------------------------------------------------ |
+| 冲突       | `舞台化对峙，编排好的动作节拍，无露骨伤害`             |
+| 后果       | `非露骨的痛苦状态，撕裂的布料，散落的道具，戏剧性静默` |
+| 悬疑       | `由阴影、锁上的门、沉重呼吸声、低光照暗示威胁`         |
+| 武器类道具 | `在舞台化动作场景中安全处理的道具物体`                 |
+| 恐怖氛围   | `阴森气氛，闪烁的实用光源，画外音提示`                 |
+| 受保护身份 | `具有广泛类型原型特征的原创角色`                       |
 
-## Boundary Rule
+## 边界规则
 
-If the user's request is unsafe, refuse or redirect to a safe alternative. If it is safe but poorly worded, repair the wording. When uncertain, state the risk class and offer a conservative prompt that keeps the non-harmful scene function.
+如果用户的请求不安全，拒绝或引导至安全的替代方案。如果安全但措辞不当，修复措辞。当不确定时，说明风险类别，并提供一个保留无害场景功能的保守提示词。
 
-Do not provide filter-bypass, evasion, or hidden-word tactics. The safe path is to clarify production intent, remove unsafe identity or harm elements, and rewrite into an original authorized scene.
+不提供绕过过滤器、规避或隐藏词策略。安全路径是澄清制作意图、移除不安全的身份或伤害元素，并改写为原创的授权场景。
 
-Face-limit or portrait-verification workarounds are not safe prompt tricks. If a surface offers sanctioned virtual portrait, trusted model-output, or authorization asset flows, route the user to those current official paths instead of evasion language.
+面部限制或肖像验证的变通方法不是安全的提示词技巧。如果某个平台提供经过认证的虚拟肖像、可信的模型输出或授权资产流程，将用户引导至这些当前官方路径，而不是使用规避性语言。
 
-Load `[ref:filter-vocab]` for safer substitutions. Load `[ref:multilingual-community-examples]` only when the safe repair needs Chinese/Russian/Japanese/Korean/Spanish or mixed-language wording for clarity.
+加载 `[ref:filter-vocab]` 获取更安全的替换词。仅在安全修复需要中文/俄语/日语/韩语/西班牙语或混合语言措辞以澄清时，加载 `[ref:multilingual-community-examples]`。
 
-## Output Contract
+## 输出约定
 
-Return likely trigger class, safer wording, final prompt, what changed, and any content boundary that still applies.
+返回可能的触发类别、更安全的措辞、最终提示词、更改内容以及任何仍然适用的内容边界。

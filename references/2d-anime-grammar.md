@@ -1,48 +1,48 @@
-# 2D / Anime Grammar — direct the medium, not a camera rig
+# 2D / 动漫语法 — 指导的是媒介本身，而非摄影机设备
 
-*Seedance 2.0 renders stylized 2D and anime motion well, but live-action grammar degrades it: lens, depth-of-field, and sensor vocabulary pulls outputs toward photorealism or a fake tilt-shift look. Direct 2D work in animation-production language instead. Labels: [field] = practitioner-reported · [heuristic] = default to test. Craft guidance compiled 2026-06-11; contains no platform-availability claims.*
+*Seedance 2.0 能够很好地呈现风格化的 2D 和动漫动态，但写实类影视语法会使其质量下降：镜头、景深和感光元件相关的词汇会将输出结果拉向照片写实主义或伪移轴效果。请改用动画制作语言来指导 2D 作品。标签：[field] = 从业者报告 · [heuristic] = 默认建议测试。本指南编制于 2026-06-11；不包含任何平台可用性声明。*
 
-## Core rule [field]
+## 核心规则 [field]
 
-Name the medium first and keep every sentence inside the animation process: "hand-drawn 2D animation, cel-shaded characters over a painted background." Never use lens, bokeh, depth-of-field, focal-length, or camera-body vocabulary in a 2D prompt — it summons photoreal rendering.
+首先指明媒介类型，并使每一句描述都保持在动画制作流程的语境中：“手绘 2D 动画，赛璐珞风格角色叠加于手绘背景之上。”绝对不要在 2D 提示词中使用镜头、虚化、景深、焦距或摄影机身相关的词汇——这些会召唤出照片写实风格的渲染效果。
 
-## Layer grammar [field]
+## 图层语法 [field]
 
-2D scenes read as stacked artwork layers, and the model responds to layer language:
+2D 画面被解读为堆叠的艺术图层，模型对图层语言会做出相应响应：
 
-- **Cel over painted background:** crisp cel-shaded subjects over a soft gouache or watercolor painted background.
-- **Background scroll / multiplane depth:** "the painted background scrolls past" or "foreground silhouettes slide faster than the distant skyline" for parallax.
-- **Held background, animated subject:** declare what stays still — held frames are a feature of the medium, not a failure.
+- **赛璐珞层叠加于手绘背景：** 清晰的赛璐珞风格主体，置于柔和的水粉或水彩手绘背景之上。
+- **背景滚动 / 多图层纵深：** “手绘背景向一侧滚动掠过”或“前景剪影比远景天际线移动得更快”，用于表现视差效果。
+- **固定背景，动态主体：** 明确说明什么保持静止——定格帧是这种媒介的特征，而非缺陷。
 
-## Motion grammar [field]
+## 动态语法 [field]
 
-- **Burst animation (sakuga) vs held frames:** alternate high-effort fully animated bursts with held poses: "a burst of fluid full animation as she turns, then a held frame on her expression."
-- **Timing:** "animated on twos" for classic cel cadence; "on ones" only for the showcase move. [heuristic]
-- **Impact frames:** "a single high-contrast impact frame on the hit."
-- **Speed lines and smears:** "speed lines streak the background during the dash," "her arm smears across the swing."
-- **Follow-through:** hair, cloth, and coat tails keep settling after the body stops.
+- **爆发式动画（作画）与定格帧交替：** 将高投入的流畅全动画爆发段落与静态姿势交替使用：“她转身时有一段流畅的全动画爆发式动作，随后在她表情上定格一帧。”
+- **节奏：** 经典赛璐珞节奏使用“二拍子动画”；仅在展示关键动作时使用“一拍子”。[heuristic]
+- **冲击帧：** “在打击点插入一帧高对比度的冲击帧。”
+- **速度线和动态拖影：** “冲刺时速度线划过背景”，“她的手臂在挥动过程中产生拖影”。
+- **跟随动作：** 身体停止运动后，头发、衣物和衣摆等仍在继续归位。
 
-## Camera in 2D [field]
+## 2D 中的镜头运用 [field]
 
-The "camera" is a rostrum over artwork: pan across the painted background, slow push-in on a held face, vertical tilt down the tower artwork. One motivated move per shot still applies. Avoid dolly, handheld shake, and lens-breathing realism wording.
+这里的“镜头”是置于 artwork 上方的动画摄影台：横移扫过手绘背景，缓慢推近到一张定格的面部，沿塔楼 artwork 垂直俯摇。每个镜头仍应只包含一个有动机的运动。避免使用轨道车推移、手持抖动和镜头呼吸等写实类措辞。
 
-## Light and color [field]
+## 光线与色彩 [field]
 
-Light is drawn, not rendered: "hard two-tone cel shadow," "rim light as a clean shape along the jaw," "specular drawn as a white wedge in the eye." Name palette and finish: "limited palette, warm paper texture," "flat color with painted light bloom."
+光线是画出来的，而非渲染出来的：“硬朗的双色赛璐珞阴影”，“轮廓光呈现为沿着下颌的干净形状”，“高光画成眼中的白色楔形块面”。指明调色板和画面质感：“限定色调，温暖的纸张纹理”，“平涂色彩辅以绘制的光晕效果。”
 
-## Sound for 2D [heuristic]
+## 2D 的音效 [heuristic]
 
-Stylized sound reads better than realistic foley: a whoosh on the smear, a sharp sting on the impact frame, room tone dropping out on the held frame.
+风格化的音效比写实的拟音效果更好：拖影动作配上嗖嗖声，冲击帧配上尖锐的刺击声，定格帧则让环境音静默。
 
-## Style safety [field]
+## 风格安全性 [field]
 
-Describe technique, era, and palette — never a studio, franchise, or living artist. "1990s hand-painted TV-anime look with grainy film texture" is safe grammar; named-studio or franchise style requests route through `[skill:seedance-copyright]` and `[skill:seedance-style]`.
+描述技法、时代和色调——绝对不要提及任何具体工作室、系列作品或在世艺术家。“1990 年代手绘电视动画质感，带有颗粒感胶片纹理”是安全的语法；指名工作室或系列作品风格的请求会经由 `[skill:seedance-copyright]` 和 `[skill:seedance-style]` 处理。
 
-## Failure → fix [field]
+## 问题 → 修复方案 [field]
 
-| Symptom | Fix |
+| 症状 | 修复方案 |
 |---|---|
-| Output drifts photoreal or 3D-CG | remove lens and depth-of-field words; lead with "hand-drawn 2D cel animation"; name the painted background |
-| Motion feels floaty or rotoscoped | ask for snappy bursts "on twos," held frames between beats, smears on fast arcs |
-| Faces melt during fast action | put the speed into lines, smears, and background scroll instead of facial detail; cut to a held impact frame |
-| Style flickers between shots | repeat the exact medium line in every shot of a multi-shot prompt; keep one palette phrase constant |
+| 输出结果偏向照片写实或 3D-CG | 移除镜头和景深相关词汇；以“手绘 2D 赛璐珞动画”开头；明确说明手绘背景 |
+| 动态感觉飘忽或像转描 | 要求干脆利落的爆发式动作“按二拍子”，在节拍之间加入定格帧，快速弧线上使用拖影 |
+| 快速动作中面部变形 | 将速度表现放在线条、拖影和背景滚动上，而非面部细节；切到定格的冲击帧 |
+| 镜头之间风格闪烁变化 | 在多镜头提示词的每一个镜头中重复完全相同的媒介描述行；保持一个统一的色调短语不变 |

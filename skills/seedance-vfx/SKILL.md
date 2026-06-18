@@ -1,52 +1,47 @@
 ---
 name: seedance-vfx
-description: "This skill should be used when the user asks for VFX, particles, energy, destruction, transformation, weather effects, magical effects, explosions, smoke, fire, water, or physically plausible effects in Seedance 2.0."
+description: '当用户询问Seedance 2.0中的视觉特效、粒子、能量、破坏、变形、天气效果、魔法效果、爆炸、烟雾、火焰、水体，或具有物理合理性的效果时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - vfx
-  - particles
-  - effects
+  - 视觉特效
+  - 粒子
+  - 效果
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
+  parent: 'seedance-20'
 ---
 
 # seedance-vfx
 
-VFX prompts need material behavior, source, timing, and consequence. Treat every effect as physical: it starts somewhere, interacts with light and objects, changes over time, and ends in a visible state. Avoid generic words such as magical, explosive, or cinematic unless they are translated into particles, fluids, smoke, light, debris, deformation, or energy behavior.
+视觉特效提示词需要材质行为、来源、时间节奏和结果。将每个效果视为有物理过程：它从某处开始，与光线和物体交互，随时间变化，并以可见状态结束。避免使用"魔法"、"爆炸性"或"电影感"等泛泛之词，除非它们被转化为粒子、流体、烟雾、光线、碎片、形变或能量行为。
 
-## Intent
+## 意图
 
-The user wants wonder, and wonder dies the moment it stops obeying physics. This skill's purpose is magic with a budget of cause and effect: every effect has a source, a journey, and an ending, so the impossible reads as witnessed rather than rendered.
+用户想要的是奇观，而当奇观停止服从物理法则的那一刻，它就死了。此技能的目的是在因果关系的预算下实现魔法：每个效果都有来源、过程和一个结局，从而让不可能之事读起来像是被见证而非被渲染出来的。
 
-## Effects Contract
+## 效果约定
 
-State: effect source, material, motion path, interaction with light, interaction with objects, dissipation, and endpoint.
+需说明：效果来源、材质、运动路径、与光的交互、与物体的交互、消散过程和终点。
 
-| Effect | Prompt-ready phrase | Stability note |
-|---|---|---|
-| Product particles | `gold dust particles spiral from behind the logo, catch the backlight, then settle on the table` | Keep logo and bottle rigid. |
-| Energy | `thin blue electrical arcs crawl along the cable, briefly illuminating fingerprints on the plug` | Keep arcs attached to source. |
-| Smoke | `cold white vapor rolls over the rim, sinks down the glass, and thins near the tabletop` | Describe density and direction. |
-| Transformation | `paper edge chars inward from the corner, flakes curl and fall, final logo remains untouched` | Protect identity anchor. |
-| Weather | `wind pushes rain diagonally across the frame, puddles ripple outward from each step` | Tie weather to surfaces. |
+| 效果     | 可直接用于提示词的描述                                         | 稳定性说明               |
+| -------- | -------------------------------------------------------------- | ------------------------ |
+| 产品粒子 | `金色粉尘粒子从标志后方螺旋上升，捕捉逆光，然后落在桌面上`     | 保持标志和瓶体刚性不变。 |
+| 能量     | `细小的蓝色电弧沿电缆爬行，短暂照亮插头上的指纹`               | 保持电弧依附在来源上。   |
+| 烟雾     | `冷白色蒸汽翻过杯沿，沿杯壁下沉，接近桌面时变薄`               | 描述密度和方向。         |
+| 变形     | `纸张边缘从角落开始向内炭化，卷曲的碎屑飘落，最终标志保持不变` | 保护身份锚点。           |
+| 天气     | `风将雨斜吹过画面，水洼随着每一步向四周泛起涟漪`               | 将天气与表面关联。       |
 
-## VFX Integration Rules
+## 视觉特效集成规则
 
-Use one hero effect per clip. Anchor the source to a clear object or body part. Make the effect respect gravity, wind, collision, reflection, and occlusion. For VFX near faces, hands, logos, or text, keep the core identity stable and place the effect around it rather than through it.
+每个片段使用一个主打效果。将效果来源锚定到一个清晰的物体或身体部位上。让效果遵循重力、风力、碰撞、反射和遮挡。对于靠近面部、手部、标志或文字的视觉特效，保持核心身份稳定，并将效果布置在周围而非穿过它们。
 
-## Timing and Dissipation
+## 时间节奏与消散
 
-Effects need an endpoint: settle, fade, evaporate, freeze, collapse, glow out, or leave residue. If the effect is complex, use a three-step timing phrase: `forms -> travels -> dissipates`. Avoid perpetual effects with no consequence because they often become noisy overlays.
+效果需要一个终点：沉降、淡出、蒸发、冻结、坍塌、辉光消散或留下痕迹。如果效果较为复杂，使用三步时间描述：`形成 -> 运动 -> 消散`。避免无结果的持续效果，因为它们通常最终会变成噪杂的叠加层。
 
-## Output Contract
+## 输出约定
 
-Return the VFX contract, stability constraints, and a compact prompt-ready phrase.
+返回效果约定、稳定性约束，以及一句紧凑的、可直接用于提示词的描述。

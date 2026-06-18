@@ -1,63 +1,57 @@
 ---
 name: seedance-camera
-description: "This skill should be used when the user asks for camera movement, shot scale, lens feel, framing, one-take direction, dolly, pan, tilt, push-in, handheld, aerial, macro, or camera-transfer guidance for Seedance 2.0."
+description: '当用户询问 Seedance 2.0 的镜头运动、景别、镜头感、构图、一镜到底指导、轨道移动、摇镜、俯仰、推镜、手持、航拍、微距或镜头迁移指导时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - camera
-  - cinematography
+  - 镜头
+  - 电影摄影
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
 ---
 
 # seedance-camera
 
-Use one clear camera idea per short clip unless the user asks for a multi-shot sequence. The best camera direction has a start frame, movement, speed, subject relationship, and endpoint. Avoid stacking moves that fight each other, such as drone rise, dolly-in, handheld shake, and orbit in the same five-second shot.
+除非用户要求多镜头序列，否则每个短片段只使用一个清晰的镜头想法。最好的镜头指导包含起始画面、运动方式、速度、与被摄主体的关系以及终点。避免在同一个五秒镜头内堆叠相互冲突的运动，例如无人机上升、轨道推进、手持晃动和环绕同时进行。
 
-Load `[ref:quick-ref]` for prompt assembly, `[ref:cinematography-shot-language]` for professional shot contracts, and `[ref:vocab/zh]` or `[ref:vocab/ru]` when camera wording must be multilingual.
+加载 `[ref:quick-ref]` 获取提示词组装指南，`[ref:cinematography-shot-language]` 获取专业的镜头规范，当镜头用语需要多语言时，加载 `[ref:vocab/zh]` 或 `[ref:vocab/ru]`。
 
-## Intent
+## 意图
 
-When a user asks about camera, they are really asking where the viewer's body stands and what the viewer is made to feel from there. Camera grammar is empathy mechanics: a push-in is leaning closer, a locked frame is holding your breath. Choose the move that puts the audience where the user's feeling lives.
+当用户询问镜头问题时，他们实际上是在问：观众的身体站在哪里，以及观众在那里被要求感受到什么。镜头语法是共情的机制：推镜是凑近看，固定镜头是屏住呼吸。选择那个能把观众放到用户感受所在之处的运动。
 
-## Camera Contract
+## 镜头规范
 
-State: shot scale, angle, movement, speed, subject relationship, and endpoint. A prompt-ready camera phrase should be physically possible and tied to the subject's action.
+明确说明：景别、角度、运动方式、速度、与被摄主体的关系以及终点。一个可直接用于提示词的镜头短语应该是物理上可行的，并且与被摄主体的动作相关联。
 
-| Need | Strong phrase | Avoid |
-|---|---|---|
-| Emotional realization | `slow dolly-in from medium close-up to tight close-up as Character A lowers the envelope` | `dramatic cinematic zoom` |
-| Product reveal | `controlled slider move from silhouette to front three-quarter hero angle, ending on the label` | `dynamic product camera` |
-| Scale | `low-angle crane up from boots to skyline, ending behind the character's shoulder` | `epic wide moving shot` |
-| Instability | `subtle handheld shoulder camera, small breathing sway, subject kept centered` | `shaky chaotic camera everywhere` |
-| Precision detail | `locked macro shot, focus stays on the watch gears while the second hand clicks once` | `cool close-up details` |
+| 需求     | 强短语                                                           | 避免                 |
+| -------- | ---------------------------------------------------------------- | -------------------- |
+| 情感揭示 | `角色A放下信封时，从中近景缓慢推进到特写`                        | `戏剧性的电影感变焦` |
+| 产品展示 | `从剪影到正面四分之三英雄角度的受控滑动轨运动，终点落在标签上`   | `动态产品镜头`       |
+| 宏大尺度 | `从靴子低角度摇臂上升到天际线，终点停在角色肩膀后方`             | `史诗级广角移动镜头` |
+| 不稳定性 | `轻微的手持肩扛镜头，带有小幅呼吸式晃动，被摄主体保持在画面中心` | `到处晃动的混乱手持` |
+| 精密细节 | `锁定微距镜头，秒针滴答走动一次期间焦点始终保持在手表齿轮上`     | `酷炫的特写细节`     |
 
-## Lens and Framing Anchors
+## 镜头和构图锚点
 
-Use lens anchors only when they improve direction: `24mm wide lens for spatial energy`, `35mm natural street perspective`, `50mm portrait compression`, `85mm shallow close-up`, or `macro lens for material detail`. Pair lens words with subject distance and motion; do not stack lens numbers as decoration.
+仅在能提升指导效果时使用镜头锚点：`24mm 广角镜头营造空间感`，`35mm 自然街道透视`，`50mm 肖像压缩感`，`85mm 浅景深特写`，或`微距镜头呈现材质细节`。将镜头词汇与被摄主体距离和运动配对；不要将镜头编号当作装饰性词汇堆叠。
 
-## Move Selection
+## 运动选择
 
-Use **locked-off** shots for lip-sync, product identity, and delicate VFX. Use **dolly-in** for discovery or realization. Use **tracking** for travel, pursuit, and product motion. Use **orbit** only when the subject can remain clear from all sides. Use **crane or drone** for scale, arrival, or reveal. Use **handheld** only when realism matters more than precision.
+口型同步、产品标识和精细特效使用**锁定**镜头。发现或醒悟时刻使用**推进**。旅行、追逐和产品运动使用**跟拍**。仅当被摄主体从各个角度都能清晰呈现时使用**环绕**。宏大尺度、到达或揭示使用**摇臂或无人机**。仅在真实感比精确度更重要时使用**手持**。
 
-## Continuity Rules
+## 连贯性规则
 
-For multi-character scenes, anchor the camera to named tags: `camera holds Character A in foreground while Character B crosses behind`. For I2V, preserve the image composition unless the user explicitly wants a reframing. For reference video, state whether `[Video1]` transfers camera movement, action rhythm, or blocking; do not let it transfer identity unless authorized.
+对于多角色场景，将镜头锚定到指定的标签：`镜头保持角色A在前景，而角色B从后方穿过`。对于 I2V，除非用户明确要求重新构图，否则保留图像构图。对于参考视频，明确说明 `[Video1]` 是传递镜头运动、动作节奏还是走位；除非得到授权，否则不要让它传递身份信息。
 
-For complex camera movement, a video reference often works better than a long verbal stack. Use `[Video1] controls camera rhythm only; do not transfer performer, room, logo, or identity`.
+对于复杂的镜头运动，视频参考通常比冗长的文字描述效果更好。使用 `[Video1] 仅控制镜头节奏；不要传递表演者、房间、标志或身份信息`。
 
-## Conflict Rule
+## 冲突规则
 
-If the user gives several incompatible moves, choose one primary camera move and put the rest into optional variants. If the shot needs multiple beats, recommend splitting into separate clips or a time-segmented prompt.
+如果用户给出了多个不兼容的运动，选择一个主要镜头运动，并将其余的放入可选变体中。如果镜头需要多个节拍，建议拆分为单独的片段或使用分段时间提示词。
 
-## Output Contract
+## 输出约定
 
-Return the selected camera phrase, why it fits the shot, conflicts removed, fragile anchors, endpoint, and a prompt-ready integrated sentence.
+返回选定的镜头短语、它为何适合该镜头、已移除的冲突、脆弱的锚点、终点，以及一个可直接用于提示词的综合句式。

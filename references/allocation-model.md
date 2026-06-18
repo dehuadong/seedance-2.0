@@ -1,48 +1,48 @@
-# Allocation Model — decide where the prompt spends its budget
+# 分配模型 — 决定提示词将预算投入何处
 
-*The operational companion to `intent-vs-precision.md`: every generation has a finite fidelity budget, and a prompt that demands everything gets mediocrity everywhere. Decide where the budget goes before writing a word. Labels: [field] = practitioner-reported · [heuristic] = default to test. Craft guidance compiled 2026-06-11; no platform-availability claims.*
+*这是 `intent-vs-precision.md` 的操作配套文档：每次生成都有固定的保真度预算，而要求面面俱到的提示词只会让各方面都表现平平。在落笔之前先决定预算的分配方向。标签：[field] = 从业者报告 · [heuristic] = 默认建议测试。本指南编制于 2026-06-11；不包含任何平台可用性声明。*
 
-## The premise [field]
+## 基本前提 [field]
 
-Identity fidelity, motion boldness, and scene density compete for the same generation budget. The known fragile areas — detail stability, multi-subject consistency, text rendering, facial micro-acting — are where overdrawn budgets fail first. A shot that needs a perfect face, a backflip, a crowded market, and a spoken line in one call will land none of them cleanly.
+身份保真度、动态大胆度和场景密度会争夺同一份生成预算。已知的脆弱区域——细节稳定性、多主体一致性、文字渲染、面部微表情——正是预算超支时首先出问题的地方。一个镜头如果希望在单次调用中同时实现完美的面部、后空翻、拥挤的市场和一句台词，那么最终每一项都无法干净利落地完成。
 
-## The three spends
+## 三种预算投向
 
-| Spend | What it buys | What it strains |
+| 投向 | 所换取的效果 | 所消耗的资源 |
 |---|---|---|
-| Identity fidelity | stable faces, products, logos, costumes | motion range; every bold move risks drift |
-| Motion boldness | committed action, physics, choreography | close-up identity detail, especially faces and hands |
-| Scene density | crowds, layered environments, weather, props | per-subject stability; tiny background detail degrades |
+| 身份保真度 | 稳定的面部、产品、标识、服装 | 动态范围；每一次大胆的动作都有漂移风险 |
+| 动态大胆度 | 有冲击力的动作、物理效果、动作编排 | 近景身份细节，尤其是面部和手部 |
+| 场景密度 | 人群、多层次环境、天气、道具 | 各主体的稳定性；微小的背景细节会退化 |
 
-## Allocation method [heuristic]
+## 分配方法 [heuristic]
 
-1. Name the primary spend — the one thing this shot is for. One per generation.
-2. Pick one secondary; economize everything else on purpose.
-3. Offload fidelity to references: identity carried by `[Image1]` is budget the text no longer spends, freeing prose for motion and timing.
-4. Pay for the primary out of the others: bold motion buys down facial detail, so stage emotion in the body and ration close-ups; dense scenes buy down subject precision, so keep hero subjects large in frame and few in number.
-5. Re-anchor across a series: chained generations drift, so respend on identity (original references, not outputs) every few clips.
+1. 指定主要投向——这个镜头要达成的核心目标。每次生成只选一个。
+2. 选择一个次要投向；其余方面有意地节省预算。
+3. 将保真度卸载给参考图：由 `[Image1]` 承载的身份信息不再消耗文本预算，从而释放文字空间用于描述动态和节奏。
+4. 用其他方面为主要投向买单：大胆的动态会降低面部细节，因此用肢体来传达情感并控制近景镜头的使用；高密度场景会降低主体的精确度，因此保持主要角色在画面中占据较大比例且数量不要过多。
+5. 在系列镜头中重新锚定：连续生成会产生漂移，因此每隔几个片段就重新在身份保真度上投入预算（使用原始参考图，而非之前的输出结果）。
 
-## Worked allocations [field]
+## 分配示例 [field]
 
-| Shot | Primary | Secondary | Economized |
+| 镜头 | 主要投向 | 次要投向 | 节省预算的方面 |
 |---|---|---|---|
-| Product ad | product identity (ref-anchored) | one material motion beat | scene density, crowd, weather |
-| Dance / action | motion boldness (donor `[Video1]`) | identity via `[Image1]` re-anchor | facial close-ups, set dressing |
-| Establishing world shot | scene density and atmosphere | camera move | character identity (no close subjects) |
-| Dialogue close-up | facial stability (locked camera) | the spoken line | motion, background activity |
+| 产品广告 | 产品身份（基于参考图锚定） | 一个材料质感相关的动态节拍 | 场景密度、人群、天气 |
+| 舞蹈 / 动作 | 动态大胆度（由 `[Video1]` 提供素材） | 通过 `[Image1]` 重新锚定的身份信息 | 面部近景、场景陈设 |
+| 建立世界观的广角镜头 | 场景密度和氛围 | 镜头运动 | 角色身份（无近景主体） |
+| 对话近景 | 面部稳定性（固定机位） | 台词内容 | 动态、背景活动 |
 
-## Trade table [field]
+## 权衡对照表 [field]
 
-| If the shot needs | It pays with |
+| 如果镜头需要 | 需要付出的代价 |
 |---|---|
-| Bold motion and a close-up face | choose one; put the emotion in posture and staging, or cut to a separate close-up shot |
-| Many subjects | per-subject identity precision; pick one hero and let the rest read as shapes |
-| Readable on-screen text | nothing — move text to post |
-| A crowded frame and a tiny product detail | the detail; isolate the product beat in its own shot |
+| 大胆的动态和面部近景 | 二选一；将情感放在姿态和场面调度中，或切到一个独立的近景镜头 |
+| 多个主体 | 每个主体的身份精确度；选择一个主要角色，其余只呈现为大致轮廓即可 |
+| 可读的屏幕文字 | 什么都不做——将文字放到后期处理中 |
+| 拥挤的画面和微小的产品细节 | 放弃细节；将产品展示节拍安排到独立的镜头中 |
 
-## Pre-write checklist [heuristic]
+## 落笔前检查清单 [heuristic]
 
-1. What is this shot for — identity, motion, or world?
-2. Which references carry fidelity so the text does not have to?
-3. What is deliberately economized, and is that written as a constraint?
-4. If the answer to 1 is "all three," which beats split into separate shots or generations?
+1. 这个镜头的目的是什么——身份、动态，还是世界构建？
+2. 哪些参考图承载了保真度信息，从而让文字不必承担此责？
+3. 哪些方面被有意地节省了预算，并且这一点是否已作为约束条件写入了提示词？
+4. 如果第 1 问的答案是“全部三者”，那么哪些节拍应该拆分为独立的镜头或独立生成？

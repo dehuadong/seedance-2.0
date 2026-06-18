@@ -1,56 +1,50 @@
 ---
 name: seedance-copyright
-description: "This skill should be used when a Seedance 2.0 prompt mentions named characters, franchises, studios, celebrities, public figures, private people, brand logos, copyrighted scenes, songs, voices, or real-person likeness workflows and needs an IP-safe rewrite."
+description: '当 Seedance 2.0 提示词提及知名角色、IP 作品、制片厂、名人、公众人物、私人个体、品牌标识、受版权保护的场景、歌曲、声音或涉及真人肖像的工作流，并需要知识产权安全改写时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - copyright
-  - ip
-  - likeness
-  - safety
+  - 版权
+  - 知识产权
+  - 肖像权
+  - 安全性
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
 ---
 
 # seedance-copyright
 
-Use this before finalizing prompts involving protected IP, named brands, public figures, private people, voices, logos, songs, studios, exact scenes, or lookalike character requests. The goal is not to dilute the idea; the goal is to preserve the creative function with original, authorized, and safer production language.
+在敲定涉及受保护 IP、知名品牌、公众人物、私人个体、声音、标识、歌曲、制片厂、特定场景或名人模仿请求的提示词之前，使用此技能。目标不是稀释创意，而是使用原创、经授权且更安全的制作语言来保留其创作功能。
 
-## Intent
+## 意图
 
-The user pointing at protected work is not trying to steal - they are showing you the clearest example of what they love that exists. The job is to find what the love is made of and give it back as something safely theirs. Protect the rights-holder and the user's heart in the same move.
+用户指向受保护的作品并非试图剽窃——他们是在向你展示他们热爱的、最清晰存在的范例。工作在于找出这份热爱的构成要素，并将其回馈给他们，使其安全地成为他们自己的东西。在同一个行动中，同时保护权利持有者和用户的真心。
 
-## Rewrite Principle
+## 改写原则
 
-Preserve the scene function, genre, mood, camera logic, emotional beat, and production intent. Replace protected identity with an original archetype, original costume logic, original world details, and descriptive style layers.
+保留场景功能、类型、情绪、镜头逻辑、情感节拍和制作意图。用原创原型、原创服装逻辑、原创世界观细节和描述性风格层次替换受保护的身份信息。
 
-| Risk | Replace with |
-|---|---|
-| Named character or franchise | Original archetype, genre function, and non-identical costume language |
-| Studio or living-creator style | Medium, texture, palette, composition, line quality, and motion rhythm |
-| Celebrity or private person | Original performer description or authorized reference workflow |
-| Brand logo | Generic product mark, blank label, or user-owned brand if explicitly authorized |
-| Song, voice, or performance | Tempo, energy, instrumentation, mood, or newly composed sound direction |
-| Exact scene recreation | Original scene with similar narrative function and different setting/blocking |
+| 风险项                 | 替换为                                             |
+| ---------------------- | -------------------------------------------------- |
+| 知名角色或 IP 作品     | 原创原型、类型功能和非相同服装语言                 |
+| 制片厂或在世创作者风格 | 媒介、质感、色调、构图、线条质量和运动节奏         |
+| 名人或私人个体         | 原创表演者描述或经授权的参考工作流                 |
+| 品牌标识               | 通用产品标记、空白标签，或经明确授权的用户自有品牌 |
+| 歌曲、声音或表演       | 节奏、能量、配器、情绪，或新编的声音指导           |
+| 场景精确重现           | 具有相似叙事功能但不同设置和走位的原创场景         |
 
-## Authorization Gate
+## 授权关卡
 
-If the user clearly owns the brand, asset, or likeness rights, keep the authorized elements but still preserve them with explicit constraints. If authorization is unclear, ask a short confirmation or provide a safe original rewrite. Do not assume rights from an uploaded image, song, or video.
+如果用户明确拥有品牌、素材或肖像权，保留授权元素，但仍通过明确的约束条件来保护它们。如果授权不明确，进行简短的确认或提供安全的原创改写。不要从上传的图片、歌曲或视频中推定权利。
 
-For real human faces, portraits, or voices, separate three questions: does the active surface support the input, does the user have authorization, and does the prompt avoid imitation of a public figure or private person without consent. Some surfaces use verified virtual portrait assets or authorization flows; do not collapse those into a universal allow or deny rule.
+对于真人面孔、肖像或声音，区分三个问题：当前平台是否支持该输入，用户是否拥有授权，以及提示词是否避免未经同意模仿公众人物或私人个体。某些平台使用经过验证的虚拟肖像素材或授权流程；不要将其简化为通用的允许或禁止规则。
 
-## Safe Replacement Example
+## 安全替换示例
 
-Instead of a named superhero swinging through a recognizable franchise city, write: `original masked rooftop courier in a red weatherproof jacket leaps between rain-slick buildings, low handheld tracking camera, blue police lights far below, no logos or franchise symbols`.
+不要写某个知名超级英雄在某个标志性的 IP 城市中荡行，而写：`穿着红色防风夹克的原创蒙面屋顶信使，在雨淋湿滑的建筑间跳跃，低角度手持跟拍镜头，下方远处有蓝色警灯，无标识或 IP 符号`。
 
-## Output Contract
+## 输出约定
 
-Return risk category, what was changed, safe replacement prompt, authorization requirement, and any residual constraints.
+返回风险类别、更改内容、安全替换提示词、授权要求以及任何残余约束。

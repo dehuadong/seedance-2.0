@@ -1,49 +1,43 @@
 ---
 name: seedance-pipeline
-description: "This skill should be used when the user asks about Seedance 2.0 workflow operations, API planning, BytePlus ModelArk, Dreamina/Jimeng surfaces, ComfyUI, post-production, stitching, batch workflow, or integration planning."
+description: '当用户询问Seedance 2.0工作流操作、API规划、BytePlus ModelArk、Dreamina/即梦界面、ComfyUI、后期制作、拼接、批量工作流或集成规划时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - workflow
+  - 工作流
   - api
-  - integration
+  - 集成
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
 ---
 
 # seedance-pipeline
 
-Use this for operational workflows, APIs, web surfaces, post-production, and integration planning.
+用于操作工作流、API、Web界面、后期制作和集成规划。
 
-## Intent
+## 意图
 
-Behind every API question is a person with a deadline, a budget, and something at stake on this working tomorrow. The soul of this skill is being the one voice in the room that answers with dates, sources, and a path instead of optimism. Reliability is the kindness this user needs.
+每个API问题的背后，都是一个有截止日期、有预算、且明天的工作中有所牵挂的人。此技能的灵魂是成为房间里唯一一个用日期、来源和可行路径来回答的声音，而不是空泛的乐观。可靠性是这个用户所需要的善意。
 
-## Status Rule
+## 状态规则
 
-Always load `[ref:api-status]` for current API and platform claims. Load `[ref:model-name-map]` when a user says Pro, Fast, V2, or a wrapper model ID. Do not rely on old release-status memory.
-Load `[ref:api-workflow]` for implementation planning, task lifecycle, Runway/Volcengine field differences, pricing caveats, upload handling, and production readiness.
-Load `[ref:pro-filmmaking-standards]` for professional film, commercial, agency, localization, post, and delivery workflows. Load `[ref:delivery-qc]` before saying an asset is delivery-ready.
+始终加载`[ref:api-status]`获取当前API和平台的最新声明。当用户提到Pro、Fast、V2或封装模型ID时，加载`[ref:model-name-map]`。不要依赖旧有的发布状态记忆。
+加载`[ref:api-workflow]`用于实现规划、任务生命周期、Runway/火山引擎字段差异、定价注意事项、上传处理和生产就绪评估。
+加载`[ref:pro-filmmaking-standards]`用于专业电影、商业广告、代理机构、本地化、后期和交付工作流。在声称某个资产已可交付之前，加载`[ref:delivery-qc]`。
 
-## Workflow Split
+## 工作流分类
 
-1. Web workflow: Dreamina/Jimeng surface, references, prompt, output review.
-2. API workflow: Volcengine, BytePlus, or Runway docs, model ID, auth, file handling, task creation, polling/querying, cancellation/deletion, task ledger, and retrieval.
-3. Professional production workflow: treatment, shot list, continuity ledger, reference rights map, review loop, post handoff, and delivery/QC.
-4. Post workflow: edit, conform, stitching, stabilization, audio cleanup, captions/subtitles, color, localization, versioning, textless, and delivery.
-5. First/last-frame workflow: map first frame, last frame, transition action, identity locks, and ending target.
-6. Runway workflow: model `seedance2`, `runway://` uploads, audio-reference combination rules, plan/region caveats, and SDK type lag are Runway-specific.
-7. Community workflow: ComfyUI or unofficial nodes must be labeled community/unverified unless sourced.
-8. Corpus-mining workflow: classify sources before reuse; extract structure and vocabulary, not unsafe raw prompts.
+1. Web工作流：Dreamina/即梦界面、参考资料、提示词、输出审核。
+2. API工作流：火山引擎、BytePlus或Runway文档、模型ID、认证、文件处理、任务创建、轮询/查询、取消/删除、任务台账和检索。
+3. 专业制作工作流：脚本、分镜表、连续性台账、参考权利映射、审阅循环、后期交接和交付/质量检查。
+4. 后期工作流：剪辑、套底、拼接、稳定、音频清理、字幕、调色、本地化、版本管理、无字幕版和交付。
+5. 首帧/末帧工作流：映射首帧、末帧、转场动作、身份锁定和结束目标。
+6. Runway工作流：模型`seedance2`、`runway://`上传、音频参考组合规则、plan/region注意事项和SDK类型延迟均为Runway特有。
+7. 社区工作流：ComfyUI或非官方节点必须标注为社区/未经验证，除非有可靠来源。
+8. 语料挖掘工作流：在复用前对来源进行分类；提取结构和词汇，而非不安全的原始提示词。
 
-## Output Contract
+## 输出约定
 
-Return the workflow path, source status, required inputs, production phase, validation steps, delivery assumptions, and risks. For professional jobs, include the next artifact to create: brief, shot list, continuity ledger, prompt batch, review packet, localization matrix, or QC preflight.
+返回工作流路径、来源状态、所需输入、制作阶段、验证步骤、交付假设和风险。对于专业项目，包括下一个要创建的工件：简报、分镜表、连续性台账、提示词批次、审阅包、本地化矩阵或质量检查预检清单。

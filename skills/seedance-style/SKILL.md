@@ -1,68 +1,63 @@
 ---
 name: seedance-style
-description: "This skill should be used when the user asks for visual style, art direction, render feel, period aesthetic, texture, animation style, realism level, or style-safe alternatives to studio or franchise references."
+description: '当用户询问视觉风格、艺术指导、渲染质感、时代美学、纹理、动画风格、写实程度，或针对工作室/IP引用的安全风格替代方案时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - style
-  - art-direction
-  - ip-safe
+  - 风格
+  - 艺术指导
+  - ip安全
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
+  parent: 'seedance-20'
 ---
 
 # seedance-style
 
-Translate style requests into production descriptors. Style should describe medium, texture, palette, lens or render behavior, period cues, and composition. Do not rely on studio, franchise, artist, or living-creator names when a safer descriptive style can preserve the user's intent.
+将风格请求转化为制作描述符。风格应描述媒介、纹理、调色板、镜头或渲染行为、时代线索和构图。当更安全的描述性风格能够保留用户意图时，不要依赖工作室、IP、艺术家或在世创作者的名字。
 
-## Intent
+## 意图
 
-Users point at art they love and ask to stand near it. The soul of this skill is honoring the love while refusing the theft: find what the love is made of - light, texture, rhythm, era - and rebuild it as something the user owns. They should feel their taste was understood, not corrected.
+用户指向他们喜爱的艺术作品，并希望站在其旁边。此技能的灵魂是尊重这份喜爱，同时拒绝剽窃：找到这份喜爱由什么构成——光线、纹理、节奏、时代——并将其重塑为用户自己的东西。他们应该感到自己的品味被理解了，而不是被纠正了。
 
-## Style Safety Rule
+## 风格安全规则
 
-Do not use studio, franchise, artist, or living-creator names as style anchors unless the user has a clearly authorized workflow. Preserve the intended visual function by describing medium, texture, palette, lighting, composition, era, line quality, and motion rhythm.
+不要使用工作室、IP、艺术家或在世创作者的名字作为风格锚点，除非用户拥有明确授权的制作流程。通过描述媒介、纹理、调色板、灯光、构图、时代、线条质感和运动节奏来保留预期的视觉功能。
 
-| User intent | Safe production descriptor |
-|---|---|
-| Cozy hand-drawn fantasy | `hand-painted 2D animation, soft watercolor backgrounds, rounded character silhouettes, warm pastel palette, gentle parallax` |
-| Sharp cyberpunk action | `neon noir city, wet pavement reflections, high-contrast magenta and cyan light, fast lateral tracking, angular silhouettes` |
-| Premium product realism | `clean commercial realism, controlled reflections, shallow depth of field, neutral background, polished material detail` |
-| Retro documentary | `1970s documentary texture, muted film grain, practical daylight, handheld observational framing` |
-| Children's animation | `soft clay-like characters, simple expressive faces, bright primary palette, bouncy squash-and-stretch motion` |
+| 用户意图           | 安全的制作描述符                                                                             |
+| ------------------ | -------------------------------------------------------------------------------------------- |
+| 舒适的手绘幻想风   | `手绘2D动画，柔和的水彩背景，圆润的角色轮廓，温暖的粉彩色调，温和的视差运动`                 |
+| 锐利的赛博朋克动作 | `霓虹黑色电影城市，湿漉漉的路面反射，高对比度的洋红和青色灯光，快速横向跟拍，棱角分明的剪影` |
+| 高端产品写实       | `干净的商业写实风格，受控的反射，浅景深，中性背景，精致的材质细节`                           |
+| 复古纪录片         | `1970年代纪录片质感，柔和的胶片颗粒，实用的日光，手持观察式构图`                             |
+| 儿童动画           | `柔软的黏土质感角色，简单富有表现力的面孔，明亮的三原色调色板，有弹性的挤压和拉伸运动`       |
 
-## Layered Style Method
+## 分层风格方法
 
-Separate style into layers instead of one broad label: **medium** (live action, stop-motion, 2D, 3D, miniature), **surface** (paper grain, clay, brushed metal, glass, fabric), **palette** (pastel, monochrome, sodium orange), **camera/render** (macro, shallow focus, orthographic, handheld), and **motion rhythm** (gentle, staccato, elastic, realistic weight).
+将风格分层描述，而非使用一个宽泛的标签：**媒介**（实拍、定格、2D、3D、微缩模型）、**表面**（纸张纹理、黏土、拉丝金属、玻璃、织物）、**调色板**（粉彩、单色、钠灯橙）、**摄影机/渲染**（微距、浅焦、正交投影、手持）、**运动节奏**（轻柔、断奏、弹性、写实重量）。
 
-## Hybrid Style Rule
+## 混合风格规则
 
-If the user asks for a hybrid, assign each style to a layer: `live-action product photography with illustrated UI overlays` is clearer than mixing many named influences. Keep character design, environment, lighting, and VFX in compatible registers.
+如果用户要求混合风格，将每种风格分配到不同层：`实拍产品摄影加上插画风格的UI叠加`比混用许多具名影响更清晰。保持角色设计、环境、灯光和视觉特效在各层面上的协调性。
 
-Load `[ref:2d-anime-grammar]` when the style is 2D, anime, or cel-based — it covers layer grammar, burst-versus-held motion, impact frames, smears, rostrum-camera language, and the no-lens rule for stylized work.
+当风格为2D、动漫或赛璐珞风格时，加载`[ref:2d-anime-grammar]`——它涵盖分层语法、爆发式与保持式运动、冲击帧、拉伸帧、摄影台语言，以及风格化作品的"无镜头"规则。
 
-## Source-Look Lock
+## 源风格锁定
 
-Field-observed from Chinese practice: realism styles stabilize when the prompt names the capture source and embraces its artifacts instead of fighting them. Classify the intended look, then lock its signature flaws deliberately:
+从中国实践中观察到的经验：当提示词明确指出拍摄来源并主动保留其瑕疵特征时，写实风格会更加稳定。对目标风格进行分类，然后有意识地锁定其标志性缺陷：
 
-| Source look | Lock its artifacts |
-|---|---|
-| Phone-shot daily / UGC | `vertical handheld phone footage, slight grip sway, auto-exposure shifts, ambient room sound` |
-| Livestream | `fixed webcam framing, flat ring light, mild compression, real-time caption pacing` |
-| Security / dashcam | `locked high-angle camera, timestamp burn-in feel, low-light noise, no camera response to events` |
-| Vintage film | `grainy film texture, gate weave, halation around highlights, era-correct contrast` |
-| Studio commercial | `controlled reflections, clean background, polished material detail, zero handheld motion` |
+| 源风格          | 锁定其瑕疵特征                                                 |
+| --------------- | -------------------------------------------------------------- |
+| 手机日常/UGC    | `竖屏手持手机画面，轻微握持晃动，自动曝光变化，环境室内音`     |
+| 直播            | `固定网络摄像头构图，平坦环形灯光，轻度压缩，实时字幕节奏`     |
+| 监控/行车记录仪 | `锁定高角度摄影机，时间戳烧录感，低光噪点，摄影机对事件无反应` |
+| 复古胶片        | `颗粒感胶片纹理，门帘抖动，高光光晕，时代正确的对比度`         |
+| 棚拍商业广告    | `受控反射，干净背景，精致材质细节，零手持晃动`                 |
 
-The flaw vocabulary is the style: faux-UGC that looks too clean reads as fake twice over.
+瑕疵词汇本身就是风格：看起来太干净的伪UGC反而显得双重虚假。
 
-## Output Contract
+## 输出约定
 
-Return a safe style descriptor, any protected-name rewrite, and one integrated prompt sentence.
+返回安全的风格描述符、受保护名称的重写方案（如有），以及一句整合后的提示词描述。

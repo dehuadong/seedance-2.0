@@ -1,57 +1,52 @@
 ---
 name: seedance-lighting
-description: "This skill should be used when the user asks for lighting design, atmosphere, time of day, color temperature, shadow, reflections, weather light, practical lights, or mood transitions in Seedance 2.0."
+description: '当用户询问Seedance 2.0中的灯光设计、氛围、时间段、色温、阴影、反射、天气光线、实际光源或情绪转换时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - lighting
-  - atmosphere
+  - 灯光
+  - 氛围
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
+  parent: 'seedance-20'
 ---
 
 # seedance-lighting
 
-Lighting should describe physical sources and transitions, not abstract beauty. A useful lighting prompt tells the model where the light comes from, its color temperature, how shadows behave, what atmosphere catches the light, and whether the light changes during the clip.
+灯光应描述物理光源及其变化，而非抽象的"美"。一个有用的灯光提示词要告诉模型：光从何处来、色温是多少、阴影如何表现、什么氛围捕捉了光线，以及在片段中光线是否发生变化。
 
-Load `[ref:color-pipeline-aces]` when the user asks for ACES, HDR/SDR, show look, grade, LUT, CDL, product color, or professional color handoff.
+当用户询问ACES、HDR/SDR、成片风格、调色、LUT、CDL、产品色彩或专业色彩交接时，加载`[ref:color-pipeline-aces]`。
 
-## Intent
+## 意图
 
-When users say mood words, they are almost always asking for light. This skill's purpose is to take "cozy," "lonely," or "electric" and answer with a sun, a lamp, or a window - because that is where feeling physically lives in a frame. Give them their emotion back as a light source they can point to.
+当用户说出情绪词汇时，他们几乎总是在描述光线。此技能的目的是将"舒适"、"孤独"或"充满电光感"转化为一个太阳、一盏灯或一扇窗——因为那是情感在画面中真实存在的地方。把他们的情绪还给他们，作为一个他们能指认的光源。
 
-## Lighting Contract
+## 灯光约定
 
-State: key source, direction, color temperature, atmosphere, shadow behavior, reflective behavior, and any transition.
+需说明：主光源、方向、色温、氛围、阴影表现、反射表现，以及任何变化过程。
 
-| Mood or task | Prompt-ready lighting | Why it works |
-|---|---|---|
-| Product luxury | `narrow warm strip light sweeps across brushed metal, black acrylic reflection remains clean` | Material and reflection are controlled. |
-| Night drama | `warm practical lamp from frame left, blue moonlight rim on shoulders, soft hallway shadows` | Uses motivated sources. |
-| Discovery | `door crack opens and a thin white beam widens across dust in the air` | Light changes with the action. |
-| Food realism | `large soft window light from the right, gentle bounce on the plate, no harsh specular glare` | Keeps texture readable. |
-| Storm atmosphere | `cool overcast daylight, intermittent lightning flashes briefly sharpen the silhouette` | Weather affects contrast. |
+| 情绪或任务 | 可直接用于提示词的灯光描述                                           | 为什么有效         |
+| ---------- | -------------------------------------------------------------------- | ------------------ |
+| 产品奢华感 | `窄条暖色光扫过拉丝金属表面，黑色亚克力反射保持干净`                 | 材质和反射都受控。 |
+| 夜间剧情   | `画幅左侧的暖色实用台灯光源，肩部带蓝色月光的轮廓光，走廊有柔和阴影` | 使用有动机的光源。 |
+| 发现时刻   | `门缝打开，一道细白光束变宽，照亮空气中漂浮的尘埃`                   | 光线随动作而变化。 |
+| 食物写实   | `右侧大面积的柔和窗光，盘子上有柔和的反射光，无刺眼高光`             | 保持纹理可辨读。   |
+| 风暴氛围   | `偏冷的阴天日光，间歇性闪电短暂地锐化轮廓`                           | 天气影响对比度。   |
 
-## Source Selection
+## 光源选择
 
-Use **practical lamps** for interiors, intimacy, and visible motivation. Use **window light** for naturalism and food or lifestyle scenes. Use **rim light** when separation matters. Use **hard light** for noir, harsh sun, or graphic shadows. Use **soft light** for beauty, skin, product polish, and children or family scenes. Use **moving light** when the scene needs a visible change.
+室内、亲密感和可见光源动机使用**实用灯具**。自然主义、食物或生活方式场景使用**窗光**。需要主体分离时使用**轮廓光**。黑色电影、强烈日光或图形化阴影使用**硬光**。美感、皮肤、产品质感和儿童或家庭场景使用**柔光**。当场景需要可见变化时使用**动态光**。
 
-## Color and Atmosphere
+## 色彩与氛围
 
-Name color temperature only when it matters: warm tungsten, cool moonlight, green fluorescent, sodium streetlight, neutral overcast daylight. Add atmosphere sparingly: mist, dust, rain streaks, smoke, or condensation should interact with the light and the subject, not merely decorate the frame.
+只有在必要时才标注色温：暖色白炽灯、冷色月光、绿色荧光灯、钠灯街灯、中性阴天日光。氛围感词汇要克制使用：薄雾、尘土、雨丝、烟雾或水汽应与光线和主体产生互动，而非仅仅装饰画面。
 
-## Failure Fixes
+## 失败修复
 
-If an output looks flat, add a motivated key source, rim separation, and one material-specific highlight. If it looks over-processed, remove broad style claims and specify softer contrast. If flicker or lighting jumps appear, make the light source stable and remove competing transitions.
+如果输出看起来平淡，补充一个有动机的主光源、轮廓分离和一个针对材质的特定高光。如果看起来过度处理，删除宽泛的风格描述，改用更柔和的对比度。如果出现闪烁或光线跳动，使光源保持稳定并移除相互冲突的变化。
 
-## Output Contract
+## 输出约定
 
-Return a compact lighting block, a transition note if needed, and one prompt-ready integrated sentence.
+返回一个紧凑的灯光模块、必要时的变化说明，以及一句可直接用于提示词的整合描述。

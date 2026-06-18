@@ -1,64 +1,59 @@
 ---
 name: seedance-motion
-description: "This skill should be used when the user asks for body action, choreography, physics, object movement, movement timing, action continuity, stunt direction, or motion-reference mapping in Seedance 2.0."
+description: '当用户询问Seedance 2.0中的身体动作、动作编排、物理效果、物体运动、动作节奏、动作连续性、特技指导或动作参考映射时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - motion
-  - choreography
-  - physics
+  - 动作
+  - 动作编排
+  - 物理
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
+  parent: 'seedance-20'
 ---
 
 # seedance-motion
 
-Use physical verbs and consequences. Motion should be observable on screen, timed within the clip, and assigned to a subject or object. Prefer one strong action with a visible endpoint over several vague actions competing for attention.
+使用具体的动词和结果来描述动作。动作应能在屏幕上被观察到，在片段时长内完成计时，并归属于某个主体或物体。优先选择一个有可见终点、强有力的主要动作，而不是多个模糊动作争夺注意力。
 
-Load `[ref:reference-workflow]` for video-motion references, `[ref:shot-list-continuity]` for action handoffs across shots, and `[ref:examples-by-mode]` for safe edit, extend, and R2V patterns.
+加载`[ref:reference-workflow]`获取视频动作参考，`[ref:shot-list-continuity]`获取跨镜头的动作衔接，`[ref:examples-by-mode]`获取安全编辑、扩展和R2V模式示例。
 
-## Intent
+## 意图
 
-Motion is the verb of the user's story - the thing they came to see HAPPEN. The soul here is consequence: motion that begins, lands, and changes something feels lived; motion that loops feels generated. Every action carries the story one beat forward, or it doesn't belong in the clip.
+动作是用户故事中的动词——是他们来看"发生了什么"的核心。此技能的灵魂在于结果：有开始、有落点、并改变某物的动作，让人觉得真实鲜活；而循环重复的动作则让人觉得是生成的。每个动作都要将故事向前推进一步，否则就不属于这个片段。
 
-## Motion Contract
+## 动作约定
 
-State: actor/object, action, force level, timing, physical consequence, continuity requirement, and endpoint.
+需说明：行为者/物体、动作、力度等级、时间节奏、物理结果、连续性要求，以及终点。
 
-| Motion type | Strong phrase | Weak phrase |
-|---|---|---|
-| Subtle acting | `Character A inhales, grips the cup tighter, then sets it down without looking away` | `she feels nervous` |
-| Product material | `condensation beads gather, merge, and slide down the bottle neck` | `the product looks refreshing` |
-| Choreography | `Character B ducks under the swinging bag, pivots left, and stops in a guarded stance` | `fast action fight scene` |
-| Object physics | `paper receipt lifts in the fan breeze, flips once, and lands face-up` | `papers move dynamically` |
-| Environmental motion | `rain streaks diagonally across the backlight while puddle ripples spread from footsteps` | `stormy weather atmosphere` |
+| 动作类型 | 强效表述                                              | 弱效表述           |
+| -------- | ----------------------------------------------------- | ------------------ |
+| 细微表演 | `角色A吸气，握紧杯子，然后视线不移地放下杯子`         | `她感到紧张`       |
+| 产品材质 | `冷凝水珠聚集、汇合，顺着瓶颈滑落`                    | `产品看起来清爽`   |
+| 动作编排 | `角色B在挥来的袋子下闪避，向左旋转，最后停在防御姿态` | `快速动作打斗场景` |
+| 物体物理 | `纸质小票在风扇吹动下升起，翻转一次，正面朝上落下`    | `纸张动态飞舞`     |
+| 环境运动 | `雨丝斜斜划过逆光背景，水洼的涟漪随着脚步向四周扩散`  | `暴风雨天气氛围`   |
 
-## Physics-Forward Pattern
+## 物理优先模式
 
-Official material claims strong physics; extract it by writing causes and letting the model compute consequences (field-observed emphasis - test before promising results). State mass, force, and material, then name one consequence the camera can see: `the heavy oak door swings shut and the candle flames bend toward it` beats `the door closes dramatically`. Consequences prove the action: weight shows in landing compression, momentum in overshoot and recovery, friction in skid length, wind in what it displaces. One physical cause with two or three visible consequences reads stronger than three separate actions.
+官方素材声称物理效果强大；通过写出原因并让模型计算后果来提取它（强调现场观察——在承诺结果前先测试）。说明质量、力量和材质，然后列出摄影机能看到的一个结果：`沉重的橡木门猛地关上，烛火向门的方向弯曲`比`门戏剧性地关上`更好。结果证明了动作的存在：重量体现在着陆的压缩中，动量体现在过冲和回弹中，摩擦力体现在滑行距离中，风体现在它吹动的东西上。一个物理原因加上两到三个可见结果，比三个孤立的动作更有力。
 
-## Timing Pattern
+## 节奏模式
 
-Use a three-beat structure for short clips: setup, action, changed end state. Example: `0-2s: candle flame steady; 2-4s: door opens and flame bends; 4-6s: smoke trail curls toward the hallway`. Time segmentation is useful for action, VFX, lip-sync, and product demonstrations, but avoid frame-perfect overload unless the user truly needs it.
+短片段使用三拍结构：铺垫、动作、改变的结束状态。示例：`0-2秒：烛火平稳；2-4秒：门打开，烛火弯曲；4-6秒：烟雾轨迹向走廊卷去`。时间分段对动作、特效、口型同步和产品演示很有用，但除非用户真正需要，否则避免过度追求逐帧精确。
 
-When sound drives the motion, pair each visible change with one beat or SFX: `door click at 2s, light pulse on the downbeat, hand releases the cup on the final chime`. Do not ask for many cuts, locations, and micro-actions inside one short clip.
+当声音驱动动作时，将每个可见变化与一个节拍或音效配对：`2秒时门咔哒声，重音拍上的光脉冲，最后一声铃响时手松开杯子`。不要在一个短片段内要求多个剪辑、地点和微观动作。
 
-## Reference Motion Rules
+## 参考动作规则
 
-For reference footage, use only owned, licensed, public-domain, stock, mocap, rehearsal, or self-recorded material. Map `[Video1]` to motion, camera, timing, or blocking, not identity, unless the identity is authorized. If a reference contains a real person, transfer only general motion or camera behavior and explicitly exclude likeness transfer.
+对于参考素材，仅使用拥有版权、已授权、公共领域、素材库、动作捕捉、排练或自行录制的材料。将`[视频1]`映射到动作、摄影机、时间节奏或走位，而非身份，除非身份已获授权。如果参考中包含真实人物，仅传递通用的动作或摄影机行为，明确排除肖像权转移。
 
-## Stability Rules
+## 稳定性规则
 
-Hands, faces, logos, and product geometry drift when too many actions occur. Reduce motion around fragile details: lock the camera for lip-sync, keep hands in simple poses, ask product parts to remain rigid, and move light or environment instead of the core identity anchor.
+当动作过多时，手部、面部、标志和产品几何形状会出现漂移。减少脆弱细节周围的运动：口型同步时锁定摄影机，保持手部简单姿态，要求产品部件保持刚性，改为移动光线或环境，而不是核心身份锚点。
 
-## Output Contract
+## 输出约定
 
-Return the motion phrase, timing pattern, reference role map if any, and repaired prompt language.
+返回动作描述、节奏模式、参考角色映射（如有），以及修正后的提示词用语。

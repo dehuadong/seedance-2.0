@@ -1,72 +1,72 @@
-# Agent Compatibility
+# 智能体兼容性
 
-last_verified: 2026-06-12
+最后验证时间：2026-06-12
 
-Use this file when reviewing whether this repository is shaped correctly as an Agent Skill package. This is about packaging and agent behavior, not Seedance model capability.
+在审查此代码库是否以正确的智能体技能包形态组织时，请使用此文件。此处涉及的是打包方式和智能体行为，而非 Seedance 模型能力。
 
-## Current Agent-Skill Shape
+## 当前智能体技能形态
 
-Codex's current Agent Skills documentation describes a skill as a directory with a required `SKILL.md` file plus optional `scripts/`, `references/`, `assets/`, and `agents/` folders. It also describes progressive disclosure: the agent sees the name, description, and path first, then loads the full `SKILL.md` only when the skill matches the task.
+Codex 当前的智能体技能文档将技能描述为一个目录，其中包含必需的 `SKILL.md` 文件，以及可选的 `scripts/`、`references/`、`assets/` 和 `agents/` 文件夹。同时还描述了渐进式披露机制：智能体首先看到名称、描述和路径，仅当技能与任务匹配时才加载完整的 `SKILL.md`。
 
-This repository follows that pattern:
+此代码库遵循该模式：
 
-| Agent-skill expectation | Repository location | Status |
+| 智能体技能预期 | 代码库位置 | 状态 |
 |---|---|---|
-| Root skill metadata and routing | `SKILL.md` | Present |
-| Task-specific sub-skills | `skills/*/SKILL.md` | Present |
-| Dense reference material | `references/*.md` | Present |
-| Validation and maintenance scripts | `scripts/*.py` | Present |
-| README-facing visual resources | `assets/*` | Present |
-| Codex UI metadata | `agents/openai.yaml` | Present |
-| Behavioral evals | `evals/evals.json` | Present |
-| CI validation | `.github/workflows/validate-skills.yml` | Present |
-| Local Codex installer | `scripts/install_codex_skill.py` | Present |
+| 根技能元数据和路由 | `SKILL.md` | 存在 |
+| 任务特定子技能 | `skills/*/SKILL.md` | 存在 |
+| 密集参考资料 | `references/*.md` | 存在 |
+| 验证和维护脚本 | `scripts/*.py` | 存在 |
+| README 中使用的视觉资源 | `assets/*` | 存在 |
+| Codex UI 元数据 | `agents/openai.yaml` | 存在 |
+| 行为评估 | `evals/evals.json` | 存在 |
+| CI 验证 | `.github/workflows/validate-skills.yml` | 存在 |
+| 本地 Codex 安装程序 | `scripts/install_codex_skill.py` | 存在 |
 
-## Compatibility Rules
+## 兼容性规则
 
-- Keep every active `description` in third-person activation wording so tools can match it from a shortened skill list.
-- Keep the root `SKILL.md` small. Route to sub-skills and references instead of copying long tables into the root.
-- Keep volatile facts in dated references such as `api-status.md` and `source-registry.md`.
-- Keep generated bitmap images inside `assets/` if they are referenced by README.
-- Keep `agents/openai.yaml` aligned with the root skill name and make the default prompt invoke `$seedance-20`.
-- Use `scripts/install_codex_skill.py --force` to install or refresh the local user-level Codex copy at `$CODEX_HOME/skills/seedance-20` or `~/.codex/skills/seedance-20`.
-- Keep scripts deterministic and local. They should validate structure, schema, design, and source metadata without requiring private credentials.
-- Do not store API keys, account cookies, or private prompt corpora in the skill package.
+- 保持每个活跃的 `description` 使用第三人称激活措辞，以便工具能从简短的技能列表中匹配到它。
+- 保持根目录 `SKILL.md` 简短。路由到子技能和参考资料，而不是将长表格复制到根目录中。
+- 将易变的事实信息放在带日期的参考资料中，如 `api-status.md` 和 `source-registry.md`。
+- 如果 README 中引用了生成的位图图像，请将其保存在 `assets/` 内。
+- 保持 `agents/openai.yaml` 与根技能名称一致，并使默认提示调用 `$seedance-20`。
+- 使用 `scripts/install_codex_skill.py --force` 在用户级 Codex 副本中安装或刷新，路径为 `$CODEX_HOME/skills/seedance-20` 或 `~/.codex/skills/seedance-20`。
+- 保持脚本具有确定性和本地性。它们应能验证结构、模式、设计和来源元数据，而无需私有凭证。
+- 不要在技能包中存储 API 密钥、账户 Cookie 或私有提示语料库。
 
-## Cross-Agent Matrix
+## 跨智能体矩阵
 
-Verified 2026-06-12 from each agent's public docs; install paths are volatile - recheck the active client before promising behavior. Install this repository as ONE root skill (`seedance-20`); sub-skills and references load by relative path from the root.
+于 2026-06-12 根据各智能体的公开文档验证；安装路径可能变化——在承诺行为之前请重新检查当前客户端。将此代码库安装为单个根技能（`seedance-20`）；子技能和参考资料通过相对于根目录的路径加载。
 
-| Agent | Skills location | Install route | Notes |
+| 智能体 | 技能位置 | 安装方式 | 备注 |
 |---|---|---|---|
-| Claude Code / claude.ai | `.claude/skills/` (workspace), managed skills | copy or marketplace | Origin platform of the SKILL.md shape. |
-| Codex | `.agents/skills/` upward scan + user/system dirs | `scripts/install_codex_skill.py --force` | `agents/openai.yaml` supplies UI metadata. |
-| Google Antigravity | `.agents/skills/` (workspace), `~/.gemini/antigravity-cli/skills/` (global) | copy the folder, restart the session | Same directory convention as Codex workspaces; SKILL.md + scripts/references/assets shape matches this repo. |
-| OpenClaw | workspace `skills/`, `~/.openclaw/skills/` (global) | `openclaw skills install` (git/local expect `SKILL.md` at source root - this repo qualifies) | ClawHub is the public registry (`clawhub` CLI to publish). Every skill here already carries `openclaw:` metadata. |
-| Hermes Agent (Nous Research) | project `skills/`, `~/.hermes/skills/` | `hermes skills install` (runs a security scan) | Activates on the frontmatter `description` - this repo's third-person activation wording is exactly what it matches. |
-| Gemini CLI / Cursor / Windsurf / Copilot | `.gemini/`, `.cursor/`, `.windsurf/`, `.github/` + `skills/` | copy the folder | Treat as installation targets, not separate source trees. |
+| Claude Code / claude.ai | `.claude/skills/`（工作区），托管技能 | 复制或通过市场安装 | SKILL.md 形态的发源平台。 |
+| Codex | `.agents/skills/` 向上扫描 + 用户/系统目录 | `scripts/install_codex_skill.py --force` | `agents/openai.yaml` 提供 UI 元数据。 |
+| Google Antigravity | `.agents/skills/`（工作区），`~/.gemini/antigravity-cli/skills/`（全局） | 复制文件夹，重启会话 | 与 Codex 工作区使用相同的目录约定；SKILL.md + scripts/references/assets 形态与此代码库匹配。 |
+| OpenClaw | 工作区 `skills/`，`~/.openclaw/skills/`（全局） | `openclaw skills install`（git/本地安装期望 `SKILL.md` 位于源码根目录——此代码库符合要求） | ClawHub 是公共注册表（使用 `clawhub` CLI 发布）。此处的每个技能都已携带 `openclaw:` 元数据。 |
+| Hermes Agent（Nous Research） | 项目 `skills/`，`~/.hermes/skills/` | `hermes skills install`（会运行安全扫描） | 根据 frontmatter 中的 `description` 激活——此代码库的第三人称激活措辞正是它所匹配的。 |
+| Gemini CLI / Cursor / Windsurf / Copilot | `.gemini/`、`.cursor/`、`.windsurf/`、`.github/` + `skills/` | 复制文件夹 | 将其视为安装目标，而非独立的源码树。 |
 
-## Cross-Client Notes
+## 跨客户端说明
 
-Different agent clients scan different local paths. Codex documentation says Codex scans `.agents/skills` locations from the current directory upward, plus user/admin/system skill locations. A repository root with `SKILL.md` has the right skill-folder shape, but it is not automatically discovered as a repository skill unless installed under a scanned skill directory or packaged through the relevant plugin/distribution path. Other agent clients may use `.claude/skills`, `.gemini/skills`, `.github/skills`, `.cursor/skills`, or `.windsurf/skills`. Treat those as installation targets, not separate source trees.
+不同的智能体客户端扫描不同的本地路径。Codex 文档说明 Codex 从当前目录向上扫描 `.agents/skills` 位置，外加用户/管理员/系统技能位置。包含 `SKILL.md` 的代码库根目录具有正确的技能文件夹形态，但除非安装在已扫描的技能目录下，或通过相关插件/分发路径打包，否则不会自动被识别为仓库技能。其他智能体客户端可能使用 `.claude/skills`、`.gemini/skills`、`.github/skills`、`.cursor/skills` 或 `.windsurf/skills`。将这些视为安装目标，而非独立的源码树。
 
-Runway MCP is a separate agent connector surface. It can expose Seedance 2.0 through Runway inside MCP-compatible agents, but it does not make this repository a Runway plugin and does not change Codex skill installation rules.
+Runway MCP 是一个独立的智能体连接表面。它可以通过 MCP 兼容智能体内的 Runway 暴露 Seedance 2.0，但这不会使此代码库成为 Runway 插件，也不会改变 Codex 技能安装规则。
 
-## Source Signals
+## 来源参考
 
-- OpenAI Codex Agent Skills docs: https://developers.openai.com/codex/skills
-- OpenAI Codex Plugins docs: https://developers.openai.com/codex/plugins
-- OpenAI Academy plugins and skills explainer: https://openai.com/academy/codex-plugins-and-skills/
-- OpenAI skills catalog: https://github.com/openai/skills
-- Agent Skills open standard overview: https://agentskills.io/
-- Google Antigravity skills docs: https://antigravity.google/docs/cli-plugins and https://codelabs.developers.google.com/getting-started-with-antigravity-skills
-- OpenClaw skills docs: https://docs.openclaw.ai/tools/skills
-- Hermes Agent skills docs: https://hermes-agent.nousresearch.com/docs/user-guide/features/skills
-- Runway MCP announcement: https://runwayml.com/news/mcp
+- OpenAI Codex 智能体技能文档：https://developers.openai.com/codex/skills
+- OpenAI Codex 插件文档：https://developers.openai.com/codex/plugins
+- OpenAI Academy 插件和技能说明：https://openai.com/academy/codex-plugins-and-skills/
+- OpenAI 技能目录：https://github.com/openai/skills
+- 智能体技能开放标准概述：https://agentskills.io/
+- Google Antigravity 技能文档：https://antigravity.google/docs/cli-plugins 和 https://codelabs.developers.google.com/getting-started-with-antigravity-skills
+- OpenClaw 技能文档：https://docs.openclaw.ai/tools/skills
+- Hermes Agent 技能文档：https://hermes-agent.nousresearch.com/docs/user-guide/features/skills
+- Runway MCP 公告：https://runwayml.com/news/mcp
 
-## Do Not Claim
+## 不得声称的事项
 
-- Do not claim every agent client can install directly from this repository URL.
-- Do not claim ClawHub or any registry lists this skill unless it has actually been published there.
-- Do not claim every client honors the same metadata fields beyond `name` and `description`.
-- Do not claim this repository provides a live Seedance API wrapper. It is an agent-skill workflow and reference package.
+- 不得声称每个智能体客户端都能从此代码库 URL 直接安装。
+- 不得声称 ClawHub 或任何注册表已收录此技能，除非实际已发布到该处。
+- 不得声称每个客户端都支持除 `name` 和 `description` 之外的相同元数据字段。
+- 不得声称此代码库提供实时的 Seedance API 封装。它是一个智能体技能工作流和参考包。

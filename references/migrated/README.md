@@ -1,5 +1,5 @@
-# Migrated Legacy Bodies
+# 已迁移的旧版文件
 
-These files preserve earlier local skill bodies for historical comparison only. They are not active guidance and can contain stale platform status, old block-rate claims, outdated face/portrait assumptions, or unsafe raw-example language.
+这些文件保留了早期本地技能主体，仅用于历史对比参考。它们并非现行指导文件，可能包含过时的平台状态、旧的拦截率声明、已过时的人脸/肖像假设，或存在安全风险的原始示例措辞。
 
-Use active files in `skills/`, `references/`, `data/`, and `evals/` for current behavior. If a useful idea exists only in this archive, re-source it against current public documentation and rewrite it into safe, source-dated active guidance before reuse.
+请使用`skills/`、`references/`、`data/`和`evals/`中的现行文件以获取当前行为。如果此存档中仅存在某个有用的想法，请根据当前公开文档重新核实来源，并在复用前将其重写为安全的、带来源日期的现行指导内容。

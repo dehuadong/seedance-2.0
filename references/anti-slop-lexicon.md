@@ -1,47 +1,47 @@
-# Anti-Slop Lexicon
+# 反陈词滥调词典
 
-Replace empty evaluation language with observable production language. Field-confirmed across prompting communities in every supported language: abstract quality words destabilize generation because the model cannot tell which element to emphasize; decomposing them into physical elements (camera verb + speed + viewpoint, light source + direction + behavior, material + texture + motion) stabilizes it.
+将空洞的评价性语言替换为可观察的制作语言。经过各支持语言提示词社区的实践验证：抽象的质量词汇会使生成结果不稳定，因为模型无法判断应强调哪个元素；将其分解为物理元素（镜头动词 + 速度 + 视点、光源 + 方向 + 表现方式、材质 + 纹理 + 动态）则能使其稳定。
 
-## The Six Slop Classes
+## 六类陈词滥调
 
-| Class | Looks like | Repair |
+| 类别 | 表现形式 | 修正方法 |
 |---|---|---|
-| Empty evaluators | `cinematic, epic, stunning, beautiful, dramatic` | convert each to the one observable detail that earns it |
-| Borrowed image-model tokens | `8K, masterpiece, award-winning, trending on ArtStation, Unreal Engine, RAW` | delete; resolution and quality are settings or outcomes, never prose |
-| Tag salad | comma-separated keyword dumps ported from image prompting | rewrite as shooting-brief prose: one sentence per element - subject, action, camera, light, sound |
-| Negation slop | `no blur, no artifacts, no distortion, no extra fingers` | negation summons; exclude compositionally - describe what IS there instead |
-| Adjective stacking | `gorgeous, breathtaking, mesmerizing sunset` | three synonyms make one weak claim; pick the single detail that matters |
-| Feel-suffix words | `电影感 · 雰囲気のある · 감성적인 · atmosférico · атмосферный · vibey` | name the physical cause of the feeling; every vocab file has a language-specific Slop Traps table |
+| 空洞的评价词 | `电影级的、史诗般的、惊艳的、美丽的、戏剧性的` | 将每一个词转换为能支撑它的一个可观察细节 |
+| 借用的图像模型标记词 | `8K、杰作、获奖作品、ArtStation 热门、Unreal Engine、RAW` | 删除；分辨率和质量是设置项或结果，而非描述性文字 |
+| 标签沙拉 | 从图像提示词移植过来的逗号分隔关键词堆砌 | 重写为分镜式描述性文字：每个元素一句——主体、动作、镜头、光线、音效 |
+| 否定式陈词 | `不要模糊、不要伪影、不要变形、不要多出手指` | 否定只会召唤出这些缺陷；通过构图来排除——描述*实际应有*的内容 |
+| 形容词堆砌 | `华丽夺目、令人屏息、令人沉醉的日落` | 三个同义词构成一个薄弱的主张；只选那个真正重要的细节 |
+| 感觉后缀词 | `电影感 · 雰囲気のある · 감성적인 · atmosférico · атмосферный · 有氛围感的` | 指明这种感觉的物理成因；每个词汇文件都有一个针对该语言的陈词滥调陷阱表 |
 
-## Replacement Table
+## 替换对照表
 
-| Weak phrase | Replace with |
+| 空洞词汇 | 替换为 |
 |---|---|
-| cinematic | shot scale, camera move, lighting, grade |
-| epic | physical scale, stakes, crowd size, lens distance |
-| beautiful | color, texture, composition, material, light behavior |
-| stunning / breathtaking | visible contrast, reveal, movement, or detail |
-| dynamic | specific movement, speed, and endpoint |
-| dramatic | blocking, shadow, silence, or camera pressure |
-| ultra-realistic | material behavior, skin texture, lens artifacts, natural motion |
-| cool transition | match cut, whip pan, dissolve, hard cut, object wipe |
-| magical | particle behavior, glow source, motion path, interaction |
-| professional | product lighting setup, clean background, controlled camera |
-| masterpiece / award-winning | delete; quality is not a request |
-| 8K / ultra-HD / high quality | delete; resolution is a render setting, not prose |
-| atmosphere of mystery | what is hidden, by what: doorway, shadow, fog |
-| insanely / highly detailed | the two details that matter, named |
-| visually striking | the one frame the viewer remembers, described |
-| trending / viral style | the actual format: vertical, fast hook, caption-safe framing |
+| 电影级的 | 镜头景别、镜头运动、光线、调色 |
+| 史诗般的 | 物理尺度、事态严峻性、人群规模、镜头距离 |
+| 美丽的 | 色彩、纹理、构图、材质、光线表现方式 |
+| 惊艳的 / 令人屏息的 | 可见的对比度、揭示过程、运动或细节 |
+| 动态的 | 具体的运动方式、速度和终点 |
+| 戏剧性的 | 场面调度、阴影、静默或镜头施压 |
+| 超写实的 | 材质表现、皮肤纹理、镜头伪影、自然运动 |
+| 炫酷转场 | 匹配剪辑、甩镜头、叠化、硬切、物体遮挡转场 |
+| 魔幻的 | 粒子表现、辉光来源、运动轨迹、交互方式 |
+| 专业的 | 产品布光设置、干净背景、受控的镜头运动 |
+| 杰作 / 获奖作品 | 删除；质量不是靠请求得来的 |
+| 8K / 超高清 / 高质量 | 删除；分辨率是渲染设置，而非描述性文字 |
+| 神秘的氛围 | 什么东西被隐藏了，被什么遮挡：门道、阴影、雾气 |
+| 极其精细的 / 高细节的 | 指明那真正重要的两个细节 |
+| 视觉上引人注目的 | 描述观众会记住的那一个画面 |
+| 热门 / 爆款风格 | 实际格式：竖屏、快速钩子、适合显示字幕的构图 |
 
-## Tag Salad Repair
+## 标签沙拉修正
 
-Image-model habits port badly: `girl, sunset, 8K, cinematic, beautiful light, masterpiece, detailed face` gives a video model no action, no camera, no time axis. Rewrite as a brief: `A woman turns from the railing at sunset; the low sun flares behind her hair. Camera: slow push-in to a medium close-up. Sound: wind and distant surf.` One sentence per element beats twenty comma fragments.
+图像模型的习惯移植过来效果很差：`女孩, 日落, 8K, 电影级, 美丽光线, 杰作, 细节丰富的脸` 给视频模型没有提供动作、没有镜头、没有时间轴。重写为一段分镜简述：`日落时一位女子从栏杆边转身；低角度阳光在她的头发后面形成眩光。镜头：缓慢推近到中近景。音效：风声和远处海浪声。`每个元素一句胜过二十个逗号碎片。
 
-## Negation Rule
+## 否定式规则
 
-Naming a flaw plants it. Instead of `no blur, no extra fingers, no watermark text`, lock the positive: `hands rest still on the table`, `clean unbroken label`, `empty sky above the skyline`. Use negation only in the constraint slot where the platform expects it (`no on-screen text, no watermark`), never as quality insurance.
+指出缺陷反而会招致它。与其写 `不要模糊、不要多出手指、不要有水印文字`，不如锁定正面描述：`双手静止地放在桌上`，`干净完整的标签`，`天际线上方空旷的天空`。仅在平台期望的约束位置使用否定式（`无屏幕文字、无水印`），切勿将其作为质量保障手段。
 
-Rule: if a camera, microphone, light meter, or stopwatch cannot detect it, rewrite it.
+规则：如果摄像机、麦克风、测光表或秒表无法检测到它，就请重写它。
 
-Each language file in `references/vocab/` carries a Slop Traps table for its own community's empty words: English (`vocab/en.md`), Chinese (`vocab/zh.md`), Japanese (`vocab/ja.md`), Korean (`vocab/ko.md`), Spanish (`vocab/es.md`), Russian (`vocab/ru.md`).
+`references/vocab/` 中的各语言文件都带有针对该语言社区常用空话的陈词滥调陷阱表：英语（`vocab/en.md`）、中文（`vocab/zh.md`）、日语（`vocab/ja.md`）、韩语（`vocab/ko.md`）、西班牙语（`vocab/es.md`）、俄语（`vocab/ru.md`）。

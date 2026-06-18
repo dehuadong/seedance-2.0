@@ -1,79 +1,79 @@
-# Examples By Mode
+# 按模式分类的示例
 
-Use these as safe structures, not fixed scripts. They are original examples and avoid protected characters, celebrities, logos, and copied community prompts.
+请将这些示例作为安全的结构参考，而非固定脚本。它们均为原创示例，避免了受保护角色、名人、标识和复制的社区提示词。
 
-## T2V Director Instruction
+## T2V 导演指令
 
-`Original night courier crosses a rain-slick service bridge as a locked gate begins to close. Camera: low lateral tracking from left to right, ending on the courier's hand catching the gate. Lighting: amber work lights behind thin mist, cool moon rim on wet metal. Sound: rain on steel, breath, gate motor hum. Constraint: no text, no logos, no extra characters.`
+`原创的夜间快递员穿过一座被雨打湿的维修桥，一道锁着的大门开始关闭。镜头：从左到右的低角度横向跟移，结束于快递员的手抓住大门的瞬间。光线：薄雾后的琥珀色工作灯，湿金属上的冷调月光轮廓光。音效：雨打钢铁声、呼吸声、大门马达嗡鸣声。约束条件：无文字、无标识、无额外角色。`
 
-## I2V Preservation
+## I2V 保留
 
-`[Image1] is the product reference; preserve label, logo, shape, cap, glass color, and current composition. Only motion changes: condensation beads gather, merge, and slide down the right side. Camera: locked medium product shot with a subtle push-in. Sound: quiet room tone, one glass tick at final frame.`
+`[Image1] 是产品参考；保留标签、标识、外形、瓶盖、玻璃颜色和当前构图。仅运动变化：冷凝水珠聚集、融合并沿右侧滑落。镜头：固定的中景产品镜头，带微弱的推近。音效：安静的室内环境音，最后一帧一声玻璃轻响。`
 
-## V2V Edit
+## V2V 编辑
 
-`[Video1] is the source clip; preserve the same subject path and camera timing. Change only the lighting from flat daylight to warm sunset backlight, with soft rim highlights and longer shadows. Do not change subject identity, clothing, background layout, or motion rhythm.`
+`[Video1] 是源片段；保留相同的主体路径和镜头节奏。仅将光线从平淡的日光改为温暖的日落逆光，带有柔和的轮廓高光和更长的阴影。不改变主体身份、服装、背景布局或运动节奏。`
 
-## V2V Extend
+## V2V 扩展
 
-`[Video1] is the previous clip. Continue the same shot for five seconds from its final frame. The character completes the turn, pauses at the window, and the curtain moves once in the breeze. Camera remains locked; lighting and room layout stay continuous.`
+`[Video1] 是前一片段。从其最后一帧开始继续同一镜头，持续五秒。角色完成转身，在窗边停顿，窗帘在微风中飘动一次。镜头保持锁定；光线和房间布局保持连续。`
 
-## R2V Role Map
+## R2V 角色映射
 
-`[Image1] controls original character identity and coat. [Video1] controls only the slow side-tracking camera rhythm; do not transfer performer, room, logo, or costume. [Audio1] controls tempo and energy only. Character walks through a wet station platform, stops under one flickering sign, and looks left on the final beat.`
+`[Image1] 控制原创角色身份和外套。[Video1] 仅控制缓慢的横向跟移镜头节奏；不转移表演者、房间、标识或服装。[Audio1] 仅控制节奏和能量。角色走过一个湿漉漉的站台，在一个闪烁的标牌下停住，在最后一个节拍向左看。`
 
-## FLF2V Transition
+## FLF2V 过渡
 
-`[Image1] is the first frame. [Image2] is the last frame. Preserve the same original character, coat, room layout, and window position. Generate a continuous transition: the character rises from the chair, crosses to the window, and stops in the final pose. Camera: locked medium shot with a very slight push-in. Sound: quiet room tone and soft floor creak.`
+`[Image1] 是首帧。[Image2] 是尾帧。保持相同的原创角色、外套、房间布局和窗户位置。生成连续的过渡：角色从椅子上起身，走向窗户，在最终姿势处停住。镜头：锁定的中景镜头，带非常轻微的推近。音效：安静的室内环境音和轻微的地板吱嘎声。`
 
-## Audio Conflict Repair
+## 音频冲突修复
 
-`[Video1] is muted and controls camera blocking only. [Audio1] controls tempo and energy. On each downbeat, the light strip pulses once and the subject changes pose once. Camera stays locked wide so choreography remains readable. Do not copy any voice, melody, performer identity, or room from the references.`
+`[Video1] 已静音，仅控制镜头调度。[Audio1] 控制节奏和能量。在每个重拍上，灯带闪烁一次，主体变换一次姿势。镜头保持固定全景，使动作编排保持可读。不复制参考中的任何声音、旋律、表演者身份或房间。`
 
-## Extension Quality Repair
+## 扩展质量修复
 
-`Use the returned last frame from the previous clip as the new first frame. Preserve character, wardrobe, light direction, and camera angle. Continue only one action: smoke thins around the doorway and the character lowers the lantern. No new scene, no new camera move, no extra VFX.`
+`将前一片段返回的尾帧作为新的首帧。保持角色、服装、光线方向和镜头角度不变。仅继续一个动作：门口周围的烟雾变薄，角色放下灯笼。无新场景、无新镜头运动、无额外 VFX。`
 
-## Professional Shot Contract
+## 专业镜头合同
 
-**Brief:** 15s product film, 16:9 hero plus 9:16 cutdown, textless plate required.
+**创意简报：** 15 秒产品影片，16:9 主版本加 9:16 精简版，需要无文字画面底板。
 
-| Shot | Purpose | Seedance prompt spine |
+| 镜头 | 目的 | Seedance 提示词主干 |
 |---|---|---|
-| S01 | establish use context | `Wide 16:9 kitchen counter at dawn, original athlete places the bottle beside running shoes. Camera: locked medium-wide, slight push-in, warm window light, quiet room tone. End frame holds product left of center for vertical crop.` |
-| S02 | material proof | `[Image1] is the product reference; preserve logo, label, cap, color, and geometry exactly. Locked macro shot, condensation beads merge and slide down glass, narrow warm strip light sweeps once. SFX: single glass tick at endpoint.` |
-| S03 | packshot | `[Image1] product preserved exactly, black acrylic reflection, slow slider from silhouette to front three-quarter hero angle. No generated text; leave clean right-side negative space for localized copy in post.` |
+| S01 | 建立使用场景 | `16:9 全景，黎明时分的厨房台面，原创运动员将瓶子放在跑鞋旁。镜头：锁定的中远景，轻微推近，温暖的窗户光，安静的室内环境音。结束画面将产品保持在画面左侧居中位置，以便竖屏裁剪。` |
+| S02 | 材质证明 | `[Image1] 是产品参考；精确保留标识、标签、瓶盖、颜色和几何外形。锁定微距镜头，冷凝水珠聚集并沿玻璃滑落，一条狭窄的暖色光带扫过一次。音效：终点处一声玻璃轻响。` |
+| S03 | 产品定妆照 | `[Image1] 产品精确保留，黑色亚克力反光，从剪影缓慢滑动到正面四分之三主体角度。不生成文字；留出右侧干净负空间供后期添加本地化文字。` |
 
-Continuity anchors: same bottle orientation, label color, dawn palette, clean counter surface, no burned-in text. Delivery notes: make textless 16:9 and 9:16 versions; add claims/captions in post.
+连续性锚点：相同瓶身朝向、标签颜色、黎明色调、干净台面表面、无烧录文字。交付说明：制作无文字的 16:9 和 9:16 版本；在后期添加宣传语/字幕。
 
-## Localization Handoff Example
+## 本地化交接示例
 
-`Character A stands still in a locked medium close-up and says "We start now." Spoken language: English. Post: create subtitles in Spanish, Japanese, Korean, Russian, and Chinese; keep lower third clear; no burned-in captions; preserve textless plate and room tone for dubbing/M&E.`
+`角色 A 静止站立在锁定的中近景中，说“We start now.” 口头语言：英语。后期：制作西班牙语、日语、韩语、俄语和中文的字幕；保持下三分之一区域干净；无烧录字幕；为配音/M&E 保留无文字画面底板和室内环境音。`
 
-## Delivery QC Example
+## 交付质检示例
 
-`Before delivery: verify frame rate, aspect ratio, crop-safe product placement, product color, no logo drift, dialogue sync, loudness target per buyer spec, subtitle placement, textless export, rights notes for Image1/Audio1, and human watch-through at normal speed.`
+`交付前：确认帧率、宽高比、产品在裁剪安全区内的位置、产品颜色、标识无漂移、对话同步、符合买方规格的响度目标、字幕位置、无文字导出、Image1/Audio1 的权利说明，以及正常速度人工通看。`
 
-## Multilingual Community-Informed Examples
+## 多语言社区参考示例
 
-These examples are original structures distilled from public multilingual practice. They do not copy community prompt text.
+以下示例是从公开的多语种实践中提炼的原创结构，不复制社区提示词文本。
 
-### Chinese-English R2V
+### 中文-英语 R2V
 
 `@图1锁定原创角色身份与服装；@视频1仅参考 camera rhythm，不复制人物、地点或品牌；@音频1仅参考节奏。Original courier walks across a wet train platform, stops under one flickering sign, and turns left on the final beat. Camera: 35mm locked medium-wide, one slow side track. Sound: rain, footsteps, no music.`
 
-### Japanese I2V
+### 日语 I2V
 
 `[Image1]の人物の顔、髪型、衣装、背景構図を保持。動きは小さく、まばたき一回、視線を少し下げるだけ。Camera: locked medium close-up, no reframing. Lighting: soft window light. Sound: quiet room tone.`
 
-### Korean Dialogue
+### 韩语对话
 
 `현대 카페, Character A sits still in a locked medium close-up and says, "괜찮아, 천천히 말해." Keep mouth movement small, no head turn during dialogue, no music under the line. Sound: cafe room tone and a soft cup tap at the end.`
 
-### Spanish Product
+### 西班牙语产品
 
 `[Image1] es la referencia del producto; conservar forma, etiqueta, logo y color sin cambios. Solo cambia la luz: una franja cálida cruza el vidrio y las gotas bajan lentamente. Camera: locked product shot with slow push-in.`
 
-### Russian Safe Suspense
+### 俄语安全悬疑
 
 `Постановочная сцена напряжения без графики: взрослый оригинальный персонаж отступает от закрытой двери, роняет ключи и замирает. Camera: locked medium shot. Lighting: warm practical plus blue window rim. Sound: key drop, breath, no music.`

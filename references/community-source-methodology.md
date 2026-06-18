@@ -1,38 +1,38 @@
-# Community Source Methodology
+# 社区来源方法论
 
-last_verified: 2026-05-30
+最后验证时间：2026-05-30
 
-Use this when mining prompt corpora, forums, Reddit posts, Chinese guides, Russian guides, or wrapper documentation.
+在挖掘提示词语料库、论坛、Reddit 帖子、中文指南、俄语指南或封装器文档时使用此参考。
 
-## Allowed Extraction
+## 允许提取的内容
 
-- Prompt structure.
-- Timing syntax.
-- Camera, lighting, motion, audio, VFX, and constraint vocabulary.
-- Reference-role language.
-- Failure modes and safe repairs.
-- Source metadata: URL, author handle, language, date, and surface.
+- 提示词结构。
+- 时序语法。
+- 镜头、光线、运动、音频、VFX 和约束词汇。
+- 参考角色语言。
+- 失败模式和安全修复方案。
+- 来源元数据：URL、作者标识、语言、日期和表面。
 
-## Disallowed Extraction
+## 禁止提取的内容
 
-- Protected characters, franchises, exact scenes, studios, or songs as reusable examples.
-- Celebrity, public-figure, private-person, or voice imitation prompts.
-- Filter bypass or evasion instructions.
-- Wrapper pricing as general Seedance pricing.
-- Private-channel claims that cannot be rechecked.
+- 将受保护角色、系列作品、确切场景、工作室或歌曲作为可复用示例。
+- 名人、公众人物、私人个体或声音模仿提示词。
+- 过滤器绕过或规避指令。
+- 将封装器定价作为通用 Seedance 定价。
+- 无法重新确认的私人渠道声明。
 
-## Corpus Labels
+## 语料标签
 
-| Label | Meaning |
+| 标签 | 含义 |
 |---|---|
-| `safe-example-candidate` | Can be rewritten into active docs with minor cleanup. |
-| `safe-structure-only` | Mine structure/vocab only; do not copy prompt content. |
-| `ip-risk` | Contains protected character, franchise, studio, exact scene, or song. |
-| `real-person-risk` | Contains real face, public figure, celebrity, or voice imitation risk. |
-| `brand-risk` | Contains brand/logo/product identity requiring authorization. |
-| `violence-risk` | Needs non-graphic staged-action rewrite or exclusion. |
-| `low-quality` | Too generic, incoherent, or slop-heavy to mine. |
+| `safe-example-candidate` | 可经少量清理后改写为活动文档。 |
+| `safe-structure-only` | 仅提取结构/词汇；不复制提示词内容。 |
+| `ip-risk` | 包含受保护角色、系列作品、工作室、确切场景或歌曲。 |
+| `real-person-risk` | 包含真人面部、公众人物、名人或声音模仿风险。 |
+| `brand-risk` | 包含需要授权的品牌/标识/产品身份。 |
+| `violence-risk` | 需要进行非写实化舞台动作改写或排除。 |
+| `low-quality` | 过于泛泛、不连贯或陈词滥调过多，无挖掘价值。 |
 
-## Transformation Rule
+## 转换规则
 
-Raw community prompts should become original safe examples. Replace protected names with archetypes, named brands with user-owned/product placeholders, and real-person references with authorization-gated language.
+原始社区提示词应转换为原创安全示例。将受保护名称替换为原型角色，将具名品牌替换为用户自有/产品占位符，将真人参考替换为授权门槛语言。

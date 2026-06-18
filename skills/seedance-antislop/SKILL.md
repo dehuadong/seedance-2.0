@@ -1,64 +1,58 @@
 ---
 name: seedance-antislop
-description: "This skill should be used when a Seedance 2.0 prompt contains generic AI filler, hollow superlatives, vague cinematic language, bloated adjectives, weak verbs, or needs sharper production-specific wording."
+description: '当 Seedance 2.0 提示词包含通用的 AI 填充词、空洞的溢美之词、模糊的电影语言、臃肿的形容词、弱动词，或需要更精准的制作术语时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - prompt-quality
-  - anti-slop
+  - 提示词质量
+  - 反注水
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
 ---
 
 # seedance-antislop
 
-Remove filler that hides missing visual decisions. A strong Seedance prompt uses observable nouns, verbs, camera moves, light sources, sound cues, and constraints. A weak prompt asks for excellence without saying what excellence looks or sounds like.
+移除那些掩盖缺失视觉决策的填充内容。一个优秀的 Seedance 提示词使用可观察的名词、动词、镜头运动、光源、声音线索和约束条件。而一个薄弱的提示词则只是要求卓越，却不说明卓越看起来或听起来是什么样的。
 
-## Intent
+## 意图
 
-Users reach for giant empty words precisely because they care intensely and don't know where to put it. The soul of de-slopping is conservation: every deleted "epic" must come back as a visible choice that holds the same caring. Strip a prompt without honoring the feeling that bloated it, and the user hears that their excitement was wrong.
+用户之所以使用那些巨大的空词，恰恰是因为他们非常在意，却不知该把这份在意安放何处。去注水的核心在于守恒：每一个被删除的“史诗级”，都必须以一个同样承载着那份在意的、可见的决策来回归。剥离提示词却不尊重导致它臃肿的情感，用户就会觉得自己的兴奋是错的。
 
-## Visibility Test
+## 可视化测试
 
-Every major phrase should be visible to a camera, measurable by a light meter, audible in the mix, or observable as motion. If a phrase cannot pass that test, replace it with production language.
+每一个主要短语都应该能被摄像机看到、能被测光表测量、能在混音中被听到，或能被观察为运动。如果一个短语无法通过这项测试，就用制作语言替换它。
 
-| Filler | Ask what it means | Strong replacement pattern |
-|---|---|---|
-| cinematic | What camera and light make it cinematic? | `locked close-up, warm practical key, cool rim light` |
-| epic | What is the scale or stake? | `wide low-angle shot, tiny figure against storm wall` |
-| beautiful | What color, texture, or light behavior? | `pearl highlights on wet ceramic, soft window bounce` |
-| dynamic | What moves, how fast, and where does it end? | `fast lateral track ending on the hero label` |
-| professional | What production setup? | `clean commercial tabletop, controlled reflection, no clutter` |
+| 填充词 | 问自己它具体指什么             | 强替换模式                                 |
+| ------ | ------------------------------ | ------------------------------------------ |
+| 电影感 | 是什么镜头和光线造就了电影感？ | `锁定特写，暖色实用主光，冷色边缘光`       |
+| 史诗级 | 规模或利害关系是什么？         | `广角低角度镜头，暴风雨墙前的渺小身影`     |
+| 美丽的 | 是什么颜色、纹理或光线表现？   | `湿陶瓷上的珍珠光泽高光，柔和的窗户反射光` |
+| 动态的 | 什么在动，多快，终点在哪？     | `快速横向平移，定格在英雄标签上`           |
+| 专业的 | 是什么制作配置？               | `干净的商业桌面布景，受控反光，无杂乱`     |
 
-## The Six Slop Classes
+## 六大注水类别
 
-Classify before rewriting - each class has a different repair:
+在重写前先分类——每一类都有不同的修复方法：
 
-1. **Empty evaluators** (`cinematic, epic, stunning`) - convert each to the one observable detail that earns it.
-2. **Borrowed image-model tokens** (`8K, masterpiece, trending on ArtStation`) - delete; quality and resolution are settings, not prose.
-3. **Tag salad** (comma keyword dumps ported from image prompting) - rewrite as shooting-brief prose: one sentence per element, with an action and a time axis.
-4. **Negation slop** (`no blur, no artifacts, no extra fingers`) - negation summons; describe what IS there instead, and keep negation only in the constraint slot.
-5. **Adjective stacking** (three synonyms for one quality) - pick the single detail that matters.
-6. **Feel-suffix words** (`电影感, 雰囲気のある, 감성적인, atmosférico, атмосферный, vibey`) - name the physical cause of the feeling; every language file in `references/vocab/` has a Slop Traps table for its own community's empty words.
+1. **空洞的评价词**（`电影感、史诗级、惊艳`）—— 将每一个转换为能支撑它的那一个可观察细节。
+2. **借来的图像模型标记**（`8K、杰作、ArtStation 热榜`）—— 删除；质量和分辨率是设置项，不是描述性文字。
+3. **标签沙拉**（从图像提示词移植过来的逗号分隔关键词堆砌）—— 改写为拍摄简报式描述：每个元素一句，包含一个动作和一个时间轴。
+4. **否定式注水**（`无模糊、无伪影、无多余手指`）—— 否定词反而会召唤出那些东西；描述 _存在的_ 内容，只把否定词保留在约束槽中。
+5. **形容词堆叠**（用三个同义词描述同一个品质）—— 只选那个真正重要的细节。
+6. **感觉后缀词**（`电影感、雰囲気のある、감성적인、atmosférico、атмосферный、vibey`）—— 说出产生那种感觉的物理原因；`references/vocab/` 中的每个语言文件都有其对应社区空词的“注水陷阱”表格。
 
-## Rewrite Pass
+## 重写步骤
 
-First, underline all superlatives and vague style labels and classify each by slop class. Second, decide whether each word should become camera, light, motion, material, sound, or constraint language. Third, reduce duplicates. Fourth, keep the prompt within the character budget and preserve reference tags.
+首先，划出所有最高级形容词和模糊的风格标签，并按注水类别分类。其次，判断每个词应转换为镜头语言、灯光语言、运动语言、材质语言、声音语言还是约束语言。第三，删减重复项。第四，确保提示词在字符预算内，并保留引用标签。
 
-## Do Not Over-Correct
+## 不要过度修正
 
-Do not remove useful genre language when it is paired with concrete direction. `Noir hallway with hard venetian-blind shadows` is useful; `dramatic cinematic noir vibes` is not. Keep terms that communicate medium, era, palette, or lens behavior.
+当有用的类型语言与具体的方向搭配时，不要移除。`具有硬质百叶窗阴影的黑色电影走廊` 是有用的；`戏剧性的电影感黑色氛围` 则不是。保留那些能传达媒介、时代、色调或镜头行为的术语。
 
-Load `[ref:anti-slop-lexicon]` for the slop-class taxonomy and extended replacement table, and `[skill:seedance-vocab-en]` with `references/vocab/en.md` for the full function-organized English precision vocabulary. For non-English prompts, load the matching vocab file's Slop Traps table (`references/vocab/zh.md`, `ja.md`, `ko.md`, `es.md`, `ru.md`) - each language community has its own empty-quality words and decompositions.
+加载 `[ref:anti-slop-lexicon]` 获取注水类别分类法和扩展替换表，以及 `[skill:seedance-vocab-en]` 搭配 `references/vocab/en.md` 获取完整的按功能组织的英语精准词汇表。对于非英语提示词，加载对应词汇文件的“注水陷阱”表格（`references/vocab/zh.md`、`ja.md`、`ko.md`、`es.md`、`ru.md`）——每个语言社区都有自己特有的空品质词汇及其分解方式。
 
-## Output Contract
+## 输出约定
 
-Return removed words, replacements grouped by camera/light/motion/sound/constraint, and the tightened prompt.
+返回已删除的词、按镜头/灯光/运动/声音/约束分组的替换词，以及精简后的提示词。

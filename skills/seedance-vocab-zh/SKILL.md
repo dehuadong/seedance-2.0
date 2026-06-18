@@ -1,54 +1,49 @@
 ---
 name: seedance-vocab-zh
-description: "This skill should be used when the user asks for Chinese Seedance 2.0 prompt wording, Mandarin cinematic vocabulary, Chinese prompt compression, or translation of camera, lighting, action, VFX, audio, and production terms into Chinese."
+description: '当用户要求中文Seedance 2.0提示词措辞、普通话电影词汇、中文提示词压缩，或将摄影、灯光、动作、视觉特效、音频和制作术语翻译成中文时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - chinese
-  - vocabulary
+  - 中文
+  - 词汇
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
+  parent: 'seedance-20'
 ---
 
 # seedance-vocab-zh
 
-Use Chinese vocabulary when the user asks for Chinese prompts, Mandarin cinematic wording, role binding, first/last-frame workflow, or maximum compactness. Chinese prompt wording is often efficient, but it must still preserve mode, reference tags, action, camera, lighting, audio, and constraints.
+当用户要求中文提示词、普通话电影措辞、角色绑定、首帧/末帧工作流或最大紧凑度时，使用中文词汇。中文提示词措辞通常效率较高，但仍必须保留模式、参考标签、动作、摄影、灯光、音频和约束条件。
 
-## Intent
+## 意图
 
-Chinese can say in four characters what English needs a sentence for - and the user choosing Chinese is choosing that compression and its culture. Serve the density without losing the directing: every 成语-tight phrase still names something a camera can see.
+中文能用四个字说出英文需要一句话才能表达的内容——而选择中文的用户选择的正是这种压缩及其背后的文化。在不丢失导演意图的前提下提供这种密度：每一个精炼的短语仍然要命名摄影机可以看到的东西。
 
-## Usage Rule
+## 使用规则
 
-Do not translate reference tags. Keep `[Image1]`, `[Video1]`, and `[Audio1]` unchanged. Use short production phrases instead of abstract adjectives.
+不要翻译参考标签。保持`[Image1]`、`[Video1]`和`[Audio1]`不变。使用简短的制作短语，而非抽象形容词。
 
-Load `[ref:vocab/zh]` for dense role-binding, first/last-frame, camera, lighting, audio, edit/extend, constraint, and safety vocabulary.
+加载`[ref:vocab/zh]`获取密集的角色绑定、首帧/末帧、摄影、灯光、音频、编辑/扩展、约束和安全词汇。
 
-| Function | Chinese wording |
-|---|---|
-| Camera | `缓慢推镜`, `横向跟拍`, `固定中景`, `低角度`, `特写`, `从轮廓到正面三分之二角度` |
-| Lighting | `侧逆光`, `柔和窗光`, `暖色实用灯`, `冷色月光`, `轮廓光`, `体积光` |
-| Motion | `慢慢转身`, `快速掠过画面`, `水珠沿表面下滑`, `薄雾贴地扩散` |
-| Audio | `安静环境声`, `一句短对白`, `轻微金属声`, `无配乐`, `脚步声卡点` |
-| First/last frame | `@图1 为首帧`, `@图2 为尾帧`, `自然过渡到尾帧`, `中间动作连续，不跳切` |
-| Constraints | `严格保持logo、标签、形状和颜色不变` |
+| 功能      | 中文措辞                                                                         |
+| --------- | -------------------------------------------------------------------------------- |
+| 摄影      | `缓慢推镜`，`横向跟拍`，`固定中景`，`低角度`，`特写`，`从轮廓到正面三分之二角度` |
+| 灯光      | `侧逆光`，`柔和窗光`，`暖色实用灯`，`冷色月光`，`轮廓光`，`体积光`               |
+| 动作      | `慢慢转身`，`快速掠过画面`，`水珠沿表面下滑`，`薄雾贴地扩散`                     |
+| 音频      | `安静环境声`，`一句短对白`，`轻微金属声`，`无配乐`，`脚步声卡点`                 |
+| 首帧/末帧 | `@图1 为首帧`，`@图2 为尾帧`，`自然过渡到尾帧`，`中间动作连续，不跳切`           |
+| 约束      | `严格保持logo、标签、形状和颜色不变`                                             |
 
-## Compact Pattern
+## 紧凑模式
 
 `[Image1]为参考，严格保持[主体/产品/脸部/标志]不变；仅加入[动作/光线/镜头变化]。镜头：[一个动作]。声音：[音效或环境声]。`
 
-## De-Slop Rule
+## 去除废话规则
 
-When the prompt leans on `电影感`, `氛围感`, `高级感`, `大片感`, or bare `质感`, load the Slop Traps table in `references/vocab/zh.md` and decompose each into the physical elements that produce it - 材质, 光线, 色彩, 空气.
+当提示词依赖`电影感`、`氛围感`、`高级感`、`大片感`或单纯的`质感`时，加载`references/vocab/zh.md`中的废话陷阱表，并将每个词分解为产生它的物理元素——材质、光线、色彩、空气。
 
-## Output Contract
+## 输出约定
 
-Return concise Chinese prompt text, optional English gloss when useful, and preserve reference tags exactly.
+返回简洁的中文提示词文本，在有帮助时附带可选的英文注释，并精确保留参考标签。

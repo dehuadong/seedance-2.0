@@ -1,38 +1,38 @@
-# Quick Reference
+# 快速参考
 
-## Default route
+## 默认路径
 
-- Vague idea: `seedance-interview`.
-- Clear idea: `seedance-prompt`.
-- Short prompt: `seedance-prompt-short`.
-- Bad result: `seedance-troubleshoot`.
-- IP or real-person risk: `seedance-copyright`.
-- Blocked prompt: `seedance-filter`.
-- Camera, light, motion, style, VFX, audio, or character-specific work: load the matching specialist sub-skill.
+- 模糊想法：`seedance-interview`。
+- 清晰想法：`seedance-prompt`。
+- 简短提示词：`seedance-prompt-short`。
+- 效果不佳：`seedance-troubleshoot`。
+- IP或真人风险：`seedance-copyright`。
+- 提示词被拦截：`seedance-filter`。
+- 镜头、灯光、运动、风格、视觉特效、音频或特定角色工作：加载匹配的专家子技能。
 
-## Prompt checklist
+## 提示词检查清单
 
-| Gate | Pass condition |
+| 检查项 | 通过条件 |
 |---|---|
-| Mode | T2V, I2V, V2V, or R2V is explicit. |
-| References | Each asset has exactly one primary role unless deliberately layered. |
-| Subject | Main subject appears in the first clause and has stable tags if needed. |
-| Action | One visible beat has an observable endpoint. |
-| Camera | One primary move has start, speed, subject relationship, and endpoint. |
-| Lighting | Source, direction, color, atmosphere, or transition is physical. |
-| Audio | Dialogue, ambience, SFX, music, or silence is intentional. |
-| Safety | Protected identity, IP, and unsafe wording are rewritten or authorization-gated. |
-| Anti-slop | Hollow boosters are replaced by observable production language. |
-| Budget | Final prompt is under 2000 characters. |
+| 模式 | 明确指定 T2V、I2V、V2V 或 R2V。 |
+| 参考素材 | 除非刻意叠加，否则每个素材必须仅有一个主要作用。 |
+| 主体 | 主体出现在首个分句中，并在需要时具有稳定的标签。 |
+| 动作 | 一个可见的动作节点具有可观察的终点。 |
+| 镜头 | 一个主要运镜具有起点、速度、主体关系和终点。 |
+| 灯光 | 光源、方向、颜色、氛围或过渡必须符合物理规律。 |
+| 音频 | 对话、环境音、音效、音乐或静音必须是有意为之。 |
+| 安全 | 受保护的身份、IP和不安全的措辞需被重写或进行授权门控。 |
+| 反低质 | 空洞的修饰词被替换为具象的制作语言。 |
+| 篇幅限制 | 最终提示词在2000个字符以内。 |
 
-## Fast repair phrases
+## 快速修复短语
 
-| Failure | Add or replace with |
+| 故障 | 添加或替换为 |
 |---|---|
-| I2V drift | `preserve [Image1] subject/product exactly; only motion, light, and camera change` |
-| Generic look | `physical light source + material behavior + specific camera endpoint` |
-| Camera chaos | `one controlled [move] from [start frame] to [end frame]` |
-| Weak action | `actor + verb + timing + consequence + final state` |
-| Lip-sync instability | `locked medium close-up, short quoted line, no head turn during dialogue` |
-| Noisy VFX | `source + material + path + interaction + dissipation endpoint` |
-| Style/IP risk | `medium + texture + palette + composition + motion rhythm` |
+| 图生视频漂移 | `严格保留 [Image1] 主体/产品；仅改变运动、灯光和镜头` |
+| 画面平庸 | `物理光源 + 材质行为 + 特定镜头终点` |
+| 镜头混乱 | `一个受控的 [运镜] 从 [起始帧] 到 [结束帧]` |
+| 动作乏力 | `演员 + 动词 + 时机 + 结果 + 最终状态` |
+| 口型同步不稳定 | `锁定中近景，短引用台词，对话期间不转头` |
+| 视觉特效杂乱 | `来源 + 材质 + 路径 + 交互 + 消散终点` |
+| 风格/IP风险 | `媒介 + 纹理 + 调色板 + 构图 + 运动节奏` |

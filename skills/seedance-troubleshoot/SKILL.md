@@ -1,63 +1,58 @@
 ---
 name: seedance-troubleshoot
-description: "This skill should be used when a Seedance 2.0 output is blurry, jittery, off-prompt, morphing, blocked, visually generic, unstable, desynced, inconsistent, or otherwise fails and needs root-cause diagnosis."
+description: '当Seedance 2.0的输出出现模糊、抖动、偏离提示词、变形、被拦截、视觉上过于平庸、不稳定、不同步、不一致，或其他故障并需要根因诊断时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - diagnostics
-  - troubleshooting
+  - 诊断
+  - 故障排除
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
+  parent: 'seedance-20'
 ---
 
 # seedance-troubleshoot
 
-If the take is partially good rather than failed, route to `[ref:retake-protocol]` triage first - most takes deserve a verdict, not a rewrite. Diagnose failure before rewriting. Do not simply add more adjectives. Identify whether the failure came from mode mismatch, overload, ambiguity, fragile identity, unsafe wording, unsupported platform behavior, or missing preservation constraints.
+如果成片是部分可用而非完全失败，首先路由到`[ref:retake-protocol]`进行分级——大多数成片需要的是一个判定，而非重写。在重写之前先诊断故障。不要简单地添加更多形容词。识别故障是来自模式不匹配、过载、歧义、脆弱身份、不安全措辞、不支持的平台行为，还是缺少保留约束。
 
-When the diagnostic tree has no row for the failure, load `[ref:model-mechanics]` and diagnose by mechanism: attention dilution, prior conflict, summoned negation, broken trajectory, compounding error, conditioning conflict, capacity starvation, or an overloaded audio-video joint constraint. Load `[ref:field-observed-tips]`, `[ref:reference-workflow]`, and `[ref:api-workflow]` when the failure involves continuation, edit/extend, source clips, audio references, or platform-specific errors. Load `[ref:shot-list-continuity]` for multi-shot drift and `[ref:delivery-qc]` for final-client or delivery failures.
+当诊断树中没有对应故障条目时，加载`[ref:model-mechanics]`并按机制诊断：注意力稀释、先验冲突、召唤否定、轨迹断裂、累积误差、条件冲突、容量不足，或音视频联合约束过载。当故障涉及续写、编辑/扩展、源素材、音频参考或平台特定错误时，加载`[ref:field-observed-tips]`、`[ref:reference-workflow]`和`[ref:api-workflow]`。针对多镜头漂移加载`[ref:shot-list-continuity]`，针对最终客户或交付故障加载`[ref:delivery-qc]`。
 
-## Intent
+## 意图
 
-A failed generation feels personal - the user showed the machine their idea and the machine returned something broken. The soul of this skill is rescue without blame: name the mechanism, never the user; save the idea, not just the prompt. They should leave with a fix and their confidence intact.
+一次失败的生成让人感觉是冲着自己来的——用户把他们的想法展示给机器，机器却返回了破碎的东西。此技能的灵魂是在不指责的前提下进行补救：指出机制问题，而非用户问题；拯救想法，而不仅仅是提示词。他们离开时应该带着修复方案，并且信心完好。
 
-## Diagnostic Tree
+## 诊断树
 
-| Symptom | Likely cause | First repair |
-|---|---|---|
-| Product or face changes | I2V prompt re-described visible identity or overloaded motion. | Add preservation constraints; remove duplicate static detail. |
-| Camera jumps | Several incompatible moves or no endpoint. | Choose one move with start and finish. |
-| Generic output | Hollow style words and weak action. | Replace with physical action, source light, material, and sound. |
-| Motion ignored | Static prompt or no visible consequence. | Add actor, verb, timing, and changed end state. |
-| Lip-sync poor | Moving head/camera, long dialogue, unassigned speaker. | Lock framing, shorten line, assign speaker. |
-| VFX noisy | Effect has no source, physics, or dissipation. | Add source, material, path, interaction, and endpoint. |
-| Prompt blocked | Protected IP, real-person, graphic, or bypass-like wording. | Rewrite intent in safe production language without evasion. |
-| Extension quality degrades | No last-frame anchor or too many new variables across continuations. | Use returned last frame as first frame and change one variable. |
-| Audio reference ignored | Competing video sound, no visual beat mapping, or unsupported combo. | Mute competing video and map one visible event to the beat. |
-| Text/logos break | Small text asked to move or be redrawn. | Keep text static, centered, and protected; animate light around it. |
-| Client QC fails | Prompt output treated as final delivery without post/QC. | Route to delivery preflight, post fix, or regenerate only the failing shot. |
+| 症状               | 可能原因                                           | 首次修复                                         |
+| ------------------ | -------------------------------------------------- | ------------------------------------------------ |
+| 产品或人脸发生变化 | I2V提示词重新描述了可见身份，或动作过载。          | 添加保留约束；删除重复的静态细节。               |
+| 镜头跳跃           | 多个不兼容的运动或没有终点。                       | 选择一个有起点和终点的运动。                     |
+| 输出平庸           | 空洞的风格词汇和薄弱的动作。                       | 替换为具体动作、光源、材质和音效。               |
+| 动作被忽略         | 静态提示词或没有可见结果。                         | 添加行为者、动词、时间节奏和改变后的结束状态。   |
+| 口型同步差         | 头部/摄影机运动、长对话、未指定说话者。            | 锁定构图，缩短台词，指定说话者。                 |
+| 视觉特效噪杂       | 效果没有来源、物理过程或消散。                     | 添加来源、材质、路径、交互和终点。               |
+| 提示词被拦截       | 包含受保护IP、真实人物、露骨内容或规避性措辞。     | 用安全的制作语言重写意图，不采用迂回方式。       |
+| 扩展后质量下降     | 没有末帧锚点，或续写中新增变量过多。               | 将返回的末帧作为首帧，并只改变一个变量。         |
+| 音频参考被忽略     | 视频音轨冲突、没有可视化节拍映射，或组合不受支持。 | 静音冲突视频音轨，并将一个可见事件映射到节拍上。 |
+| 文字/标志破损      | 要求小文字移动或被重绘。                           | 保持文字静态、居中且受保护；在其周围做灯光动画。 |
+| 客户质量检查不通过 | 将提示词输出直接作为最终交付物，未经后期/质检。    | 路由到交付预检、后期修复，或仅重新生成故障镜头。 |
 
-## Repair Process
+## 修复流程
 
-First quote the failing phrase or missing element. Then name the root cause. Next, remove conflicts rather than adding complexity. Finally, produce one conservative retry prompt and one optional creative variant only if the user wants exploration.
+首先引用故障的措辞或缺失的元素。然后指出根本原因。接着，删除冲突项而非增加复杂性。最后，生成一个保守的重试提示词，以及一个可选的创意变体（仅当用户想要探索时）。
 
-## Conservative Retry Pattern
+## 保守重试模式
 
-`[Reference role if any]. Preserve [identity/product/environment] exactly. One visible action: [specific verb and consequence]. Camera: [single move]. Lighting: [physical source]. Sound: [ambient/SFX/dialogue]. Constraints: [what must not change].`
+`[如有参考角色]。严格保持[身份/产品/环境]不变。一个可见动作：[具体动词和结果]。摄影：[单个运动]。灯光：[物理光源]。音效：[环境音/音效/对话]。约束：[不得改变的内容]。`
 
-## Escalation Rules
+## 升级规则
 
-If the same error repeats, split the scene into shorter clips, reduce characters, simplify hand or face motion, use stronger reference role mapping, or change the mode. For unstable text/logos, keep them static, centered, and protected; do not ask the model to redraw small text during motion.
+如果相同错误重复出现，将场景拆分为更短的片段、减少角色数量、简化手部或面部运动、使用更强的参考角色映射，或更换模式。对于不稳定的文字/标志，保持它们静态、居中且受保护；不要在运动过程中要求模型重绘小文字。
 
-For edit/extend failures, preserve the source clip first and change only the failing layer. If a surface supports returned last frames, use that still as the next first-frame anchor before extending.
+对于编辑/扩展故障，首先保留源素材，仅修改有问题的部分。如果某个平台支持返回末帧，在扩展之前将该静态图作为下一个首帧锚点使用。
 
-## Output Contract
+## 输出约定
 
-Return root cause, evidence from the prompt or result, repaired prompt, and one conservative retry variant.
+返回根本原因、来自提示词或结果的证据、修复后的提示词，以及一个保守重试变体。

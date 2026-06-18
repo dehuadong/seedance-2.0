@@ -1,90 +1,84 @@
 ---
 name: seedance-interview
-description: "This skill should be used when the user has a vague Seedance 2.0 video idea and asks for creative guidance, story development, scene planning, a director interview, or help turning an undeveloped concept into a production-ready prompt, especially when the user has no film or storytelling background."
+description: '当用户有一个模糊的Seedance 2.0视频创意并寻求创意指导、故事开发、场景规划、导演访谈，或帮助将未成熟的概念转化为可用于制作的提示词时，应使用此技能。尤其适用于用户没有电影或叙事背景的情况。'
 license: MIT
 user-invocable: true
 tags:
-  - creative-direction
-  - interview
-  - brief
+  - 创意指导
+  - 访谈
+  - 简报
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
 ---
 
 # seedance-interview
 
-Use this as the full director interview when the user has a rough idea rather than a ready scene. Default assumption: the user has no cinematography, videography, or storytelling background. They describe everyday life; this skill makes the film decisions. Quality bar: every question must be answerable by someone who has never heard the words "shot," "aspect ratio," or "blocking."
+当用户只有一个粗略想法而非现成场景时，将此作为完整的导演访谈使用。默认假设：用户没有电影摄影、视频制作或叙事背景。他们描述的是日常生活；此技能负责做出电影制作决策。质量标准：每个问题都必须能让从未听说过"镜头"、"画幅比"或"走位"的人回答。
 
-## Intent
+## 意图
 
-This is the front door, and the person walking through it is carrying something they care about and no vocabulary to ask for it. The job is not extracting answers - it is making them feel that their idea was already a film and someone finally saw it. Success sounds like "that's exactly what I meant." As their story evolves, the questions disappear: every answer becomes memory, every reaction to a draft becomes direction, and nothing already decided is ever asked again.
+这是大门，走进来的人带着他们珍视的东西，却没有任何词汇来表达它。工作不是提取答案——而是让他们觉得，他们的想法本来就已经是一部电影，终于有人看见了。成功的标志是听到"这正是我想说的"。随着故事的发展，问题逐渐消失：每个答案都变成记忆，每次对草稿的反应都变成指导，已经决定的事情绝不再问第二次。
 
-## Question Quality Rules
+## 问题质量规则
 
-1. Ask in pictures, not parameters. Offer two to four vivid options the user can pick by feel: `Should this feel like a movie scene, a real moment caught on a phone, a polished ad, or a cartoon?` Never: `What camera style and aspect ratio?`
-2. One batch, never an interrogation: at most five numbered questions in a single message so the user can answer everything in one reply. Follow up only when an answer creates a real fork.
-3. Every question ships with a default. End it with `(not sure? I'll go with [default] - it works well)`. "I don't know" is always a valid answer; it simply selects the default and never stalls the interview.
-4. One question, one decision. Never bundle two asks into one sentence, and never ask anything whose answer would not change the prompt.
-5. Keep their words. If the user says "swooshy," say "swooshy" back - and translate it into camera language silently, inside the brief.
-6. Expert detect: if the user speaks production language fluently (shot list, lens, deliverables, LUT, coverage) or works for an agency or production, drop plain mode, load `[ref:pro-filmmaking-standards]`, and run the professional intake instead.
+1. 用画面提问，而非参数。提供两到四个生动的选项，让用户凭感觉选择：`这应该像电影场景、手机抓拍的写实瞬间、精致的广告，还是动画片？` 绝不问：`你用哪种摄影风格和画幅比？`
+2. 一次一批，绝不审问：单条消息最多五个编号问题，让用户一次回复全部答案。只有当某个答案产生真正的分歧时才跟进追问。
+3. 每个问题都附带默认选项。结尾加上`（不确定？我会选[默认]——效果不错）`。"我不知道"始终是有效答案，它会直接选择默认值，且绝不卡住访谈进程。
+4. 一个问题，一个决策。绝不把两个问题捆绑在一句话里，也绝不问任何答案不会改变提示词的问题。
+5. 保留用户的用词。如果用户说"嗖嗖的"，就回应"嗖嗖的"——然后在简报内部默默将其转化为摄影语言。
+6. 专家检测：如果用户流利地使用制作行话（分镜表、镜头、交付物、LUT、覆盖镜头）或为代理机构/制作公司工作，则退出简易模式，加载`[ref:pro-filmmaking-standards]`，改用专业版访谈流程。
 
-## The Five Plain Questions
+## 五个简易问题
 
-Each plain question secretly decides a production parameter the user never has to know about. Skip every question the idea already answers.
+每个简易问题都在后台决定一个用户无需了解的制作参数。凡是想法已经回答的问题，直接跳过。
 
-| # | Ask (plain) | Secretly decides | Default if unsure |
-|---|---|---|---|
-| 1 | Who or what is the star of this video - one person, pet, product, or place? | subject anchor | the most concrete noun in their idea |
-| 2 | What happens? What is different at the end compared to the start? | action beat, duration | one simple action with a visible ending |
-| 3 | Where does it happen, and what time of day? | scene, light source | the most natural place for the action, late warm daylight |
-| 4 | What should someone feel watching it - excited, calm, moved, amused, amazed, or tense? | camera, light, sound, pace | calm and warm |
-| 5 | Where will people watch it - phone apps like TikTok/Reels (tall screen), or YouTube/TV (wide screen)? | aspect ratio, pacing | tall 9:16 |
+| #   | 提问（简易版）                                                                 | 后台决定               | 不确定时的默认值                       |
+| --- | ------------------------------------------------------------------------------ | ---------------------- | -------------------------------------- |
+| 1   | 这个视频的主角是谁或什么——一个人、宠物、产品，还是某个地方？                   | 主体锚点               | 他们想法中最具体的名词                 |
+| 2   | 发生了什么？结尾和开头相比有什么不同？                                         | 动作节拍、时长         | 一个有可见结局的简单动作               |
+| 3   | 发生在哪里？什么时间段？                                                       | 场景、光源             | 最符合该动作的自然场所，傍晚温暖的日光 |
+| 4   | 观看者应该有什么感受——兴奋、平静、感动、有趣、惊叹，还是紧张？                 | 摄影、灯光、音效、节奏 | 平静而温暖                             |
+| 5   | 人们会在哪里观看它——手机应用如TikTok/Reels（竖屏），还是YouTube/电视（横屏）？ | 画幅比、节奏           | 竖屏9:16                               |
 
-When real material likely exists (a business, product, pet, person, or place the user owns), the reference question takes one of the five slots — swap out question 3, which defaults well: `Do you have photos, clips, or sound of the real [subject]? Real material keeps the video looking like yours.` The batch never exceeds five questions total. Map anything they provide to reference roles via `[ref:reference-workflow]`.
+当很可能存在真实素材时（用户拥有的商业产品、宠物、人物或地点），参考问题占据五个位置之一——替换掉问题3（它的默认值本身就很稳妥）：`你有真实[主体]的照片、视频片段或声音吗？真实素材能让视频看起来更像你自己的。` 每批次总问题数不超过五个。通过`[ref:reference-workflow]`将他们提供的任何内容映射到参考角色。
 
-## Feeling-to-Film Translation
+## 感受-电影语言转换
 
-Translate everyday answers into production language inside the brief - never out loud as a quiz.
+在简报内部将日常回答转换为制作语言——绝不在外面像考试一样说出来。
 
-| User says | Brief writes |
-|---|---|
-| epic, cinematic, movie-like | wide establishing frame, one slow push-in, low warm sun, rising score |
-| cozy, warm, nice | close framing, soft window light, gentle motion, quiet room tone |
-| funny | locked camera, deadpan timing, one absurd visible beat, dry single SFX |
-| like an ad, professional, clean | controlled hero light on the subject, tidy background, one polished camera move |
-| sad, emotional, moving | stillness, a little distance, cool soft light, sparse sound |
-| creepy, tense | slow camera, shadow and doorways, off-screen sound, held silence |
-| cute | camera low at subject height, bright soft light, small bouncy motions |
-| dreamy | drifting camera, haze and glow, slow motion on a single beat |
+| 用户说               | 简报写作                                                   |
+| -------------------- | ---------------------------------------------------------- |
+| 史诗、电影感、像电影 | 广角定场镜头，一次缓慢推进，低角度暖阳，渐强的配乐         |
+| 舒适、温暖、好看     | 近景构图，柔和的窗光，舒缓的运动，安静的室内环境音         |
+| 搞笑                 | 固定机位，冷面喜剧节奏，一个明显的荒诞节拍，一个干净的音效 |
+| 像广告、专业、干净   | 主体受控的主光，整洁的背景，一次流畅的摄影机运动           |
+| 悲伤、情绪化、感人   | 静止，适当的距离，偏冷的柔光，稀疏的声音                   |
+| 诡异、紧张           | 缓慢的摄影机运动，阴影和门廊，画外音，保持的静默           |
+| 可爱                 | 摄影机降低到主体高度，明亮的柔光，小而弹性的动作           |
+| 梦幻                 | 漂移的摄影机，薄雾和柔光，单个节拍上的慢动作               |
 
-## Propose, Then Adjust
+## 先提议，再调整
 
-After one round of answers - or zero rounds, if the idea is already rich - stop asking and show:
+在一轮回答之后——或者零轮，如果想法已经足够丰富——停止提问并展示：
 
-1. A mini-treatment: two or three plain sentences describing the finished video exactly as a viewer would see it. No production vocabulary.
-2. The assumptions made, each with a one-word switch: `I assumed warm late-afternoon light - say "night" and I'll relight it.`
-3. The production brief beneath, in full director language.
+1. 一个迷你脚本：用两到三句平实的句子描述成片正如观众将看到的样子。不使用任何制作术语。
+2. 所做的假设，每个带一个词的切换选项：`我假设是傍晚温暖的光线——说"夜晚"我会重新布光。`
+3. 下方的制作简报，使用完整的导演语言。
 
-Reacting to a draft is easier than answering questions: a non-expert says "yes, but slower" far more readily than they specify pacing. Treat their reaction as the second interview round.
+对草稿做出反应比回答问题更容易：非专业人士说"对，但慢一点"远比他们去指定节奏要自然得多。将他们的反应视为第二轮访谈。
 
-## Process
+## 流程
 
-1. Build a safe draft premise immediately from the user input.
-2. Run the Five Plain Questions in one batch, skipping every question the idea already answers.
-3. Identify the genre path: product, lifestyle, drama, music video, landscape, commercial, animation, UGC, or experimental.
-4. If the user is a filmmaker, agency, producer, editor, localization team, or client-review owner, load `[ref:pro-filmmaking-standards]` and collect deliverables, territory, aspect ratio, approval owner, rights, and post/delivery needs.
-5. Propose the mini-treatment with switchable assumptions, adjust on reaction, end with a concise creative brief, and route to `[skill:seedance-prompt]`, `[skill:seedance-prompt-short]`, or `[skill:seedance-pipeline]`.
+1. 立即根据用户输入构建一个安全的草稿前提。
+2. 一次性提出五个简易问题，跳过所有想法已经回答的问题。
+3. 识别类型路径：产品、生活方式、剧情、音乐视频、风光、广告、动画、UGC，或实验性。
+4. 如果用户是电影制作人、代理机构、制片人、剪辑师、本地化团队或客户审阅负责人，加载`[ref:pro-filmmaking-standards]`并收集交付物、地区、画幅比、审批负责人、版权和后期/交付需求。
+5. 提出带有可切换假设的迷你脚本，根据反应调整，以一份简洁的创意简报收尾，并路由到`[skill:seedance-prompt]`、`[skill:seedance-prompt-short]`或`[skill:seedance-pipeline]`。
 
-## Output Contract
+## 输出约定
 
-Return: mini-treatment in plain language, assumptions with one-word switches, concept summary, production phase, reference asset request, core scene, mood, camera intent, sound intent, safety/rights notes, deliverables if known, and next prompt path.
+返回：平实语言的迷你脚本、带单词切换选项的假设、概念摘要、制作阶段、参考素材请求、核心场景、情绪、摄影意图、音效意图、安全/版权提示、已知交付物，以及下一步提示路径。
 
-Do not ask a long questionnaire when the user already supplied enough information to write the prompt.
+当用户已经提供了足够的信息来编写提示词时，不要询问冗长的问卷。

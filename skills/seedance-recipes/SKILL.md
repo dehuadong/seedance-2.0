@@ -1,68 +1,63 @@
 ---
 name: seedance-recipes
-description: "This skill should be used when the user asks for a Seedance 2.0 template, genre recipe, product ad, lifestyle video, drama scene, music video, landscape shot, commercial, animation scene, or reusable production pattern."
+description: '当用户询问Seedance 2.0模板、类型配方、产品广告、生活方式视频、剧情场景、音乐视频、风景镜头、商业广告、动画场景或可复用的制作模式时，应使用此技能。'
 license: MIT
 user-invocable: true
 tags:
-  - templates
-  - genres
-  - recipes
+  - 模板
+  - 类型
+  - 配方
   - seedance-20
 metadata:
-  version: "5.5.2"
-  updated: "2026-06-12"
-  parent: "seedance-20"
-  author: "Iamemily2050 (@iamemily2050)"
-  repository: "https://github.com/Emily2040/seedance-2.0"
-  openclaw:
-    emoji: "🎬"
-    homepage: "https://github.com/Emily2040/seedance-2.0"
+  version: '5.5.2'
+  updated: '2026-06-12'
+  parent: 'seedance-20'
 ---
 
 # seedance-recipes
 
-Use recipes as starting patterns, not rigid prompt templates. Pick the recipe that matches the user's outcome, then customize subject, action, camera, lighting, audio, and constraints. Recipes should preserve the one-beat discipline of a short clip.
+将配方作为起始模式使用，而非僵化的提示词模板。选择与用户目标匹配的配方，然后自定义主体、动作、摄影机、灯光、音频和约束条件。配方应保持短片段"一个节拍"的纪律。
 
-Load `[ref:genre-guides]` for genre patterns, `[ref:examples-by-mode]` when the user needs copy-ready examples, `[ref:shot-list-continuity]` for professional multi-shot sequences or commercials, and `[ref:multilingual-community-examples]` when the recipe should reflect Chinese/Russian/Japanese/Korean/Spanish community-style structures.
+加载`[ref:genre-guides]`获取类型模式，`[ref:examples-by-mode]`获取可直接复制的示例，`[ref:shot-list-continuity]`用于专业多镜头序列或商业广告，`[ref:multilingual-community-examples]`当配方需要反映中文/俄语/日语/韩语/西班牙语社区风格结构时使用。
 
-## Intent
+## 意图
 
-A recipe is a head start, never a mold. The user wants the confidence of a proven shape with their own story inside it. Bend the recipe to the story every time; a user who feels templated has been failed even if the output is competent.
+配方是起跑线，绝不是模具。用户想要的是一个经过验证的框架所带来的信心，同时装进他们自己的故事。每次都让配方服务于故事；如果用户感到被模板化了，即使输出本身合格，也是失败。
 
-## Recipe Families
+## 配方家族
 
-| Family | Best use | Core pattern |
-|---|---|---|
-| Product | Ads, ecommerce, hero shots, material reveals. | `product anchor + one material change + controlled camera + logo preservation` |
-| Lifestyle | Human use, food, travel, social clips. | `simple action + lived environment + handheld or natural light + ambient sound` |
-| Drama | Emotion, dialogue, short narrative beats. | `character tag + gesture + motivated camera + silence or sparse sound` |
-| Music video | Beat sync, dance, stylized edits. | `rhythm reference + visible beat changes + light pulses + clear character blocking` |
-| Landscape | Establishing shots, nature, atmosphere. | `slow camera + weather motion + layered depth + natural sound` |
-| Commercial | Brand-safe polish and function. | `problem/use/result beat + precise product constraint + clean light` |
-| Animation | Original characters and stylized motion. | `medium + shape language + palette + elastic or weighted motion` |
-| VFX | Transformations, particles, weather, energy. | `source + material behavior + interaction + dissipation endpoint` |
-| First/last frame | In-between transitions, product state changes, character pose targets. | `first frame + last frame + continuous transition + identity locks` |
-| Commercial campaign | 6/10/15/30s variants, vertical/social cutdowns, textless/localized masters. | `hook + product proof + end state + cutdown matrix + delivery notes` |
-| Short drama (短剧) | Fast-cut vertical mini-drama beats: setup, reversal, cliffhanger. | `two or three labeled shots + one emotional reversal + held reaction close + cut on the sting` |
-| Talking head (口播) | Presenter, explainer, livestream-style pitch to camera. | `locked medium close-up + short quoted lines + minimal head motion + caption-safe framing + room tone` |
-| Home / space tour | Walkthrough of a room, venue, or property. | `single continuous take + steady forward path + light changes per zone + ambient sound only` |
+| 家族          | 最佳用途                                                   | 核心模式                                                               |
+| ------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------- |
+| 产品          | 广告、电商、主打镜头、材质展示。                           | `产品锚点 + 一个材质变化 + 受控摄影机 + 标志保留`                      |
+| 生活方式      | 人物使用场景、美食、旅行、社交片段。                       | `简单动作 + 生活化环境 + 手持或自然光 + 环境音`                        |
+| 剧情          | 情绪、对话、短叙事节拍。                                   | `角色标签 + 手势 + 有动机的摄影机 + 静默或稀疏音效`                    |
+| 音乐视频      | 节拍同步、舞蹈、风格化剪辑。                               | `节奏参考 + 可见的节拍变化 + 光脉冲 + 清晰的角色走位`                  |
+| 风景          | 定场镜头、自然、氛围。                                     | `缓慢摄影机 + 天气运动 + 层次景深 + 自然音`                            |
+| 商业广告      | 品牌安全的精致呈现和功能展示。                             | `问题/使用/结果节拍 + 精确的产品约束 + 干净光线`                       |
+| 动画          | 原创角色和风格化动作。                                     | `媒介 + 形状语言 + 调色板 + 弹性或重量感动作`                          |
+| 视觉特效      | 变形、粒子、天气、能量。                                   | `来源 + 材质行为 + 交互 + 消散终点`                                    |
+| 首帧/末帧     | 中间过渡、产品状态变化、角色姿态目标。                     | `首帧 + 末帧 + 连续过渡 + 身份锁定`                                    |
+| 商业广告活动  | 6/10/15/30秒变体、竖屏/社交渠道剪辑版、无字幕/本地化母版。 | `钩子 + 产品证明 + 结束状态 + 剪辑矩阵 + 交付说明`                     |
+| 短剧          | 快切竖屏短剧节拍：铺垫、反转、悬念。                       | `两个或三个标注镜头 + 一个情绪反转 + 保持的反应特写 + 在痛点处剪切`    |
+| 口播          | 主持人、解说员、直播式对镜头讲述。                         | `锁定中近景 + 简短引述台词 + 最小头部运动 + 安全字幕区域 + 室内环境音` |
+| 家居/空间导览 | 房间、场地或房产的穿行展示。                               | `单个连续长镜头 + 稳定前进路径 + 每区域光线变化 + 仅有环境音`          |
 
-## Prompt Skeletons
+## 提示词骨架
 
-**Product I2V:** `[Image1] is the product reference; preserve logo, label, shape, and materials exactly. [One material or light change]. Camera: [single move]. Lighting: [physical source]. Sound: [ambient/SFX].`
+**产品 I2V:** `[Image1]为产品参考；严格保持标志、标签、形状和材质不变。[一个材质或光线变化]。摄影：[单个运动]。灯光：[物理光源]。音效：[环境音/音效]。`
 
-**Drama T2V:** `Character A [visible emotional action] in [specific setting]. Camera: [motivated framing]. Lighting: [motivated source]. Sound: [ambient or short dialogue]. End state: [changed expression/action].`
+**剧情 T2V:** `角色A在[具体场景]中[可见的情绪动作]。摄影：[有动机的构图]。灯光：[有动机的光源]。音效：[环境音或简短对话]。结束状态：[改变的表情/动作]。`
 
-**Reference Motion:** `[Video1] provides only [camera/action/timing] reference; do not transfer identity, costume, logo, or environment. New subject: [authorized/original subject]. [Action and endpoint].`
+**参考动作:** `[Video1]仅提供[摄影机/动作/节奏]参考；不转移身份、服装、标志或环境。新主体：[已授权/原创主体]。[动作和终点]。`
 
-**First/Last Frame:** `[Image1] is the first frame. [Image2] is the last frame. Preserve [identity/product/scene anchors]. Generate a continuous transition from [start state] to [end state]. Camera: [locked or one controlled move]. Sound: [ambient/SFX].`
+**首帧/末帧:** `[Image1]为首帧。[Image2]为末帧。保持[身份/产品/场景锚点]不变。生成从[起始状态]到[结束状态]的连续过渡。摄影：[锁定或一个受控运动]。音效：[环境音/音效]。`
 
-**Animation:** `Original [character archetype] [action] in [environment]. Style: [medium, line quality, texture, palette]. Motion: [rhythm]. Camera and sound: [simple support].`
+**动画:** `原创[角色原型]在[环境]中[动作]。风格：[媒介、线条质感、纹理、调色板]。动作：[节奏]。摄影和音效：[简单配合]。`
 
-## Selection Rule
+## 选择规则
 
-If a user gives many goals, choose the recipe that protects the most fragile requirement. Product identity beats camera spectacle; lip-sync beats large head motion; character consistency beats complex choreography; first/last-frame target accuracy beats extra style changes; safety and authorization beat style mimicry.
+如果用户给出多个目标，选择保护最脆弱要求的配方。产品身份优先于镜头奇观；口型同步优先于大幅头部运动；角色一致性优先于复杂编排；首帧/末帧目标准确性优先于额外风格变化；安全与授权优先于风格模仿。
 
-## Output Contract
+## 输出约定
 
-Return one selected recipe, why it fits, the customized prompt skeleton, compact final prompt, and campaign/delivery notes when relevant.
+返回一个选定的配方、为何适合、自定义后的提示词骨架、紧凑的最终提示词，以及相关的活动/交付说明（如适用）。
