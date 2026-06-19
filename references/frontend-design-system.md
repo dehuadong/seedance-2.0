@@ -1,49 +1,49 @@
-# Frontend Design System
+# 前端设计系统
 
-This repository has no application frontend. The user-facing frontend is the GitHub README, generated bitmap assets, and SVG support assets.
+此仓库没有应用程序前端。面向用户的前端是 GitHub README、生成的位图资源和 SVG 辅助资源。
 
-## Design goals
+## 设计目标
 
-- Clean, cinematic, high-contrast presentation.
-- No collapsed Markdown.
-- No overloaded neon copy.
-- Usable on GitHub mobile and dark mode.
-- Clear start-here decision path.
-- Validation commands visible above the fold after the skill map.
+- 干净、电影感、高对比度的呈现。
+- 不折叠 Markdown。
+- 不过度使用霓虹风格文案。
+- 可在 GitHub 移动端和深色模式下使用。
+- 清晰的“从这里开始”决策路径。
+- 在技能图谱之后，首屏可见验证命令。
 
-## Asset rules
+## 资源规则
 
-- Use SVG for simple structural support diagrams.
-- Use generated bitmap images for the README hero, operating-system infographic, skill-map infographic, capability map, CDN delivery map, reference-role map, production-delivery map, and QC stack when the asset needs cinematic texture, real scene depth, or visual storytelling.
-- Bitmap hero/infographic/map assets should be logo-free, watermark-free, and readable at GitHub README width.
-- Text-rich infographics are allowed when labels are large, short, corrected, and repeated in accessible Markdown next to the image.
-- SVG assets must include `<title>` and `<desc>`.
-- No external scripts, images, fonts, or tracking in SVG assets.
-- Avoid generic lens dashboards, dense decorative noise, and unreadable micro labels.
-- Inspect generated text manually; reject garbled words, ugly font treatment, low contrast, noisy decoration, and placeholder-looking panels.
+- 简单结构示意图使用 SVG。
+- 当资源需要电影质感、真实场景景深或视觉叙事时，README 主视觉、操作系统信息图、技能图谱信息图、能力地图、CDN 分发地图、参考角色地图、生产交付地图和 QC 技术栈使用生成的位图图像。
+- 位图主视觉/信息图/地图资源应无徽标、无水印，并在 GitHub README 宽度下可读。
+- 当标签文字大、简短、经过校正，并在图片旁边的无障碍 Markdown 中重复出现时，允许使用文本密集型信息图。
+- SVG 资源必须包含 `<title>` 和 `<desc>`。
+- SVG 资源中无外部脚本、图像、字体或追踪。
+- 避免通用的仪表盘式设计、密集的装饰性噪点和不可读的微小标签。
+- 手动检查生成的文本；拒绝乱码、丑陋的字体处理、低对比度、杂乱的装饰和看起来像占位符的面板。
 
-## README rules
+## README 规则
 
-- No line longer than 500 characters.
-- Tables should have real newlines.
-- Every major section should answer a user decision: what is it, where do I start, what skills exist, how do I validate, what changed.
-- Bitmap hero art should avoid watermarks and tiny text. Text-rich infographic labels must also be represented in Markdown for accessibility and search.
+- 每行不超过 500 个字符。
+- 表格应使用真正的换行。
+- 每个主要部分都应回答一个用户决策问题：它是什么、我从哪里开始、有哪些技能、如何验证、有什么变化。
+- 位图主视觉应避免水印和微小文字。文本密集型信息图的标签也必须在 Markdown 中呈现，以确保无障碍和可搜索性。
 
-## Editorial Design Tokens (v5.4.8)
+## 编辑设计令牌（v5.4.8）
 
-The front page uses a studio spec-sheet system. Apply these tokens to every hand-built vector asset; never reintroduce gradients, glow blobs, or multi-hue accent ramps.
+首页使用工作室规格表系统。将这些令牌应用于每个手工构建的矢量资源；切勿重新引入渐变、发光斑点或多色强调渐变。
 
-| Token | Dark | Light |
+| 令牌 | 深色 | 浅色 |
 |---|---|---|
-| Background | `#100E0A` warm ink | `#F7F3EA` warm paper |
-| Foreground | `#EDE6D6` | `#1C1914` |
-| Muted | `#9A917D` | `#6F6757` |
-| Hairline | `#2E2A22` | `#D8D0BE` |
-| Accent (single) | `#E2A75E` amber | `#A86F24` amber |
+| 背景 | `#100E0A` 暖墨色 | `#F7F3EA` 暖纸色 |
+| 前景 | `#EDE6D6` | `#1C1914` |
+| 柔和 | `#9A917D` | `#6F6757` |
+| 细线 | `#2E2A22` | `#D8D0BE` |
+| 强调色（单一） | `#E2A75E` 琥珀色 | `#A86F24` 琥珀色 |
 
-- Display type: `Didot, 'Bodoni MT', 'Hoefler Text', Baskerville, 'Palatino Linotype', Georgia, serif` - high-contrast editorial serif where the system provides one, Georgia as the universal fallback; weight 400, no external fonts. The tagline is set as a serif italic aphorism in sentence case, not monospace.
-- Specification type: `ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace` - weight 400, smaller sizes, generous letter-spacing (6-7px on eyebrows); labels whisper, the wordmark speaks.
-- Motifs: sprocket strips, viewfinder corner marks, crosshairs, timecode, waveform ticks - drawn as fine line work.
-- The masthead ships as a theme-aware pair (`hero-dark.svg`, `hero-light.svg`) behind a `prefers-color-scheme` picture element; the operating diagram (`skill-map.svg`) carries its own background so it reads on both themes.
-- Do not bake version numbers or counts into vector assets; they go stale. Use timeless labels (ROUTE / VERIFY / DIRECT / DELIVER).
-- Generated bitmap art is gallery-only. The working interface of the README is vector.
+- 展示字体：`Didot, 'Bodoni MT', 'Hoefler Text', Baskerville, 'Palatino Linotype', Georgia, serif` - 高对比度编辑衬线字体（系统提供时使用），Georgia 作为通用后备；字重 400，无外部字体。标语设置为衬线斜体箴言，采用句子大小写，而非等宽字体。
+- 规格字体：`ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace` - 字重 400，较小字号，宽松字间距（眉题上 6-7px）；标签轻声细语，品牌标志掷地有声。
+- 图案：链轮齿条、取景器角标、十字准线、时间码、波形刻度 - 以精细线条绘制。
+- 刊头以主题适配对（`hero-dark.svg`、`hero-light.svg`）形式提供，置于 `prefers-color-scheme` 图片元素之后；操作示意图（`skill-map.svg`）自带背景，可在两种主题下阅读。
+- 请勿将版本号或计数硬编码到矢量资源中；它们会过时。使用永恒标签（ROUTE / VERIFY / DIRECT / DELIVER）。
+- 生成的位图仅供图库展示。README 的工作界面为矢量格式。

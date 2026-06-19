@@ -1,35 +1,35 @@
-# Genre Guides
+# 类型指南
 
-Use genre guidance to choose priorities, not to add empty style words. Every genre still needs a subject, one visible beat, camera logic, physical light, audio intent, and constraints.
+使用类型指南来确定优先级，而非添加空洞的修饰词。每种类型仍然需要有主题、一个可见的节拍、摄像机逻辑、物理光源、音频意图和约束条件。
 
-## Product Ad
+## 产品广告
 
-Preserve product identity. Use one reveal, clean reflections, material-specific light, and controlled camera movement. Put logo, label, shape, and material constraints near the start, especially in I2V or R2V. Prefer moving light, mist, condensation, particles, or camera around the product rather than transforming the product itself.
+保留产品辨识度。使用一次揭示、干净的反射、针对材质的灯光和受控的摄像机运动。将徽标、标签、形状和材质约束放在提示开头附近，尤其是在 I2V 或 R2V 中。优先选择让光源、雾气、冷凝水珠、粒子或摄像机围绕产品运动，而非变换产品本身。
 
-## Short Drama
+## 短剧
 
-Use gesture, blocking, silence, and a visible emotional turn. Keep the prompt anchored to one beat: the character enters, notices, decides, hides, reveals, or leaves. Assign each character by tag and keep dialogue short. Use locked or slow push-in camera when facial performance matters.
+使用肢体动作、走位、沉默和可见的情绪转折。将提示锚定在一个节拍上：角色进入、注意、决定、隐藏、揭示或离开。为每个角色分配标签，并保持对话简短。当面部表演至关重要时，使用锁定或缓慢推近的摄像机。
 
-## Action
+## 动作
 
-Use one objective, one obstacle, one camera move, and explicit character tags. Specify force, timing, and consequence: who ducks, who lands, what breaks, what remains intact. If hands, faces, or props matter, reduce action complexity or split into clips.
+使用一个目标、一个障碍、一个摄像机运动和明确的角色标签。指定力度、时机和后果：谁躲闪、谁落地、什么被破坏、什么保持完好。如果手部、面部或道具至关重要，则降低动作复杂度或拆分为多个片段。
 
-## Animation
+## 动画
 
-Use medium, line quality, palette, deformation, timing, texture, and motion rhythm. Avoid named studio, franchise, or artist labels. Describe original character shapes, background texture, palette, and movement: soft squash-and-stretch, stepped limited animation, cut-paper parallax, clay-like stop motion, or clean 3D toy realism.
+使用媒介、线条质量、调色板、形变、节奏、纹理和运动韵律。避免使用知名工作室、系列或艺术家的名称。描述原创角色造型、背景纹理、调色板和运动方式：柔和的挤压与拉伸、逐帧有限动画、剪纸视差、黏土式定格动画或干净的 3D 玩具写实风格。
 
-## Music / Beat Sync
+## 音乐 / 节拍同步
 
-Map beats to visible changes: step, cut, light pulse, object impact, or camera accent. Use `[Audio1]` for tempo, energy, mood, or pacing unless documented platform behavior supports exact playback. Avoid copying protected voice, melody, or performance identity.
+将节拍映射为可见变化：步伐、切换、光脉冲、物体碰撞或摄像机强调。使用 `[Audio1]` 表示速度、能量、情绪或节奏，除非文档规定的平台行为支持精确播放。避免复制受保护的声线、旋律或表演特征。
 
-## Food and Lifestyle
+## 美食与生活方式
 
-Prioritize texture, steam, hand motion, practical light, and natural sound. Keep actions simple: pour, lift, cut, stir, place, bite, wipe, fold, or open. Use close framing and motivated ambient audio instead of broad lifestyle adjectives.
+优先呈现纹理、蒸汽、手部动作、实用光源和自然音效。保持动作简单：倒、提起、切、搅拌、放置、咬、擦、折叠或打开。使用近景构图和有动机的环境音，而非宽泛的生活风格形容词。
 
-## Landscape and Nature
+## 景观与自然
 
-Use slow camera, atmospheric layers, weather motion, and natural sound. Build depth with foreground movement, midground subject, and background reveal. Avoid overcrowding the frame with animals, weather, camera moves, and time-lapse changes at once.
+使用缓慢的摄像机、大气层次、天气运动和自然音效。通过前景运动、中景主体和背景揭示来构建景深。避免同时用动物、天气、摄像机运动和延时变化塞满画面。
 
-## VFX and Transformation
+## 视觉特效与变形
 
-State the source, material, motion path, interaction, and endpoint. Protect identity anchors such as faces, logos, props, and text. If transformation is the story beat, transform the environment or an expendable object unless the user explicitly wants the main subject to change.
+说明来源、材质、运动路径、交互方式和终点。保护身份锚点，如面部、徽标、道具和文字。如果变形是故事节拍，则变换环境或可牺牲的物品，除非用户明确要求改变主体。

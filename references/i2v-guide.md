@@ -1,40 +1,40 @@
-# Image-to-Video Guide
+# 图像转视频指南
 
-## Core Rule
+## 核心规则
 
-Prompt only what the image cannot show. A still image already contains subject identity, product form, wardrobe, palette, composition, and background. Re-describing those static details often causes drift. Add motion, camera, timing, transformation, lighting change, audio, and preservation constraints.
+仅提示图像无法展示的内容。静态图像已包含主体身份、产品形态、服装、调色板、构图和背景。重新描述这些静态细节通常会导致偏移。添加运动、摄像机、时间、变形、光照变化、音频和保留约束。
 
-## Minimal Template
+## 最小模板
 
-`[Image1] is the reference; preserve [identity/product/scene] exactly. Only [motion] changes. Camera: [one move]. Lighting: [source or transition]. Sound: [cue]. Constraint: [what must not change].`
+`[Image1] 为参考；精确保留 [身份/产品/场景]。仅 [运动] 发生变化。摄像机：[一个运动]。光照：[光源或变化]。音效：[提示]。约束：[不得改变的内容]。`
 
-## Two I2V Modes
+## 两种 I2V 模式
 
-Field-observed from Chinese practice; decide the mode before writing.
+根据实际观察（源自中文实践）总结；写作前先决定模式。
 
-- **Hold mode** (the image is the moment): distribute three or four natural micro-actions across the clip - a blink, a breath, hair drift, a slow gaze shift - and lock everything else with a double statement, positive plus negative: `she stays seated by the window; she does not stand, turn, or leave frame`. No camera move, or one slow push-in at most.
-- **React mode** (something happens to the subject): expand one emotion into sub-beats with real time to land - `she registers the sound, her eyes widen, color rises in her face over two to three seconds`. Rushed emotions read as glitches; give the key beat at least two seconds. If the image is clearly mid-scene rather than a natural opening frame, anchor the start explicitly: `the clip begins exactly at this moment`.
+- **保持模式**（图像即为当下瞬间）：在片段中分布三到四个自然的微动作——一次眨眼、一次呼吸、发丝飘动、一次缓慢的目光转移——并通过双重陈述锁定其他所有内容，肯定加否定：`她靠窗坐着；她没有站起、转身或离开画面`。无摄像机运动，或最多一次缓慢推近。
+- **反应模式**（主体遭遇某事）：将一个情绪展开为子节拍，并留有真实的落地时间——`她听到声音，眼睛睁大，肤色在两到三秒内泛红`。仓促的情绪会显得像卡顿；给关键节拍至少两秒。如果图像明显是场景中间而非自然的起始画面，需明确锚定开头：`片段从这一时刻开始`。
 
-## Preservation Language
+## 保留语言
 
-Use precise locks for fragile anchors: `preserve face identity`, `preserve logo and label`, `preserve bottle shape and cap geometry`, `preserve outfit and hairstyle`, `preserve room layout`. Do not lock everything if the scene needs natural motion; lock only what must remain stable.
+对脆弱锚点使用精确锁定：`保留面部身份`、`保留徽标和标签`、`保留瓶身形状和瓶盖几何结构`、`保留服装和发型`、`保留房间布局`。如果场景需要自然运动，不要锁定所有内容；只锁定必须保持稳定的部分。
 
-## Good I2V Additions
+## 好的 I2V 补充项
 
-| Add | Example |
+| 补充项 | 示例 |
 |---|---|
-| Micro-expression | `subject blinks once and lowers their eyes` |
-| Product light | `thin highlight travels across the label` |
-| Weather | `rain streaks behind the subject; droplets bead on the surface` |
-| Camera | `slow dolly-in from current composition to tighter detail` |
-| Atmosphere | `dust catches the doorway beam and settles` |
-| Audio | `soft room tone, one key click at the endpoint` |
+| 微表情 | `主体眨眼一次并垂下眼睛` |
+| 产品光线 | `细小高光划过标签` |
+| 天气 | `主体身后有雨丝；表面凝结水珠` |
+| 摄像机 | `从当前构图缓慢推近至更紧密的细节` |
+| 氛围 | `灰尘捕捉到门道光束并落定` |
+| 音频 | `轻柔的环境音，结尾处一声关键点击` |
 
-## Failure Fixes
+## 失败修复
 
-- If identity drifts: reduce new visual description and strengthen preservation constraints.
-- If camera jumps: use one camera move with start and endpoint.
-- If product warps: say preserved, static identity, no shape change, no transformation of the product.
-- If output is still: add one physical action and one time cue.
-- If background changes: preserve environment layout and animate only light, weather, or atmosphere.
-- If hands deform: simplify hand motion or keep hands outside the main action.
+- 若身份偏移：减少新的视觉描述，加强保留约束。
+- 若摄像机跳跃：使用一个摄像机运动，明确起点和终点。
+- 若产品变形：说明保持不变、静态身份、无形状变化、不进行产品变形。
+- 若输出静止：添加一个物理动作和一个时间提示。
+- 若背景改变：保留环境布局，仅动画化光线、天气或氛围。
+- 若手部变形：简化手部动作或将手部移出主要动作区域。

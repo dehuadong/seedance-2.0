@@ -1,72 +1,72 @@
-# Model Mechanics — how the generator thinks
+# 模型机制——生成器的思维方式
 
-*A working mental model of why this repo's rules work, so an agent can derive correct guidance for cases no rule covers. Built from public machine-learning knowledge and the public model card; Seedance's exact internals are not published. Evidence label: `internal` reasoning — a thinking tool, never architecture documentation or a platform claim.*
+*一个可用的思维模型，用于理解此仓库规则为何有效，以便智能体在遇到规则未覆盖的情况时能推导出正确指导。基于公开的机器学习和公共模型卡信息构建；Seedance 的确切内部实现并未公开。证据标签：`internal` 推理——思维工具，绝非架构文档或平台声明。*
 
-## The eight mechanisms
+## 八大机制
 
-### 1. Attention is a budget
+### 1. 注意力是一种预算
 
-Every word in the prompt competes for a finite amount of conditioning influence. Words that name something visible spend the budget on pixels; words that name an evaluation ("stunning") spend it on nothing. Earlier clauses tend to win more influence.
+提示词中的每个词都在争夺有限的条件影响力。命名可见内容的词将预算花在像素上；命名一种评价（“惊艳”）的词则花在虚无上。靠前的子句往往获得更多影响力。
 
-**Consequences:** word order is a priority ranking · slop is not just ugly, it is expensive · short dense prompts beat long prose. **Explains:** the anti-slop system, the allocation model, the character-budget discipline, "put subject and action first."
+**后果：** 词序即优先级排序 · 冗余内容不仅难看，而且昂贵 · 简短密集的提示词胜过长篇散文。**解释了：** 反冗余系统、分配模型、字符预算纪律、“将主体和动作放在最前面”。
 
-### 2. Generation pulls toward the familiar
+### 2. 生成过程趋向于熟悉区域
 
-The model produces samples near its training distribution. Combinations it has seen millions of times (golden hour + warm rim light) are cheap and stable; rare combinations fight the prior and wobble.
+模型生成的样本接近其训练分布。它见过数百万次的组合（黄金时刻 + 暖色轮廓光）生成起来既便宜又稳定；罕见组合则会对抗先验并产生抖动。
 
-**Consequences:** name dense visual clusters (film noir, cel animation, phone footage), not judgments (beautiful) · expect instability whenever the request is statistically rare, and stage rare ideas as familiar pieces · style flicker between shots is the sampler hopping between nearby clusters — repeat the exact anchor phrase to hold it. **Explains:** style-safe descriptors, the medium-line repetition rule in 2D work, the source-look lock.
+**后果：** 使用密集的视觉聚类名称（黑色电影、赛璐珞动画、手机拍摄画面），而非评判性词汇（美丽）· 当请求在统计上罕见时，预期会出现不稳定性，并将罕见想法分解为熟悉片段来呈现 · 不同镜头间的风格闪烁是采样器在邻近聚类间跳跃所致——重复完全相同的锚定短语以保持稳定。**解释了：** 风格安全描述符、2D 工作中介质行重复规则、源外观锁定。
 
-### 3. There is no NOT
+### 3. 不存在“不”的概念
 
-Text conditioning moves probability toward every concept it mentions. Negation is weak grammar wrapped around a strong activation: "no blood" still summons the concept.
+文本条件引导会向它提到的每个概念增加概率。否定是以弱语法包裹的强激活：“不要血”仍然会召唤出血的概念。
 
-**Consequences:** describe what IS there; exclude compositionally · reserve literal negation for the constraint slot platforms parse (`no on-screen text, no watermark`). **Explains:** negation slop, "negation summons" in the capability map.
+**后果：** 描述存在的內容；通过构图来排除 · 将字面否定留给平台可解析的约束槽位（`无屏幕文字、无水印`）。**解释了：** 否定冗余、“否定即召唤”在能力地图中的体现。
 
-### 4. Time is a trajectory prior
+### 4. 时间是轨迹先验
 
-The model strongly prefers motion that looks like real footage: smooth, momentum-carrying, cause-and-effect. A described cause lets the model compute plausible consequences; a list of disconnected micro-instructions has no trajectory to ride.
+模型强烈偏好看起来像真实素材的运动：平滑、带动量、有因果关系。描述一个原因，让模型可以计算合理的结果；一系列孤立的微指令则没有可依赖的轨迹。
 
-**Consequences:** one physical cause with visible consequences beats five stage directions · unmotivated sudden changes get smoothed away or glitch · declared media change the prior — "hand-drawn 2D" legitimizes held frames that photoreal footage would treat as freezing. **Explains:** physics-forward prompting, the one-action discipline, burst-vs-held grammar in 2D.
+**后果：** 一个带有可见后果的物理原因胜过五条舞台调度 · 无动机的突变会被平滑掉或产生卡顿 · 声明的媒介类型会改变先验——“手绘 2D”使定格帧合法化，而写实素材则会视其为冻结。**解释了：** 物理优先的提示方式、单动作纪律、2D 中的爆发式与保持式语法。
 
-### 5. Errors compound
+### 5. 错误会累积
 
-Each frame is re-synthesized under the influence of its neighbors; tiny identity errors accumulate across a clip, and feeding outputs back as inputs amplifies them generation after generation.
+每一帧都在相邻帧的影响下重新合成；微小的身份错误在整个片段中累积，而将输出作为输入反馈回去会在每一代生成中放大这些错误。
 
-**Consequences:** identity drifts with clip length and chained continuations — re-anchor with the ORIGINAL references, never with outputs · keep fragile anchors locked and clips short · expect the fifth chained generation to need a reset. **Explains:** the ~4–5-generation drift note, extension-degradation repair, preservation language.
+**后果：** 身份随片段长度和链式续写而偏移——使用原始参考重新锚定，绝不使用输出结果 · 保持脆弱锚点锁定，并保持片段简短 · 预计第五次链式生成时需要重置。**解释了：** 约 4 到 5 代的漂移提示、扩展退化修复、保留语言。
 
-### 6. References outrank text where they overlap
+### 6. 在重叠部分，参考素材优先级高于文本
 
-Image, video, and audio references are dense conditioning; a still image specifies more about appearance than a paragraph ever could. Text that re-describes a reference creates a second, slightly different instruction for the same pixels — and conflict reads as drift. Reference channels also bleed: a motion donor wants to bring its appearance along.
+图像、视频和音频参考是密集的条件信号；一张静态图像对外观的指定超过一整段文字。重新描述参考内容的文本会为相同像素产生第二个略有不同的指令——冲突则表现为漂移。参考通道也会产生溢出效应：运动参考素材会带入其外观。
 
-**Consequences:** prompt only what references cannot carry — change over time, camera, sound, constraints · always state what must NOT transfer. **Explains:** intent-vs-precision, role binding with exclusions, "prompt only what the image cannot show."
+**后果：** 仅提示参考素材无法承载的内容——随时间的变化、摄像机、声音、约束 · 始终说明哪些内容不能迁移。**解释了：** 意图与精确度的区分、带排除项的角色绑定、“仅提示图像无法展示的内容”。
 
-### 7. Detail capacity scales with screen area
+### 7. 细节容量随画面面积缩放
 
-A face occupying 2% of the frame gets roughly 2% of the spatial representation. Small regions cannot hold fine structure, and motion makes it worse.
+占据画面 2% 的面部大约获得 2% 的空间表征。小区域无法保持精细结构，运动会使情况更糟。
 
-**Consequences:** the hero subject earns its fidelity by being large in frame · distant faces, busy hands, small logos, and on-screen text degrade first · a detail that matters gets its own shot. **Explains:** tiny-detail design-arounds, close-up rationing, text-to-post.
+**后果：** 主体角色通过在画面中占据大面积来获得保真度 · 远处面部、忙碌的手、小徽标和屏幕文字最先退化 · 重要的细节应有自己的镜头。**解释了：** 细小细节的设计规避、特写的合理分配、文字转为后期处理。
 
-### 8. Audio and video are generated together
+### 8. 音频和视频共同生成
 
-Sound is not added afterward; it denoises jointly with the picture. Named sound events give the sampler synchronization targets, and lip-sync is a joint constraint across both streams — every extra head or camera motion tightens it.
+声音并非后期添加；它与画面一起进行去噪处理。命名的声音事件为采样器提供同步目标，而口型同步是跨两个流联合约束——每增加一个头部或摄像机运动都会使其更紧张。
 
-**Consequences:** name each shot's specific sounds — they anchor timing · audio can act as the clock of the edit · dialogue wants a stable face and a short line because the model is solving picture and phonemes simultaneously. **Explains:** audio-as-clock, sound-per-shot in multi-shot grammar, locked framing for dialogue.
+**后果：** 为每个镜头命名具体声音——它们锚定时间 · 音频可作为剪辑的时钟 · 对话需要稳定的面部和短句，因为模型同时处理画面和音素。**解释了：** 音频作为时钟、多镜头语法中每个镜头对应声音、对话的锁定构图。
 
-## Deriving guidance for novel cases
+## 为新颖情况推导指导
 
-When no rule covers the request: (1) ask which mechanism dominates; (2) ask what that mechanism predicts; (3) choose the lever that works with the mechanism instead of against it.
+当规则未覆盖某个请求时：（1）判断哪个机制占主导；（2）判断该机制预测什么结果；（3）选择与该机制协同而非对抗的杠杆。
 
-**Worked example — "the mirror reflection should move differently from the subject":** mechanism 2 says this is distribution-rare (training mirrors agree with their subjects), and mechanism 4 says two conflicting trajectories in one region fight the prior. Prediction: wobble, merging, or the reflection syncing back. Levers: stage it as two shots (subject, then mirror as its own subject), or shoot the mirror as the only subject in frame, or accept a brief 2–3s effect window where instability reads as intended. No rule in the repo states this; the mechanics derive it.
+**示例——“镜中反射应与主体运动不同”：** 机制 2 表明这在分布上罕见（训练数据中的镜子与其主体一致），机制 4 表明同一区域中两个冲突的轨迹会对抗先验。预测：抖动、合并或反射最终同步回主体。杠杆：将其分为两个镜头（主体，然后镜子作为其自身主体），或将镜子作为画面中唯一主体拍摄，或接受一个短暂的 2-3 秒效果窗口，使不稳定性显得是刻意为之。仓库中没有规则说明这一点；机制推导出了它。
 
-## Mechanism-indexed diagnosis
+## 机制索引诊断
 
-| Symptom | Dominant mechanism | Lever |
+| 症状 | 主导机制 | 杠杆 |
 |---|---|---|
-| Output generic despite long prompt | 1 — attention diluted | cut slop, reorder priorities first |
-| Style or look flickers | 2 — cluster hopping | repeat the exact anchor phrase every shot |
-| Excluded thing appears | 3 — negation summoned it | describe the positive replacement |
-| Action skipped or mushy | 4 — no trajectory to ride | one cause, visible consequences, an endpoint |
-| Identity decays over time | 5 — compounding error | shorter clip, original-reference re-anchor |
-| Reference fights the prompt | 6 — conflicting conditioning | delete re-description, state non-transfer |
-| Small detail breaks | 7 — capacity starvation | enlarge it in frame or give it its own shot |
-| Lips or sound desync | 8 — joint constraint overloaded | lock the face, shorten the line, name the sound |
+| 尽管提示词很长但输出平淡 | 1 — 注意力被稀释 | 删减冗余，重新排列优先级 |
+| 风格或外观闪烁 | 2 — 聚类跳跃 | 每个镜头重复完全相同的锚定短语 |
+| 被排除的内容出现 | 3 — 否定召唤了它 | 描述正向替代物 |
+| 动作被跳过或模糊 | 4 — 无轨迹可依赖 | 一个原因、可见结果、一个终点 |
+| 身份随时间衰减 | 5 — 累积错误 | 缩短片段，使用原始参考重新锚定 |
+| 参考与提示词冲突 | 6 — 条件冲突 | 删除重新描述，说明不可迁移项 |
+| 细小细节损坏 | 7 — 容量不足 | 在画面中放大或单独设一个镜头 |
+| 嘴唇或声音不同步 | 8 — 联合约束过载 | 锁定面部、缩短句子、命名声音 |

@@ -1,26 +1,26 @@
-# Storytelling Framework
+# 叙事框架
 
-A short Seedance clip works best when it has one visible decision or one visible transformation. The model does not need a full plot; it needs a clear before state, action, and changed final state.
+一个简短的 Seedance 片段在拥有一个可见的决策或一个可见的转变时效果最佳。模型不需要完整的故事情节；它需要一个清晰的前置状态、动作和改变后的最终状态。
 
-## Useful Clip Beats
+## 有用的片段节拍
 
-| Beat | What changes | Example |
+| 节拍 | 变化内容 | 示例 |
 |---|---|---|
-| Arrival | A subject enters a new space. | Courier reaches a locked rooftop door. |
-| Reveal | Hidden information becomes visible. | Strip light reveals a product label. |
-| Decision | A character chooses through gesture. | Character lowers an envelope and looks at the door. |
-| Transformation | A material or environment changes. | Frost spreads across glass and stops at the logo. |
-| Reversal | Expected action changes direction. | A paper plane turns back toward its sender. |
-| Pursuit | One subject closes distance. | Drone tracks a runner through rain. |
-| Contact | Two elements meet. | Key touches lock and a blue spark collapses. |
-| Disappearance | Subject exits, dissolves, or hides. | Train lights fade into fog. |
+| 抵达 | 主体进入一个新空间。 | 信使到达一扇锁着的天台门。 |
+| 揭示 | 隐藏的信息变得可见。 | 条形灯照亮产品标签。 |
+| 决策 | 角色通过手势做出选择。 | 角色放下信封并看向门。 |
+| 转变 | 材质或环境发生变化。 | 霜冻在玻璃上蔓延，并在标识处停止。 |
+| 反转 | 预期动作改变方向。 | 纸飞机掉头飞向寄件人。 |
+| 追逐 | 一个主体拉近与另一个的距离。 | 无人机在雨中追踪跑步者。 |
+| 接触 | 两个元素相遇。 | 钥匙触碰锁，蓝色火花迸发后消散。 |
+| 消失 | 主体退出、溶解或隐藏。 | 列车灯光消失在雾中。 |
 
-## Beat Formula
+## 节拍公式
 
-`Before state -> visible action -> changed final state.`
+`前置状态 -> 可见动作 -> 改变后的最终状态。`
 
-Camera, lighting, and audio should support that beat instead of competing with it. If the prompt contains several beats, split it into separate clips or write a deliberate time-segmented sequence.
+摄影机、灯光和音频应支持该节拍，而非与之竞争。如果提示词中包含多个节拍，请将其拆分为单独的片段，或编写一个精心设计的时间分段序列。
 
-## Micro-Story Checklist
+## 微故事检查清单
 
-The subject is named or tagged. The action is a verb, not an emotion. The scene has one useful environmental detail. The camera has a start and endpoint. The lighting source is motivated. The sound layer either supports the beat or stays silent. The final frame is different from the first frame.
+主体被命名或标记。动作是动词，而非情绪。场景包含一个有用的环境细节。摄影机有起点和终点。光源是有动机的。声音层要么支持节拍，要么保持静音。最终帧与首帧不同。

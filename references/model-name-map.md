@@ -1,51 +1,51 @@
-# Model Name Map
+# 模型名称映射表
 
 last_verified: 2026-06-14
 
-Use this file when a user says "Seedance Pro", "Seedance V2", "Seed2.0 Pro", or wrapper-specific model names.
+当用户提到“Seedance Pro”、“Seedance V2”、“Seed2.0 Pro”或特定包装器的模型名称时，请使用此文件。
 
-## Canonical Names
+## 标准名称
 
-| Name | Meaning | Guidance |
+| 名称 | 含义 | 指导 |
 |---|---|---|
-| Seedance 2.0 | ByteDance Seed video generation model line | Correct public name for the v2 video model family. Use this as the default wording. |
-| Seedance 2.0 Fast | Faster Seedance 2.0 variant reported by official/product and wrapper surfaces | Use for draft, iteration, or low-latency discussion when the active surface exposes it. Recheck exact resolution, duration, and pricing. |
-| Doubao Seedance 2.0 | Volcengine/Doubao-flavored surface naming | Treat as a product/API surface label, not a different creative method. |
-| `doubao-seedance-2-0-260128` | Volcengine Ark model ID observed in May 29 tutorial | Useful for implementation examples only after rechecking the active console/docs. Do not treat as universal BytePlus/global availability. |
-| `doubao-seedance-2-0-fast-260128` | Volcengine Ark Fast model ID observed in May 29 tutorial | Use only when the active surface exposes the Fast variant and current pricing/limits are checked. |
-| `doubao-seedance-2-0-pro-260215` | Volcengine Ark Pro model ID (reported 2026-06-14, not console-verified here) | Use only after rechecking the live Ark console. Do not confuse with the `doubao-seed-2-0-pro-*` LLM (see Non-Seedance section). |
-| `dreamina-seedance-2-0-260128` / `-fast-260128` | BytePlus ModelArk model IDs — the international counterpart of the Volcengine `doubao-` IDs (reported 2026-06-14) | BytePlus uses a `dreamina-` prefix where Volcengine uses `doubao-`. Same model family, different surface; recheck the live ModelArk docs before quoting. |
-| `seedance2` | Runway API model ID | Use only for Runway's API surface. Do not substitute for Volcengine/Doubao model IDs. |
-| fal Seedance 2.0 endpoints | fal's hosted Seedance 2.0 surface: `text-to-video`, `image-to-video`, `reference-to-video`, each with a `/fast` tier | Use fal endpoint naming only for the fal surface (verified 2026-06-09). Recheck endpoint IDs, resolution tiers, and per-second pricing live before quoting. Do not substitute for Volcengine, Doubao, or Runway model IDs. |
-| Seedance V2 | Community shorthand | Normalize to Seedance 2.0 unless the user is clearly referring to a wrapper-specific model. |
-| Seedance 2.0 Pro | Ambiguous community shorthand | Do not assume this is an official video-model name. Ask which surface, or normalize to Seedance 2.0 / Fast with a caveat. |
-| Seed2.0 Pro | Separate Seed/Doubao naming seen outside the Seedance video model line | Do not confuse with Seedance 2.0 video generation. |
-| Seedance 1.5 Pro | Earlier Seedance generation | Useful for historical comparison only. Do not mix its limits with Seedance 2.0. |
+| Seedance 2.0 | 字节跳动 Seed 视频生成模型系列 | v2 视频模型系列的正确公开名称。将其作为默认用语。 |
+| Seedance 2.0 Fast | 官方/产品和包装器界面报告的更快 Seedance 2.0 变体 | 用于草稿、迭代或低延迟讨论（当活动界面暴露该变体时）。重新确认确切分辨率、时长和定价。 |
+| Doubao Seedance 2.0 | 火山引擎/豆包风格的界面命名 | 视为产品/API 界面标签，而非不同的创作方法。 |
+| `doubao-seedance-2-0-260128` | 在 5 月 29 日教程中观察到的火山引擎 Ark 模型 ID | 仅在重新检查当前控制台/文档后，用于实现示例。不要视为通用 BytePlus/全球可用性。 |
+| `doubao-seedance-2-0-fast-260128` | 在 5 月 29 日教程中观察到的火山引擎 Ark Fast 模型 ID | 仅在活动界面暴露 Fast 变体且已检查当前定价/限制时使用。 |
+| `doubao-seedance-2-0-pro-260215` | 火山引擎 Ark Pro 模型 ID（报告于 2026-06-14，此处未经验证控制台） | 仅在重新检查实时 Ark 控制台后使用。不要与 `doubao-seed-2-0-pro-*` LLM 混淆（见非 Seedance 部分）。 |
+| `dreamina-seedance-2-0-260128` / `-fast-260128` | BytePlus ModelArk 模型 ID——火山引擎 `doubao-` ID 的国际对应版本（报告于 2026-06-14） | BytePlus 使用 `dreamina-` 前缀，而火山引擎使用 `doubao-`。同一模型系列，不同界面；引用前重新检查实时 ModelArk 文档。 |
+| `seedance2` | Runway API 模型 ID | 仅用于 Runway 的 API 界面。不要替代火山引擎/豆包模型 ID。 |
+| fal Seedance 2.0 端点 | fal 托管的 Seedance 2.0 界面：`text-to-video`、`image-to-video`、`reference-to-video`，各有 `/fast` 层级 | 仅对 fal 界面使用 fal 端点命名（验证于 2026-06-09）。引用前重新确认端点 ID、分辨率层级和每秒定价。不要替代火山引擎、豆包或 Runway 模型 ID。 |
+| Seedance V2 | 社区简称 | 标准化为 Seedance 2.0，除非用户明确指向特定包装器模型。 |
+| Seedance 2.0 Pro | 含义模糊的社区简称 | 不要假设这是官方视频模型名称。询问具体界面，或标准化为 Seedance 2.0 / Fast 并加以说明。 |
+| Seed2.0 Pro | 在 Seedance 视频模型系列之外看到的独立 Seed/Doubao 命名 | 不要与 Seedance 2.0 视频生成混淆。 |
+| Seedance 1.5 Pro | 较早的 Seedance 生成版本 | 仅用于历史比较。不要将其限制与 Seedance 2.0 混合。 |
 
-## Answer Pattern
+## 回答模式
 
-If the user says "Seedance 2.0 Pro", answer:
+如果用户说“Seedance 2.0 Pro”，回答：
 
-`I will treat this as Seedance 2.0 unless you mean a specific wrapper's Pro label. Official public video-model wording is Seedance 2.0 and, on some surfaces, Seedance 2.0 Fast. Seed2.0 Pro is a different naming lane and should not be used as the Seedance video model name without source confirmation.`
+`我将视为 Seedance 2.0，除非您指特定包装器的 Pro 标签。官方公开视频模型用语是 Seedance 2.0，在某些界面上还有 Seedance 2.0 Fast。Seed2.0 Pro 是另一套命名体系，在没有来源确认的情况下不应作为 Seedance 视频模型名称使用。`
 
-## Non-Seedance Models (Do Not Confuse)
+## 非 Seedance 模型（请勿混淆）
 
-These are NOT Seedance and should not trigger Seedance-specific syntax, specs, or surfaces. Versions verified 2026-06-14; recheck before quoting.
+这些 NOT 不是 Seedance，不应触发 Seedance 特定的语法、规格或界面。版本验证于 2026-06-14；引用前重新确认。
 
-| Name | What it actually is | Note |
+| 名称 | 实际是什么 | 注意 |
 |---|---|---|
-| Seedream (e.g. Seedream 4.5) | ByteDance's **image** generation model | Same vendor, near-identical name (Seedr**ea**m vs Seed**a**nce). Highest confusion risk. Not video. |
-| Doubao-Seed-2.0 (`doubao-seed-2-0-pro-*`) | ByteDance's **LLM** on Volcengine | Shares the Ark surface and the "Seed" lineage but is a language model, not Seedance video. |
-| Sora 2 (OpenAI) | Competing video model | Note: OpenAI announced Sora's sunset — app closed ~Apr 2026, API ending ~Sept 2026. Not Seedance. |
-| Veo 3.1 (Google) | Competing video model (family: 3.1 / Fast / Lite) | "Veo 3" is the prior gen. Not Seedance. |
-| Kling 3.0 (Kuaishou) | Competing video model ("Omni" = its multimodal variants) | Not Seedance. |
-| Runway Gen-4.5 | Runway's own video model line | Distinct from Runway *hosting* Seedance 2.0 via its API. Not Seedance. |
-| Hailuo / Vidu / Luma Ray3 / Pika / Wan | Other competing video models | Not Seedance. |
+| Seedream（如 Seedream 4.5） | 字节跳动的**图像**生成模型 | 同一供应商，名称几乎相同（Seedr**ea**m 与 Seed**a**nce）。混淆风险最高。非视频。 |
+| Doubao-Seed-2.0（`doubao-seed-2-0-pro-*`） | 字节跳动在火山引擎上的 **LLM** | 共享 Ark 界面和“Seed”系列，但是语言模型，而非 Seedance 视频。 |
+| Sora 2（OpenAI） | 竞品视频模型 | 注意：OpenAI 宣布 Sora 停用——应用程序约 2026 年 4 月关闭，API 约 2026 年 9 月结束。非 Seedance。 |
+| Veo 3.1（Google） | 竞品视频模型（系列：3.1 / Fast / Lite） | “Veo 3”为前代。非 Seedance。 |
+| Kling 3.0（快手） | 竞品视频模型（“Omni”为其多模态变体） | 非 Seedance。 |
+| Runway Gen-4.5 | Runway 自有的视频模型系列 | 区别于 Runway 通过其 API *托管* Seedance 2.0。非 Seedance。 |
+| Hailuo / Vidu / Luma Ray3 / Pika / Wan | 其他竞品视频模型 | 非 Seedance。 |
 
-For these, offer general filmmaking craft only — never Seedance reference tags, shot grammar, or surface-specific settings.
+对于这些模型，仅提供通用电影制作技巧——绝不提供 Seedance 参考标签、镜头语法或界面特定设置。
 
-## Wrapper Names
+## 包装器名称
 
-Third-party wrappers may expose names such as `doubao-seedance-2.0`, `doubao-seedance-2.0-fast`, or provider-prefixed variants. These can be useful for implementation, but they are not the repo's source of truth for official naming.
+第三方包装器可能暴露诸如 `doubao-seedance-2.0`、`doubao-seedance-2.0-fast` 或供应商前缀变体等名称。这些对实现有参考价值，但并非本仓库官方命名的依据。
 
-Do not quote current BytePlus Seedance 2.0 pricing or model IDs from JavaScript-rendered pricing pages unless the value has been verified in a current official page or console. Volcengine prices can be cited only with source date, model, surface, currency, and a recheck warning.
+除非值已在当前官方页面或控制台中验证，否则不要引用由 JavaScript 渲染的定价页面中的当前 BytePlus Seedance 2.0 定价或模型 ID。火山引擎价格仅在附有来源日期、模型、界面、货币和重新检查警告的情况下方可引用。

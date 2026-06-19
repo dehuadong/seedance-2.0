@@ -1,49 +1,49 @@
-# Platform Surface Matrix
+# 平台界面矩阵
 
 last_verified: 2026-06-13
 
-Seedance 2.0 capability claims must separate the model from the product surface. A feature can be true for the model while still being gated, unavailable, renamed, priced differently, or policy-limited on a specific surface.
+Seedance 2.0 的能力声明必须将模型与产品界面区分开来。一项功能可能对模型本身为真，但在特定界面上仍可能被限制、不可用、重命名、定价不同或受策略限制。
 
-Access note (2026-06-13): the overseas Seedance 2.0 API is contested following a copyright-driven suspension — see `api-status.md`. Verify live access on any third-party surface before relying on it, and add no surface here without independently confirming it hosts Seedance 2.0.
+访问说明（2026-06-13）：由于版权相关暂停，海外 Seedance 2.0 API 存在争议——参见 `api-status.md`。在依赖任何第三方界面之前，请验证其实际可访问性，且未经独立确认其托管 Seedance 2.0，请勿在此添加任何界面。
 
-| Surface | Evidence type | Typical use | Current guidance |
+| 界面 | 证据类型 | 典型用途 | 当前指导 |
 |---|---|---|---|
-| ByteDance Seed official model page | official | Broad capability framing | Use for high-level model positioning only. It confirms multimodal audio-video generation, references, performance, lighting, shadow, and camera control. |
-| ByteDance official launch post | official | Capability details and known limits | Use for the strongest public claims about input modalities, reference counts, video extension/editing, dual-channel audio, and remaining weaknesses. |
-| Volcengine Ark / ModelArk docs | official platform docs | API task flow and model surface | Recheck before giving endpoints, regions, quotas, pricing, or file limits. The May 29 model list/tutorial pages are current signals, but still date-bound. |
-| Volcengine video-generation tutorial | official platform docs | Async task lifecycle, first/last-frame roles, return-last-frame, web-search tools, and reference-file combinations | Current May 29 signal for Volcengine fields. Use for Volcengine only; recheck exact schema, entitlement, pricing, and face-reference behavior before implementation. |
-| Volcengine developer-community article | official ecosystem/news article | API availability, safety, and adoption context | Useful for noting API-service rollout, portrait/copyright standards, face verification, virtual portraits, and BytePlus overseas service. Do not treat it as an API schema, pricing table, or account entitlement guarantee. |
-| BytePlus ModelArk docs | official platform docs | International API and docs surface | Recheck before production guidance. Some pages require JavaScript, so cite only visible or independently verified claims. Do not quote Seedance 2.0 BytePlus pricing from JS-only pages without live verification. |
-| Runway Seedance 2 | official third-party surface | API/web generation with Seedance 2 model access | Runway documents `seedance2`, 5-15s duration, image/video/audio references, upload URIs, audio-combination rules, and plan/region caveats. Treat as Runway surface behavior, not Volcengine or BytePlus behavior. |
-| Runway MCP | official agent connector surface | Agent-accessible image/video generation | Useful for agent workflow planning. It does not prove ByteDance API access or alter Seedance model limits. |
-| fal | official third-party surface | API generation through fal's Seedance 2.0 endpoints | Verified 2026-06-09: fal documents text-to-video, image-to-video (start image plus optional end image), and reference-to-video, each with a /fast tier, 4-15s or auto duration, six aspect ratios plus auto, and per-second pricing. fal's prose guide says 480p/720p while model and pricing pages list 1080p - verify resolution per endpoint at call time. No extend endpoint on this surface. Treat as fal surface behavior, not Volcengine or BytePlus behavior. |
-| Atlas Cloud | third-party aggregator surface | Hosted Seedance 2.0 via an async video-generation API | Verified 2026-06-13: Atlas Cloud hosts live Seedance 2.0 (text-to-video, image-to-video, reference-to-video, plus fast variants). Its OpenAI-compatible endpoint covers LLM/chat only; **Seedance video generation uses Atlas Cloud's own async API** - `POST /api/v1/model/generateVideo` with a model id such as `bytedance/seedance-2.0/text-to-video`, returning a prediction id polled at `/api/v1/model/prediction/{id}` - not the OpenAI SDK shape. One of several aggregators reselling Seedance access; treat endpoints, pricing, model IDs, quotas, and guardrails as aggregator-specific, recheck before use, and never present them as official ByteDance behavior. The repo endorses no reseller; listed for completeness. |
-| Replicate | third-party model-host surface | Hosted Seedance 2.0 under the official `bytedance` namespace | Verified 2026-06-13: Replicate lists `bytedance/seedance-2.0` (text-to-video, image-to-video, multimodal reference inputs `[Image1]/[Video1]/[Audio1]`, native audio) behind its standard async prediction API; check the model page for supported resolutions rather than assuming model-level maximums. A reputable, widely-used model host — but still surface-specific: recheck pricing, limits, and live access (see the overseas-API status note in `api-status.md`), and never present its behavior as official ByteDance behavior. The repo endorses no host; listed for completeness. |
-| WaveSpeedAI / Higgsfield / Pollo | third-party host surfaces | Additional verified Seedance 2.0 hosts | Verified 2026-06-14 (provider-own pages): WaveSpeedAI (async job API, t2v/i2v + fast/turbo/"spicy" variants, 480p/720p/1080p tiers), Higgsfield (creator UI, multimodal inputs; no clearly documented public API found), Pollo (web model page + unified job API). Same rules as every host: async submit/poll for video, recheck live, aggregator/host-specific not official. The repo endorses none. |
-| Dreamina / Jimeng web UI | official product surface | Creator workflow | Behavior may differ from API. Do not generalize web UI limits, credits, face checks, or upload rules to every surface. |
-| ComfyUI partner node docs | partner workflow docs | T2V, R2V, FLF2V workflows | Useful for workflow vocabulary and surface caveats. Label as ComfyUI-specific rather than universal Seedance behavior. |
-| Third-party wrappers | community/commercial wrapper | Access abstraction | Useful for field patterns and integration ideas only. Do not present wrapper model names, prices, or guardrail behavior as official. |
-| Community prompt corpora | field-observed | Prompt pattern mining | Mine structures, timing syntax, vocab, and failure modes. Do not copy unsafe, IP-sensitive, or real-person examples directly. |
-| Agent Skills docs | agent packaging docs | Repository layout and install language | Use for skill structure and progressive-disclosure guidance. Do not treat repository install paths as universal client guarantees. |
+| ByteDance Seed 官方模型页面 | 官方 | 广泛的能力框架 | 仅用于高层次模型定位。确认多模态音视频生成、参考、性能、光照、阴影和摄像机控制。 |
+| ByteDance 官方发布文章 | 官方 | 能力细节和已知限制 | 用于关于输入模态、参考数量、视频扩展/编辑、双声道音频和剩余弱点的最强公开声明。 |
+| 火山引擎 Ark / ModelArk 文档 | 官方平台文档 | API 任务流和模型界面 | 在提供端点、区域、配额、定价或文件限制前重新检查。5 月 29 日的模型列表/教程页面是当前信号，但仍受日期限制。 |
+| 火山引擎视频生成教程 | 官方平台文档 | 异步任务生命周期、首帧/尾帧角色、return-last-frame、网页搜索工具和参考文件组合 | 当前（5 月 29 日）的火山引擎字段信号。仅用于火山引擎；实现前重新确认确切模式、权限、定价和面部参考行为。 |
+| 火山引擎开发者社区文章 | 官方生态/新闻文章 | API 可用性、安全和采用背景 | 可用于了解 API 服务部署、肖像/版权标准、面部验证、虚拟肖像和 BytePlus 海外服务。不要将其视为 API 模式、定价表或账户权限保证。 |
+| BytePlus ModelArk 文档 | 官方平台文档 | 国际 API 和文档界面 | 在用于生产指导前重新检查。某些页面需要 JavaScript，因此仅引用可见或独立验证的声明。未经实时验证，不要从仅 JS 页面引用 Seedance 2.0 BytePlus 定价。 |
+| Runway Seedance 2 | 官方第三方界面 | 使用 Seedance 2 模型访问的 API/Web 生成 | Runway 文档记录 `seedance2`、5-15 秒时长、图像/视频/音频参考、上传 URI、音频组合规则以及计划/区域注意事项。视为 Runway 界面行为，而非火山引擎或 BytePlus 行为。 |
+| Runway MCP | 官方智能体连接器界面 | 智能体可访问的图像/视频生成 | 对智能体工作流规划有用。不能证明 ByteDance API 访问或改变 Seedance 模型限制。 |
+| fal | 官方第三方界面 | 通过 fal 的 Seedance 2.0 端点进行 API 生成 | 验证于 2026-06-09：fal 文档记录文本转视频、图像转视频（起始图像加可选结束图像）和参考转视频，各有 /fast 层级、4-15 秒或 auto 时长、六种宽高比加 auto 以及按秒定价。fal 的文本指南称 480p/720p，而模型和定价页面列出 1080p——调用时按端点验证分辨率。此界面无扩展端点。视为 fal 界面行为，而非火山引擎或 BytePlus 行为。 |
+| Atlas Cloud | 第三方聚合器界面 | 通过异步视频生成 API 托管 Seedance 2.0 | 验证于 2026-06-13：Atlas Cloud 托管可用的 Seedance 2.0（文本转视频、图像转视频、参考转视频，以及快速变体）。其 OpenAI 兼容端点仅覆盖 LLM/聊天；**Seedance 视频生成使用 Atlas Cloud 自有异步 API**——`POST /api/v1/model/generateVideo`，使用模型 ID 如 `bytedance/seedance-2.0/text-to-video`，返回预测 ID 并在 `/api/v1/model/prediction/{id}` 轮询——而非 OpenAI SDK 格式。是众多转售 Seedance 访问的聚合器之一；将端点、定价、模型 ID、配额和护栏视为聚合器特定内容，使用前重新检查，且绝不要将其呈现为官方 ByteDance 行为。本仓库不背书任何转售商；列出仅为完整性。 |
+| Replicate | 第三方模型托管界面 | 在官方 `bytedance` 命名空间下托管 Seedance 2.0 | 验证于 2026-06-13：Replicate 在其标准异步预测 API 后列出 `bytedance/seedance-2.0`（文本转视频、图像转视频、多模态参考输入 `[Image1]/[Video1]/[Audio1]`、原生音频）；检查模型页面支持的分辨率，而非假设模型级最大值。是信誉良好且广泛使用的模型托管方——但仍是界面特定：重新检查定价、限制和实时访问（见 `api-status.md` 中的海外 API 状态说明），且绝不要将其行为呈现为官方 ByteDance 行为。本仓库不背书任何托管方；列出仅为完整性。 |
+| WaveSpeedAI / Higgsfield / Pollo | 第三方托管界面 | 额外的已验证 Seedance 2.0 托管方 | 验证于 2026-06-14（供应商自有页面）：WaveSpeedAI（异步任务 API，t2v/i2v 加 fast/turbo/“spicy”变体，480p/720p/1080p 层级）、Higgsfield（创作者 UI，多模态输入；未发现明确文档化的公共 API）、Pollo（网页模型页面加统一任务 API）。与每个托管方规则相同：异步提交/轮询视频，重新检查实时状态，聚合器/托管方特定而非官方。本仓库不背书任何一方。 |
+| Dreamina / 即梦 Web UI | 官方产品界面 | 创作者工作流 | 行为可能与 API 不同。不要将 Web UI 限制、积分、面部检查或上传规则推广到每个界面。 |
+| ComfyUI 合作伙伴节点文档 | 合作伙伴工作流文档 | T2V、R2V、FLF2V 工作流 | 对工作流词汇和界面注意事项有用。标记为 ComfyUI 特定，而非通用 Seedance 行为。 |
+| 第三方包装器 | 社区/商业包装器 | 访问抽象层 | 仅对现场模式和集成思路有用。不要将包装器模型名称、价格或护栏行为呈现为官方信息。 |
+| 社区提示语料库 | 现场观察 | 提示模式挖掘 | 挖掘结构、时间语法、词汇和失败模式。不要直接复制不安全、IP 敏感或真实人物示例。 |
+| Agent Skills 文档 | 智能体打包文档 | 仓库结构和安装语言 | 用于技能结构和渐进披露指导。不要将仓库安装路径视为通用客户端保证。 |
 
-## API Shape Rule
+## API 形态规则
 
-Verified 2026-06-14 across every developer surface (fal, Replicate, Volcengine Ark, BytePlus ModelArk, Atlas Cloud, Runway, WaveSpeed, Pollo): Seedance 2.0 **video generation is always an async job** — submit a task, get an id, poll until ready, fetch the URL. No surface exposes video as an OpenAI-compatible chat call. Where a surface advertises "OpenAI-compatible," that applies to its **LLM/chat** endpoint only. Never hand a user the OpenAI SDK shape for Seedance video.
+验证于 2026-06-14，涵盖每个开发者界面（fal、Replicate、火山引擎 Ark、BytePlus ModelArk、Atlas Cloud、Runway、WaveSpeed、Pollo）：Seedance 2.0 **视频生成始终是异步任务**——提交任务、获取 ID、轮询直到就绪、获取 URL。没有任何界面将视频暴露为 OpenAI 兼容的聊天调用。若某界面宣传“OpenAI 兼容”，那仅适用于其 **LLM/聊天**端点。绝不要将 OpenAI SDK 形态交给用户用于 Seedance 视频。
 
-## Surface-Specific Claims
+## 界面特定声明
 
-When answering a question about production use, include:
+在回答有关生产使用的问题时，请包含：
 
-- surface name,
-- verification date,
-- model or workflow name if known,
-- whether the claim is official, partner, wrapper, or field-observed,
-- what must be rechecked before use.
+- 界面名称，
+- 验证日期，
+- 模型或工作流名称（若已知），
+- 声明是官方、合作伙伴、包装器还是现场观察，
+- 使用前必须重新检查的内容。
 
-## Real-Person Rule
+## 真人规则
 
-Real-person images, portraits, and voices are authorization-sensitive. Some surfaces may provide identity verification flows, and others may reject or restrict real-person references. Do not infer consent from an uploaded asset.
+真人图像、肖像和声音属于授权敏感内容。某些界面可能提供身份验证流程，而其他界面可能拒绝或限制真人参考。不要从上传的素材推断同意。
 
-## V2V, R2V, and FLF2V Boundary
+## V2V、R2V 和 FLF2V 边界
 
-Official ByteDance material supports multimodal references, I2V/R2V examples, editing, and extension. Volcengine now documents first-frame and last-frame roles on its video-generation surface. Keep `FLF2V` as a label caveat because workflow names differ by product surface, but do not say first/last-frame itself is partner-only.
+官方 ByteDance 材料支持多模态参考、I2V/R2V 示例、编辑和扩展。火山引擎现在在其视频生成界面上文档化了首帧和尾帧角色。保留 `FLF2V` 作为标签注意事项，因为工作流名称因产品界面而异，但不要说首帧/尾帧本身是合作伙伴专属。

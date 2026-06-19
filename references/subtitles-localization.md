@@ -1,54 +1,54 @@
-# Subtitles And Localization
+# 字幕与本地化
 
-Use this reference when a Seedance project needs global release, subtitles, captions, forced narratives, dubbing, multilingual prompts, or market-specific copy.
+当 Seedance 项目需要全球发布、字幕、隐藏字幕、强制叙事、配音、多语言提示词或特定市场文案时，请使用本参考。
 
-## Localization Plan
+## 本地化计划
 
-| Deliverable | Purpose | Prompt/post boundary |
+| 交付物 | 目的 | 提示词/后期边界 |
 |---|---|---|
-| Subtitles | translate spoken dialogue | create in post from approved script, not generated as moving text |
-| SDH captions | dialogue plus important sound cues | plan sound cues and speaker IDs; author captions in post |
-| Forced narrative | translate signs, texts, or off-language lines | avoid burned-in AI text; keep clean plates |
-| Dubbing | localized voice performance | use short speaker turns, stable framing, and post-sync review |
-| M&E | music and effects without dialogue | plan audio layers separately |
-| Textless | picture without titles/lower thirds | generate clean background/action plates |
-| Market copy | local tagline or legal claim | add in design/edit tools after legal approval |
+| 字幕 | 翻译对白 | 根据批准脚本在后期制作中创建，而非生成为移动文字 |
+| SDH 隐藏字幕 | 对白加重要声音提示 | 规划声音提示和说话者标识；在后期制作中编写字幕 |
+| 强制叙事 | 翻译标志、文字或异语言对白 | 避免生成 AI 文字嵌入画面；保留干净空背景 |
+| 配音 | 本地化语音表演 | 使用短小的说话者轮次、稳定构图和后期同步检查 |
+| M&E | 无对白的音乐和音效 | 单独规划音频层 |
+| 无文字版 | 无标题/下三栏字幕的画面 | 生成干净的背景/动作空背景 |
+| 市场文案 | 本地标语或法律声明 | 在法律批准后，于设计/编辑工具中添加 |
 
-## Prompting For Subtitle-Friendly Footage
+## 便于添加字幕的素材提示词
 
-- Keep dialogue short and assigned to a speaker.
-- Use stable medium or medium close-up for important spoken lines.
-- Leave negative space for captions when needed.
-- Avoid generated subtitles or small moving text unless the task is explicitly a rough concept preview.
-- Preserve clean plates for markets where copy changes.
-- For multilingual dialogue, specify which language is spoken and which language is captioned in post.
+- 保持对白简短并指定说话者。
+- 对重要的口述台词使用稳定的中景或中近景。
+- 需要时为字幕留出负空间。
+- 避免生成字幕或小型移动文字，除非任务明确是粗略的概念预览。
+- 为文案可能变更的市场保留干净空背景。
+- 对于多语言对白，需指定使用哪种语言对话，以及后期为哪种语言添加字幕。
 
-## Reading And Placement Checks
+## 阅读和位置检查
 
-For professional output, check:
+对于专业输出，需检查：
 
-- captions do not cover faces, product claims, logos, legal disclaimers, or key action;
-- subtitles have enough reading time for the target language;
-- speaker changes are clear;
-- SDH sound cues describe story-relevant sounds only;
-- forced narratives are used only when needed;
-- line breaks preserve meaning;
-- formal/informal address matches region and character relationship.
+- 字幕不覆盖面部、产品声明、标识、法律免责声明或关键动作；
+- 字幕有足够的阅读时间以适应目标语言；
+- 说话者切换清晰；
+- SDH 声音提示仅描述与故事相关的声音；
+- 仅在必要时使用强制叙事；
+- 换行保留含义；
+- 正式/非正式称呼符合地区和角色关系。
 
-## Global Prompt Handoff
+## 全球提示词交接
 
-| Language need | Safe wording |
+| 语言需求 | 安全措辞 |
 |---|---|
-| Chinese prompt with English camera terms | Chinese for role binding, English for camera/lens terms if clearer; never for evasion |
-| Japanese market copy | keep generated shot textless; add Japanese copy in post |
-| Korean dialogue | short quoted line, stable face framing, no head turn |
-| Spanish captions | plan caption-safe lower third and avoid burned-in source text |
-| Russian localization | deliver textless plate plus separate Russian subtitle/copy file |
+| 中文提示词配英文摄影术语 | 中文用于角色绑定，英语用于摄影机/镜头术语（若更清晰）；绝不用于规避 |
+| 日本市场文案 | 保持生成的镜头无文字；在后期添加日语文案 |
+| 韩语对白 | 简短引用台词、稳定的面部构图、不转头 |
+| 西班牙语字幕 | 规划字幕安全下三栏区域，避免嵌入源文字 |
+| 俄语本地化 | 交付无文字空背景外加单独的俄语字幕/文案文件 |
 
-## Cultural Localization
+## 文化本地化
 
-Ask what must localize: dialogue, product claim, holiday/season, gesture, sign, food, wardrobe, legal text, or music cue. Do not assume a literal translation is a market-ready localization.
+询问哪些内容必须本地化：对白、产品声明、节日/季节、手势、标志、食物、服装、法律文本或音乐提示。不要假设字面翻译就是可投放市场的本地化版本。
 
-## Safe False-Positive Repair
+## 安全误报修复
 
-Mixed-language wording may clarify benign production context and reference roles, but it must not hide unsafe content. If a blocked prompt includes violence, real-person likeness, protected IP, sexual content, or evasion-like phrasing, repair the underlying issue in every language.
+混合语言措辞可以澄清无害的制作上下文和参考角色，但不得用于隐藏不安全内容。如果被拦截的提示词包含暴力、真实人物肖像、受保护知识产权、性内容或类似规避措辞，请在每种语言中修复根本问题。

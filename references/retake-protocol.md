@@ -1,41 +1,41 @@
-# Retake Protocol — the iteration economy
+# 重拍协议——迭代经济
 
-*What happens after a generation comes back. The rest of this skill plans the shot and repairs outright failure; this governs everything in between — the partially good take, which is most of real production. Labels: [heuristic] = default to test · [internal] = workflow guidance. Cost figures are surface-specific and volatile: load `api-status.md` and verify live before budgeting.*
+*生成返回之后发生的事情。本技能的其他部分负责规划镜头和修复彻底失败的情况；而此处则管理介于两者之间的一切——即部分好的成片，这才是真实制作中的大多数情况。标签：[heuristic] = 默认测试 · [internal] = 工作流指导。成本数据因界面而异且易变动：请加载 `api-status.md` 并在预算前实时核实。*
 
-## Triage every take — five verdicts
+## 对每个成片进行分级——五种判定
 
-| Verdict | When | Next move |
+| 判定 | 适用情况 | 下一步操作 |
 |---|---|---|
-| **Keep** | The primary spend (the thing this shot is FOR, per `allocation-model.md`) is delivered and nothing is fatal. | Lock it, log it, move on. Perfection in secondary details is post's job. |
-| **Fix in post** | The flaw lives in post's domain: color, on-screen text, sound mix, trim, a few unstable frames at the ends. | Never burn takes on what an editor fixes in minutes. |
-| **Edit, don't regenerate** | Composition and timing are right; exactly one layer is wrong, and the surface supports edit. | Preserve the take as the source clip; change only the failing layer. |
-| **Re-roll** | The prompt is right; the sample was unlucky (sampling variance). | Same prompt, new seed. Two or three re-rolls maximum — then the prompt is the problem, by definition. |
-| **Rewrite** | The same flaw appears in two or more takes. | It is systematic, not luck. Diagnose by mechanism (`model-mechanics.md`), change the prompt. |
+| **保留** | 主要支出（即本镜头在 `allocation-model.md` 中所针对的目标）已达成，且无致命缺陷。 | 锁定、记录、继续。次要细节的完美是后期的工作。 |
+| **后期修复** | 缺陷属于后期领域：色彩、画面文字、混音、剪辑、端部少数不稳定帧。 | 切勿为了剪辑师几分钟就能修复的问题而浪费生成次数。 |
+| **编辑，不重新生成** | 构图和节奏正确；恰好一个图层有问题，且界面支持编辑。 | 将成片作为源素材保留；仅修改有问题的图层。 |
+| **重抽** | 提示词正确；本次采样运气不佳（采样方差）。 | 相同提示词，新随机种子。最多重抽两到三次——超过则根据定义，问题出在提示词。 |
+| **重写** | 相同缺陷出现在两个或以上成片中。 | 这是系统性问题，而非运气。按机制诊断（`model-mechanics.md`），修改提示词。 |
 
-## The one-variable rule [heuristic]
+## 单变量规则 [heuristic]
 
-Change one thing per retake: one prompt clause, OR the seed, OR the mode, OR one reference — never several. Same seed plus one prompt change is the closest available thing to a controlled experiment; new seed with the same prompt is a pure re-roll. Change two things at once and the result is unreadable either way it lands — you learn nothing.
+每次重拍只更改一个变量：一个提示词子句，或随机种子，或模式，或一个参考素材——切勿同时更改多个。相同随机种子加一个提示词更改是目前最接近对照实验的做法；相同提示词加新随机种子则是纯粹的重抽。同时更改两样东西，无论结果如何都是不可解读的——你学不到任何东西。
 
-## Attempt budget [heuristic]
+## 尝试预算 [heuristic]
 
-Set it before take one: a number of takes (default: five standard-tier, or ten fast-tier drafts) and a written "good enough" — the primary spend delivered, secondary flaws postable. At half the budget with no progress on the same flaw, stop iterating and change strategy: a different mode, decomposition into more shots, or the honest exit below. Iteration without a stop condition is how a five-dollar shot becomes a hundred-dollar shot.
+在第一次生成之前设定好：一个生成次数（默认：标准层级五次，或快速层级草稿十次）以及一个书面的“足够好”标准——即主要支出已达成、次要缺陷可后期处理。当预算消耗过半且同一缺陷毫无进展时，停止迭代并改变策略：换一种模式、拆分为更多镜头，或者干脆诚实退出。没有停止条件的迭代，就是让一个五美元的镜头变成一百美元镜头的方式。
 
-## Cost awareness [internal]
+## 成本意识 [internal]
 
-Every second of generation costs real money, and retakes multiply it: at the fal figures last verified in `api-status.md` (≈$0.30/s standard 720p, ≈$0.68/s 1080p — verify live), a single 15-second standard take is several dollars, and a ten-take session is a real invoice. Spend accordingly:
+每一秒生成都花费真金白银，重拍会成倍增加：以 `api-status.md` 中最后核实的成本数字（标准 720p 约 $0.30/秒，1080p 约 $0.68/秒——请实时核实）为例，单次 15 秒标准生成就是好几美元，十次生成的会话就是一张实打实的账单。请据此支出：
 
-- **Draft cheap, lock expensive**: explore composition on the fast tier, short durations, or lower resolution; spend standard tier and full length only on the locked design.
-- Ten four-second drafts answer more questions than one failed fifteen-second take.
-- Quote costs to users only with the verification date and a verify-live caveat.
+- **草稿用便宜的，定稿用贵的**：在快速层级、短时长或较低分辨率下探索构图；仅在锁定设计后才使用标准层级和完整时长。
+- 十个四秒草稿比一次失败的十五秒成片能解答更多问题。
+- 向用户报价时务必附带核实日期和“请实时核实”的警告。
 
-## The shot log [internal]
+## 镜头日志 [internal]
 
-One line per take — this is the story state made auditable:
+每个成片一行——这是让故事状态可审计的方式：
 
-`Take N · changed: [the one variable] · seed: [same/new] · verdict: [keep/post/edit/re-roll/rewrite] · evidence: [one sentence]`
+`第 N 次生成 · 更改项：[那个唯一变量] · 随机种子：[相同/新] · 判定：[保留/后期修复/编辑/重抽/重写] · 证据：[一句话]`
 
-Re-reading the log beats re-living it. Two takes in the log with the same flaw is a rewrite, by rule — no third attempt on luck.
+重读日志胜过于重新体验。日志中出现两次相同缺陷的成片，按规则即为重写——不要寄希望于第三次运气。
 
-## When the answer is "don't generate"
+## 当答案是“不要生成”
 
-Honest direction sometimes refuses the tool: dense on-screen text belongs to post, a real product's exact behavior may belong to a camera, archival reality belongs to licensing, and a shot that has failed its budget twice after decomposition belongs to a different idea. "Film this one for real" is a deliverable, not a failure.
+诚实的指导有时会拒绝使用该工具：密集的画面文字属于后期工作，真实产品的精确行为可能属于实拍范畴，档案现实属于版权许可，而在分解后仍两次超出预算的镜头则属于换一个创意方向。“这个镜头实拍吧”是一种交付方案，而非失败。
